@@ -16,13 +16,8 @@
 // cannot be static as multiple property pages may be active simultaneously
 
 TCHAR *WINAPI StringFromResource(TCHAR *pBuffer, int iResourceID) {
-    if(LoadString(g_hInst,iResourceID,pBuffer,STR_MAX_LENGTH) == 0)
-    {
-#ifdef UNICODE
-        return (wchar_t*)"";
-#else
-        return (char*)"";
-#endif
+    if(LoadString(g_hInst,iResourceID,pBuffer,STR_MAX_LENGTH) == 0) {
+        return TEXT("");
     }
     return pBuffer;
 }
@@ -30,7 +25,7 @@ TCHAR *WINAPI StringFromResource(TCHAR *pBuffer, int iResourceID) {
 #ifdef UNICODE
 char *WINAPI StringFromResource(char *pBuffer, int iResourceID) {
     if(LoadStringA(g_hInst,iResourceID,pBuffer,STR_MAX_LENGTH) == 0) {
-        return  (char*)"";
+        return "";
     }
     return pBuffer;
 }

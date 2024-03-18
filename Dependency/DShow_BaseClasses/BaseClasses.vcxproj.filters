@@ -96,6 +96,9 @@
     <ClCompile Include="winutil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wxdebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="wxlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -203,13 +206,13 @@
     <ClInclude Include="winutil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="wxdebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="wxlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wxutil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wxdebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,163 +1,189 @@
-#include "AFilePackage.h"
-#include "AFI.h"
+/*
+ * FILE: AFilePackage.cpp
+ *
+ * DESCRIPTION: A File Package Class for Angelica Engine
+ *
+ * CREATED BY: Hedi, 2002/4/15
+ *
+ * HISTORY:
+ *
+ * Copyright (c) 2001 Archosaur Studio, All Rights Reserved.	
+ */
+
 #include "AFPI.h"
-#include "StringConvert.h"
-#include "zlib.h"
+#include "AFilePackage.h"
+#include <IO.h>
 
-#include <io.h>
-
-AFilePackage* g_pAFilePackage = nullptr;
+AFilePackage * g_pAFilePackage = NULL;
 
 AFilePackage::AFilePackage()
-    : m_bHasChanged(false)
-    , m_bReadOnly(false)
-    , m_header()
-    , m_mode()
-    , m_nNumFiles(0)
-    , m_pFileEntries(nullptr)
-    , m_fpPackageFile(nullptr)
-    , m_pBuffer(nullptr)
-    , m_dwBufferLen(0)
-    , m_bHasSorted(false)
-{}
-
-AFilePackage::~AFilePackage() = default;
-
-bool AFilePackage::Open(std::wstring& szPckPath, AFPCK_OPENMODE mode)
 {
-	if (g_bCompressEnable)
+	m_bHasChanged	= false;
+	m_bReadOnly		= false;
+
+	m_nNumFiles		= 0;
+	m_pFileEntries	= NULL;
+	m_fpPackageFile = NULL;
+
+	m_pBuffer		= NULL;
+	m_dwBufferLen	= 0;
+
+	m_bHasSorted	= false;
+}
+
+AFilePackage::~AFilePackage()
+{
+}
+
+bool AFilePackage::PrepareBuffer(DWORD dwBufferLen)
+{
+	if( dwBufferLen <= m_dwBufferLen )
+		return true;
+
+	m_dwBufferLen = dwBufferLen;
+	m_pBuffer = (LPBYTE) realloc(m_pBuffer, m_dwBufferLen);
+	if( NULL == m_pBuffer )
 	{
-		if (!PrepareBuffer(1024 * 1024))
+		AFERRLOG(("AFilePackage::PrepareBuffer(), Not enough memory!"));
+		return false;
+	}
+
+	return true;
+}
+
+bool AFilePackage::Open(char * szPckPath, AFPCK_OPENMODE mode)
+{
+	if( g_bCompressEnable )
+	{
+		if( !PrepareBuffer(1024 * 1024) )
 		{
 			return false;
 		}
 	}
 
-	switch (mode)
+	switch( mode )
 	{
 	case AFPCK_OPENEXIST:
 		m_bReadOnly = false;
-		m_fpPackageFile = _wfopen(szPckPath.c_str(), L"r+b");
-		if (m_fpPackageFile == nullptr)
+		m_fpPackageFile = fopen(szPckPath, "r+b");
+		if( NULL == m_fpPackageFile )
 		{
-			m_fpPackageFile = _wfopen(szPckPath.c_str(), L"rb");
-			if (m_fpPackageFile == nullptr)
+			m_fpPackageFile = fopen(szPckPath, "rb");
+			if( NULL == m_fpPackageFile )
 			{
-				AFERRLOG((L"AFilePackage::Open(), Can not open file [%s]", szPckPath));
+				AFERRLOG(("AFilePackage::Open(), Can not open file [%s]", szPckPath));
 				return false;
 			}
-
 			m_bReadOnly = true;
 		}
 
-		// Now analyze the file entries of the package
-		uint32_t dwVersion;
+		// Now analyse the file entries of the package;
+		DWORD		dwVersion;
 
-		fseek(m_fpPackageFile, 0 - sizeof(uint32_t), SEEK_END);
-		fread(&dwVersion, sizeof(uint32_t), 1, m_fpPackageFile);
-		if (dwVersion == 0x00010003)
+		fseek(m_fpPackageFile, 0 - sizeof(DWORD), SEEK_END);
+		fread(&dwVersion, sizeof(DWORD), 1, m_fpPackageFile);
+		if( dwVersion == 0x00010003 )
 		{
-			// First version
-			// Now read file number
-			fseek(m_fpPackageFile, 0 - (sizeof(int32_t) + sizeof(uint32_t)), SEEK_END);
-			fread(&m_nNumFiles, sizeof(int32_t), 1, m_fpPackageFile);
-			fseek(m_fpPackageFile, 0 - (sizeof(AFPCK_FILEHEADER) + sizeof(uint32_t) + sizeof(int32_t)), SEEK_END);
+			// First version;
+			// Now read file number;
+			fseek(m_fpPackageFile, 0 - (sizeof(int) + sizeof(DWORD)), SEEK_END);
+			fread(&m_nNumFiles, sizeof(int), 1, m_fpPackageFile);
+			fseek(m_fpPackageFile, 0 - (sizeof(AFPCK_FILEHEADER) + sizeof(DWORD) + sizeof(int)), SEEK_END);
 			fread(&m_header, sizeof(AFPCK_FILEHEADER), 1, m_fpPackageFile);
 
-			m_pFileEntries = (AFPCK_FILEENTRY*)malloc(sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
-			if (m_pFileEntries == nullptr)
+			m_pFileEntries = (AFPCK_FILEENTRY *) malloc(sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
+			if( NULL == m_pFileEntries )
 			{
-				AFERRLOG((L"AFilePackage::Open(), Not enough memory!"));
+				AFERRLOG(("AFilePackage::Open(), Not enough memory!"));
 				return false;
 			}
 
-			// Seek to entry list
-			fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
-			for (int32_t i = 0; i < m_nNumFiles; i++)
+			// Seek to entry list;
+			fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET); 
+			for(int i=0; i<m_nNumFiles; i++)
 			{
-				int32_t nNameLength;
-				fread(&nNameLength, sizeof(int32_t), 1, m_fpPackageFile);
+				int nNameLength;
+				fread(&nNameLength, sizeof(int), 1, m_fpPackageFile);
 				fread(m_pFileEntries[i].szFileName, nNameLength, 1, m_fpPackageFile);
-				fread(&m_pFileEntries[i].dwOffset, sizeof(uint32_t), 1, m_fpPackageFile);
-				fread(&m_pFileEntries[i].dwLength, sizeof(uint32_t), 1, m_fpPackageFile);
-				fread(&m_pFileEntries[i].dwCompressedLength, sizeof(uint32_t), 1, m_fpPackageFile);
+				fread(&m_pFileEntries[i].dwOffset, sizeof(DWORD), 1, m_fpPackageFile);
+				fread(&m_pFileEntries[i].dwLength, sizeof(DWORD), 1, m_fpPackageFile);
+				fread(&m_pFileEntries[i].dwCompressedLength, sizeof(DWORD), 1, m_fpPackageFile);
 			}
 
 			ResortEntries();
 		}
 		else
 		{
-			AFERRLOG((L"AFilePackage::Open(), Incorrect version!"));
+			AFERRLOG(("AFilePackage::Open(), Incorrect version!"));
 			return false;
 		}
 		break;
 
 	case AFPCK_CREATENEW:
 		m_bReadOnly = false;
-		m_fpPackageFile = _wfopen(szPckPath.c_str(), L"wb");
-		if (m_fpPackageFile == nullptr)
+		m_fpPackageFile = fopen(szPckPath, "wb");
+		if( NULL == m_fpPackageFile )
 		{
-			AFERRLOG((L"AFilePackage::Open(), Can not create file [%s]", szPckPath));
+			AFERRLOG(("AFilePackage::Open(), Can not create file [%s]", szPckPath));
 			return false;
 		}
 
-		// Init header
+		// Init header;
 		ZeroMemory(&m_header, sizeof(AFPCK_FILEHEADER));
 		m_header.dwEntryOffset = 0;
 		m_header.dwVersion = AFPCK_VERSION;
 		strncpy(m_header.szDescription, "Angelica File Package, Beijing E-Pie Entertainment Corporation 2002~2008. All Rights Reserved. ", 256);
 
 		m_nNumFiles = 0;
-		m_pFileEntries = nullptr;
+		m_pFileEntries = NULL;
 		break;
 
 	default:
-		AFERRLOG((L"AFilePackage::Open(), Unknown open mode [%d]!", mode));
+		AFERRLOG(("AFilePackage::Open(), Unknown open mode [%d]!", mode));
 		return false;
 	}
 
 	m_mode = mode;
 	m_bHasChanged = false;
-
 	return true;
 }
 
 bool AFilePackage::Close()
 {
-	switch (m_mode)
+	switch( m_mode )
 	{
 	case AFPCK_OPENEXIST:
-		if (m_bHasChanged)
+		if( m_bHasChanged )
 		{
 			DWORD dwFileSize = m_header.dwEntryOffset;
 
 			// Rewrite file entries and file header here;
 			fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
-			for (int32_t i = 0; i < m_nNumFiles; i++)
+			for(int i=0; i<m_nNumFiles; i++)
 			{
-				int32_t nNameLength = strlen(m_pFileEntries[i].szFileName) + 1; // Plus '\0'
-				fwrite(&nNameLength, sizeof(int32_t), 1, m_fpPackageFile);
-				dwFileSize += sizeof(int32_t);
+				int nNameLength = strlen(m_pFileEntries[i].szFileName) + 1; // Plus '\0'
+				fwrite(&nNameLength, sizeof(int), 1, m_fpPackageFile);
+				dwFileSize += sizeof(int);
 				fwrite(m_pFileEntries[i].szFileName, nNameLength, 1, m_fpPackageFile);
 				dwFileSize += nNameLength;
-				fwrite(&m_pFileEntries[i].dwOffset, sizeof(uint32_t), 1, m_fpPackageFile);
-				dwFileSize += sizeof(uint32_t);
-				fwrite(&m_pFileEntries[i].dwLength, sizeof(uint32_t), 1, m_fpPackageFile);
-				dwFileSize += sizeof(uint32_t);
-				fwrite(&m_pFileEntries[i].dwCompressedLength, sizeof(uint32_t), 1, m_fpPackageFile);
-				dwFileSize += sizeof(uint32_t);
+				fwrite(&m_pFileEntries[i].dwOffset, sizeof(DWORD), 1, m_fpPackageFile);
+				dwFileSize += sizeof(DWORD);
+				fwrite(&m_pFileEntries[i].dwLength, sizeof(DWORD), 1, m_fpPackageFile);
+				dwFileSize += sizeof(DWORD);
+				fwrite(&m_pFileEntries[i].dwCompressedLength, sizeof(DWORD), 1, m_fpPackageFile);
+				dwFileSize += sizeof(DWORD);
 			}
 
 			// Write file header here;
 			fwrite(&m_header, sizeof(AFPCK_FILEHEADER), 1, m_fpPackageFile);
 			dwFileSize += sizeof(AFPCK_FILEHEADER);
-			fwrite(&m_nNumFiles, sizeof(int32_t), 1, m_fpPackageFile);
-			dwFileSize += sizeof(int32_t);
-			fwrite(&m_header.dwVersion, sizeof(uint32_t), 1, m_fpPackageFile);
-			dwFileSize += sizeof(uint32_t);
+			fwrite(&m_nNumFiles, sizeof(int), 1, m_fpPackageFile);
+			dwFileSize += sizeof(int);
+			fwrite(&m_header.dwVersion, sizeof(DWORD), 1, m_fpPackageFile);
+			dwFileSize += sizeof(DWORD);
 
-			int32_t fileHandle = _fileno(m_fpPackageFile);
-			int32_t discard = _chsize(fileHandle, dwFileSize);
+			int fileHandle = _fileno(m_fpPackageFile);
+			_chsize(fileHandle, dwFileSize);
 
 			m_bHasChanged = false;
 		}
@@ -165,262 +191,179 @@ bool AFilePackage::Close()
 	case AFPCK_CREATENEW:
 		// Write file entries and file header here;
 		fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
-		for (int32_t i = 0; i < m_nNumFiles; i++)
+		for(int i=0; i<m_nNumFiles; i++)
 		{
-			int32_t nNameLength = strlen(m_pFileEntries[i].szFileName) + 1; // Plus '\0'
-			fwrite(&nNameLength, sizeof(int32_t), 1, m_fpPackageFile);
+			int nNameLength = strlen(m_pFileEntries[i].szFileName) + 1; // Plus '\0'
+			fwrite(&nNameLength, sizeof(int), 1, m_fpPackageFile);
 			fwrite(m_pFileEntries[i].szFileName, nNameLength, 1, m_fpPackageFile);
-			fwrite(&m_pFileEntries[i].dwOffset, sizeof(uint32_t), 1, m_fpPackageFile);
-			fwrite(&m_pFileEntries[i].dwLength, sizeof(uint32_t), 1, m_fpPackageFile);
-			fwrite(&m_pFileEntries[i].dwCompressedLength, sizeof(uint32_t), 1, m_fpPackageFile);
+			fwrite(&m_pFileEntries[i].dwOffset, sizeof(DWORD), 1, m_fpPackageFile);
+			fwrite(&m_pFileEntries[i].dwLength, sizeof(DWORD), 1, m_fpPackageFile);
+			fwrite(&m_pFileEntries[i].dwCompressedLength, sizeof(DWORD), 1, m_fpPackageFile);
 		}
 
 		// Write file header here;
 		fwrite(&m_header, sizeof(AFPCK_FILEHEADER), 1, m_fpPackageFile);
-		fwrite(&m_nNumFiles, sizeof(int32_t), 1, m_fpPackageFile);
-		fwrite(&m_header.dwVersion, sizeof(uint32_t), 1, m_fpPackageFile);
+		fwrite(&m_nNumFiles, sizeof(int), 1, m_fpPackageFile);
+		fwrite(&m_header.dwVersion, sizeof(DWORD), 1, m_fpPackageFile);
 		break;
 	}
 
-	if (m_fpPackageFile)
+	if( m_fpPackageFile )
 	{
 		fclose(m_fpPackageFile);
-		m_fpPackageFile = nullptr;
+		m_fpPackageFile = NULL;
 	}
-
-	if (m_pFileEntries)
+	if( m_pFileEntries )
 	{
 		free(m_pFileEntries);
-		m_pFileEntries = nullptr;
+		m_pFileEntries = NULL;
 	}
 
-	if (m_pBuffer)
+	if( m_pBuffer )
 	{
 		free(m_pBuffer);
-		m_pBuffer = nullptr;
+		m_pBuffer = NULL;
 		m_dwBufferLen = 0;
 	}
 
 	m_nNumFiles = 0;
-
 	return true;
 }
 
-bool AFilePackage::AppendFile(std::wstring& szFileName, uint8_t* pFileBuffer, uint32_t dwFileLength)
+bool AFilePackage::GetFileEntryByIndex(int nIndex, AFPCK_FILEENTRY * pFileEntry)
 {
-	// We should use a function to check whether szFileName has been added into the package;
-	if (m_bReadOnly)
-	{
-		AFERRLOG((L"AFilePackage::AppendFile(), Read only package, can not append!"));
+	if( nIndex >= m_nNumFiles )
 		return false;
-	}
 
-	// Realloc the file entries;
-	m_nNumFiles++;
-	m_pFileEntries = (AFPCK_FILEENTRY*)realloc(m_pFileEntries, sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
-	if (m_pFileEntries == nullptr)
-	{
-		AFERRLOG((L"AFilePackage::AppendFile(), Not enough memory!"));
-		return false;
-	}
-
-	uLongf dwCompressedLength = dwFileLength;
-	// First we should compress the file if needed
-	if (g_bCompressEnable)
-	{
-		if (!PrepareBuffer(dwFileLength))
-			return false;
-
-		compress2(m_pBuffer, &dwCompressedLength, pFileBuffer, dwFileLength, 1);
-	}
-
-	// store this file
-	strncpy(m_pFileEntries[m_nNumFiles - 1].szFileName, wstring_to_string(szFileName).c_str(), MAX_PATH);
-	m_pFileEntries[m_nNumFiles - 1].dwOffset = m_header.dwEntryOffset;
-	m_pFileEntries[m_nNumFiles - 1].dwLength = dwFileLength;
-	m_pFileEntries[m_nNumFiles - 1].dwCompressedLength = dwCompressedLength;
-
-	fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
-
-	// If can't compress, we will use the origin file buffer directly
-	if (dwCompressedLength < dwFileLength)
-	{
-		// We write the compressed buffer into the disk
-		fwrite(m_pBuffer, dwCompressedLength, 1, m_fpPackageFile);
-		m_header.dwEntryOffset += dwCompressedLength;
-	}
-	else
-	{
-		fwrite(pFileBuffer, dwFileLength, 1, m_fpPackageFile);
-		m_header.dwEntryOffset += dwFileLength;
-	}
-
-	m_bHasChanged = true;
-	m_bHasSorted = false;
+	*pFileEntry = m_pFileEntries[nIndex];
 	return true;
 }
 
-bool AFilePackage::RemoveFile(std::wstring& szFileName)
+bool AFilePackage::GetFileEntry(char * szFileName, AFPCK_FILEENTRY * pFileEntry, int * pnIndex)
 {
-	if (m_bReadOnly)
-	{
-		AFERRLOG((L"AFilePackage::RemoveFile(), Read only package, can not remove file!"));
-		return false;
-	}
+	char szFindName[MAX_PATH];
+	int nLength;
+	int i;
 
-	AFPCK_FILEENTRY entry;
-	int32_t nIndex;
-	if (!GetFileEntry(szFileName, &entry, &nIndex))
-	{
-		AFERRLOG((L"AFilePackage::RemoveFile(), Can not find file %s", szFileName));
-		return false;
-	}
-
-	// We only remove the file's entry, but leave the file's body there
-	for (int32_t i = nIndex; i < m_nNumFiles - 1; i++)
-		memcpy(&m_pFileEntries[i], &m_pFileEntries[i + 1], sizeof(AFPCK_FILEENTRY));
+	strncpy(szFindName, szFileName, MAX_PATH);
 	
-	m_nNumFiles--;
-	m_pFileEntries = (AFPCK_FILEENTRY*)realloc(m_pFileEntries, sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
-	if (m_pFileEntries == nullptr)
+	// First we should unite the path seperator to '\'
+	nLength = strlen(szFindName);
+	for(i=0; i<nLength; i++)
 	{
-		AFERRLOG((L"AFilePackage::AppendFile(), Not enough memory!"));
-		return false;
+		if( szFindName[i] == '/' )
+			szFindName[i] = '\\';
 	}
 
-	m_bHasChanged = true;
-	m_bHasSorted = false;
-
-	return true;
-}
-
-bool AFilePackage::ReplaceAFile(std::wstring& szFileName, uint8_t* pFileBuffer, uint32_t dwFileLength)
-{
-	if (m_bReadOnly)
+	// Get rid of the preceding .\ string
+	if( nLength > 2 && szFindName[0] == '.' && szFindName[1] == '\\' )
 	{
-		AFERRLOG((L"AFilePackage::ReplaceFile(), Read only package, can not replace!"));
-		return false;
+		for(i=0; i<nLength - 2; i++)
+			szFindName[i] = szFindName[i + 2];
+		szFindName[i] = '\0';
 	}
 
-	AFPCK_FILEENTRY	entry;
-	int32_t nIndex;
-
-	if (!GetFileEntry(szFileName, &entry, &nIndex))
+	// Get rid of extra space at the tail of the string;
+	nLength = strlen(szFindName);
+	for(i=nLength - 1; i>=0; i--)
 	{
-		AFERRLOG((L"AFilePackage::ReplaceFile(), Can not find file %s", szFileName));
-		return false;
+		if( szFindName[i] != ' ' )
+			break;
+		else
+			szFindName[i] = '\0';
 	}
 
-	// we only add a new file copy at the end of the file part, and modify the 
-	// file entry point to that file body;
-	uLongf dwCompressedLength = dwFileLength;
+	// We should also get rid of the preceding space;
+	// TrimString()...
 
-	// First we should compress the file if needed
-	if (g_bCompressEnable)
+	ZeroMemory(pFileEntry, sizeof(AFPCK_FILEENTRY));
+
+	if( !m_bHasSorted )
 	{
-		if (!PrepareBuffer(dwFileLength))
-			return false;
-
-		compress2(m_pBuffer, &dwCompressedLength, pFileBuffer, dwFileLength, 1);
-	}
-
-	// modify this file entry to point to the new file body		
-	m_pFileEntries[nIndex].dwOffset = m_header.dwEntryOffset;
-	m_pFileEntries[nIndex].dwLength = dwFileLength;
-	m_pFileEntries[nIndex].dwCompressedLength = dwCompressedLength;
-
-	fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
-
-	// If can't compress, we will use the origin file buffer directly
-	if (dwCompressedLength < dwFileLength)
-	{
-		// We write the compressed buffer into the disk
-		fwrite(m_pBuffer, dwCompressedLength, 1, m_fpPackageFile);
-		m_header.dwEntryOffset += dwCompressedLength;
-	}
-	else
-	{
-		fwrite(pFileBuffer, dwFileLength, 1, m_fpPackageFile);
-		m_header.dwEntryOffset += dwFileLength;
-	}
-
-	m_bHasChanged = true;
-	m_bHasSorted = false;
-
-	return true;
-}
-
-bool AFilePackage::ResortEntries()
-{
-	int32_t nBestIndex;
-	char* szBestName;
-	AFPCK_FILEENTRY temp;
-
-	for (int i = 0; i < m_nNumFiles - 1; i++)
-	{
-		nBestIndex = i;
-		szBestName = m_pFileEntries[i].szFileName;
-		for (int32_t j = i + 1; j < m_nNumFiles; j++)
+		// Use a linear search now
+		// For better performance we should use a binary search, that you need call ResortEntry
+		for(i=0; i<m_nNumFiles; i++)
 		{
-			if (_stricmp(m_pFileEntries[j].szFileName, szBestName) < 0)
+			if( 0 == _stricmp(szFindName, m_pFileEntries[i].szFileName) )
 			{
-				nBestIndex = j;
-				szBestName = m_pFileEntries[j].szFileName;
+				*pFileEntry = m_pFileEntries[i];
+				if( pnIndex )
+					*pnIndex = i;
+				return true;
 			}
 		}
+	}
+	else
+	{
+		// Use binary search;
+		if( m_nNumFiles == 0 )
+			return false;
 
-		if (nBestIndex != i)
+		int		nLeft = 0; 
+		int		nRight = m_nNumFiles - 1;
+		int		nMiddle;
+		
+		while(nLeft <= nRight)
 		{
-			temp = m_pFileEntries[i];
-			m_pFileEntries[i] = m_pFileEntries[nBestIndex];
-			m_pFileEntries[nBestIndex] = temp;
+			nMiddle = (nLeft + nRight) / 2;
+			
+			int nCompare = _stricmp(m_pFileEntries[nMiddle].szFileName, szFindName);
+			if( nCompare == 0 )
+			{
+				*pFileEntry = m_pFileEntries[nMiddle];
+				if( pnIndex )
+					*pnIndex = nMiddle;
+				return true;
+			}
+			else if( nCompare < 0 )
+				nLeft = nMiddle + 1;
+			else if( nCompare > 0 )
+				nRight = nMiddle - 1;
 		}
 	}
 
-	m_bHasSorted = true;
-
-	return true;
+	return false;
 }
 
-bool AFilePackage::ReadAFile(std::wstring& szFileName, uint8_t* pFileBuffer, uint32_t dwOffset, LPDWORD pdwBufferLen)
+bool AFilePackage::ReadFile(char * szFileName, LPBYTE pFileBuffer, DWORD dwOffset, DWORD * pdwBufferLen)
 {
 	AFPCK_FILEENTRY fileEntry;
 
-	if (!GetFileEntry(szFileName, &fileEntry))
+	if( !GetFileEntry(szFileName, &fileEntry) )
 	{
-		AFERRLOG((L"AFilePackage::ReadFile(), Can not find file entry [%s]!", szFileName));
+		AFERRLOG(("AFilePackage::ReadFile(), Can not find file entry [%s]!", szFileName));
 		return false;
 	}
 
-	return ReadAFile(fileEntry, pFileBuffer, dwOffset, pdwBufferLen);
+	return ReadFile(fileEntry, pFileBuffer, dwOffset, pdwBufferLen);
 }
 
-bool AFilePackage::ReadAFile(AFPCK_FILEENTRY& fileEntry, uint8_t* pFileBuffer, uint32_t dwOffset, LPDWORD pdwBufferLen)
+bool AFilePackage::ReadFile(AFPCK_FILEENTRY& fileEntry, LPBYTE pFileBuffer, DWORD dwOffset, DWORD * pdwBufferLen)
 {
-	if (fileEntry.dwLength < dwOffset)
+	if( fileEntry.dwLength < dwOffset )
 	{
-		AFERRLOG((L"AFilePackage::ReadFile(), Offset [%d] beyond the end of the file!", dwOffset));
+		AFERRLOG(("AFilePackage::ReadFile(), Offset [%d] beyond the end of the file!", dwOffset));
 		return false;
 	}
 
-	if (*pdwBufferLen < fileEntry.dwLength - dwOffset)
+	if( *pdwBufferLen < fileEntry.dwLength - dwOffset )
 	{
-		AFERRLOG((L"AFilePackage::ReadFile(), Buffer is too small!"));
+		AFERRLOG(("AFilePackage::ReadFile(), Buffer is too small!"));
 		return false;
 	}
 
 	fseek(m_fpPackageFile, fileEntry.dwOffset + dwOffset, SEEK_SET);
 
-	// We can automaticly determine whether compression has been used
-	if (fileEntry.dwLength > fileEntry.dwCompressedLength)
+	// We can automaticly determine whether compression has been used;
+	if( fileEntry.dwLength > fileEntry.dwCompressedLength )
 	{
 		DWORD dwFileLength = fileEntry.dwLength;
-		if (!PrepareBuffer(fileEntry.dwCompressedLength))
+		if( !PrepareBuffer(fileEntry.dwCompressedLength) )
 			return false;
 
-		if (dwOffset > 0)
+		if( dwOffset > 0 )
 		{
-			AFERRLOG((L"AFilePackage::ReadFile(), use a offset for read is not allowed when using a compressed package!"));
+			AFERRLOG(("AFilePackage::ReadFile(), use a offset for read is not allowed when using a compressed package!"));
 			return false;
 		}
 
@@ -429,138 +372,196 @@ bool AFilePackage::ReadAFile(AFPCK_FILEENTRY& fileEntry, uint8_t* pFileBuffer, u
 	}
 	else
 		fread(pFileBuffer, fileEntry.dwLength - dwOffset, 1, m_fpPackageFile);
-
 	return true;
 }
 
-bool AFilePackage::GetFileEntry(std::wstring& szFileName, AFPCK_FILEENTRY* pFileEntry, int32_t* pnIndex)
+bool AFilePackage::AppendFile(char * szFileName, LPBYTE pFileBuffer, DWORD dwFileLength)
 {
-	char szFindName[MAX_PATH];
-	int32_t nLength;
-	int32_t i;
-
-	strncpy(szFindName, wstring_to_string(szFileName).c_str(), MAX_PATH);
-
-	// First we should unite the path seperator to '\'
-	nLength = strlen(szFindName);
-	for (i = 0; i < nLength; i++)
+	// We should use a function to check whether szFileName has been added into the package;
+	if( m_bReadOnly )
 	{
-		if (szFindName[i] == '/')
-			szFindName[i] = '\\';
+		AFERRLOG(("AFilePackage::AppendFile(), Read only package, can not append!"));
+		return false;
 	}
 
-	// Get rid of the preceding .\ string
-	if (nLength > 2 && szFindName[0] == '.' && szFindName[1] == '\\')
+	// Realloc the file entries;
+	m_nNumFiles ++;
+	m_pFileEntries = (AFPCK_FILEENTRY *) realloc(m_pFileEntries, sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
+	if( NULL == m_pFileEntries )
 	{
-		for (i = 0; i < nLength - 2; i++)
-			szFindName[i] = szFindName[i + 2];
-		szFindName[i] = '\0';
+		AFERRLOG(("AFilePackage::AppendFile(), Not enough memory!"));
+		return false;
 	}
 
-	// Get rid of extra space at the tail of the string
-	nLength = strlen(szFindName);
-	for (i = nLength - 1; i >= 0; i--)
+	DWORD dwCompressedLength = dwFileLength;
+	// First we should compress the file if needed;
+	if( g_bCompressEnable )
 	{
-		if (szFindName[i] != ' ')
-			break;
-		else
-			szFindName[i] = '\0';
+		if( !PrepareBuffer(dwFileLength) )
+			return false;
+
+		compress2(m_pBuffer, &dwCompressedLength, pFileBuffer, dwFileLength, 1);
 	}
 
-	// We should also get rid of the preceding space
-	// TrimString()...
-
-	ZeroMemory(pFileEntry, sizeof(AFPCK_FILEENTRY));
-
-	if (!m_bHasSorted)
+	// store this file;			
+	strncpy(m_pFileEntries[m_nNumFiles - 1].szFileName, szFileName, MAX_PATH);
+	m_pFileEntries[m_nNumFiles - 1].dwOffset = m_header.dwEntryOffset;
+	m_pFileEntries[m_nNumFiles - 1].dwLength = dwFileLength;
+	m_pFileEntries[m_nNumFiles - 1].dwCompressedLength = dwCompressedLength;
+	
+	fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
+	// If can't compress, we will use the origin file buffer directly;
+	if( dwCompressedLength < dwFileLength )
 	{
-		// Use a linear search now
-		// For better performance we should use a binary search, that you need call ResortEntry
-		for (i = 0; i < m_nNumFiles; i++)
-		{
-			if (_stricmp(szFindName, m_pFileEntries[i].szFileName) == 0)
-			{
-				*pFileEntry = m_pFileEntries[i];
-				if (pnIndex)
-					*pnIndex = i;
-				return true;
-			}
-		}
+		// We write the compressed buffer into the disk;
+		fwrite(m_pBuffer, dwCompressedLength, 1, m_fpPackageFile);
+		m_header.dwEntryOffset += dwCompressedLength;
 	}
 	else
 	{
-		// Use binary search
-		if (m_nNumFiles == 0)
-			return false;
-
-		int32_t nLeft = 0;
-		int32_t nRight = m_nNumFiles - 1;
-		int32_t nMiddle;
-
-		while (nLeft <= nRight)
-		{
-			nMiddle = (nLeft + nRight) / 2;
-
-			int32_t nCompare = _stricmp(m_pFileEntries[nMiddle].szFileName, szFindName);
-			if (nCompare == 0)
-			{
-				*pFileEntry = m_pFileEntries[nMiddle];
-				if (pnIndex)
-					*pnIndex = nMiddle;
-				return true;
-			}
-			else if (nCompare < 0)
-				nLeft = nMiddle + 1;
-			else if (nCompare > 0)
-				nRight = nMiddle - 1;
-		}
+		fwrite(pFileBuffer, dwFileLength, 1, m_fpPackageFile);
+		m_header.dwEntryOffset += dwFileLength;
 	}
 
-	return false;
-}
-
-bool AFilePackage::GetFileEntryByIndex(int32_t nIndex, AFPCK_FILEENTRY* pFileEntry)
-{
-	if (nIndex >= m_nNumFiles)
-		return false;
-
-	*pFileEntry = m_pFileEntries[nIndex];
-
+	m_bHasChanged = true;
+	m_bHasSorted = false;
 	return true;
 }
 
-bool AFilePackage::PrepareBuffer(uint32_t dwBufferLen)
+bool AFilePackage::RemoveFile(char * szFileName)
 {
-    if (dwBufferLen <= m_dwBufferLen)
-        return true;
-
-    m_dwBufferLen = dwBufferLen;
-    m_pBuffer = (uint8_t*)realloc(m_pBuffer, m_dwBufferLen);
-    if (m_pBuffer == nullptr)
-    {
-        AFERRLOG((L"AFilePackage::PrepareBuffer(), Not enough memory!"));
-        return false;
-    }
-
-    return true;
-}
-
-bool OpenFilePackage(std::wstring& szPackFile)
-{
-	if (g_pAFilePackage)
-		CloseFilePackage();
-
-	g_pAFilePackage = new AFilePackage();
-
-	if (g_pAFilePackage == nullptr)
+	if( m_bReadOnly )
 	{
-		AFERRLOG((L"OpenFilePackage(), Not enough memory!"));
+		AFERRLOG(("AFilePackage::RemoveFile(), Read only package, can not remove file!"));
+		return false;
+	}
+	
+	AFPCK_FILEENTRY	entry;
+	int				nIndex;
+	if( !GetFileEntry(szFileName, &entry, &nIndex) )
+	{
+		AFERRLOG(("AFilePackage::RemoveFile(), Can not find file %s", szFileName));
+		return false;
+	}
+	
+	// We only remove the file's entry, but leave the file's body there
+	for(int i=nIndex; i<m_nNumFiles-1; i++)
+	{
+		memcpy(&m_pFileEntries[i], &m_pFileEntries[i + 1], sizeof(AFPCK_FILEENTRY));	
+	}
+
+	m_nNumFiles --;
+	m_pFileEntries = (AFPCK_FILEENTRY *) realloc(m_pFileEntries, sizeof(AFPCK_FILEENTRY) * m_nNumFiles);
+	if( NULL == m_pFileEntries )
+	{
+		AFERRLOG(("AFilePackage::AppendFile(), Not enough memory!"));
 		return false;
 	}
 
-	if (!g_pAFilePackage->Open(szPackFile, AFPCK_OPENEXIST))
+	m_bHasChanged = true;
+	m_bHasSorted = false;
+	return true;
+}
+
+bool AFilePackage::ReplaceFile(char * szFileName, LPBYTE pFileBuffer, DWORD dwFileLength)
+{
+	if( m_bReadOnly )
 	{
-		AFERRLOG((L"OpenFilePackage(), Can not open package [%s]", szPackFile));
+		AFERRLOG(("AFilePackage::ReplaceFile(), Read only package, can not replace!"));
+		return false;
+	}
+
+	AFPCK_FILEENTRY	entry;
+	int				nIndex;
+
+	if( !GetFileEntry(szFileName, &entry, &nIndex) )
+	{
+		AFERRLOG(("AFilePackage::ReplaceFile(), Can not find file %s", szFileName));
+		return false;
+	}
+
+	// we only add a new file copy at the end of the file part, and modify the 
+	// file entry point to that file body;
+	DWORD dwCompressedLength = dwFileLength;
+	// First we should compress the file if needed;
+	if( g_bCompressEnable )
+	{
+		if( !PrepareBuffer(dwFileLength) )
+			return false;
+
+		compress2(m_pBuffer, &dwCompressedLength, pFileBuffer, dwFileLength, 1);
+	}
+
+	// modify this file entry to point to the new file body;			
+	m_pFileEntries[nIndex].dwOffset = m_header.dwEntryOffset;
+	m_pFileEntries[nIndex].dwLength = dwFileLength;
+	m_pFileEntries[nIndex].dwCompressedLength = dwCompressedLength;
+	
+	fseek(m_fpPackageFile, m_header.dwEntryOffset, SEEK_SET);
+	// If can't compress, we will use the origin file buffer directly;
+	if( dwCompressedLength < dwFileLength )
+	{
+		// We write the compressed buffer into the disk;
+		fwrite(m_pBuffer, dwCompressedLength, 1, m_fpPackageFile);
+		m_header.dwEntryOffset += dwCompressedLength;
+	}
+	else
+	{
+		fwrite(pFileBuffer, dwFileLength, 1, m_fpPackageFile);
+		m_header.dwEntryOffset += dwFileLength;
+	}
+
+	m_bHasChanged = true;
+	m_bHasSorted = false;
+	return true;
+}
+
+bool AFilePackage::ResortEntries()
+{
+	int					nBestIndex;
+	char				*szBestName;
+	AFPCK_FILEENTRY		temp;
+
+	for(int i=0; i<m_nNumFiles-1; i++)
+	{
+		nBestIndex = i;
+		szBestName = m_pFileEntries[i].szFileName;
+		for(int j=i+1; j<m_nNumFiles; j++)
+		{
+			if( _stricmp(m_pFileEntries[j].szFileName, szBestName) < 0 )
+			{
+				nBestIndex = j;
+				szBestName = m_pFileEntries[j].szFileName;
+			}
+		}
+
+		if( nBestIndex != i )
+		{
+			temp = m_pFileEntries[i];
+			m_pFileEntries[i] = m_pFileEntries[nBestIndex];
+			m_pFileEntries[nBestIndex] = temp;
+		}
+	}
+
+	m_bHasSorted = true;
+	return true;
+}
+
+bool OpenFilePackage(char * szPackFile)
+{
+	if( g_pAFilePackage )
+		CloseFilePackage();
+
+	g_pAFilePackage = new AFilePackage();
+	if( NULL == g_pAFilePackage )
+	{
+		AFERRLOG(("OpenFilePackage(), Not enough memory!"));
+		return false;
+	}
+
+	if( !g_pAFilePackage->Open(szPackFile, AFPCK_OPENEXIST) )
+	{
+		AFERRLOG(("OpenFilePackage(), Can not open package [%s]", szPackFile));
 		return false;
 	}
 	return true;
@@ -568,12 +569,12 @@ bool OpenFilePackage(std::wstring& szPackFile)
 
 bool CloseFilePackage()
 {
-	if (g_pAFilePackage)
+	if( g_pAFilePackage )
 	{
 		g_pAFilePackage->Close();
 		delete g_pAFilePackage;
-		g_pAFilePackage = nullptr;
+		g_pAFilePackage = NULL;
 	}
-
 	return true;
 }
+

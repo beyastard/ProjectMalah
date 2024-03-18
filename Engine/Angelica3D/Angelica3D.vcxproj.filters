@@ -3,88 +3,862 @@
   <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\3D">
-      <UniqueIdentifier>{a6a24232-6a70-4fdf-934c-0eced1484183}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Common">
-      <UniqueIdentifier>{0f60dc1c-462f-468c-b491-cf1f091048e5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\File">
-      <UniqueIdentifier>{95ea7520-b57a-4e5a-930a-013e19c089a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Media">
-      <UniqueIdentifier>{9e52f539-fcea-4da9-acb9-f58b04de4697}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\3D">
-      <UniqueIdentifier>{f1df70a4-6345-4286-a051-c160b30ac1a0}</UniqueIdentifier>
+      <UniqueIdentifier>{ea93d319-8818-4043-888c-1b14dbf0a524}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Common">
-      <UniqueIdentifier>{b457ca75-b34d-479a-9ce1-376e9b655f6a}</UniqueIdentifier>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{b3fb315d-c0ba-4731-b2a6-d7957a47f915}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\File">
-      <UniqueIdentifier>{8474cccc-45e7-44f0-af9f-fd1920c996f0}</UniqueIdentifier>
+    <Filter Include="Header Files\file">
+      <UniqueIdentifier>{55a5fee3-ae13-45bb-b9dd-39fcc5480cf6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Media">
-      <UniqueIdentifier>{b957c4c9-7b6f-4ef4-9839-ecd20f832f0b}</UniqueIdentifier>
+    <Filter Include="Header Files\media">
+      <UniqueIdentifier>{c056088c-7f6d-4541-b20c-da79b884fae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3D">
+      <UniqueIdentifier>{3bc807f4-20e2-485c-8577-86ec3f19cb7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{4ea5c3ff-b883-46f2-8e1d-a4b38edf51c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\file">
+      <UniqueIdentifier>{d72685a0-bd71-4bc9-8ac5-d4c844194341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\media">
+      <UniqueIdentifier>{837a43bd-1a58-445d-8d72-712b567706b3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\common\ABaseDef.h">
-      <Filter>Header Files\Common</Filter>
+    <ClInclude Include="include\common\AC.h">
+      <Filter>Header Files\common</Filter>
     </ClInclude>
-    <ClInclude Include="include\common\Base64.h">
-      <Filter>Header Files\Common</Filter>
+    <ClInclude Include="include\common\ACPlatform.h">
+      <Filter>Header Files\common</Filter>
     </ClInclude>
     <ClInclude Include="include\common\ALog.h">
-      <Filter>Header Files\Common</Filter>
+      <Filter>Header Files\common</Filter>
     </ClInclude>
-    <ClInclude Include="include\file\AFile.h">
-      <Filter>Header Files\File</Filter>
+    <ClInclude Include="include\common\APath.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common\APerlinNoise1D.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common\APerlinNoise2D.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common\APerlinNoise3D.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common\APerlinNoiseBase.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common\ATime.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AF.h">
+      <Filter>Header Files\file</Filter>
     </ClInclude>
     <ClInclude Include="include\file\AFI.h">
-      <Filter>Header Files\File</Filter>
+      <Filter>Header Files\file</Filter>
     </ClInclude>
-    <ClInclude Include="include\file\AFilePackage.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="include\file\AFPI.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="include\common\StringConvert.h">
-      <Filter>Header Files\Common</Filter>
+    <ClInclude Include="include\file\AFile.h">
+      <Filter>Header Files\file</Filter>
     </ClInclude>
     <ClInclude Include="include\file\AFileImage.h">
-      <Filter>Header Files\File</Filter>
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AFilePackage.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AFPI.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AFPlatform.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AScriptFile.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\file\AStringTable.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AM.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AM3DSoundBuffer.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AM3DSoundBufferMan.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AM3DSoundDevice.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMConfig.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMEngine.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMMp3File.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMPI.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMPlatform.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSoundBuffer.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSoundBufferMan.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSoundDevice.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSoundEngine.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSoundStream.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMSurfaceRenderer.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMTypes.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMVideoClip.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMVideoEngine.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\media\AMWaveFile.h">
+      <Filter>Header Files\media</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A2DSprite.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A2DSpriteBuffer.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A2DSpriteItem.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3D.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBezier.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBezierPoint.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBezierSegment.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBillBoard.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBox.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DBSP.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DCamera.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DCDS.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DClassID.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DCollision.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DConfig.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DControl.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DCounter.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DCursor.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DData.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DDecal.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DDevice.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DEngine.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DErrLog.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DESP.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFile.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFlash.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFont.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFontMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFrame.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DFuncs.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DGDI.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DGFXCollector.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DGFXMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DGraphicsFX.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DIBLMesh.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DIBLScene.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DImgModel.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DImgModelMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLamp.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLensFlare.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLight.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLightingEngine.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLightMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DLightning.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMacros.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMaterial.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMathUtility.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMesh.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMeshCollector.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMeshMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMeshSorter.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DModel.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DModelCollector.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DModelMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DMoxMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DOBBFuncs.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DObject.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DPArray.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DParticleSystem.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DPixelShader.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DPlants.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DPlatform.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DRain.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DRandGenerator.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DRenderTarget.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DScene.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DScriptFile.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DShader.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DShaderMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSky.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSkyBox.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSkyGradient.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSkySphere.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSnow.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DStars.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DStream.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DString.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DStringSet.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSuperDecal.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSuperSpray.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSurface.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DSurfaceMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTerrain.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTerrainMark.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTexture.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTextureMan.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTime.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTrace.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DTypes.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVertex.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVertexCollector.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DViewport.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVSSCommon.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVSSIBLScene.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVSSRouteLoader.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DVSSScene.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DWorld.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\A3DWorldCDS.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\ADarray.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\AList.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\allocator.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\amemory.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\AStack.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\BSPFile.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\ESPFile.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\hashtab.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\3D\vector.h">
+      <Filter>Header Files\3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\common\Base64.cpp">
-      <Filter>Source Files\Common</Filter>
-    </ClCompile>
     <ClCompile Include="src\common\ALog.cpp">
-      <Filter>Source Files\Common</Filter>
+      <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="src\file\AFile.cpp">
-      <Filter>Source Files\File</Filter>
+    <ClCompile Include="src\common\APerlinNoise1D.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\APerlinNoise2D.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\APerlinNoise3D.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\APerlinNoiseBase.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\ATime.cpp">
+      <Filter>Source Files\common</Filter>
     </ClCompile>
     <ClCompile Include="src\file\AFI.cpp">
-      <Filter>Source Files\File</Filter>
+      <Filter>Source Files\file</Filter>
     </ClCompile>
-    <ClCompile Include="src\file\AFilePackage.cpp">
-      <Filter>Source Files\File</Filter>
+    <ClCompile Include="src\file\AFile.cpp">
+      <Filter>Source Files\file</Filter>
     </ClCompile>
     <ClCompile Include="src\file\AFileImage.cpp">
-      <Filter>Source Files\File</Filter>
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file\AFilePackage.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file\AScriptFile.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file\AStringTable.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AM3DSoundBuffer.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AM3DSoundBufferMan.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AM3DSoundDevice.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMConfig.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMEngine.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMMp3File.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMPI.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSoundBuffer.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSoundBufferMan.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSoundDevice.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSoundEngine.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSoundStream.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMSurfaceRenderer.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMVideoClip.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMVideoEngine.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\media\AMWaveFile.cpp">
+      <Filter>Source Files\media</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A2DSprite.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A2DSpriteBuffer.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A2DSpriteItem.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DAABBTrace.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBezier.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBezierPoint.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBezierSegment.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBillBoard.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBox.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DBSP.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DCamera.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DCollision.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DConfig.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DControl.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DCounter.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DCursor.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DData.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DDecal.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DDevice.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DEngine.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DErrLog.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DESP.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DESPMove.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFile.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFlash.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFont.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFontMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFrame.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DFuncs.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DGDI.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DGFXCollector.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DGFXMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DGraphicsFX.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DIBLMesh.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DIBLScene.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DImgModel.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DImgModelMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLamp.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLensFlare.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLight.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLightingEngine.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLightMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DLightning.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMaterial.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMathUtility.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMesh.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMeshCollector.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMeshMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMeshSorter.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DModel.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DModelCollector.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DModelMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DMoxMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DOBBFuncs.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DObject.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DPArray.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DParticleSystem.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DPixelShader.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DPlants.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DRain.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DRandGenerator.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DRenderTarget.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DScene.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DScriptFile.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DShader.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DShaderMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSky.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSkyBox.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSkyGradient.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSkySphere.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSnow.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DStars.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DStream.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DString.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DStringSet.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSuperDecal.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSuperSpray.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSurface.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DSurfaceMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTerrain.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTerrainMark.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTexture.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTextureMan.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTime.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DTrace.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DVertexCollector.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DViewport.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DVSSIBLScene.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DVSSRouteLoader.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DVSSScene.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DWorld.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\A3DWorldCDS.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\ADarray.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\AList.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\allocator.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\amemory.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\AStack.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\BSPFile.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\ESPFile.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\hashtab.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3D\vector.cpp">
+      <Filter>Source Files\3D</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

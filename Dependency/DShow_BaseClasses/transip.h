@@ -77,7 +77,7 @@ public:
 
     // Pass this on downstream if it ever gets called.
     STDMETHODIMP
-    GetAllocatorRequirements(ALLOCATOR_PROPERTIES *pProps);
+    CTransInPlaceInputPin::GetAllocatorRequirements(ALLOCATOR_PROPERTIES *pProps);
 
     inline const BOOL ReadOnly() { return m_bReadOnly ; }
 
@@ -207,7 +207,7 @@ public:
 
 protected:
 
-    IMediaSample * Copy(IMediaSample *pSource);
+    IMediaSample * CTransInPlaceFilter::Copy(IMediaSample *pSource);
 
 #ifdef PERF
     int m_idTransInPlace;                 // performance measuring id

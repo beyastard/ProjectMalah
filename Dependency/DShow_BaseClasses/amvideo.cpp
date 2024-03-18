@@ -23,8 +23,8 @@ const DWORD bits888[] = {0xFF0000,0x00FF00,0x0000FF};
 const struct {
     const GUID *pSubtype;
     WORD BitCount;
-    const CHAR *pName;
-    const WCHAR *wszName;
+    CHAR *pName;
+    WCHAR *wszName;
 } BitCountMap[] =  { &MEDIASUBTYPE_RGB1,        1,   "RGB Monochrome",     L"RGB Monochrome",   
                      &MEDIASUBTYPE_RGB4,        4,   "RGB VGA",            L"RGB VGA",          
                      &MEDIASUBTYPE_RGB8,        8,   "RGB 8",              L"RGB 8",            
@@ -175,12 +175,12 @@ int LocateSubtype(const GUID *pSubtype)
 
 STDAPI_(WCHAR *) GetSubtypeNameW(const GUID *pSubtype)
 {
-    return (WCHAR*)BitCountMap[LocateSubtype(pSubtype)].wszName;
+    return BitCountMap[LocateSubtype(pSubtype)].wszName;
 }
 
 STDAPI_(CHAR *) GetSubtypeNameA(const GUID *pSubtype)
 {
-    return (CHAR*)BitCountMap[LocateSubtype(pSubtype)].pName;
+    return BitCountMap[LocateSubtype(pSubtype)].pName;
 }
 
 #ifndef GetSubtypeName

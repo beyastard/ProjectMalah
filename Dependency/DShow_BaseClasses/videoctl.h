@@ -37,9 +37,11 @@ BOOL WINAPI GetDialogSize(int iResourceID,     // Dialog box resource identifier
 class CAggDirectDraw : public IDirectDraw, public CUnknown
 {
 protected:
+
     LPDIRECTDRAW m_pDirectDraw;
 
 public:
+
     DECLARE_IUNKNOWN
     STDMETHODIMP NonDelegatingQueryInterface(REFIID riid,void **ppv);
 
@@ -49,7 +51,7 @@ public:
         CUnknown(pName,pUnk),
         m_pDirectDraw(NULL) { };
 
-    virtual ~CAggDirectDraw() { };
+    virtual CAggDirectDraw::~CAggDirectDraw() { };
 
     // Set the object we should be aggregating
     void SetDirectDraw(LPDIRECTDRAW pDirectDraw) {

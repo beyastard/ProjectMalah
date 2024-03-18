@@ -1,13 +1,29 @@
-#ifndef __AFPI_H__
-#define __AFPI_H__
+/*
+ * FILE: AFPI.h
+ *
+ * DESCRIPTION: private interface functions for Angelica File Lib;
+ *
+ * CREATED BY: Hedi, 2001/12/31
+ *
+ * HISTORY:
+ *
+ * Copyright (c) 2001 Archosaur Studio, All Rights Reserved.	
+ */
 
-#include "ALog.h"
+#ifndef _AFPI_H_
+#define _AFPI_H_
 
-extern ALog* g_pAFErrLog;
-extern std::wstring g_strBaseDir;
+#include "AFPlatform.h"
+#include "ZLib\ZLib.h"
+
+extern ALog *			g_pAFErrLog;
+extern char				g_szBaseDir[MAX_PATH];
+extern bool				g_bCompressEnable;
 
 // You must use a () to include the fmt string;
 // For example AFERRLOG(("Error Occurs at %d", nval))
-#define AFERRLOG(fmt) { if (g_pAFErrLog) g_pAFErrLog->Log fmt; }
+
+#define AFERRLOG(fmt) {if(g_pAFErrLog) g_pAFErrLog->Log fmt;}
 
 #endif
+

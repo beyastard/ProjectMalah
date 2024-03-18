@@ -33,7 +33,7 @@ const AMOVIESETUP_MEDIATYPE sudOpPinTypes =
 , &MEDIASUBTYPE_NULL }; // clsMinorType
 
 const AMOVIESETUP_PIN sudOpPin =
-{ (LPWSTR)"Output"          // strName
+{ L"Output"          // strName
 , FALSE              // bRendered
 , TRUE               // bOutput
 , FALSE              // bZero
@@ -57,7 +57,7 @@ const AMOVIESETUP_FILTER sudAsync =
 CFactoryTemplate g_Templates[1] = {
     { L"Sample File Source (Async.)"
     , &CLSID_AsyncSample
-    , (LPFNNewCOMObject)CAsyncFilter::CreateInstance
+    , CAsyncFilter::CreateInstance
     , NULL
     , &sudAsync }
 };

@@ -20,6 +20,7 @@ BOOL WINAPI PossiblyEatMessage(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPara
 class CBaseControlWindow : public CBaseVideoWindow, public CBaseWindow
 {
 protected:
+
     CBaseFilter *m_pFilter;            // Pointer to owning media filter
     CBasePin *m_pPin;                  // Controls media types for connection
     CCritSec *m_pInterfaceLock;        // Externally defined critical section
@@ -30,6 +31,7 @@ protected:
     BOOL m_bCursorHidden;              // Should we hide the window cursor
 
 public:
+
     // Internal methods for other objects to get information out
 
     HRESULT DoSetWindowStyle(long Style,long WindowLong);
@@ -55,6 +57,7 @@ public:
     }
 
 public:
+
     CBaseControlWindow(CBaseFilter *pFilter,   // Owning media filter
                        CCritSec *pInterfaceLock,    // Locking object
                        TCHAR *pName,                // Object description
@@ -112,11 +115,13 @@ public:
 class CBaseControlVideo : public CBaseBasicVideo
 {
 protected:
+
     CBaseFilter *m_pFilter;   // Pointer to owning media filter
     CBasePin *m_pPin;                   // Controls media types for connection
     CCritSec *m_pInterfaceLock;         // Externally defined critical section
 
 public:
+
     // Derived classes must provide these for the implementation
 
     virtual HRESULT IsDefaultTargetRect() PURE;
@@ -169,6 +174,7 @@ public:
     virtual HRESULT CheckTargetRect(RECT *pTargetRect);
 
 public:
+
     CBaseControlVideo(CBaseFilter *pFilter,    // Owning media filter
                       CCritSec *pInterfaceLock,     // Serialise interface
                       TCHAR *pName,                 // Object description

@@ -1,89 +1,77 @@
-#ifndef __AFILE_H__
-#define __AFILE_H__
+/*
+ * FILE: AFile.h
+ *
+ * DESCRIPTION: The class which operating the files in Angelica Engine
+ *
+ * CREATED BY: Hedi, 2001/12/3
+ *
+ * HISTORY:
+ *
+ * Copyright (c) 2001 Archosaur Studio, All Rights Reserved.	
+ */
 
-#include <fstream>
+#ifndef _AFILE_H_
+#define _AFILE_H_
 
-#define AFILE_TYPE_BINARY 0x42584f4d // MOXT
-#define AFILE_TYPE_TEXT   0x54584f4d // MOXB
+#include "AFPlatform.h"
 
-#define AFILE_OPENEXIST   0x00000001
-#define AFILE_CREATENEW   0x00000002
-#define AFILE_OPENAPPEND  0x00000004
-#define AFILE_TEXT        0x00000008
-#define AFILE_BINARY      0x00000010
-#define AFILE_NOHEAD      0x00000020
-#define AFILE_TEMPMEMORY  0x00000040
+#define AFILE_TYPE_BINARY			0x42584f4d
+#define AFILE_TYPE_TEXT				0x54584f4d
 
-#define AFILE_LINEMAXLEN  2048
+#define AFILE_OPENEXIST				0x00000001
+#define AFILE_CREATENEW				0x00000002
+#define AFILE_OPENAPPEND			0x00000004
+#define AFILE_TEXT					0x00000008
+#define AFILE_BINARY				0x00000010
 
-enum AFILE_SEEK
-{
-    AFILE_SEEK_SET = std::ios_base::beg,
-    AFILE_SEEK_CUR = std::ios_base::cur,
-    AFILE_SEEK_END = std::ios_base::end
-};
+#define AFILE_LINEMAXLEN			2048
+
+#define AFILE_SEEK_SET				SEEK_SET
+#define AFILE_SEEK_CUR				SEEK_CUR
+#define AFILE_SEEK_END				SEEK_END
 
 class AFile
 {
-public:
-    AFile();
-
-    AFile(const std::wstring& filename)
-        : m_fileStream(filename, std::ios::binary)
-        , m_flags(0)
-        , m_timeStamp(0)
-        , m_bHasOpened(false)
-    {}
-
-    virtual ~AFile();
-
-    virtual bool Open(const std::wstring& filepath, std::ios_base::openmode mode);
-    virtual bool Open(const std::wstring& filepath, uint32_t dwFlags);
-    virtual bool Open(const std::wstring& folderName, const std::wstring& fileName, uint32_t dwFlags);
-    virtual bool Close();
-
-    virtual bool Read(void* pBuffer, uint32_t dwBufferLength, uint32_t* pReadLength);
-    virtual bool Write(const void* pBuffer, uint32_t dwBufferLength, uint32_t* pWriteLength);
-
-    virtual bool ReadLine(char* szLineBuffer, uint32_t dwBufferLength, uint32_t* pdwReadLength);
-    virtual bool WriteLine(const char* szLineBuffer);
-
-    virtual bool ReadString(char* szLineBuffer, uint32_t dwBufferLength, uint32_t* pdwReadLength);
-    virtual bool ReadString(std::string& s);
-    virtual bool WriteString(const std::string& s);
-
-    virtual std::streampos Tell();
-    virtual bool Seek(int64_t iOffset, AFILE_SEEK origin);
-    virtual bool ResetFilePointer();
-    virtual std::streampos GetFileLength();
-
-    bool Flush();
-
-    uint32_t GetFileTimeStamp(const std::wstring& filepath);
-
-    std::wstring changeFileExtension(const std::wstring& filePath, const std::wstring& ext);
-
-    std::fstream& GetFileStream() { return m_fileStream; }
-
-    std::wstring& GetFileName() { return m_strFilename; }
-    std::wstring& GetRelativePath() { return m_strRelativePath; }
-    std::wstring& GetFullPath() { return m_strFullPath; }
-
-    uint32_t GetFlags() const { return m_flags; }
-    bool IsText() const { return (m_flags & AFILE_TEXT) ? true : false; }
-    bool IsBinary() const { return !IsText(); }
+private:
+	FILE *	m_pFile;
 
 protected:
-    std::wstring m_strFilename;
-    std::wstring m_strRelativePath;
-    std::wstring m_strFullPath;
+	// An fullpath file name;
+	char	m_szFileName[MAX_PATH];
 
-    uint32_t m_flags;
-    uint32_t m_timeStamp;
-    bool m_bHasOpened;
+	// An relative file name that relative to the work dir;
+	char	m_szRelativeName[MAX_PATH];
 
-private:
-    std::fstream m_fileStream;
+	DWORD	m_dwFlags;
+
+	bool	m_bHasOpened;
+
+public:
+	AFile();
+	virtual ~AFile();
+
+	virtual bool Open(char * szFullPath, DWORD dwFlags);
+	virtual bool Open(char * szFolderName, char * szFileName, DWORD dwFlags);
+	virtual bool ResetPointer(); // Reset the file pointer;
+	virtual bool Close();
+
+	virtual bool Read(LPVOID pBuffer, DWORD dwBufferLength, DWORD * pReadLength);
+	virtual bool Write(LPVOID pBuffer, DWORD dwBufferLength, DWORD * pWriteLength);
+	virtual bool ReadLine(char * szLineBuffer, DWORD dwBufferLength, DWORD * pdwReadLength);
+	virtual bool ReadString(char * szLineBuffer, DWORD dwBufferLength, DWORD * pdwReadLength);
+	virtual bool WriteLine(char * szLineBuffer);
+	virtual bool GetStringAfter(char * szBuffer, char * szTag, char * szResult);
+	virtual DWORD GetPos();
+	virtual bool Seek(DWORD dwBytes, int iOrigin);
+
+	inline DWORD GetFlags() { return m_dwFlags; }
+	//Binary first, so if there is no binary or text, it is a binary file;
+	inline DWORD IsBinary() { return !IsText(); }
+	inline DWORD IsText() { return m_dwFlags & AFILE_TEXT; }
+
+	inline char * GetFileName() { return m_szFileName; }
+	inline char * GetRelativeName() { return m_szRelativeName; }
 };
 
+typedef AFile * PAFile;
 #endif

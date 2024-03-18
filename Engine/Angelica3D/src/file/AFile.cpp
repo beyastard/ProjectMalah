@@ -1,303 +1,218 @@
+#include "AFPI.h"
 #include "AFile.h"
-#include "ALog.h"
-
-#include <codecvt>
-#include <filesystem>
-#include <iostream>
-
-extern std::wstring g_strBaseDir;
+#include "AFI.h"
 
 AFile::AFile()
-    : m_strFilename()
-    , m_strRelativePath()
-    , m_strFullPath()
-    , m_flags(0)
-    , m_timeStamp(0)
-    , m_bHasOpened(false)
-{}
+{
+	m_szFileName[0]		= '\0';
+	m_szRelativeName[0]	= '\0';
+
+	m_pFile				= NULL;
+	m_dwFlags			= 0;
+
+	m_bHasOpened		= false;
+}
 
 AFile::~AFile()
 {
-    AFile::Close();
+	Close();
 }
 
-bool AFile::Open(const std::wstring& filepath, std::ios_base::openmode mode)
+bool AFile::Open(char * szFolderName, char * szFileName, DWORD dwFlags)
 {
-    if (m_bHasOpened)
-        Close();
+	char	szFullPath[MAX_PATH];
 
-    m_fileStream.open(filepath, mode);
-    if (m_fileStream.is_open())
-    {
-        m_strFilename = std::filesystem::path(filepath).filename().wstring();
-        m_strRelativePath = std::filesystem::path(filepath).parent_path().wstring();
-        m_strFullPath = std::filesystem::absolute(filepath).wstring();
-    }
-    else
-        return false;
+	AFileMod_GetFullPath(szFullPath, szFolderName, szFileName);
 
-    m_bHasOpened = true;
-    return true;
+	return Open(szFullPath, dwFlags);
 }
 
-bool AFile::Open(const std::wstring& filepath, uint32_t dwFlags)
+bool AFile::Open(char * szFullPath, DWORD dwFlags)
 {
-    if (m_bHasOpened)
-        Close();
+	// If already opened, we must first close it!
+	if( m_bHasOpened )
+		Close();
 
-    std::ios_base::openmode mode = std::ios_base::binary; // Default mode is binary
-    if (dwFlags & AFILE_OPENEXIST)
-        mode |= std::ios_base::in;
+	strncpy(m_szFileName, szFullPath, MAX_PATH);
+	// Get a relative path name of this file, may use a little time, but
+	// this call is not too often, so this is not matter
+	AFileMod_GetRelativePath(szFullPath, m_szRelativeName);
 
-    if (dwFlags & AFILE_CREATENEW)
-        mode |= std::ios_base::out;
+	char szOpenFlag[32];
 
-    if (dwFlags & AFILE_OPENAPPEND)
-        mode |= std::ios_base::app;
+	szOpenFlag[0] = '\0';
+	if( dwFlags & AFILE_OPENEXIST )
+		strcat(szOpenFlag, "r");
 
-    if (dwFlags & AFILE_BINARY)
-        mode |= std::ios_base::binary;
+	if( dwFlags & AFILE_CREATENEW )
+		strcat(szOpenFlag, "w");
 
-    m_fileStream.open(filepath, mode);
-    if (m_fileStream.is_open())
-    {
-        m_strFilename = std::filesystem::path(filepath).filename().wstring();
-        m_strRelativePath = std::filesystem::path(filepath).parent_path().wstring();
-        m_strFullPath = std::filesystem::absolute(filepath).wstring();
-    }
-    else
-        return false;
+	if( dwFlags & AFILE_OPENAPPEND )
+		strcat(szOpenFlag, "a");
 
-    if (dwFlags & AFILE_CREATENEW)
-    {
-        m_flags = dwFlags;
-        uint32_t dwFOURCC;
-        if (m_flags & AFILE_TEXT)
-        {
-            dwFOURCC = 0x54584f4d; // MOXT
-            if (!(m_flags & AFILE_NOHEAD))
-                m_fileStream.write(reinterpret_cast<const char*>(&dwFOURCC), sizeof(dwFOURCC));
-        }
-        else
-        {
-            dwFOURCC = 0x42584f4d; // MOXB
-            if (!(m_flags & AFILE_NOHEAD))
-                m_fileStream.write(reinterpret_cast<const char*>(&dwFOURCC), sizeof(dwFOURCC));
-        }
-    }
-    else
-    {
-        m_flags = dwFlags & (~(AFILE_BINARY | AFILE_TEXT));
+	//If there is no binary or text flag, the default is binary;
+	if( dwFlags & AFILE_TEXT )
+		strcat(szOpenFlag, "t");
+	else
+		strcat(szOpenFlag, "b");
 
-        uint32_t dwFOURCC;
-        m_fileStream.read(reinterpret_cast<char*>(&dwFOURCC), sizeof(dwFOURCC));
-        if (dwFOURCC == 0x42584f4d)      // MOXB
-            m_flags |= AFILE_BINARY;
-        else if (dwFOURCC == 0x54584f4d) // MOXT
-            m_flags |= AFILE_TEXT;
-        else
-        {
-            // Default to text mode
-            m_flags |= AFILE_TEXT;
-            m_fileStream.seekg(0, std::ios_base::beg);
-        }
-    }
+	m_pFile = fopen(m_szFileName, szOpenFlag);
+	if( NULL == m_pFile )
+		return false;
 
-    m_timeStamp = GetFileTimeStamp(GetFullPath());
-    m_bHasOpened = true;
+	DWORD dwFOURCC;
 
-    return true;
-}
+	if( dwFlags & AFILE_CREATENEW )	//	Create new file
+	{
+		m_dwFlags = dwFlags;
+		if( m_dwFlags & AFILE_TEXT )
+		{
+			dwFOURCC = 0x54584f4d;
+			fwrite(&dwFOURCC, 4, 1, m_pFile);
+		}
+		else
+		{
+			dwFOURCC = 0x42584f4d;
+			fwrite(&dwFOURCC, 4, 1, m_pFile);
+		}
+	}
+	else	//	Open a normal file
+	{
+		m_dwFlags = dwFlags & (~(AFILE_BINARY | AFILE_TEXT));
 
-bool AFile::Open(const std::wstring& folderName, const std::wstring& fileName, uint32_t dwFlags)
-{
-    std::wstring szFullPath;
-    if (fileName.empty())
-        return false;
-
-    if (std::filesystem::path(fileName).is_absolute())
-        szFullPath = fileName;
-    else
-    {
-        std::wstring realfile = fileName;
-        if (realfile.size() > 2 && realfile[0] == L'.' && realfile[1] == L'\\')
-            realfile = realfile.substr(2);
-
-        std::filesystem::path baseDir = g_strBaseDir;
-        szFullPath = baseDir / realfile;
-    }
-
-    return Open(szFullPath, dwFlags);
+		fread(&dwFOURCC, 4, 1, m_pFile);
+		if( dwFOURCC == 0x42584f4d )
+			m_dwFlags |= AFILE_BINARY;
+		else if( dwFOURCC == 0x54584f4d )
+			m_dwFlags |= AFILE_TEXT;
+		else
+		{
+			//Default we use text mode, for we can edit it by hand, and we will not add 
+			//the shitting FOURCC at the beginning of the file
+			m_dwFlags |= AFILE_TEXT;
+			fseek(m_pFile, 0, SEEK_SET);
+		}
+	}
+	
+	m_bHasOpened = true;
+	return true;
 }
 
 bool AFile::Close()
 {
-    if (m_fileStream.is_open())
-        m_fileStream.close();
+	if( m_pFile )
+	{
+		fclose(m_pFile);
+		m_pFile = NULL;
+	}
 
-    m_bHasOpened = false;
-    return true;
+	m_bHasOpened = false;
+	return true;
 }
 
-bool AFile::Read(void* pBuffer, uint32_t dwBufferLength, uint32_t* pReadLength)
+bool AFile::Read(LPVOID pBuffer, DWORD dwBufferLength, DWORD * pReadLength)
 {
-    m_fileStream.read(reinterpret_cast<char*>(pBuffer), dwBufferLength);
-    if (m_fileStream.fail())
-    {
-        *pReadLength = 0;
-        return false;
-    }
-
-    *pReadLength = static_cast<uint32_t>(m_fileStream.gcount());
-    return true;
+	*pReadLength = fread(pBuffer, 1, dwBufferLength, m_pFile);
+	return true;
 }
 
-bool AFile::Write(const void* pBuffer, uint32_t dwBufferLength, uint32_t* pWriteLength)
+bool AFile::Write(LPVOID pBuffer, DWORD dwBufferLength, DWORD * pWriteLength)
 {
-    m_fileStream.write(reinterpret_cast<const char*>(pBuffer), dwBufferLength);
-    if (m_fileStream.fail())
-    {
-        *pWriteLength = 0;
-        return false;
-    }
-
-    *pWriteLength = dwBufferLength;
-    return true;
+	*pWriteLength = fwrite(pBuffer, 1, dwBufferLength, m_pFile);
+	return true;
 }
 
-bool AFile::ReadLine(char* szLineBuffer, uint32_t dwBufferLength, uint32_t* pdwReadLength)
+bool AFile::ReadLine(char * szLineBuffer, DWORD dwBufferLength, DWORD * pdwReadLength)
 {
-    if (!m_fileStream.getline(szLineBuffer, dwBufferLength))
-        return false;
+	if( !fgets(szLineBuffer, dwBufferLength, m_pFile) )
+		return false;
 
-    // Calculate the length of the line
-    size_t lineLength = std::strlen(szLineBuffer);
+	//chop the \n\r
+	if( szLineBuffer[strlen(szLineBuffer) - 1] == '\n' || szLineBuffer[strlen(szLineBuffer) - 1] == '\r' )
+		szLineBuffer[strlen(szLineBuffer) - 1] = '\0';
 
-    // Remove trailing newline characters
-    while (lineLength > 0 && (szLineBuffer[lineLength - 1] == '\n' || szLineBuffer[lineLength - 1] == '\r')) {
-        szLineBuffer[lineLength - 1] = '\0';
-        lineLength--;
-    }
+	if( szLineBuffer[strlen(szLineBuffer) - 1] == '\n' || szLineBuffer[strlen(szLineBuffer) - 1] == '\r' )
+		szLineBuffer[strlen(szLineBuffer) - 1] = '\0';
 
-    *pdwReadLength = static_cast<uint32_t>(lineLength);
-
-    return true;
+	*pdwReadLength = strlen(szLineBuffer) + 1;
+	return true;
 }
 
-bool AFile::WriteLine(const char* szLineBuffer)
+bool AFile::ReadString(char * szLineBuffer, DWORD dwBufferLength, DWORD * pdwReadLength)
 {
-    m_fileStream << szLineBuffer << '\n';
-    return !m_fileStream.fail();
+	char ch;
+	DWORD nStrLen = 0;
+
+	fread(&ch, 1, 1, m_pFile);
+	while( ch )
+	{
+		szLineBuffer[nStrLen] = ch;
+		nStrLen ++;
+
+		if( nStrLen >= dwBufferLength )
+			return false;
+
+		fread(&ch, 1, 1, m_pFile);
+	}
+
+	szLineBuffer[nStrLen] = '\0';
+
+	*pdwReadLength = nStrLen + 1;
+	return true;
 }
 
-bool AFile::ReadString(char* szLineBuffer, uint32_t dwBufferLength, uint32_t* pdwReadLength)
+bool AFile::WriteLine(char * szLineBuffer)
 {
-    if (!m_fileStream.getline(szLineBuffer, dwBufferLength))
-        return false;
-
-    // Calculate the length of the string
-    *pdwReadLength = static_cast<uint32_t>(std::strlen(szLineBuffer)) + 1;
-
-    return true;
+	if( fprintf(m_pFile, "%s\n", szLineBuffer) < 0 )
+		return false;
+	return true;
 }
 
-bool AFile::ReadString(std::string& s)
+DWORD AFile::GetPos()
 {
-    int32_t iLen;
-    if (!m_fileStream.read(reinterpret_cast<char*>(&iLen), sizeof(int32_t)))
-        return false;
+	DWORD dwPos;
 
-    // Read string data
-    if (iLen > 0) {
-        s.resize(iLen);
-        if (!m_fileStream.read(reinterpret_cast<char*>(s.data()), iLen))
-            return false;
-    }
-    else
-        s.clear();
+	dwPos = (DWORD) ftell(m_pFile);
 
-    return true;
+	return dwPos;
 }
 
-bool AFile::WriteString(const std::string& s)
+bool AFile::Seek(DWORD dwBytes, int iOrigin)
 {
-    m_fileStream << s << '\n';
-    return !m_fileStream.fail();
+	int iStart = SEEK_SET;
+
+	switch (iOrigin)
+	{
+	case AFILE_SEEK_SET:	iStart = SEEK_SET;	break;
+	case AFILE_SEEK_CUR:	iStart = SEEK_CUR;	break;
+	case AFILE_SEEK_END:	iStart = SEEK_END;	break;
+	default:
+		return false;
+	}
+
+	if( 0 != fseek(m_pFile, dwBytes, iStart) )
+		return false;
+
+	return true;
 }
 
-std::streampos AFile::Tell()
+bool AFile::GetStringAfter(char * szBuffer, char * szTag, char * szResult)
 {
-    return m_fileStream.tellg();
+	char * pch;
+
+	szResult[0] = '\0';
+	pch = strstr(szBuffer, szTag);
+	if( pch != szBuffer )
+		return false;
+
+	pch += strlen(szTag);
+	strcpy(szResult, pch);
+	return true;
 }
 
-bool AFile::Seek(int64_t iOffset, AFILE_SEEK origin)
+bool AFile::ResetPointer()
 {
-    std::ios_base::seekdir dir;
-    if (origin == AFILE_SEEK_SET)
-        dir = std::ios_base::beg;
-    else if (origin == AFILE_SEEK_CUR)
-        dir = std::ios_base::cur;
-    else if (origin == AFILE_SEEK_END)
-        dir = std::ios_base::end;
-    else
-        return false; // Invalid origin
-
-    m_fileStream.seekg(iOffset, dir);
-    return !m_fileStream.fail();
+	fseek(m_pFile, 0, SEEK_SET);
+	return true;
 }
 
-bool AFile::ResetFilePointer()
-{
-    m_fileStream.seekg(0, std::ios_base::beg);
-    return !m_fileStream.fail();
-}
-
-std::streampos AFile::GetFileLength()
-{
-    std::streampos currentPosition = m_fileStream.tellg();
-    m_fileStream.seekg(0, std::ios_base::end);
-
-    std::streampos endPosition = m_fileStream.tellg();
-    m_fileStream.seekg(currentPosition, std::ios_base::beg);
-
-    return endPosition;
-}
-
-bool AFile::Flush()
-{
-    m_fileStream.flush();
-    return !m_fileStream.fail();
-}
-
-uint32_t AFile::GetFileTimeStamp(const std::wstring& filepath)
-{
-    std::filesystem::path filePath(filepath);
-    std::error_code ec;
-    std::filesystem::file_time_type fileTime = std::filesystem::last_write_time(filePath, ec);
-
-    if (ec)
-    {
-        // Convert wide character filepath to multibyte string
-        std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter;
-        std::string filepath_mb = converter.to_bytes(filepath);
-
-        // Print an error message indicating the cause of the error
-        std::cerr << "Error accessing file: " << filepath_mb << " - " << ec.message() << std::endl;
-
-        return -1;
-    }
-
-    auto fileTimePoint = std::chrono::time_point_cast<std::chrono::system_clock::time_point::duration>(fileTime);
-    auto time_t_stamp = std::chrono::duration_cast<std::chrono::seconds>(fileTimePoint.time_since_epoch()).count();
-
-    m_timeStamp = static_cast<DWORD>(time_t_stamp);
-    return m_timeStamp;
-}
-
-std::wstring AFile::changeFileExtension(const std::wstring& filePath, const std::wstring& ext)
-{
-    size_t dotPosition = filePath.find_last_of(L'.');
-    return (dotPosition != std::wstring::npos)
-        ? filePath.substr(0, dotPosition) + ext
-        : filePath + ext;
-}

@@ -1,36 +1,48 @@
-#ifndef __AFI_H__
-#define __AFI_H__
+/*
+ * FILE: AFI.h
+ *
+ * DESCRIPTION: headers for interface functions in Angelica File Lib;
+ *
+ * CREATED BY: Hedi, 2001/12/31
+ *
+ * HISTORY:
+ *
+ * Copyright (c) 2001 Archosaur Studio, All Rights Reserved.	
+ */
 
-#include "ABaseDef.h"
+#ifndef _AFI_H_
+#define _AFI_H_
 
-extern std::wstring g_strBaseDir;
-extern bool g_bCompressEnable;
+#include "AFPlatform.h"
 
-bool af_Initialize();
-bool af_Finalize();
-bool af_SetBaseDir(const std::wstring& szBaseDir);
-const std::wstring& af_GetBaseDir();
+extern char g_szBaseDir[MAX_PATH];
 
-void af_GetRelativePathNoBase(const std::wstring& szFullpath, const std::wstring& szParentPath, std::wstring& szRelativepath);
-void af_GetFullPathNoBase(std::wstring& szFullpath, const std::wstring& szBaseDir, const std::wstring& szFilename);
+//	************************** Attention Please! *******************************
+//
+//	To Use File Module properly, you must first call AFileMod_Initialize() and 
+//	then call AFileMod_SetBaseDir() to set a correct base dir, and at last you
+//  should make a call to AFileMod_Finalize()
+//
+//	The default base dir is current directory, which is set when calling 
+//	AFileMod_Initialize()
+//
+//  ****************************************************************************
 
-void af_GetFullPath(std::wstring& szFullPath, const std::wstring& szFolderName, const std::wstring& szFileName);
-void af_GetFullPath(std::wstring& szFullPath, const std::wstring& szFileName);
+bool AFileMod_Initialize(bool bCompressEnable=true);
+bool AFileMod_SetBaseDir(char * szBaseDir);
+bool AFileMod_Finalize();
+const char * AFileMod_GetBaseDir();
 
-void af_GetRelativePath(const std::wstring& szFullPath, const std::wstring& szFolderName, std::wstring& szRelativePath);
-void af_GetRelativePath(const std::wstring& szFullPath, std::wstring& szRelativePath);
+void AFileMod_GetFullPath(char * szFullPath, char * szFolderName, char * szFileName);
+void AFileMod_GetFullPath(char * szFullPath, char * szFileName);
+void AFileMod_GetRelativePath(char * szFullPath, char * szFolderName, char * szRelativePath);
+void AFileMod_GetRelativePath(char * szFullPath, char * szRelativePath);
 
-bool af_GetFileTitle(const std::wstring& lpszFile, std::wstring& lpszTitle, uint16_t cbBuf);
-bool af_GetFileTitle(const std::wstring& lpszFile, std::wstring& strTitle);
+// Get the file's title in the filename string;
+// Note: lpszFile and lpszTitle should be different buffer;
+bool AFileMod_GetFileTitle(char * lpszFile, char * lpszTitle, WORD cbBuf);
 
-bool af_GetFilePath(const std::wstring& lpszFile, std::wstring& lpszPath, uint16_t cbBuf);
-bool af_GetFilePath(const std::wstring& lpszFile, std::wstring& strPath);
-
-bool af_CheckFileExt(const std::wstring& szFileName, const std::wstring& szExt, int32_t iExtLen = -1, int32_t iFileNameLen = -1);
-
-bool af_ChangeFileExt(std::wstring& szFileNameBuf, int32_t iBufLen, const std::wstring& szNewExt);
-bool af_ChangeFileExt(std::wstring& strFileName, const std::wstring& szNewExt);
-
-bool af_IsFileExist(const std::wstring& szFileName);
-
+// Get the file's path in the filename string;
+// Note: lpszFile and lpszPath should be different buffer;
+bool AFileMod_GetFilePath(char * lpszFile, char * lpszPath, WORD cbBuf);
 #endif

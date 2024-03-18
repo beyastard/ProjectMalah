@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -11,30 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>17.0</VCProjectVersion>
-    <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{fd8e681e-67e3-4cf4-8e5b-8d1f106ba163}</ProjectGuid>
+    <ProjectGuid>{8FD4C0B6-D42F-405C-8EAB-D5380D688384}</ProjectGuid>
     <RootNamespace>Angelica3D</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>NotSet</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>NotSet</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -55,61 +48,325 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>./include/common;./include/file;./include/3d;./include/media;../../Dependency/zlib-1.2.13/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include/3D;./include/common;./include/file;./include/media;../ImmWrapper/include;../mpg123lib/include;../../Dependency/DShow_BaseClasses;../../Dependency/dx81sdk/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WINDOW;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(OutDir)\$(TargetName).*" ..\..\AngelicaSDK\a3dSDK\lib\ /Y /D /Q /R
-xcopy .\include\* ..\..\AngelicaSDK\a3dSDK\include\ /Y /D /Q /R /E</Command>
+xcopy .\include\3D\*.h ..\..\AngelicaSDK\a3dSDK\include\3D\ /Y /D /Q /R
+xcopy .\include\common\*.h ..\..\AngelicaSDK\a3dSDK\include\common\ /Y /D /Q /R
+xcopy .\include\file\*.h ..\..\AngelicaSDK\a3dSDK\include\file\ /Y /D /Q /R
+xcopy .\include\media\*.h ..\..\AngelicaSDK\a3dSDK\include\media\ /Y /D /Q /R</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>./include/common;./include/file;./include/3d;./include/media;../../Dependency/zlib-1.2.13/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>./include/3D;./include/common;./include/file;./include/media;../ImmWrapper/include;../mpg123lib/include;../../Dependency/DShow_BaseClasses;../../Dependency/dx81sdk/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WINDOW;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(OutDir)\$(TargetName).*" ..\..\AngelicaSDK\a3dSDK\lib\ /Y /D /Q /R
-xcopy .\include\* ..\..\AngelicaSDK\a3dSDK\include\ /Y /D /Q /R /E</Command>
+xcopy .\include\3D\*.h ..\..\AngelicaSDK\a3dSDK\include\3D\ /Y /D /Q /R
+xcopy .\include\common\*.h ..\..\AngelicaSDK\a3dSDK\include\common\ /Y /D /Q /R
+xcopy .\include\file\*.h ..\..\AngelicaSDK\a3dSDK\include\file\ /Y /D /Q /R
+xcopy .\include\media\*.h ..\..\AngelicaSDK\a3dSDK\include\media\ /Y /D /Q /R</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\common\ABaseDef.h" />
+    <ClInclude Include="include\3D\A2DSprite.h" />
+    <ClInclude Include="include\3D\A2DSpriteBuffer.h" />
+    <ClInclude Include="include\3D\A2DSpriteItem.h" />
+    <ClInclude Include="include\3D\A3D.h" />
+    <ClInclude Include="include\3D\A3DBezier.h" />
+    <ClInclude Include="include\3D\A3DBezierPoint.h" />
+    <ClInclude Include="include\3D\A3DBezierSegment.h" />
+    <ClInclude Include="include\3D\A3DBillBoard.h" />
+    <ClInclude Include="include\3D\A3DBox.h" />
+    <ClInclude Include="include\3D\A3DBSP.h" />
+    <ClInclude Include="include\3D\A3DCamera.h" />
+    <ClInclude Include="include\3D\A3DCDS.h" />
+    <ClInclude Include="include\3D\A3DClassID.h" />
+    <ClInclude Include="include\3D\A3DCollision.h" />
+    <ClInclude Include="include\3D\A3DConfig.h" />
+    <ClInclude Include="include\3D\A3DControl.h" />
+    <ClInclude Include="include\3D\A3DCounter.h" />
+    <ClInclude Include="include\3D\A3DCursor.h" />
+    <ClInclude Include="include\3D\A3DData.h" />
+    <ClInclude Include="include\3D\A3DDecal.h" />
+    <ClInclude Include="include\3D\A3DDevice.h" />
+    <ClInclude Include="include\3D\A3DEngine.h" />
+    <ClInclude Include="include\3D\A3DErrLog.h" />
+    <ClInclude Include="include\3D\A3DESP.h" />
+    <ClInclude Include="include\3D\A3DFile.h" />
+    <ClInclude Include="include\3D\A3DFlash.h" />
+    <ClInclude Include="include\3D\A3DFont.h" />
+    <ClInclude Include="include\3D\A3DFontMan.h" />
+    <ClInclude Include="include\3D\A3DFrame.h" />
+    <ClInclude Include="include\3D\A3DFuncs.h" />
+    <ClInclude Include="include\3D\A3DGDI.h" />
+    <ClInclude Include="include\3D\A3DGFXCollector.h" />
+    <ClInclude Include="include\3D\A3DGFXMan.h" />
+    <ClInclude Include="include\3D\A3DGraphicsFX.h" />
+    <ClInclude Include="include\3D\A3DIBLMesh.h" />
+    <ClInclude Include="include\3D\A3DIBLScene.h" />
+    <ClInclude Include="include\3D\A3DImgModel.h" />
+    <ClInclude Include="include\3D\A3DImgModelMan.h" />
+    <ClInclude Include="include\3D\A3DLamp.h" />
+    <ClInclude Include="include\3D\A3DLensFlare.h" />
+    <ClInclude Include="include\3D\A3DLight.h" />
+    <ClInclude Include="include\3D\A3DLightingEngine.h" />
+    <ClInclude Include="include\3D\A3DLightMan.h" />
+    <ClInclude Include="include\3D\A3DLightning.h" />
+    <ClInclude Include="include\3D\A3DMacros.h" />
+    <ClInclude Include="include\3D\A3DMaterial.h" />
+    <ClInclude Include="include\3D\A3DMathUtility.h" />
+    <ClInclude Include="include\3D\A3DMesh.h" />
+    <ClInclude Include="include\3D\A3DMeshCollector.h" />
+    <ClInclude Include="include\3D\A3DMeshMan.h" />
+    <ClInclude Include="include\3D\A3DMeshSorter.h" />
+    <ClInclude Include="include\3D\A3DModel.h" />
+    <ClInclude Include="include\3D\A3DModelCollector.h" />
+    <ClInclude Include="include\3D\A3DModelMan.h" />
+    <ClInclude Include="include\3D\A3DMoxMan.h" />
+    <ClInclude Include="include\3D\A3DOBBFuncs.h" />
+    <ClInclude Include="include\3D\A3DObject.h" />
+    <ClInclude Include="include\3D\A3DPArray.h" />
+    <ClInclude Include="include\3D\A3DParticleSystem.h" />
+    <ClInclude Include="include\3D\A3DPixelShader.h" />
+    <ClInclude Include="include\3D\A3DPlants.h" />
+    <ClInclude Include="include\3D\A3DPlatform.h" />
+    <ClInclude Include="include\3D\A3DRain.h" />
+    <ClInclude Include="include\3D\A3DRandGenerator.h" />
+    <ClInclude Include="include\3D\A3DRenderTarget.h" />
+    <ClInclude Include="include\3D\A3DScene.h" />
+    <ClInclude Include="include\3D\A3DScriptFile.h" />
+    <ClInclude Include="include\3D\A3DShader.h" />
+    <ClInclude Include="include\3D\A3DShaderMan.h" />
+    <ClInclude Include="include\3D\A3DSky.h" />
+    <ClInclude Include="include\3D\A3DSkyBox.h" />
+    <ClInclude Include="include\3D\A3DSkyGradient.h" />
+    <ClInclude Include="include\3D\A3DSkySphere.h" />
+    <ClInclude Include="include\3D\A3DSnow.h" />
+    <ClInclude Include="include\3D\A3DStars.h" />
+    <ClInclude Include="include\3D\A3DStream.h" />
+    <ClInclude Include="include\3D\A3DString.h" />
+    <ClInclude Include="include\3D\A3DStringSet.h" />
+    <ClInclude Include="include\3D\A3DSuperDecal.h" />
+    <ClInclude Include="include\3D\A3DSuperSpray.h" />
+    <ClInclude Include="include\3D\A3DSurface.h" />
+    <ClInclude Include="include\3D\A3DSurfaceMan.h" />
+    <ClInclude Include="include\3D\A3DTerrain.h" />
+    <ClInclude Include="include\3D\A3DTerrainMark.h" />
+    <ClInclude Include="include\3D\A3DTexture.h" />
+    <ClInclude Include="include\3D\A3DTextureMan.h" />
+    <ClInclude Include="include\3D\A3DTime.h" />
+    <ClInclude Include="include\3D\A3DTrace.h" />
+    <ClInclude Include="include\3D\A3DTypes.h" />
+    <ClInclude Include="include\3D\A3DVertex.h" />
+    <ClInclude Include="include\3D\A3DVertexCollector.h" />
+    <ClInclude Include="include\3D\A3DViewport.h" />
+    <ClInclude Include="include\3D\A3DVSSCommon.h" />
+    <ClInclude Include="include\3D\A3DVSSIBLScene.h" />
+    <ClInclude Include="include\3D\A3DVSSRouteLoader.h" />
+    <ClInclude Include="include\3D\A3DVSSScene.h" />
+    <ClInclude Include="include\3D\A3DWorld.h" />
+    <ClInclude Include="include\3D\A3DWorldCDS.h" />
+    <ClInclude Include="include\3D\ADarray.h" />
+    <ClInclude Include="include\3D\AList.h" />
+    <ClInclude Include="include\3D\allocator.h" />
+    <ClInclude Include="include\3D\amemory.h" />
+    <ClInclude Include="include\3D\AStack.h" />
+    <ClInclude Include="include\3D\BSPFile.h" />
+    <ClInclude Include="include\3D\ESPFile.h" />
+    <ClInclude Include="include\3D\hashtab.h" />
+    <ClInclude Include="include\3D\vector.h" />
+    <ClInclude Include="include\common\AC.h" />
+    <ClInclude Include="include\common\ACPlatform.h" />
     <ClInclude Include="include\common\ALog.h" />
-    <ClInclude Include="include\common\Base64.h" />
-    <ClInclude Include="include\common\StringConvert.h" />
+    <ClInclude Include="include\common\APath.h" />
+    <ClInclude Include="include\common\APerlinNoise1D.h" />
+    <ClInclude Include="include\common\APerlinNoise2D.h" />
+    <ClInclude Include="include\common\APerlinNoise3D.h" />
+    <ClInclude Include="include\common\APerlinNoiseBase.h" />
+    <ClInclude Include="include\common\ATime.h" />
+    <ClInclude Include="include\file\AF.h" />
     <ClInclude Include="include\file\AFI.h" />
     <ClInclude Include="include\file\AFile.h" />
     <ClInclude Include="include\file\AFileImage.h" />
     <ClInclude Include="include\file\AFilePackage.h" />
     <ClInclude Include="include\file\AFPI.h" />
+    <ClInclude Include="include\file\AFPlatform.h" />
+    <ClInclude Include="include\file\AScriptFile.h" />
+    <ClInclude Include="include\file\AStringTable.h" />
+    <ClInclude Include="include\media\AM.h" />
+    <ClInclude Include="include\media\AM3DSoundBuffer.h" />
+    <ClInclude Include="include\media\AM3DSoundBufferMan.h" />
+    <ClInclude Include="include\media\AM3DSoundDevice.h" />
+    <ClInclude Include="include\media\AMConfig.h" />
+    <ClInclude Include="include\media\AMEngine.h" />
+    <ClInclude Include="include\media\AMMp3File.h" />
+    <ClInclude Include="include\media\AMPI.h" />
+    <ClInclude Include="include\media\AMPlatform.h" />
+    <ClInclude Include="include\media\AMSoundBuffer.h" />
+    <ClInclude Include="include\media\AMSoundBufferMan.h" />
+    <ClInclude Include="include\media\AMSoundDevice.h" />
+    <ClInclude Include="include\media\AMSoundEngine.h" />
+    <ClInclude Include="include\media\AMSoundStream.h" />
+    <ClInclude Include="include\media\AMSurfaceRenderer.h" />
+    <ClInclude Include="include\media\AMTypes.h" />
+    <ClInclude Include="include\media\AMVideoClip.h" />
+    <ClInclude Include="include\media\AMVideoEngine.h" />
+    <ClInclude Include="include\media\AMWaveFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\3D\A2DSprite.cpp" />
+    <ClCompile Include="src\3D\A2DSpriteBuffer.cpp" />
+    <ClCompile Include="src\3D\A2DSpriteItem.cpp" />
+    <ClCompile Include="src\3D\A3DAABBTrace.cpp" />
+    <ClCompile Include="src\3D\A3DBezier.cpp" />
+    <ClCompile Include="src\3D\A3DBezierPoint.cpp" />
+    <ClCompile Include="src\3D\A3DBezierSegment.cpp" />
+    <ClCompile Include="src\3D\A3DBillBoard.cpp" />
+    <ClCompile Include="src\3D\A3DBox.cpp" />
+    <ClCompile Include="src\3D\A3DBSP.cpp" />
+    <ClCompile Include="src\3D\A3DCamera.cpp" />
+    <ClCompile Include="src\3D\A3DCollision.cpp" />
+    <ClCompile Include="src\3D\A3DConfig.cpp" />
+    <ClCompile Include="src\3D\A3DControl.cpp" />
+    <ClCompile Include="src\3D\A3DCounter.cpp" />
+    <ClCompile Include="src\3D\A3DCursor.cpp" />
+    <ClCompile Include="src\3D\A3DData.cpp" />
+    <ClCompile Include="src\3D\A3DDecal.cpp" />
+    <ClCompile Include="src\3D\A3DDevice.cpp" />
+    <ClCompile Include="src\3D\A3DEngine.cpp" />
+    <ClCompile Include="src\3D\A3DErrLog.cpp" />
+    <ClCompile Include="src\3D\A3DESP.cpp" />
+    <ClCompile Include="src\3D\A3DESPMove.cpp" />
+    <ClCompile Include="src\3D\A3DFile.cpp" />
+    <ClCompile Include="src\3D\A3DFlash.cpp" />
+    <ClCompile Include="src\3D\A3DFont.cpp" />
+    <ClCompile Include="src\3D\A3DFontMan.cpp" />
+    <ClCompile Include="src\3D\A3DFrame.cpp" />
+    <ClCompile Include="src\3D\A3DFuncs.cpp" />
+    <ClCompile Include="src\3D\A3DGDI.cpp" />
+    <ClCompile Include="src\3D\A3DGFXCollector.cpp" />
+    <ClCompile Include="src\3D\A3DGFXMan.cpp" />
+    <ClCompile Include="src\3D\A3DGraphicsFX.cpp" />
+    <ClCompile Include="src\3D\A3DIBLMesh.cpp" />
+    <ClCompile Include="src\3D\A3DIBLScene.cpp" />
+    <ClCompile Include="src\3D\A3DImgModel.cpp" />
+    <ClCompile Include="src\3D\A3DImgModelMan.cpp" />
+    <ClCompile Include="src\3D\A3DLamp.cpp" />
+    <ClCompile Include="src\3D\A3DLensFlare.cpp" />
+    <ClCompile Include="src\3D\A3DLight.cpp" />
+    <ClCompile Include="src\3D\A3DLightingEngine.cpp" />
+    <ClCompile Include="src\3D\A3DLightMan.cpp" />
+    <ClCompile Include="src\3D\A3DLightning.cpp" />
+    <ClCompile Include="src\3D\A3DMaterial.cpp" />
+    <ClCompile Include="src\3D\A3DMathUtility.cpp" />
+    <ClCompile Include="src\3D\A3DMesh.cpp" />
+    <ClCompile Include="src\3D\A3DMeshCollector.cpp" />
+    <ClCompile Include="src\3D\A3DMeshMan.cpp" />
+    <ClCompile Include="src\3D\A3DMeshSorter.cpp" />
+    <ClCompile Include="src\3D\A3DModel.cpp" />
+    <ClCompile Include="src\3D\A3DModelCollector.cpp" />
+    <ClCompile Include="src\3D\A3DModelMan.cpp" />
+    <ClCompile Include="src\3D\A3DMoxMan.cpp" />
+    <ClCompile Include="src\3D\A3DOBBFuncs.cpp" />
+    <ClCompile Include="src\3D\A3DObject.cpp" />
+    <ClCompile Include="src\3D\A3DPArray.cpp" />
+    <ClCompile Include="src\3D\A3DParticleSystem.cpp" />
+    <ClCompile Include="src\3D\A3DPixelShader.cpp" />
+    <ClCompile Include="src\3D\A3DPlants.cpp" />
+    <ClCompile Include="src\3D\A3DRain.cpp" />
+    <ClCompile Include="src\3D\A3DRandGenerator.cpp" />
+    <ClCompile Include="src\3D\A3DRenderTarget.cpp" />
+    <ClCompile Include="src\3D\A3DScene.cpp" />
+    <ClCompile Include="src\3D\A3DScriptFile.cpp" />
+    <ClCompile Include="src\3D\A3DShader.cpp" />
+    <ClCompile Include="src\3D\A3DShaderMan.cpp" />
+    <ClCompile Include="src\3D\A3DSky.cpp" />
+    <ClCompile Include="src\3D\A3DSkyBox.cpp" />
+    <ClCompile Include="src\3D\A3DSkyGradient.cpp" />
+    <ClCompile Include="src\3D\A3DSkySphere.cpp" />
+    <ClCompile Include="src\3D\A3DSnow.cpp" />
+    <ClCompile Include="src\3D\A3DStars.cpp" />
+    <ClCompile Include="src\3D\A3DStream.cpp" />
+    <ClCompile Include="src\3D\A3DString.cpp" />
+    <ClCompile Include="src\3D\A3DStringSet.cpp" />
+    <ClCompile Include="src\3D\A3DSuperDecal.cpp" />
+    <ClCompile Include="src\3D\A3DSuperSpray.cpp" />
+    <ClCompile Include="src\3D\A3DSurface.cpp" />
+    <ClCompile Include="src\3D\A3DSurfaceMan.cpp" />
+    <ClCompile Include="src\3D\A3DTerrain.cpp" />
+    <ClCompile Include="src\3D\A3DTerrainMark.cpp" />
+    <ClCompile Include="src\3D\A3DTexture.cpp" />
+    <ClCompile Include="src\3D\A3DTextureMan.cpp" />
+    <ClCompile Include="src\3D\A3DTime.cpp" />
+    <ClCompile Include="src\3D\A3DTrace.cpp" />
+    <ClCompile Include="src\3D\A3DVertexCollector.cpp" />
+    <ClCompile Include="src\3D\A3DViewport.cpp" />
+    <ClCompile Include="src\3D\A3DVSSIBLScene.cpp" />
+    <ClCompile Include="src\3D\A3DVSSRouteLoader.cpp" />
+    <ClCompile Include="src\3D\A3DVSSScene.cpp" />
+    <ClCompile Include="src\3D\A3DWorld.cpp" />
+    <ClCompile Include="src\3D\A3DWorldCDS.cpp" />
+    <ClCompile Include="src\3D\ADarray.cpp" />
+    <ClCompile Include="src\3D\AList.cpp" />
+    <ClCompile Include="src\3D\allocator.cpp" />
+    <ClCompile Include="src\3D\amemory.cpp" />
+    <ClCompile Include="src\3D\AStack.cpp" />
+    <ClCompile Include="src\3D\BSPFile.cpp" />
+    <ClCompile Include="src\3D\ESPFile.cpp" />
+    <ClCompile Include="src\3D\hashtab.cpp" />
+    <ClCompile Include="src\3D\vector.cpp" />
     <ClCompile Include="src\common\ALog.cpp" />
-    <ClCompile Include="src\common\Base64.cpp" />
+    <ClCompile Include="src\common\APerlinNoise1D.cpp" />
+    <ClCompile Include="src\common\APerlinNoise2D.cpp" />
+    <ClCompile Include="src\common\APerlinNoise3D.cpp" />
+    <ClCompile Include="src\common\APerlinNoiseBase.cpp" />
+    <ClCompile Include="src\common\ATime.cpp" />
     <ClCompile Include="src\file\AFI.cpp" />
     <ClCompile Include="src\file\AFile.cpp" />
     <ClCompile Include="src\file\AFileImage.cpp" />
     <ClCompile Include="src\file\AFilePackage.cpp" />
+    <ClCompile Include="src\file\AScriptFile.cpp" />
+    <ClCompile Include="src\file\AStringTable.cpp" />
+    <ClCompile Include="src\media\AM3DSoundBuffer.cpp" />
+    <ClCompile Include="src\media\AM3DSoundBufferMan.cpp" />
+    <ClCompile Include="src\media\AM3DSoundDevice.cpp" />
+    <ClCompile Include="src\media\AMConfig.cpp" />
+    <ClCompile Include="src\media\AMEngine.cpp" />
+    <ClCompile Include="src\media\AMMp3File.cpp" />
+    <ClCompile Include="src\media\AMPI.cpp" />
+    <ClCompile Include="src\media\AMSoundBuffer.cpp" />
+    <ClCompile Include="src\media\AMSoundBufferMan.cpp" />
+    <ClCompile Include="src\media\AMSoundDevice.cpp" />
+    <ClCompile Include="src\media\AMSoundEngine.cpp" />
+    <ClCompile Include="src\media\AMSoundStream.cpp" />
+    <ClCompile Include="src\media\AMSurfaceRenderer.cpp" />
+    <ClCompile Include="src\media\AMVideoClip.cpp" />
+    <ClCompile Include="src\media\AMVideoEngine.cpp" />
+    <ClCompile Include="src\media\AMWaveFile.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

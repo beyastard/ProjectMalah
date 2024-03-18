@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AB004327-E0F7-43ED-86B9-57256DAB97CE}</ProjectGuid>
+    <RootNamespace>Malah</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>..\..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>..\..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WINDOWS;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./include;../Common/include;./res;../../AngelicaSDK/immSDK/include;../../AngelicaSDK/a3dSDK/include/3D;../../AngelicaSDK/a3dSDK/include/common;../../AngelicaSDK/a3dSDK/include/file;../../AngelicaSDK/a3dSDK/include/media;../../AngelicaSDK/3rdSDK/include/mpg123;../../AngelicaSDK/3rdSDK/include/dshow;../../AngelicaSDK/3rdSDK/include/zlib;../../AngelicaSDK/Library/include/ABase;../../Dependency/dx81sdk/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild />
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>Angelica3D_d.lib;ABase_d.lib;ImmWrapper_d.lib;strmbase_d.lib;zlib_d.lib;mpg123lib_d.lib;IMM32.lib;WinMM.lib;d3d8.lib;d3dx8.lib;dxguid.lib;dsound.lib;dinput8.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../AngelicaSDK/a3dSDK/lib;../../AngelicaSDK/immSDK/lib;../../AngelicaSDK/3rdSDK/lib;../../AngelicaSDK/Library/lib;../../Dependency/dx81sdk/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(OutDir)\$(TargetName).*" ..\..\AngelicaSDK\Malah\ /Y /D /Q /R</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WINDOWS;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./include;../Common/include;./res;../../AngelicaSDK/immSDK/include;../../AngelicaSDK/a3dSDK/include/3D;../../AngelicaSDK/a3dSDK/include/common;../../AngelicaSDK/a3dSDK/include/file;../../AngelicaSDK/a3dSDK/include/media;../../AngelicaSDK/3rdSDK/include/mpg123;../../AngelicaSDK/3rdSDK/include/dshow;../../AngelicaSDK/3rdSDK/include/zlib;../../AngelicaSDK/Library/include/ABase;../../Dependency/dx81sdk/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild />
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>Angelica3D.lib;ABase.lib;ImmWrapper.lib;strmbase.lib;zlib.lib;mpg123lib.lib;IMM32.lib;WinMM.lib;d3d8.lib;d3dx8.lib;dxguid.lib;dsound.lib;dinput8.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../AngelicaSDK/a3dSDK/lib;../../AngelicaSDK/immSDK/lib;../../AngelicaSDK/3rdSDK/lib;../../AngelicaSDK/Library/lib;../../Dependency/dx81sdk/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(OutDir)\$(TargetName).*" ..\..\AngelicaSDK\Malah\ /Y /D /Q /R</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="res\gameicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\include\ML_ABasePatch.h" />
+    <ClInclude Include="..\Common\include\ML_ActorSet.h" />
+    <ClInclude Include="..\Common\include\ML_AISet.h" />
+    <ClInclude Include="..\Common\include\ML_Database.h" />
+    <ClInclude Include="..\Common\include\ML_EditorJoint.h" />
+    <ClInclude Include="..\Common\include\ML_EnvSchemeSet.h" />
+    <ClInclude Include="..\Common\include\ML_EnvSet.h" />
+    <ClInclude Include="..\Common\include\ML_EventPtData.h" />
+    <ClInclude Include="..\Common\include\ML_FixedObjData.h" />
+    <ClInclude Include="..\Common\include\ML_GeneralSet.h" />
+    <ClInclude Include="..\Common\include\ML_ID.h" />
+    <ClInclude Include="..\Common\include\ML_LevelData.h" />
+    <ClInclude Include="..\Common\include\ML_LevelFiles.h" />
+    <ClInclude Include="..\Common\include\ML_MapData.h" />
+    <ClInclude Include="..\Common\include\ML_MissionData.h" />
+    <ClInclude Include="..\Common\include\ML_RouteData.h" />
+    <ClInclude Include="..\Common\include\ML_SkySet.h" />
+    <ClInclude Include="..\Common\include\ML_Strings.h" />
+    <ClInclude Include="..\Common\include\ML_Utility.h" />
+    <ClInclude Include="..\Common\include\ObjectPool.h" />
+    <ClInclude Include="include\ML_ABase.h" />
+    <ClInclude Include="include\ML_AIUnit.h" />
+    <ClInclude Include="include\ML_Attacker.h" />
+    <ClInclude Include="include\ML_AttackerCaller.h" />
+    <ClInclude Include="include\ML_Bullet.h" />
+    <ClInclude Include="include\ML_BulletShell.h" />
+    <ClInclude Include="include\ML_Button.h" />
+    <ClInclude Include="include\ML_Cannon.h" />
+    <ClInclude Include="include\ML_CannonCaller.h" />
+    <ClInclude Include="include\ML_ComboBox.h" />
+    <ClInclude Include="include\ML_EnemyPlane.h" />
+    <ClInclude Include="include\ML_EnemyVehicle.h" />
+    <ClInclude Include="include\ML_EventPt.h" />
+    <ClInclude Include="include\ML_FixedObject.h" />
+    <ClInclude Include="include\ML_Game.h" />
+    <ClInclude Include="include\ML_GameParams.h" />
+    <ClInclude Include="include\ML_GamePlay.h" />
+    <ClInclude Include="include\ML_Global.h" />
+    <ClInclude Include="include\ML_Helicopter.h" />
+    <ClInclude Include="include\ML_Interface.h" />
+    <ClInclude Include="include\ML_KeyBox.h" />
+    <ClInclude Include="include\ML_Language.h" />
+    <ClInclude Include="include\ML_ListBox.h" />
+    <ClInclude Include="include\ML_LogicWorld.h" />
+    <ClInclude Include="include\ML_MainFrame.h" />
+    <ClInclude Include="include\ML_ManagerDef.h" />
+    <ClInclude Include="include\ML_ManAI.h" />
+    <ClInclude Include="include\ML_ManBase.h" />
+    <ClInclude Include="include\ML_ManBullet.h" />
+    <ClInclude Include="include\ML_ManImage.h" />
+    <ClInclude Include="include\ML_ManMessage.h" />
+    <ClInclude Include="include\ML_ManObject.h" />
+    <ClInclude Include="include\ML_ManPlayer.h" />
+    <ClInclude Include="include\ML_ManRoute.h" />
+    <ClInclude Include="include\ML_MessageBox.h" />
+    <ClInclude Include="include\ML_Mission.h" />
+    <ClInclude Include="include\ML_ModelUnit.h" />
+    <ClInclude Include="include\ML_MsgDef.h" />
+    <ClInclude Include="include\ML_Player.h" />
+    <ClInclude Include="include\ML_Resources.h" />
+    <ClInclude Include="include\ML_Route.h" />
+    <ClInclude Include="include\ML_Scene.h" />
+    <ClInclude Include="include\ML_TransKeyboard.h" />
+    <ClInclude Include="include\ML_TransPlayerKeyboard.h" />
+    <ClInclude Include="include\ML_TransPlayerMouse.h" />
+    <ClInclude Include="include\ML_Unit.h" />
+    <ClInclude Include="include\ML_UnitDef.h" />
+    <ClInclude Include="include\ML_VSSetScene.h" />
+    <ClInclude Include="include\ML_Weapon.h" />
+    <ClInclude Include="include\ML_WeaponMachine.h" />
+    <ClInclude Include="include\ML_WeaponMortar.h" />
+    <ClInclude Include="include\ML_WeaponPistol.h" />
+    <ClInclude Include="include\ML_WeaponRifle.h" />
+    <ClInclude Include="include\ML_WeaponRPG.h" />
+    <ClInclude Include="include\ML_WndConsole.h" />
+    <ClInclude Include="include\ML_WndCredits.h" />
+    <ClInclude Include="include\ML_WndESCPopup.h" />
+    <ClInclude Include="include\ML_WndFailure.h" />
+    <ClInclude Include="include\ML_WndFinalWin.h" />
+    <ClInclude Include="include\ML_WndHelp.h" />
+    <ClInclude Include="include\ML_WndKeySetting.h" />
+    <ClInclude Include="include\ML_WndLoadGame.h" />
+    <ClInclude Include="include\ML_WndLoading.h" />
+    <ClInclude Include="include\ML_WndMainMenu.h" />
+    <ClInclude Include="include\ML_WndManager.h" />
+    <ClInclude Include="include\ML_WndPlayHelp.h" />
+    <ClInclude Include="include\ML_WndScore.h" />
+    <ClInclude Include="include\ML_WndScroll.h" />
+    <ClInclude Include="include\ML_WndSetting.h" />
+    <ClInclude Include="include\ML_WndSysSetting.h" />
+    <ClInclude Include="include\ML_WndUnitHelp.h" />
+    <ClInclude Include="include\ML_WndVictory.h" />
+    <ClInclude Include="include\ML_WndVideo.h" />
+    <ClInclude Include="include\ML_World.h" />
+    <ClInclude Include="res\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\Malah.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\src\ML_ActorSet.cpp" />
+    <ClCompile Include="..\Common\src\ML_AISet.cpp" />
+    <ClCompile Include="..\Common\src\ML_EditorJoint.cpp" />
+    <ClCompile Include="..\Common\src\ML_EnvSchemeSet.cpp" />
+    <ClCompile Include="..\Common\src\ML_EnvSet.cpp" />
+    <ClCompile Include="..\Common\src\ML_EventPtData.cpp" />
+    <ClCompile Include="..\Common\src\ML_FixedObjData.cpp" />
+    <ClCompile Include="..\Common\src\ML_GeneralSet.cpp" />
+    <ClCompile Include="..\Common\src\ML_LevelFiles.cpp" />
+    <ClCompile Include="..\Common\src\ML_MapData.cpp" />
+    <ClCompile Include="..\Common\src\ML_MissionData.cpp" />
+    <ClCompile Include="..\Common\src\ML_RouteData.cpp" />
+    <ClCompile Include="..\Common\src\ML_SkySet.cpp" />
+    <ClCompile Include="..\Common\src\ML_Strings.cpp" />
+    <ClCompile Include="..\Common\src\ML_Utility.cpp" />
+    <ClCompile Include="src\Malah.cpp" />
+    <ClCompile Include="src\ML_AIUnit.cpp" />
+    <ClCompile Include="src\ML_AIUnitAct.cpp" />
+    <ClCompile Include="src\ML_AIUnitEvent.cpp" />
+    <ClCompile Include="src\ML_Attacker.cpp" />
+    <ClCompile Include="src\ML_AttackerCaller.cpp" />
+    <ClCompile Include="src\ML_Bullet.cpp" />
+    <ClCompile Include="src\ML_BulletShell.cpp" />
+    <ClCompile Include="src\ML_Button.cpp" />
+    <ClCompile Include="src\ML_Cannon.cpp" />
+    <ClCompile Include="src\ML_CannonCaller.cpp" />
+    <ClCompile Include="src\ML_ComboBox.cpp" />
+    <ClCompile Include="src\ML_EnemyPlane.cpp" />
+    <ClCompile Include="src\ML_EnemyVehicle.cpp" />
+    <ClCompile Include="src\ML_EventPt.cpp" />
+    <ClCompile Include="src\ML_FixedObject.cpp" />
+    <ClCompile Include="src\ML_Game.cpp" />
+    <ClCompile Include="src\ML_GameParams.cpp" />
+    <ClCompile Include="src\ML_GamePlay.cpp" />
+    <ClCompile Include="src\ML_GamePlaySwitch.cpp" />
+    <ClCompile Include="src\ML_Global.cpp" />
+    <ClCompile Include="src\ML_Helicopter.cpp" />
+    <ClCompile Include="src\ML_KeyBox.cpp" />
+    <ClCompile Include="src\ML_ListBox.cpp" />
+    <ClCompile Include="src\ML_LogicWorld.cpp" />
+    <ClCompile Include="src\ML_MainFrame.cpp" />
+    <ClCompile Include="src\ML_ManAI.cpp" />
+    <ClCompile Include="src\ML_ManBullet.cpp" />
+    <ClCompile Include="src\ML_ManImage.cpp" />
+    <ClCompile Include="src\ML_ManMessage.cpp" />
+    <ClCompile Include="src\ML_ManObject.cpp" />
+    <ClCompile Include="src\ML_ManPlayer.cpp" />
+    <ClCompile Include="src\ML_ManRoute.cpp" />
+    <ClCompile Include="src\ML_MessageBox.cpp" />
+    <ClCompile Include="src\ML_Mission.cpp" />
+    <ClCompile Include="src\ML_ModelUnit.cpp" />
+    <ClCompile Include="src\ML_Player.cpp" />
+    <ClCompile Include="src\ML_Resources.cpp" />
+    <ClCompile Include="src\ML_Route.cpp" />
+    <ClCompile Include="src\ML_Scene.cpp" />
+    <ClCompile Include="src\ML_TransKeyboard.cpp" />
+    <ClCompile Include="src\ML_TransPlayerKeyboard.cpp" />
+    <ClCompile Include="src\ML_TransPlayerMouse.cpp" />
+    <ClCompile Include="src\ML_Unit.cpp" />
+    <ClCompile Include="src\ML_VSSetScene.cpp" />
+    <ClCompile Include="src\ML_Weapon.cpp" />
+    <ClCompile Include="src\ML_WeaponMachine.cpp" />
+    <ClCompile Include="src\ML_WeaponMortar.cpp" />
+    <ClCompile Include="src\ML_WeaponPistol.cpp" />
+    <ClCompile Include="src\ML_WeaponRifle.cpp" />
+    <ClCompile Include="src\ML_WeaponRPG.cpp" />
+    <ClCompile Include="src\ML_WndConsole.cpp" />
+    <ClCompile Include="src\ML_WndCredits.cpp" />
+    <ClCompile Include="src\ML_WndESCPopup.cpp" />
+    <ClCompile Include="src\ML_WndFailure.cpp" />
+    <ClCompile Include="src\ML_WndFinalWin.cpp" />
+    <ClCompile Include="src\ML_WndHelp.cpp" />
+    <ClCompile Include="src\ML_WndKeySetting.cpp" />
+    <ClCompile Include="src\ML_WndLoadGame.cpp" />
+    <ClCompile Include="src\ML_WndLoading.cpp" />
+    <ClCompile Include="src\ML_WndMainMenu.cpp" />
+    <ClCompile Include="src\ML_WndManager.cpp" />
+    <ClCompile Include="src\ML_WndPlayHelp.cpp" />
+    <ClCompile Include="src\ML_WndScore.cpp" />
+    <ClCompile Include="src\ML_WndScroll.cpp" />
+    <ClCompile Include="src\ML_WndSetting.cpp" />
+    <ClCompile Include="src\ML_WndSysSetting.cpp" />
+    <ClCompile Include="src\ML_WndUnitHelp.cpp" />
+    <ClCompile Include="src\ML_WndVictory.cpp" />
+    <ClCompile Include="src\ML_WndVideo.cpp" />
+    <ClCompile Include="src\ML_World.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

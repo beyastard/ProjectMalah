@@ -216,7 +216,7 @@ public:
     }
 
 private:
-    BOOL ReadTheFile(LPCTSTR lpszFileName);
+    BOOL CAsyncFilter::ReadTheFile(LPCTSTR lpszFileName);
 
 private:
     LPWSTR     m_pFileName;

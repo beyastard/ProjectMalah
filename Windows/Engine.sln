@@ -1,25 +1,32 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34601.278
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Angelica3D", "..\Engine\Angelica3D\Angelica3D.vcxproj", "{FD8E681E-67E3-4CF4-8E5B-8D1F106BA163}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Angelica3D", "..\Engine\Angelica3D\Angelica3D.vcxproj", "{8FD4C0B6-D42F-405C-8EAB-D5380D688384}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImmWrapper", "..\Engine\ImmWrapper\ImmWrapper.vcxproj", "{896BE8B6-E4D4-4E5C-ABCA-275882C9EE6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpg123lib", "..\Engine\mpg123lib\mpg123lib.vcxproj", "{98992D06-6CCA-4CAC-92AE-841C487B1948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD8E681E-67E3-4CF4-8E5B-8D1F106BA163}.Debug|x86.ActiveCfg = Debug|Win32
-		{FD8E681E-67E3-4CF4-8E5B-8D1F106BA163}.Debug|x86.Build.0 = Debug|Win32
-		{FD8E681E-67E3-4CF4-8E5B-8D1F106BA163}.Release|x86.ActiveCfg = Release|Win32
-		{FD8E681E-67E3-4CF4-8E5B-8D1F106BA163}.Release|x86.Build.0 = Release|Win32
+		{8FD4C0B6-D42F-405C-8EAB-D5380D688384}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8FD4C0B6-D42F-405C-8EAB-D5380D688384}.Debug|Win32.Build.0 = Debug|Win32
+		{8FD4C0B6-D42F-405C-8EAB-D5380D688384}.Release|Win32.ActiveCfg = Release|Win32
+		{8FD4C0B6-D42F-405C-8EAB-D5380D688384}.Release|Win32.Build.0 = Release|Win32
+		{896BE8B6-E4D4-4E5C-ABCA-275882C9EE6C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{896BE8B6-E4D4-4E5C-ABCA-275882C9EE6C}.Debug|Win32.Build.0 = Debug|Win32
+		{896BE8B6-E4D4-4E5C-ABCA-275882C9EE6C}.Release|Win32.ActiveCfg = Release|Win32
+		{896BE8B6-E4D4-4E5C-ABCA-275882C9EE6C}.Release|Win32.Build.0 = Release|Win32
+		{98992D06-6CCA-4CAC-92AE-841C487B1948}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98992D06-6CCA-4CAC-92AE-841C487B1948}.Debug|Win32.Build.0 = Debug|Win32
+		{98992D06-6CCA-4CAC-92AE-841C487B1948}.Release|Win32.ActiveCfg = Release|Win32
+		{98992D06-6CCA-4CAC-92AE-841C487B1948}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AE2FD38D-AA41-471C-B413-2D44946269D5}
 	EndGlobalSection
 EndGlobal
