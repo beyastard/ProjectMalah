@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceKeyboard.cpp
-// Creator: Wei Hua (Îº»ª)
-// ¼üÅÌÉè±¸
+// Creator: Wei Hua (é­å)
+// é”®ç›˜è®¾å¤‡
 
 #include "ADeviceKeyboard.h"
 #include "APlatform.h"
@@ -22,8 +22,8 @@ private:
 	char	m_szKeys[2][ADEVICEKEYBOARD_MAX_KEYS];
 	int		m_nCharNum[2];
 	int		m_nKeyNum[2];
-	int		m_nGroupNow;								// ±¾´Î¸üĞÂ×´Ì¬×éµÄË÷Òı
-	int		m_nGroupPrev;								// ÉÏ´Î×´Ì¬×éµÄË÷Òı
+	int		m_nGroupNow;								// æœ¬æ¬¡æ›´æ–°çŠ¶æ€ç»„çš„ç´¢å¼•
+	int		m_nGroupPrev;								// ä¸Šæ¬¡çŠ¶æ€ç»„çš„ç´¢å¼•
 private:
 	void	ClearChars();
 	bool	AddToChars(unsigned int nChar);
@@ -37,15 +37,15 @@ public:
 	//
 	virtual bool	UpdateIn();
 	virtual bool	UpdateOut();
-	// ·µ»ØÖ¸¶¨ĞéÄâ¼üµÄ°´ÏÂ×´Ì¬
+	// è¿”å›æŒ‡å®šè™šæ‹Ÿé”®çš„æŒ‰ä¸‹çŠ¶æ€
 	virtual bool	VK_FirstPress(int nVK);
 	virtual bool	VK_LastPress(int nVK);
 	virtual bool	VK_Pressing(int nVK);
-	// »ñµÃWM_CHARµÄ¿É¼û×Ö´®(·µ»Ø×Ö´®³¤¶È)
+	// è·å¾—WM_CHARçš„å¯è§å­—ä¸²(è¿”å›å­—ä¸²é•¿åº¦)
 	virtual int		GetChars(char *pszChars, int nSize);
-	// »ñµÃWM_KEYDOWNµÄ¹¦ÄÜ¼ü×Ö´®(·µ»Ø×Ö´®³¤¶È)
+	// è·å¾—WM_KEYDOWNçš„åŠŸèƒ½é”®å­—ä¸²(è¿”å›å­—ä¸²é•¿åº¦)
 	virtual int		GetKeys(char *pszChars, int nSize);
-	// ±ÈÈç´¦ÀíWM_CHARÏûÏ¢
+	// æ¯”å¦‚å¤„ç†WM_CHARæ¶ˆæ¯
 	virtual bool	FilterWinMsg(void *pWinMsg);
 };
 ADeviceKeyboard	* NewADeviceKeyboard()
@@ -96,20 +96,20 @@ bool	ADeviceKeyboard_Internal::AddToChars(unsigned int nChar)
 				AddToKeys(nChar);
 			break;
 		}
-		// ÆäËûµÄ¿ÉÄÜ°üÀ¨
+		// å…¶ä»–çš„å¯èƒ½åŒ…æ‹¬
 		// case	0x0D:				// /n
 		// case	0x0A:				// /r
 		// case	0x1B:				// ESC
 		// case	0x09:				// TAB
 		// case	0x08:				// BACKSPACE
-		// ¶¼ÊÇÕâ¸ö·¶Î§µÄ
+		// éƒ½æ˜¯è¿™ä¸ªèŒƒå›´çš„
 		return	true;
 	}
-	// »¹ÓĞÒ»Ğ©²»ÄÜ×÷Îª×Ö·ûÊäÈë
+	// è¿˜æœ‰ä¸€äº›ä¸èƒ½ä½œä¸ºå­—ç¬¦è¾“å…¥
 	switch(nChar)
 	{
-		case	'`':				// ÓÃÓÚ¿ª¹ØconsoleµÄ
-		case	'~':				// ÓÃÓÚ¿ª¹ØconsoleµÄ
+		case	'`':				// ç”¨äºå¼€å…³consoleçš„
+		case	'~':				// ç”¨äºå¼€å…³consoleçš„
 			return	true;
 		break;
 	}
@@ -143,13 +143,13 @@ bool	ADeviceKeyboard_Internal::AddToKeys(unsigned int nKey)
 		case	VK_RETURN:
 		case	VK_PRIOR:			// page up
 		case	VK_NEXT:			// page down
-		case	VK_DELETE:			// É¾³ıºóÒ»¸ö
-		case	VK_BACK:			// É¾³ıÇ°Ò»¸ö
+		case	VK_DELETE:			// åˆ é™¤åä¸€ä¸ª
+		case	VK_BACK:			// åˆ é™¤å‰ä¸€ä¸ª
 		case	MYVK_UNDO:
 		case	MYVK_REDO:
 		break;
 		default:
-		return	true;				// Ê£ÏÂµÄ²»ÓÃ¿¼ÂÇ
+		return	true;				// å‰©ä¸‹çš„ä¸ç”¨è€ƒè™‘
 	}
 
 	m_szKeys[m_nGroupNow][idx]		= nKey;
@@ -161,7 +161,7 @@ bool	ADeviceKeyboard_Internal::AddToKeys(unsigned int nKey)
 bool	ADeviceKeyboard_Internal::RecordVKeyState()
 {
 	int	i;
-	// VK == 0 Ã»ÓĞÒâÒå
+	// VK == 0 æ²¡æœ‰æ„ä¹‰
 	for( i=1;i<ADEVICEKEYBOARD_NUM_VKEYS;i++ )
 	{
 		m_bVKeyState[m_nGroupNow][i] = PRESSING(i);

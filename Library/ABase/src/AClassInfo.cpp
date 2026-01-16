@@ -1,9 +1,9 @@
 /*
  * FILE: AClassInfo.cpp
  *
- * DESCRIPTION: ʵ��AClassInfo��ķ���
+ * DESCRIPTION: 实现AClassInfo类的方法
  *
- * CREATED BY: ����ӯ, 2002/8/7
+ * CREATED BY: 杨智盈, 2002/8/7
  *
  * HISTORY:
  *

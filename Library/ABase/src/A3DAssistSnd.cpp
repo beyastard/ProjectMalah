@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistSnd.cpp
-// Creator: Wei Hua (Îº»ª)
-// ÎªÒôĞ§×öµÄ»º´æ
+// Creator: Wei Hua (é­å)
+// ä¸ºéŸ³æ•ˆåšçš„ç¼“å­˜
 
 #include "A3DAssistSnd.h"
 #include "A3DAssistTools_Cmn.h"
@@ -10,7 +10,7 @@
 #include "ADebug.h"
 #include <am.h>
 
-// ¹«¹²º¯Êı
+// å…¬å…±å‡½æ•°
 bool	IsSndStopped(AMSoundBuffer *pAMSoundBuffer)
 {
 	pAMSoundBuffer->CheckEnd();
@@ -72,13 +72,13 @@ int		A3DAssist2DOSOP::CheckAndSetSnd(char *szSndFile)
 	nIdx	= SearchString(szSndFile);
 	if( nIdx<0 )
 	{
-		// Èç¹ûËùÓĞÉùÒô¶¼ÔÚ²¥·Å£¬¾ÍËãÁË
+		// å¦‚æœæ‰€æœ‰å£°éŸ³éƒ½åœ¨æ’­æ”¾ï¼Œå°±ç®—äº†
 		nIdx	= GetMEUU();
 		if( nIdx<0 )
 		{
 			return	-1;
 		}
-		// ÎªÁË±£ÏÕÏÈÒªÊÍ·ÅÒ»´Î
+		// ä¸ºäº†ä¿é™©å…ˆè¦é‡Šæ”¾ä¸€æ¬¡
 		ClrSnd(nIdx);
 		//
 		AMSoundBuffer	* pAMSoundBuffer;
@@ -144,7 +144,7 @@ bool	A3DAssist2DOSOP::LogicRun()
 	J_EXCEPTION_RECORD(0);
 	int		i;
 	AMSoundBuffer	*pAMSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )
@@ -152,7 +152,7 @@ bool	A3DAssist2DOSOP::LogicRun()
 			continue;
 		}
 		//if( StillInUse(i)
-		if( 1	// ²»µ÷ÓÃStillInUseÃâµÃÖĞ¶ÏÁË±ğµÄÉùÒô
+		if( 1	// ä¸è°ƒç”¨StillInUseå…å¾—ä¸­æ–­äº†åˆ«çš„å£°éŸ³
 		&&  m_pUnits[i].m_nProperty & AA_SND_PROPERTY_NEEDFADETICK )
 		{
 			pAMSoundBuffer	= m_ppAMSoundBuffer[i];
@@ -194,7 +194,7 @@ bool	A3DAssist2DOSOP::Play(char *szSndFile, bool bImmEffect, bool bLoop, bool bC
 		ADebug::Msg(0,"!!!!NULL buf when play:%s idx:%d"
 			, szSndFile
 			, nIdx);
-		// ´òÓ¡ËùÓĞÔªËØµÄÄÚÈİ
+		// æ‰“å°æ‰€æœ‰å…ƒç´ çš„å†…å®¹
 		int	i;
 		for(i=0;i<m_nTotal;i++)
 		{
@@ -211,8 +211,8 @@ bool	A3DAssist2DOSOP::Play(char *szSndFile, bool bImmEffect, bool bLoop, bool bC
 				, m_pUnits[i].m_nProperty
 				);
 		}
-		// ²»·µ»Ø£¬µÈ×Å³ö´í
-		// ÍòÒ»ÓĞ´í£¬¾ÍÌø¹ıÈ¥
+		// ä¸è¿”å›ï¼Œç­‰ç€å‡ºé”™
+		// ä¸‡ä¸€æœ‰é”™ï¼Œå°±è·³è¿‡å»
 		//return	false;
 	}
 	if( bImmEffect )
@@ -230,7 +230,7 @@ bool	A3DAssist2DOSOP::Play(char *szSndFile, bool bImmEffect, bool bLoop, bool bC
 	}
 	if( !m_bJustLoad )
 	{
-		// Èç¹ûÔÚÊ±¼ä·¶Î§ÄÚÔò×÷µ­Èë´¦Àí
+		// å¦‚æœåœ¨æ—¶é—´èŒƒå›´å†…åˆ™ä½œæ·¡å…¥å¤„ç†
 		if( m_nFadeInFinishTime > g_AA_nSystemTickcount
 		&&  bCanFade )
 		{
@@ -291,17 +291,17 @@ bool	A3DAssist2DOSOP::IsStopped(char *szSndFile)
 bool	A3DAssist2DOSOP::FadeIn(int ms)
 {
 	J_EXCEPTION_RECORD(0);
-	// ÉèÖÃÊ±¼ä
+	// è®¾ç½®æ—¶é—´
 	m_nFadeInFinishTime	= g_AA_nSystemTickcount + ms;
 	return	true;
 }
 bool	A3DAssist2DOSOP::FadeOut()
 {
 	J_EXCEPTION_RECORD(0);
-	// ±éÀúµ±Ç°ËùÓĞÕıÔÚ²¥·ÅµÄÉùÒô£¬Èç¹ûĞèÒªfade¾Ífadeout
+	// éå†å½“å‰æ‰€æœ‰æ­£åœ¨æ’­æ”¾çš„å£°éŸ³ï¼Œå¦‚æœéœ€è¦fadeå°±fadeout
 	int		i;
 	AMSoundBuffer	*pAMSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )
@@ -389,7 +389,7 @@ bool	A3DAssist2DSnd::LogicRun()
 {
 	int		i;
 	AMSoundBuffer	*pAMSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )
@@ -397,7 +397,7 @@ bool	A3DAssist2DSnd::LogicRun()
 			continue;
 		}
 		//if( StillInUse(i)
-		if( 1	// ²»µ÷ÓÃStillInUseÃâµÃÖĞ¶ÏÁË±ğµÄÉùÒô
+		if( 1	// ä¸è°ƒç”¨StillInUseå…å¾—ä¸­æ–­äº†åˆ«çš„å£°éŸ³
 		&&  m_pUnits[i].m_nProperty & AA_SND_PROPERTY_NEEDFADETICK )
 		{
 			pAMSoundBuffer	= m_ppAMSoundBuffer[i];
@@ -428,8 +428,8 @@ bool	A3DAssist2DSnd::Play(char *szSndFile, bool bImmEffect, bool bCanFade)
 	bval	= SearchAndAct(szSndFile, &nIdx, false);
 	if( !bval )
 	{
-		// ÖØĞÂ³õÊ¼»¯µ¥Ôª
-		// ÎªÁË±£ÏÕÏÈÒªÊÍ·ÅÒ»´Î
+		// é‡æ–°åˆå§‹åŒ–å•å…ƒ
+		// ä¸ºäº†ä¿é™©å…ˆè¦é‡Šæ”¾ä¸€æ¬¡
 		ClrSnd(nIdx);
 		//
 		bval	= m_pA3DEngine->GetAMSoundEngine()->GetSoundBufferMan()
@@ -461,7 +461,7 @@ bool	A3DAssist2DSnd::Play(char *szSndFile, bool bImmEffect, bool bCanFade)
 	}
 	if( !m_bJustLoad )
 	{
-		// Èç¹ûÔÚÊ±¼ä·¶Î§ÄÚÔò×÷µ­Èë´¦Àí
+		// å¦‚æœåœ¨æ—¶é—´èŒƒå›´å†…åˆ™ä½œæ·¡å…¥å¤„ç†
 		if( m_nFadeInFinishTime > g_AA_nSystemTickcount
 		&&  bCanFade )
 		{
@@ -478,16 +478,16 @@ bool	A3DAssist2DSnd::Play(char *szSndFile, bool bImmEffect, bool bCanFade)
 }
 bool	A3DAssist2DSnd::FadeIn(int ms)
 {
-	// ÉèÖÃÊ±¼ä
+	// è®¾ç½®æ—¶é—´
 	m_nFadeInFinishTime	= g_AA_nSystemTickcount + ms;
 	return	true;
 }
 bool	A3DAssist2DSnd::FadeOut()
 {
-	// ±éÀúµ±Ç°ËùÓĞÕıÔÚ²¥·ÅµÄÉùÒô£¬Èç¹ûĞèÒªfade¾Ífadeout
+	// éå†å½“å‰æ‰€æœ‰æ­£åœ¨æ’­æ”¾çš„å£°éŸ³ï¼Œå¦‚æœéœ€è¦fadeå°±fadeout
 	int		i;
 	AMSoundBuffer	*pAMSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )
@@ -576,7 +576,7 @@ bool	A3DAssist3DSnd::LogicRun()
 {
 	int		i;
 	AM3DSoundBuffer	*pAM3DSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )
@@ -584,7 +584,7 @@ bool	A3DAssist3DSnd::LogicRun()
 			continue;
 		}
 		//if( StillInUse(i)
-		if( 1	// ²»µ÷ÓÃStillInUseÃâµÃÖĞ¶ÏÁË±ğµÄÉùÒô
+		if( 1	// ä¸è°ƒç”¨StillInUseå…å¾—ä¸­æ–­äº†åˆ«çš„å£°éŸ³
 		&&  m_pUnits[i].m_nProperty & AA_SND_PROPERTY_NEEDFADETICK )
 		{
 			pAM3DSoundBuffer	= m_ppAM3DSoundBuffer[i];
@@ -615,8 +615,8 @@ bool	A3DAssist3DSnd::Play(char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, f
 	bval	= SearchAndAct(szSndFile, &nIdx, true);
 	if( !bval )
 	{
-		// ÖØĞÂ³õÊ¼»¯µ¥Ôª
-		// ÎªÁË±£ÏÕÏÈÒªÊÍ·ÅÒ»´Î
+		// é‡æ–°åˆå§‹åŒ–å•å…ƒ
+		// ä¸ºäº†ä¿é™©å…ˆè¦é‡Šæ”¾ä¸€æ¬¡
 		ClrSnd(nIdx);
 		//
 		bval	= m_pA3DEngine->GetAMSoundEngine()->Get3DSoundBufferMan()
@@ -653,7 +653,7 @@ bool	A3DAssist3DSnd::Play(char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, f
 	{
 		m_pUnits[nIdx].m_nProperty |= AA_SND_PROPERTY_CANFADE;
 	}
-	// Èç¹ûÔÚÊ±¼ä·¶Î§ÄÚÔò×÷µ­Èë´¦Àí
+	// å¦‚æœåœ¨æ—¶é—´èŒƒå›´å†…åˆ™ä½œæ·¡å…¥å¤„ç†
 	if( !m_bJustLoad )
 	{
 		if( m_nFadeInFinishTime > g_AA_nSystemTickcount
@@ -672,16 +672,16 @@ bool	A3DAssist3DSnd::Play(char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, f
 }
 bool	A3DAssist3DSnd::FadeIn(int ms)
 {
-	// ÉèÖÃÊ±¼ä
+	// è®¾ç½®æ—¶é—´
 	m_nFadeInFinishTime	= g_AA_nSystemTickcount + ms;
 	return	true;
 }
 bool	A3DAssist3DSnd::FadeOut()
 {
-	// ±éÀúµ±Ç°ËùÓĞÕıÔÚ²¥·ÅµÄÉùÒô£¬Èç¹ûĞèÒªfade¾Ífadeout
+	// éå†å½“å‰æ‰€æœ‰æ­£åœ¨æ’­æ”¾çš„å£°éŸ³ï¼Œå¦‚æœéœ€è¦fadeå°±fadeout
 	int		i;
 	AM3DSoundBuffer	* pAM3DSoundBuffer;
-	// ¸øËùÓĞĞèÒªfadetickµÄ·şÎñ
+	// ç»™æ‰€æœ‰éœ€è¦fadetickçš„æœåŠ¡
 	for(i=0;i<m_nTotal;i++)
 	{
 		if( !m_pUnits[i].m_bTaken )

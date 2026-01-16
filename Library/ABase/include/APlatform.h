@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: APlatform.h
-// Creator: Wei Hua (魏华)
-// 系统相关的头文件
+// Creator: Wei Hua (榄忓崕)
+// 绯荤粺鐩稿叧鐨勫ご鏂囦欢
 
 #ifndef __APLATFORM_H__
 #define __APLATFORM_H__

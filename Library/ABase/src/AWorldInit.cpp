@@ -1,9 +1,9 @@
 #include "AWorldInit.h"
 
 DEFINE_SETBEGIN(int, global_skytypes)
-//DEFINE_SETELEMENT(int, "盒状天空", ASkyInit::SKY_BOX)
-DEFINE_SETELEMENT(int, "球形天空", ASkyInit::SKY_SPHERE)
-//DEFINE_SETELEMENT(int, "梯度天空", ASkyInit::SKY_GRADIENT)
+//DEFINE_SETELEMENT(int, "鐩掔姸澶╃┖", ASkyInit::SKY_BOX)
+DEFINE_SETELEMENT(int, "鐞冨舰澶╃┖", ASkyInit::SKY_SPHERE)
+//DEFINE_SETELEMENT(int, "姊害澶╃┖", ASkyInit::SKY_GRADIENT)
 DEFINE_SETEND(int)
 
 IMPLEMENT_ASERIAL(ASceneInit,AData,0x0100)

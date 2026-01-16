@@ -35,7 +35,7 @@ bool AObjectIDListMan::Load(AArchive &ar, AGame *__pAGame)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 	int nNum = 0;
 	if(!ar.Read(&nNum,sizeof(nNum)))
 	{
@@ -44,7 +44,7 @@ bool AObjectIDListMan::Load(AArchive &ar, AGame *__pAGame)
 	}
 	for(int i=0;i<nNum;i++)
 	{
-		// ´´½¨ĞÂ¶ÔÏó
+		// åˆ›å»ºæ–°å¯¹è±¡
 		AIDObject  *ptr = (AIDObject*)ar.CreateObject();
 		if(OwnerLoad(ptr,ar,__pAGame)==false)
 		{
@@ -117,7 +117,7 @@ bool AObjectIDListMan::LogicRun(float __TimeSpan)
 		return true;
 	AListPosition posThis;
 	AListPosition pos = m_list.GetHeadPosition();
-	BEGIN_STAT("¹ÜÀíÆ÷µÄLogicRunºÄÊ±");
+	BEGIN_STAT("ç®¡ç†å™¨çš„LogicRunè€—æ—¶");
 	while(pos)
 	{
 		posThis = pos;

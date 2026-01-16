@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistA3dString.h
-// Creator: Wei Hua (魏华)
-// 为A3dString做的缓存
+// Creator: Wei Hua (榄忓崕)
+// 涓篈3dString鍋氱殑缂撳瓨
 
 #ifndef	__A3DASSISTA3DSTRING_H__
 #define	__A3DASSISTA3DSTRING_H__

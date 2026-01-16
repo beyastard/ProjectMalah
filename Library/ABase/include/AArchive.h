@@ -1,9 +1,9 @@
 /*
  * FILE: AArchive.h
  *
- * DESCRIPTION: ´®ÐÐ»¯¶¯×÷ÀàAArchive
+ * DESCRIPTION: ä¸²è¡ŒåŒ–åŠ¨ä½œç±»AArchive
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *

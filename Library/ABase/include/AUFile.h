@@ -1,11 +1,11 @@
 /*
  * FILE: AUFile.h
  *
- * DESCRIPTION: ¶¨Òå´®ĞĞ»¯ÎÄ¼şÊı¾İ½Ó¿ÚAUFile
+ * DESCRIPTION: å®šä¹‰ä¸²è¡ŒåŒ–æ–‡ä»¶æ•°æ®æ¥å£AUFile
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
- * HISTORY: By Jiangli. ÊµÏÖÁËÒ»Ğ©½Ó¿Ú£º
+ * HISTORY: By Jiangli. å®ç°äº†ä¸€äº›æ¥å£ï¼š
  *			Write, Read, Create, Close, SetPointer, GetSize.
  *
  * Copyright (c) 2001~2008 Epie-Game, All Rights Reserved.
@@ -26,12 +26,12 @@ public:
 	AUFile();
 	virtual ~AUFile();
 
-	virtual bool Write(const void * buff, int size);	// Ğ´Êı¾İ
+	virtual bool Write(const void * buff, int size);	// å†™æ•°æ®
 
 	// [out] buff : 
 	// [in/out] size : in, the size of buff.
 	//                 out, the size of readed.
-	virtual bool Read(void * buff, int size);			// ¶ÁÊı¾İ
+	virtual bool Read(void * buff, int size);			// è¯»æ•°æ®
 
 	// [in] nDistanceToMove : The distance to move the file pointer.
 	//          A positive value for lDistanceToMove moves the file

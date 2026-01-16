@@ -14,8 +14,8 @@
 #ifndef	__ADEBUG_MEMLEAK_H__
 #define __ADEBUG_MEMLEAK_H__
 
-// �������Ҫ�����ڴ�й©�ļ�⣬��ô�ͽ����#define ADEBUG_NO_LEAK_TEST��
-// ע�͡�ͬʱ���еĿ�������±����������ʹ�á�
+// 如果不需要进行内存泄漏的检测，那么就解除对#define ADEBUG_NO_LEAK_TEST的
+// 注释。同时所有的库必须重新编译才能正常使用。
 
 #ifndef _DEBUG
 #define	ADEBUG_NO_LEAK_TEST
@@ -23,9 +23,9 @@
 
 #ifndef	ADEBUG_NO_LEAK_TEST
 
-// ������Releaseģʽ����ʽ���ӱ�Ҫ�Ŀ��ļ���
-// ������Releaseģʽ�»����_CrtDumpMemoryLeaksδ����Ĵ�����Ϣ��
-// �����ǲ��ò�ͬ�����п����õ�ʱ����Ҫ���ӵĿ��ļ���
+// 必须在Release模式下显式链接必要的库文件，
+// 否则在Release模式下会出现_CrtDumpMemoryLeaks未定义的错误信息。
+// 以下是采用不同的运行库设置的时候需要链接的库文件。
 #ifdef	_MT
 
 #ifdef	_DLL
@@ -48,8 +48,8 @@
 #pragma comment(linker, "/NODEFAULTLIB:LIBC.LIB")
 #pragma comment(linker, "/NODEFAULTLIB:MSVCRT.LIB")
 
-// ���������ADEBUG_NO_LEAK_TEST����ô�Ͳ�������ڴ�й©�ļ�⡣
-// ���û�ж��壬��ô��ʹ��Releaseģʽ��Ҳ�����ڴ�й©���⡣
+// 如果定义了ADEBUG_NO_LEAK_TEST，那么就不会进行内存泄漏的监测。
+// 如果没有定义，那么即使在Release模式下也会检查内存泄漏问题。
 #ifdef	ADEBUG_NO_LEAK_TEST
 
 #define ADEBUG_NEW new

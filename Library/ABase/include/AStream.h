@@ -1,9 +1,9 @@
 /*
  * FILE: AStream.h
  *
- * DESCRIPTION: ¶¨Òå´®ĞĞ»¯ÎÄ¼şÊı¾İ½Ó¿ÚAStream
+ * DESCRIPTION: å®šä¹‰ä¸²è¡ŒåŒ–æ–‡ä»¶æ•°æ®æ¥å£AStream
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -16,8 +16,8 @@
 class AStream  
 {
 public:
-	virtual bool Write(const void * buff, int size) = 0;	// Ğ´Êı¾İ
-	virtual bool Read(void * buff, int size) = 0;			// ¶ÁÊı¾İ
+	virtual bool Write(const void * buff, int size) = 0;	// å†™æ•°æ®
+	virtual bool Read(void * buff, int size) = 0;			// è¯»æ•°æ®
 };
 
 #endif

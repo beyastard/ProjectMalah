@@ -24,13 +24,13 @@ void AStat::BeginStatItem(TU_S * pItem)
 		pItem->minTime		= 0;
 	}
 	pItem->preTime	= timeGetTime();
-	//ѹջ
+	//压栈
 	m_itemStack.AddTail(pItem);
 }
 
 void AStat::EndStatItem()
 {
-	//��ջ
+	//出栈
 	AListPosition pos = m_itemStack.GetTailPosition();
 	TU_S * pItem = m_itemStack.GetAt(pos);
 	m_itemStack.RemoveAt(pos);

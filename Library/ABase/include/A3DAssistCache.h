@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistCache.h
-// Creator: Wei Hua (Îº»ª)
-// Í¨ÓÃ»º´æ
+// Creator: Wei Hua (é­å)
+// é€šç”¨ç¼“å­˜
 
 #ifndef	__A3DASSISTCACHE_H__
 #define	__A3DASSISTCACHE_H__
@@ -15,11 +15,11 @@
 class	A3DASSISTCACHEUNIT
 {
 public:
-	bool	m_bTaken;						// ¸Ãµ¥ÔªÒÑ±»Õ¼ÓÃ
-	int		m_nUseCount;					// ×Ü¹²Ê¹ÓÃµÄ´ÎÊı
-	int		m_nLastUsedTick;				// ×·ºóÒ»´ÎÊ¹ÓÃµÄÊ±¿Ì
-	void	*m_pExtra;						// ¸½¼ÓÊı¾İ
-	int		m_nProperty;					// ÊôĞÔÊı¾İ
+	bool	m_bTaken;						// è¯¥å•å…ƒå·²è¢«å ç”¨
+	int		m_nUseCount;					// æ€»å…±ä½¿ç”¨çš„æ¬¡æ•°
+	int		m_nLastUsedTick;				// è¿½åä¸€æ¬¡ä½¿ç”¨çš„æ—¶åˆ»
+	void	*m_pExtra;						// é™„åŠ æ•°æ®
+	int		m_nProperty;					// å±æ€§æ•°æ®
 	inline int		Cmp(A3DASSISTCACHEUNIT &Unit)
 	{
 		int	rst;
@@ -38,9 +38,9 @@ protected:
 	int		m_nTotal;
 	A3DASSISTCACHEUNIT	*m_pUnits;
 protected:
-	virtual bool	StillInUse(int nIdx)		{return false;}	// ÓÉ×ÓÀàÊµÏÖ±íÊ¾Õâ¸öµ¥ÔªÊÇ·ñ»¹ÔÚÊ¹ÓÃÖĞ
+	virtual bool	StillInUse(int nIdx)		{return false;}	// ç”±å­ç±»å®ç°è¡¨ç¤ºè¿™ä¸ªå•å…ƒæ˜¯å¦è¿˜åœ¨ä½¿ç”¨ä¸­
 public:
-	static unsigned int	m_nCurTick;								// ¿ÉÒÔÓÉÍâ½çÌîĞ´
+	static unsigned int	m_nCurTick;								// å¯ä»¥ç”±å¤–ç•Œå¡«å†™
 public:
 	A3DAssistCache();
 	virtual	~A3DAssistCache();
@@ -50,11 +50,11 @@ public:
 	void	SetLastUsedTick(int nIdx, int nTick);
 	void	Reset(int nIdx);
 	void	ResetAll();
-	int		GetMEUU(bool bForce = true);	// »ñµÃÒ»¸ö×î²»³¤Ê¹ÓÃµÄµ¥ÔªË÷Òı(Most Earlist Unused Unit)
-											// »òÕß¿ÕÏĞÃ»ÓĞ±»Ê¹ÓÃµÄµ¥ÔªË÷Òı
+	int		GetMEUU(bool bForce = true);	// è·å¾—ä¸€ä¸ªæœ€ä¸é•¿ä½¿ç”¨çš„å•å…ƒç´¢å¼•(Most Earlist Unused Unit)
+											// æˆ–è€…ç©ºé—²æ²¡æœ‰è¢«ä½¿ç”¨çš„å•å…ƒç´¢å¼•
 };
 
-// ¶Ô×Ö·û´®Ïà¹Ø×ÊÔ´µÄ»º³å
+// å¯¹å­—ç¬¦ä¸²ç›¸å…³èµ„æºçš„ç¼“å†²
 ////////////////////////////////////////////////////////////////////
 // A3DAssistCache_StrNoDup
 ////////////////////////////////////////////////////////////////////
@@ -122,7 +122,7 @@ public:
 		m_pTab->clear();
 		A3DAssistCache::ResetAll();
 	}
-	// ·µ»ØpszStr¶ÔÓ¦µÄË÷Òı£¬Èç¹ûÃ»ÓĞ·µ»Ø-1¡£È»ºóÉÏ²ãµ÷ÓÃGetMEUUµÃµ½Ò»¸ö¿ÉÒÔÊ¹ÓÃµÄË÷ÒıºÅ
+	// è¿”å›pszStrå¯¹åº”çš„ç´¢å¼•ï¼Œå¦‚æœæ²¡æœ‰è¿”å›-1ã€‚ç„¶åä¸Šå±‚è°ƒç”¨GetMEUUå¾—åˆ°ä¸€ä¸ªå¯ä»¥ä½¿ç”¨çš„ç´¢å¼•å·
 	int		SearchString(char *pszStr)
 	{
 		m_srst	= m_pTab->get(pszStr);
@@ -132,7 +132,7 @@ public:
 		}
 		return	-1;
 	}
-	// Èç¹ûÔ­À´nIdxÖĞÓĞ¶«Î÷¾ÍÒªÇå³ıËüÏà¹ØµÄËùÓĞ¶«Î÷(Èç£ºhashÖĞµÄ×Ö´®)
+	// å¦‚æœåŸæ¥nIdxä¸­æœ‰ä¸œè¥¿å°±è¦æ¸…é™¤å®ƒç›¸å…³çš„æ‰€æœ‰ä¸œè¥¿(å¦‚ï¼šhashä¸­çš„å­—ä¸²)
 	int		RegisterString(int nIdx, char *pszStr)
 	{
 		if( nIdx<0 )
@@ -157,7 +157,7 @@ public:
 		return	0;
 	}
 };
-// ÆÕÍ¨×Ö´®
+// æ™®é€šå­—ä¸²
 struct HASHSTR
 {
 	typedef const char * LPCSTR;
@@ -170,7 +170,7 @@ struct HASHSTR
 	{ return (!strcmp(_reference, rhs)); }
 };
 typedef	abase::hashtab<int, HASHSTR, abase::_hash_function>	AAC_StrTab;
-// º¬¶ş½øÖÆÊı¾İµÄ×Ö´®
+// å«äºŒè¿›åˆ¶æ•°æ®çš„å­—ä¸²
 struct HASHBINSTR
 {
 	typedef const char * LPCSTR;
@@ -194,7 +194,7 @@ struct _binstr_hash_function
 	}
 };
 typedef	abase::hashtab<int, HASHBINSTR, _binstr_hash_function>	AAC_BinStrTab;
-// ÕæÕıµÄÓ¦ÓÃÀà
+// çœŸæ­£çš„åº”ç”¨ç±»
 typedef		A3DAssistCache_StrNoDup<AAC_StrTab, AStringArray>		A3DAssistCache_String;
 typedef		A3DAssistCache_StrNoDup<AAC_BinStrTab, ABinStringArray>	A3DAssistCache_BinString;
 
@@ -206,11 +206,11 @@ class	A3DAssistCache_StrDup		: public A3DAssistCache
 protected:
 	AStringArray	m_asa;
 protected:
-	// ·µ»Øtrue±íÊ¾ÒÑ¾­ÓĞÁË±»³õÊ¼»¯µÄµ¥Î»£¬*pnMEUUÖĞ·µ»ØµÄÊÇµ¥Î»µÄĞòºÅ
-	// ·µ»Øfalse±íÊ¾ĞèÒªÀûÓÃ*pnMEUUÖØĞÂ³õÊ¼»¯µ¥Î»ÔÙÊ¹ÓÃ
-	bool	SearchAndAct(char *szStr, int *pnMEUU, bool bFindOld);	// ÀïÃæµ÷ÓÃStillInUse¾¡¿ÉÄÜÕÒµ½Ò»¸ö²»ÓÃÖØĞÂ³õÊ¼»¯µÄµ¥Î»¶ÔÏó
+	// è¿”å›trueè¡¨ç¤ºå·²ç»æœ‰äº†è¢«åˆå§‹åŒ–çš„å•ä½ï¼Œ*pnMEUUä¸­è¿”å›çš„æ˜¯å•ä½çš„åºå·
+	// è¿”å›falseè¡¨ç¤ºéœ€è¦åˆ©ç”¨*pnMEUUé‡æ–°åˆå§‹åŒ–å•ä½å†ä½¿ç”¨
+	bool	SearchAndAct(char *szStr, int *pnMEUU, bool bFindOld);	// é‡Œé¢è°ƒç”¨StillInUseå°½å¯èƒ½æ‰¾åˆ°ä¸€ä¸ªä¸ç”¨é‡æ–°åˆå§‹åŒ–çš„å•ä½å¯¹è±¡
 	void	Reset(int nIdx);
-	// ¼´ËùÓĞ¶¼Ä¬ÈÏÎªÖ»ÒÀ¿¿MEUU¾ö¶¨Ê¹ÓÃË³Ğò
+	// å³æ‰€æœ‰éƒ½é»˜è®¤ä¸ºåªä¾é MEUUå†³å®šä½¿ç”¨é¡ºåº
 	virtual bool	StillInUse(int nIdx)		{return true;}
 public:
 	A3DAssistCache_StrDup();

@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ABinString.cpp
-// Creator: Wei Hua (魏华)
-// 头部包含总长度的字串
+// Creator: Wei Hua (榄忓崕)
+// 澶撮儴鍖呭惈鎬婚暱搴︾殑瀛椾覆
 
 #include "ABinString.h"
 #include <string.h>

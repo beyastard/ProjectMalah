@@ -1,9 +1,9 @@
 /*
  * FILE: AStat.h
  *
- * DESCRIPTION: ÓÎÏ·µÄÍ³¼ÆÀà
+ * DESCRIPTION: æ¸¸æˆçš„ç»Ÿè®¡ç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: ç‹è¿œæ˜, 2002/8/9
  *
  * HISTORY:
  *
@@ -23,7 +23,7 @@ struct TU_S
 public:
 	int			id;
 	bool		bReset;
-	unsigned long preTime;		//Ç°Ò»´ÎtimegettimeµÃµ½µÄÊ±¼ä£¬ÒòÎªnew±È½Ï·ÑÊ±£¬ËùÒÔÃ»ÓĞ¶¨ÒåÈëÕ»½á¹¹
+	unsigned long preTime;		//å‰ä¸€æ¬¡timegettimeå¾—åˆ°çš„æ—¶é—´ï¼Œå› ä¸ºnewæ¯”è¾ƒè´¹æ—¶ï¼Œæ‰€ä»¥æ²¡æœ‰å®šä¹‰å…¥æ ˆç»“æ„
 	unsigned long useTime;
 	unsigned long totalTime;
 	unsigned long maxTime;
@@ -36,7 +36,7 @@ public:
 class AStat : public AObjectIDMan
 {
 protected:
-	AListT<TU_S*>	m_itemStack;	//½Úµã¶ÑÕ»
+	AListT<TU_S*>	m_itemStack;	//èŠ‚ç‚¹å †æ ˆ
 public:
 	AStat();
 	virtual ~AStat();

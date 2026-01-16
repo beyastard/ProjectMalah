@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistSnd.h
-// Creator: Wei Hua (Îº»ª)
-// ÎªÒôĞ§×öµÄ»º´æ
+// Creator: Wei Hua (é­å)
+// ä¸ºéŸ³æ•ˆåšçš„ç¼“å­˜
 
 #ifndef	__A3DASSISTSND_H__
 #define	__A3DASSISTSND_H__
@@ -10,21 +10,21 @@
 #include "A3DAssistCache.h"
 #include <a3d.h>
 
-// ¶¨Òå
-#define	AA_SND_PROPERTY_CANFADE			0x01	// ¿ÉÒÔµ­Èëµ­³ö
-#define	AA_SND_PROPERTY_NEEDFADETICK	0x02	// ĞèÒªµ÷ÓÃtickµ­Èë
+// å®šä¹‰
+#define	AA_SND_PROPERTY_CANFADE			0x01	// å¯ä»¥æ·¡å…¥æ·¡å‡º
+#define	AA_SND_PROPERTY_NEEDFADETICK	0x02	// éœ€è¦è°ƒç”¨tickæ·¡å…¥
 
-// ¹«¹²º¯Êı
+// å…¬å…±å‡½æ•°
 bool	IsSndStopped(AMSoundBuffer *pAMSoundBuffer);
 
-// Ã¿¸öwavÖ»²¥Í¬Ê±Ò»¸ö(OneSoundOnePlay)
+// æ¯ä¸ªwavåªæ’­åŒæ—¶ä¸€ä¸ª(OneSoundOnePlay)
 class	A3DAssist2DOSOP	: public A3DAssistCache_String
 {
 protected:
-	bool			m_bJustLoad;				// ÊÇ·ñÖ»load²»²»·Å
+	bool			m_bJustLoad;				// æ˜¯å¦åªloadä¸ä¸æ”¾
 	AMSoundBuffer	**m_ppAMSoundBuffer;
 	A3DEngine		*m_pA3DEngine;
-	unsigned long	m_nFadeInFinishTime;		// Èç¹û´óÓÚÁãÔò±íÊ¾ÔÚ´ÎÊ±¿ÌÇ°²¥·ÅµÄËùÓĞĞèÒªfadeµÄÉùÒôfadein
+	unsigned long	m_nFadeInFinishTime;		// å¦‚æœå¤§äºé›¶åˆ™è¡¨ç¤ºåœ¨æ¬¡æ—¶åˆ»å‰æ’­æ”¾çš„æ‰€æœ‰éœ€è¦fadeçš„å£°éŸ³fadein
 protected:
 	bool	ClrSnd(int i);
 	AMSoundBuffer	*SearchSndBuf(char *szSndFile);
@@ -39,7 +39,7 @@ public:
 	~A3DAssist2DOSOP();
 	bool	Init(A3DEngine *pA3DEngine, int nTotal, int nStrLen);
 	bool	Release();
-	bool	LogicRun();							// Ìá¹©fadeµÈ¹¦ÄÜ
+	bool	LogicRun();							// æä¾›fadeç­‰åŠŸèƒ½
 	bool	ResetAll();
 	bool	Play(char *szSndFile, bool bImmEffect, bool bLoop, bool bCanFade);
 	bool	Stop(char *szSndFile);
@@ -49,14 +49,14 @@ public:
 	bool	FadeOut();
 };
 
-// wav²»ÖØÓÃ£¬Ö»ÏŞÖÆÍ¬Ê±´æÔÚµÄ¸öÊı
+// wavä¸é‡ç”¨ï¼Œåªé™åˆ¶åŒæ—¶å­˜åœ¨çš„ä¸ªæ•°
 class	A3DAssist2DSnd		: public A3DAssistCache_StrDup
 {
 protected:
-	bool			m_bJustLoad;				// ÊÇ·ñÖ»load²»²»·Å
+	bool			m_bJustLoad;				// æ˜¯å¦åªloadä¸ä¸æ”¾
 	AMSoundBuffer	**m_ppAMSoundBuffer;
 	A3DEngine		*m_pA3DEngine;
-	unsigned long	m_nFadeInFinishTime;		// Èç¹û´óÓÚÁãÔò±íÊ¾ÔÚ´ÎÊ±¿ÌÇ°²¥·ÅµÄËùÓĞĞèÒªfadeµÄÉùÒôfadein
+	unsigned long	m_nFadeInFinishTime;		// å¦‚æœå¤§äºé›¶åˆ™è¡¨ç¤ºåœ¨æ¬¡æ—¶åˆ»å‰æ’­æ”¾çš„æ‰€æœ‰éœ€è¦fadeçš„å£°éŸ³fadein
 protected:
 	bool	ClrSnd(int i);
 	virtual bool	StillInUse(int nIdx);
@@ -68,9 +68,9 @@ public:
 	~A3DAssist2DSnd();
 	bool	Init(A3DEngine *pA3DEngine, int nTotal, int nStrLen);
 	bool	Release();
-	bool	LogicRun();							// Ìá¹©fadeµÈ¹¦ÄÜ
+	bool	LogicRun();							// æä¾›fadeç­‰åŠŸèƒ½
 	bool	ResetAll();
-	bool	Play(char *szSndFile, bool bImmEffect, bool bCanFade);		// ÒòÎª²»ÄÜÍ££¬ËùÒÔ²»ÄÜÓĞloop
+	bool	Play(char *szSndFile, bool bImmEffect, bool bCanFade);		// å› ä¸ºä¸èƒ½åœï¼Œæ‰€ä»¥ä¸èƒ½æœ‰loop
 	bool	FadeIn(int ms);
 	bool	FadeOut();
 };
@@ -78,10 +78,10 @@ public:
 class	A3DAssist3DSnd		: public A3DAssistCache_StrDup
 {
 protected:
-	bool			m_bJustLoad;				// ÊÇ·ñÖ»load²»²»·Å
+	bool			m_bJustLoad;				// æ˜¯å¦åªloadä¸ä¸æ”¾
 	AM3DSoundBuffer	**m_ppAM3DSoundBuffer;
 	A3DEngine		*m_pA3DEngine;
-	unsigned long	m_nFadeInFinishTime;		// Èç¹û´óÓÚÁãÔò±íÊ¾ÔÚ´ÎÊ±¿ÌÇ°²¥·ÅµÄËùÓĞĞèÒªfadeµÄÉùÒôfadein
+	unsigned long	m_nFadeInFinishTime;		// å¦‚æœå¤§äºé›¶åˆ™è¡¨ç¤ºåœ¨æ¬¡æ—¶åˆ»å‰æ’­æ”¾çš„æ‰€æœ‰éœ€è¦fadeçš„å£°éŸ³fadein
 protected:
 	bool	ClrSnd(int i);
 	virtual bool	StillInUse(int nIdx);
@@ -93,9 +93,9 @@ public:
 	~A3DAssist3DSnd();
 	bool	Init(A3DEngine *pA3DEngine, int nTotal, int nStrLen);
 	bool	Release();
-	bool	LogicRun();							// Ìá¹©fadeµÈ¹¦ÄÜ
+	bool	LogicRun();							// æä¾›fadeç­‰åŠŸèƒ½
 	bool	ResetAll();
-	bool	Play(char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, float fMaxDist, bool bImmEffect, bool bForce2D, bool bCanFade);	// ÒıÓÃÊÇÎªÁË¼Ó¿ì´«µİËÙ¶È
+	bool	Play(char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, float fMaxDist, bool bImmEffect, bool bForce2D, bool bCanFade);	// å¼•ç”¨æ˜¯ä¸ºäº†åŠ å¿«ä¼ é€’é€Ÿåº¦
 	bool	FadeIn(int ms);
 	bool	FadeOut();
 };

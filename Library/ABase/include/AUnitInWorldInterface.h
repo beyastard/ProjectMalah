@@ -46,9 +46,9 @@ enum MODEL_LEVEL
 	LEVEL_SEXY
 };
 
-//�߼���Χ��Ķ����¼������ӿڣ�
-//ͨ������£����� ModelWraper ��ʵ���Ķ���Ӧ�ý��ýӿ�
-//ʵ�ֲ����� ModelWraper��
+//逻辑外围类的动作事件反馈接口，
+//通常情况下，包含 ModelWraper 类实例的对象应该将该接口
+//实现并传给 ModelWraper。
 
 struct i_host_listener
 {

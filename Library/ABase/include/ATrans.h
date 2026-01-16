@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ATrans.h
-// Creator: Wei Hua (Îº»ª)
-// ·­ÒëÆ÷»ùÀà
+// Creator: Wei Hua (é­å)
+// ç¿»è¯‘å™¨åŸºç±»
 
 #ifndef	__ATRANS_H__
 #define	__ATRANS_H__
@@ -14,7 +14,7 @@ class	ADevice;
 class	ATrans	: public AUnit
 {
 protected:
-	int			m_nDestID;							// Ä¿±êÓÎÏ·µ¥ÔªµÄid
+	int			m_nDestID;							// ç›®æ ‡æ¸¸æˆå•å…ƒçš„id
 public:
 	ATrans()		{ m_nDestID = -1; }
 	virtual bool	TranslateIn(ADevice *pADevice)	{ return true; }

@@ -1,9 +1,9 @@
 /*
  * FILE: AMemFile.h
  *
- * DESCRIPTION: ÄÚ´æÎÄ¼ş
+ * DESCRIPTION: å†…å­˜æ–‡ä»¶
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/10/27
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/10/27
  *
  * HISTORY:
  *
@@ -31,8 +31,8 @@ public:
 	bool IsEOF();
 	bool IsBOF();
 
-	virtual bool Write(const void * buff, int size);	// Ğ´Êı¾İ
-	virtual bool Read(void * buff, int size);			// ¶ÁÊı¾İ
+	virtual bool Write(const void * buff, int size);	// å†™æ•°æ®
+	virtual bool Read(void * buff, int size);			// è¯»æ•°æ®
 
 	AMemFile(DWORD buffersize = 1024);
 	virtual ~AMemFile();

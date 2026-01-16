@@ -176,7 +176,7 @@ bool AModelUnit::Render(A3DViewport * pCurrentViewport)
 			pLight->SetLightParam(&param);
 			g_pAGame->GetA3DEngine()->GetA3DDevice()->SetAmbient(m_light_infor.LTParam.clLightAmbient);
 			g_pAGame->GetA3DEngine()->GetA3DDevice()->SetTextureColorOP(0, pGrid->GetColorOP());
-			//Ìí¼Ó³¡¾°¶¯Ì¬¹âÔ´
+			//æ·»åŠ åœºæ™¯åŠ¨æ€å…‰æº
 
 			if( m_light_infor.LTParam.dynamicLightParam.Type != A3DLIGHT_FORCE_DWORD )
 			{

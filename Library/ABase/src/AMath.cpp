@@ -1,12 +1,12 @@
 #include "AMath.h"
 
-// ÈÏÎª×îĞ¡µÄfloat
+// è®¤ä¸ºæœ€å°çš„float
 static const	float	MIN_FLOAT	= float(0.00001);
 static const	double	PIE			= 3.1415926;
 static const	double	PIE_M2		= PIE * 2;
 static const	double	PIE_D2		= PIE / 2;
 
-// ¿´Ò»¸ö¸¡µãÊıÊÇ·ñ¿ÉÒÔÈÏÎªÊÇ0
+// çœ‹ä¸€ä¸ªæµ®ç‚¹æ•°æ˜¯å¦å¯ä»¥è®¤ä¸ºæ˜¯0
 int	IsFloatZero(float __f)
 {
 	if( fabs(__f) < MIN_FLOAT )
@@ -16,10 +16,10 @@ int	IsFloatZero(float __f)
 	return	0;
 }
 
-// ½«·½ÏòÏòÁ¿×ª»¯ÎªË®Æ½×ª½Ç(0~2PIE)ºÍ´¹Ö±×ª½Ç(-PIE/2~PIE/2)£¬ÒòÎªÉÏÏÂ¿´µÄ·¶Î§Ó¦¸ÃÖ»ÓĞÇ°ÃæµÄ(-PIE/2~PIE/2)
-// È»ºó°´µÈ·Ö¸ñÊı×ª»¯ÎªÕûÊı
-// __anglehºÍ__anglev·Ö±ğÊÇ½Ç¶ÈµÄË®Æ½ÊıÖµºÍÊúÖ±ÊıÖµ
-// __htotalºÍ__vtotal·Ö±ğÊÇË®Æ½Ô²ÖÜºÍÊúÖ±°ëÔ°ÖÜµÄµÈ·Ö¸ñÊı
+// å°†æ–¹å‘å‘é‡è½¬åŒ–ä¸ºæ°´å¹³è½¬è§’(0~2PIE)å’Œå‚ç›´è½¬è§’(-PIE/2~PIE/2)ï¼Œå› ä¸ºä¸Šä¸‹çœ‹çš„èŒƒå›´åº”è¯¥åªæœ‰å‰é¢çš„(-PIE/2~PIE/2)
+// ç„¶åæŒ‰ç­‰åˆ†æ ¼æ•°è½¬åŒ–ä¸ºæ•´æ•°
+// __anglehå’Œ__anglevåˆ†åˆ«æ˜¯è§’åº¦çš„æ°´å¹³æ•°å€¼å’Œç«–ç›´æ•°å€¼
+// __htotalå’Œ__vtotalåˆ†åˆ«æ˜¯æ°´å¹³åœ†å‘¨å’Œç«–ç›´åŠå›­å‘¨çš„ç­‰åˆ†æ ¼æ•°
 int	Dir2TwoAngle(float __dx, float __dy, float __dz
 	, int *__angleh, int *__anglev, int __htotal, int __vtotal)
 {
@@ -107,7 +107,7 @@ int	NormalizeDir(float *__dx, float *__dy, float *__dz)
 	return	0;
 }
 
-// Ë®Æ½½Ç¶È(0~2PIE)£¬´¹Ö±½Ç¶È(-PIE/2~PIE/2)
+// æ°´å¹³è§’åº¦(0~2PIE)ï¼Œå‚ç›´è§’åº¦(-PIE/2~PIE/2)
 int	TwoAngle2Int(float __fh, float __fv, int *__ih, int *__iv, int __htotal, int __vtotal)
 {
 	double	ah, av;
@@ -130,7 +130,7 @@ int	Int2TwoAngle(int __ih, int __iv, int __htotal, int __vtotal, float *__fh, fl
 	return	0;
 }
 
-//Ë®Æ½ÎªÏòÁ¿£¬´¹Ö±Îª(-PIE/2~PIE/2)
+//æ°´å¹³ä¸ºå‘é‡ï¼Œå‚ç›´ä¸º(-PIE/2~PIE/2)
 int	DirAngle2Vector(float __dx, float __dz, float __av, float *__dirx, float *__diry, float *__dirz)
 {
 	double	dy;
@@ -154,7 +154,7 @@ int	Vector2DirAngle(float __dirx, float __diry, float __dirz, float *__dx, float
 	rh		= sqrt(__dirx*__dirx + __dirz*__dirz);
 	if(IsFloatZero((float)rh))
 	{
-		// Ë®Æ½½Ç¶È²»±ä£¬ÊúÖ±½Ç¶ÈÎªpie/2 ~ -pie/2
+		// æ°´å¹³è§’åº¦ä¸å˜ï¼Œç«–ç›´è§’åº¦ä¸ºpie/2 ~ -pie/2
 		*__av	= float(__diry>0 ? PIE_D2 : -PIE_D2);
 		return	0;
 	}
@@ -166,7 +166,7 @@ int	Vector2DirAngle(float __dirx, float __diry, float __dirz, float *__dx, float
 	return	0;
 }
 
-// ·½ÏòÏòÁ¿±ä³É½Ç¶È[0,2PIE)£¬·µ»Ø-1±íÊ¾Ã»ÓĞ½Ç¶È
+// æ–¹å‘å‘é‡å˜æˆè§’åº¦[0,2PIE)ï¼Œè¿”å›-1è¡¨ç¤ºæ²¡æœ‰è§’åº¦
 int	Dir2Degree(float __dx, float __dz, float *__degree)
 {
 	double	r, degree;
@@ -183,7 +183,7 @@ int	Dir2Degree(float __dx, float __dz, float *__degree)
 	*__degree	= (float)degree;
 	return	0;
 }
-// ±ä³É[1,360]£¬0±íÊ¾Ã»ÓĞ½Ç¶È
+// å˜æˆ[1,360]ï¼Œ0è¡¨ç¤ºæ²¡æœ‰è§’åº¦
 int	Dir2IntDegree(float __dx, float __dz, int *__degree)
 {
 	float	fd;

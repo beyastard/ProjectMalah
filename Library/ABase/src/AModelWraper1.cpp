@@ -136,25 +136,25 @@ A3DVECTOR3 AModelWraper::GetUp()
 }
 A3DVECTOR3 AModelWraper::GetRootFramePos()
 {
-	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_¿ç²¿"))
+	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨"))
 	{
-		return pCurrentModel->FindChildFrameByName("HH_¿ç²¿")->GetAbsoluteTM().GetRow(0);
+		return pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨")->GetAbsoluteTM().GetRow(0);
 	}
 	return A3DVECTOR3(0.0f,0.0f,0.0f);
 }
 A3DVECTOR3 AModelWraper::GetRootFrameDir()
 {
-	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_¿ç²¿"))
+	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨"))
 	{
-		return pCurrentModel->FindChildFrameByName("HH_¿ç²¿")->GetAbsoluteTM().GetRow(2);
+		return pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨")->GetAbsoluteTM().GetRow(2);
 	}
 	return A3DVECTOR3(1.0f,0.0f,0.0f);
 }
 A3DVECTOR3 AModelWraper::GetRootFrameUp()
 {
-	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_¿ç²¿"))
+	if(pCurrentModel&&pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨"))
 	{
-		return pCurrentModel->FindChildFrameByName("HH_¿ç²¿")->GetAbsoluteTM().GetRow(1);
+		return pCurrentModel->FindChildFrameByName("HH_è·¨éƒ¨")->GetAbsoluteTM().GetRow(1);
 	}
 	return A3DVECTOR3(0.0f,1.0f,0.0f);
 }
@@ -308,7 +308,7 @@ static bool extractFunction(LexicalParse& lp,
 	string token;
 	long token_type;
 	
-	//È¡µÃº¯ÊıÃû
+	//å–å¾—å‡½æ•°å
 	token_type = lp.lookToken(token);
 	lp.goForward();
 	if(token_type  == TOKEN_TYPE_IDENTITY)
@@ -495,7 +495,7 @@ static bool GetInvolvedModelFromTXT(const char * txt,
 				(fun_name == "model_blood" && AModelWraper::model_level == LEVEL_BLOOD)||
 				(fun_name == "model_urbanity" && AModelWraper::model_level == LEVEL_URBANITY)||
 				(fun_name == "model"/* && model_level == LEVEL_NORMAL*/)
-				//È±Ê¡ÅäÖÃ£¬ÔÚÄ£ĞÍ¼¶±ğÆ¥ÅäÊ§°Ü»òÎ´Ö¸¶¨µÄÊ±Ê¹ÓÃ
+				//ç¼ºçœé…ç½®ï¼Œåœ¨æ¨¡å‹çº§åˆ«åŒ¹é…å¤±è´¥æˆ–æœªæŒ‡å®šçš„æ—¶ä½¿ç”¨
 				)
 			{
 				if(arg_list.size() != 1)
@@ -625,7 +625,7 @@ bool AModelWraper::GetInvolvedGFX(const char * file_name,AListT<AUString>& res)
 	return true;
 }
 
-//ÓŞ´Àµ«ÓĞĞ§µÄ·ÖÎö·½·¨
+//æ„šè ¢ä½†æœ‰æ•ˆçš„åˆ†ææ–¹æ³•
 bool AModelWraper::LoadConfigString(const char * config_string)
 {
 
@@ -942,7 +942,7 @@ bool AModelWraper::LoadConfigString(const char * config_string)
 				(fun_name == "model_sexy" && model_level == LEVEL_SEXY)||
 				(fun_name == "model_blood" && model_level == LEVEL_BLOOD)||
 				(fun_name == "model_urbanity" && model_level == LEVEL_URBANITY)||
-				(fun_name == "model"/* && model_level == LEVEL_NORMAL*/)//È±Ê¡ÅäÖÃ£¬ÔÚÄ£ĞÍ¼¶±ğÆ¥ÅäÊ§°Ü»òÎ´Ö¸¶¨µÄÊ±Ê¹ÓÃ
+				(fun_name == "model"/* && model_level == LEVEL_NORMAL*/)//ç¼ºçœé…ç½®ï¼Œåœ¨æ¨¡å‹çº§åˆ«åŒ¹é…å¤±è´¥æˆ–æœªæŒ‡å®šçš„æ—¶ä½¿ç”¨
 				)
 			{
 				if(define_flag != DEFINE_STATE)
@@ -1207,7 +1207,7 @@ bool AModelWraper::RayTrace(const A3DVECTOR3& vecStart,
 	RAYTRACE ray_trace;
 	ray_trace.fFraction = 1.0;
 	pRayTrace->fFraction = 1.0;
-	//Ö÷Ä£ĞÍµÄÅö×²¼ì²â
+	//ä¸»æ¨¡å‹çš„ç¢°æ’æ£€æµ‹
 	if(pCurrentModel)
 	{
 		if(pCurrentModel->RayTrace(
@@ -1221,7 +1221,7 @@ bool AModelWraper::RayTrace(const A3DVECTOR3& vecStart,
 			}
 		}
 	}
-	//¸¨ÖúÄ£ĞÍµÄÅö×²¼ì²â
+	//è¾…åŠ©æ¨¡å‹çš„ç¢°æ’æ£€æµ‹
 	map<string,A3DModel *>::iterator itor = assistant_model_map.begin();
 	for(;itor!=assistant_model_map.end();++itor)
 	{	
@@ -1245,12 +1245,12 @@ bool AModelWraper::SetStateByName(const char * state_name)
 	J_EXCEPTION_RECORD(0)
 
 
-	//ÉèÖÃµÄºÍÒÔÇ°ÏàÍ¬¾ÍºöÂÔ
+	//è®¾ç½®çš„å’Œä»¥å‰ç›¸åŒå°±å¿½ç•¥
 	if(last_state == state_name)
 	{
 		return true;
 	}
-	//Èç¹û×´Ì¬ÊÇ²»¿ÉÊ¶±ğµÄ¾ÍºöÂÔ
+	//å¦‚æœçŠ¶æ€æ˜¯ä¸å¯è¯†åˆ«çš„å°±å¿½ç•¥
 	if(state_model_map.find(state_name) == state_model_map.end())
 	{
 		return true;
@@ -1282,7 +1282,7 @@ bool AModelWraper::SetStateByName(const char * state_name)
 		}
 	}
 
-	//Èç¹ûÏàÓ¦µÄÈİÆ÷ÕÒµ½ÁËÒª±íÏÖµÄÄÚÈİµ«ÊÇÎŞ·¨±íÏÖÊ±²Å·µ»Øfalse
+	//å¦‚æœç›¸åº”çš„å®¹å™¨æ‰¾åˆ°äº†è¦è¡¨ç°çš„å†…å®¹ä½†æ˜¯æ— æ³•è¡¨ç°æ—¶æ‰è¿”å›false
 
 	if(!loadModel(state_model_map[state_name].c_str()))
 	{
@@ -1782,17 +1782,17 @@ bool AModelWraper::handleActionQueue()
 	J_EXCEPTION_RECORD(0)
 
 
-	//Ê×ÏÈ¼ì²é¿ØÖÆ¿ª¹ØÊÇ·ñÊÇ¿ª·ÅµÄ
+	//é¦–å…ˆæ£€æŸ¥æ§åˆ¶å¼€å…³æ˜¯å¦æ˜¯å¼€æ”¾çš„
 	if(play_anim_ready)
 	{	
-		//µ±Ç°Ö´ĞĞ¶ÓÁĞ·Ç¿ÕÊ±
+		//å½“å‰æ‰§è¡Œé˜Ÿåˆ—éç©ºæ—¶
 		if(!current_action_queue.empty())
 		{
 			const action_item& item = current_action_queue.front();
-			//µ¯³ö²¢²¥·Å¶ÓÁĞÖĞµÄÔªËØ
+			//å¼¹å‡ºå¹¶æ’­æ”¾é˜Ÿåˆ—ä¸­çš„å…ƒç´ 
 			string anim_name = item.name;
 			current_anim_privilege = item.privilege;
-			//Èç¹ûÕâ¸öÔªËØÓĞÑ­»·±ê¼Ç£¬¾Í¼ÇÂ¼ÏÂÀ´
+			//å¦‚æœè¿™ä¸ªå…ƒç´ æœ‰å¾ªç¯æ ‡è®°ï¼Œå°±è®°å½•ä¸‹æ¥
 			if(!item.loop_name.empty())
 			{
 				next_call_anim = item.loop_name;
@@ -1806,14 +1806,14 @@ bool AModelWraper::handleActionQueue()
 					" \" contain correct action define.");
 				return false;
 			}
-			//°Ñ¿ØÖÆ¿ª¹Ø¹ØÉÏ
+			//æŠŠæ§åˆ¶å¼€å…³å…³ä¸Š
 			play_anim_ready = false;
-			//Í¨ÖªËŞÖ÷
+			//é€šçŸ¥å®¿ä¸»
 			m_pHostListener ->anim_change(anim_name.c_str(),item.p_outer_data);
 			anim_in_engine = anim_name;
 			current_action_queue.pop_front();
 		}
-		else//µ±Ç°¶ÓÁĞÎª¿ÕÊ±£¬¼ì²éÊÇ·ñÓĞÑ­»·ĞÅÏ¢£¬ÓĞµÄ»°¾Íµİ¼õÑÓ³Ù¼ÆÊıÆ÷¼õµ½ÁãÊ±½øĞĞÑ­»·
+		else//å½“å‰é˜Ÿåˆ—ä¸ºç©ºæ—¶ï¼Œæ£€æŸ¥æ˜¯å¦æœ‰å¾ªç¯ä¿¡æ¯ï¼Œæœ‰çš„è¯å°±é€’å‡å»¶è¿Ÿè®¡æ•°å™¨å‡åˆ°é›¶æ—¶è¿›è¡Œå¾ªç¯
 		{
 			if(!next_call_anim.empty() && -- next_call_delay <= 0)
 			{
@@ -1831,7 +1831,7 @@ bool AModelWraper::AppendActionToTail(const char * act_name,void* p_buffer)
 	J_EXCEPTION_RECORD(0)
 
 
-	//¸ß¼¶¶¯»­Ãû²»´æÔÚ¾ÍºöÂÔ
+	//é«˜çº§åŠ¨ç”»åä¸å­˜åœ¨å°±å¿½ç•¥
 	if(action_serial_map.find(act_name) == action_serial_map.end())
 	{
 		writeErrorInfor("unit can not execute action named : < " 
@@ -1839,9 +1839,9 @@ bool AModelWraper::AppendActionToTail(const char * act_name,void* p_buffer)
 
 		return false;
 	}
-	//µÃµ½¸ß¼¶¶¯»­Ãû¶ÔÓ¦µÄµÍ¼¶¶¯»­ĞòÁĞ
+	//å¾—åˆ°é«˜çº§åŠ¨ç”»åå¯¹åº”çš„ä½çº§åŠ¨ç”»åºåˆ—
 	list<action_item>& act_list = action_serial_map[act_name];
-	//²åÈëÓÃ»§Ö¸¶¨µÄĞÅÏ¢
+	//æ’å…¥ç”¨æˆ·æŒ‡å®šçš„ä¿¡æ¯
 	if(p_buffer != 0 && !act_list.empty())
 	{
 		act_list.front().p_outer_data = p_buffer;
@@ -1855,16 +1855,16 @@ bool AModelWraper::AddActionToHead(const char * act_name,void * p_buffer)
 	J_EXCEPTION_RECORD(0)
 
 
-	//¸ß¼¶¶¯»­Ãû²»´æÔÚ¾ÍºöÂÔ
+	//é«˜çº§åŠ¨ç”»åä¸å­˜åœ¨å°±å¿½ç•¥
 	if(action_serial_map.find(act_name) == action_serial_map.end())
 	{
 		writeErrorInfor("unit can not execute action named : < " 
 			+ string(act_name) + " >. please ensure file < " + config_file_name + " > contain this action define.");
 		return false;
 	}
-	//µÃµ½¸ß¼¶¶¯»­Ãû¶ÔÓ¦µÄµÍ¼¶¶¯»­ÁĞ
+	//å¾—åˆ°é«˜çº§åŠ¨ç”»åå¯¹åº”çš„ä½çº§åŠ¨ç”»åˆ—
 	list<action_item>& act_list = action_serial_map[act_name];
-	//²åÈëÓÃ»§Ö¸¶¨µÄĞÅÏ¢
+	//æ’å…¥ç”¨æˆ·æŒ‡å®šçš„ä¿¡æ¯
 	if(p_buffer != 0 && !act_list.empty())
 	{
 		act_list.front().p_outer_data = p_buffer;
@@ -1872,7 +1872,7 @@ bool AModelWraper::AddActionToHead(const char * act_name,void * p_buffer)
 	if(	current_anim_privilege <= act_list.front().privilege)
 	{
 		current_action_queue.insert(current_action_queue.begin(),act_list.begin(),act_list.end());
-		//Ç¿ĞĞ²¥·ÅÏÂÒ»¸ö¶¯»­
+		//å¼ºè¡Œæ’­æ”¾ä¸‹ä¸€ä¸ªåŠ¨ç”»
 		play_anim_ready = true;
 		return true;
 	}
@@ -1901,7 +1901,7 @@ void AModelWraper::call_back_logic_event(A3DMODEL_LOGIC_EVENT * pLogicEvent, LPV
 	J_EXCEPTION_RECORD(0)
 
 
-	//µ÷ÓÃ·´À¡½Ó¿Ú
+	//è°ƒç”¨åé¦ˆæ¥å£
 	AModelWraper * pThis = static_cast<AModelWraper * >(pArg);
 	if(pThis->m_pHostListener)
 	{
@@ -1914,7 +1914,7 @@ void AModelWraper::call_back_action_end(A3DModel * pNoUsing, LPVOID pArg)
 	J_EXCEPTION_RECORD(0)
 
 
-	//¶¯»­ÏîÖ´ĞĞ½áÊøÊ±´ò¿ª¿ª¹Ø
+	//åŠ¨ç”»é¡¹æ‰§è¡Œç»“æŸæ—¶æ‰“å¼€å¼€å…³
 	AModelWraper * pThis = static_cast<AModelWraper * >(pArg);
 	pThis->play_anim_ready = true;
 	pThis->current_anim_privilege = -10;
@@ -1935,7 +1935,7 @@ bool AModelWraper::AddLowLevelActionToHead(const char * state_name)
 	if(	current_anim_privilege <= item.privilege)
 	{
 		current_action_queue.push_front(item);
-		//Ç¿ĞĞ²¥·ÅÏÂÒ»¸ö¶¯»­
+		//å¼ºè¡Œæ’­æ”¾ä¸‹ä¸€ä¸ªåŠ¨ç”»
 		play_anim_ready = true;
 		return true;
 	}

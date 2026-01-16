@@ -12,7 +12,7 @@ allocator::allocator(size_t __size, size_t __n, size_t __grow)
 	_grow		= __grow;
 	_block_size	= __size>0?__size:1;
 	_fbuf_head 	= NULL;
-	//ĞŞÕı_block_size
+	//ä¿®æ­£_block_size
 	
 	assert(_block_size >= sizeof(fbuf_node));
 	assert(__size);
@@ -83,7 +83,7 @@ int	allocator::check(int type)
 	if(type == CHECK_MEM_LEAK){
 		fbuf_node *tmpnode = _fbuf_head;
 		int counter = 0;
-		//µ÷ÓÃÃ¿¿é¿ÉÄÜµÄÄÚ´æÊÍ·Åº¯Êı
+		//è°ƒç”¨æ¯å—å¯èƒ½çš„å†…å­˜é‡Šæ”¾å‡½æ•°
 		while(tmpnode)
 		{
 			counter += _block_size;
@@ -140,7 +140,7 @@ void	allocator::release()
 		return;
 	}
 
-	//½«Á´±íÖĞµÄÊı¾İÇøÊÍ·Å
+	//å°†é“¾è¡¨ä¸­çš„æ•°æ®åŒºé‡Šæ”¾
 	struct abuf_node *nnode = _buf_chain;
 	while(nnode)
 	{

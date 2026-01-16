@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: AStringArray.h
-// Creator: Wei Hua (魏华)
-// 字传数组
+// Creator: Wei Hua (榄忓崕)
+// 瀛椾紶鏁扮粍
 
 #ifndef	__ASTRINGARRAY_H__
 #define	__ASTRINGARRAY_H__

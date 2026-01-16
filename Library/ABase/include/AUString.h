@@ -1,9 +1,9 @@
 /*
  * FILE: AUString.h
  *
- * DESCRIPTION:×Ö·û´¦ÀíÀà
+ * DESCRIPTION:å­—ç¬¦å¤„ç†ç±»
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/20
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/20
  *
  * HISTORY:
  *
@@ -26,20 +26,20 @@ public:
 
 	char * GetBufferSetLength(int length);
 	void Free();
-	//ÉèÖÃ×Ö·û
+	//è®¾ç½®å­—ç¬¦
 	bool SetAt(int index,char ch);
 	bool GetAt(int index,char & ch);
 	
-	//ÒÆ³ı×Ö´®ÖĞµÄÖ¸¶¨×Ö·û£¬·µ»ØÉ¾³ı»òÓöµ½µÄ¸öÊı
+	//ç§»é™¤å­—ä¸²ä¸­çš„æŒ‡å®šå­—ç¬¦ï¼Œè¿”å›åˆ é™¤æˆ–é‡åˆ°çš„ä¸ªæ•°
 	int FilterChar(char ch,bool remove = true);
 
-	//ÒÆ³ıºÍÌí¼Ó×Ö·û
+	//ç§»é™¤å’Œæ·»åŠ å­—ç¬¦
 	bool RemoveAt(int index);
 
-	//ÖÃÎª´óĞ´
+	//ç½®ä¸ºå¤§å†™
 	void MakeUpper();
 
-	//ÖÃÎªĞ¡Ğ´
+	//ç½®ä¸ºå°å†™
 	void MakeLower();
 	bool InsertAt(int index,char ch);
 	void Left(AUString & str,int count);
@@ -50,7 +50,7 @@ protected:
 	bool FailLink(int iLen, char *pFailLink);
 
 public:
-	//ÔËËã·ûÖØÔØ
+	//è¿ç®—ç¬¦é‡è½½
 	char operator [] (int index);
 	const char operator [](int index) const;
 	const AUString & operator = (const AUString & right);

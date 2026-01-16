@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceMan.h
-// Creator: Wei Hua (Îº»ª)
-// Éè±¸¹ÜÀíÀà
+// Creator: Wei Hua (é­å)
+// è®¾å¤‡ç®¡ç†ç±»
 
 #ifndef	__ADEVICEMAN_H__
 #define	__ADEVICEMAN_H__
@@ -14,21 +14,21 @@ class	AWinMsgDevice;
 class	ADeviceMan
 {
 protected:
-	AListT<ADevice *>	* m_pDeviceList;						// ¹ÜÀíµÄÉè±¸ÁĞ±í
+	AListT<ADevice *>	* m_pDeviceList;						// ç®¡ç†çš„è®¾å¤‡åˆ—è¡¨
 public:
 	ADeviceMan();
 	~ADeviceMan();
-	bool	AddDevice(ADevice *pADevice);			// ËùÓĞÉè±¸ÓÉAGameFrame´´½¨¡¢É¾³ı¡£Ò²¿ÉÒÔÖ±½ÓÊÇ³ÉÔ±±äÁ¿£¨ÒòÎªÒ»°ã²»ÓÃ¶¯Ì¬Éú³É£©¡£
+	bool	AddDevice(ADevice *pADevice);			// æ‰€æœ‰è®¾å¤‡ç”±AGameFrameåˆ›å»ºã€åˆ é™¤ã€‚ä¹Ÿå¯ä»¥ç›´æ¥æ˜¯æˆå‘˜å˜é‡ï¼ˆå› ä¸ºä¸€èˆ¬ä¸ç”¨åŠ¨æ€ç”Ÿæˆï¼‰ã€‚
 	bool	RemoveDevice(ADevice *pADevice);
 	bool	RemoveAllDevice();
-	bool	DealIn();								// ·Ö³ÉIn/OutĞ´µÄÔ­ÒòÊÇ³ÌĞò×ÜÁ÷³ÌÊÇÏÈ¼ì²éÊäÈë¡¢½øĞĞÂß¼­¡¢È»ºóÊä³ö
+	bool	DealIn();								// åˆ†æˆIn/Outå†™çš„åŸå› æ˜¯ç¨‹åºæ€»æµç¨‹æ˜¯å…ˆæ£€æŸ¥è¾“å…¥ã€è¿›è¡Œé€»è¾‘ã€ç„¶åè¾“å‡º
 	bool	DealOut();
 };
 
 class	AWinMsgDeviceGrp
 {
 protected:
-	AListT<AWinMsgDevice *>	* m_pDeviceList;						// ¹ÜÀíµÄÉè±¸ÁĞ±í
+	AListT<AWinMsgDevice *>	* m_pDeviceList;						// ç®¡ç†çš„è®¾å¤‡åˆ—è¡¨
 public:
 	AWinMsgDeviceGrp();
 	~AWinMsgDeviceGrp();

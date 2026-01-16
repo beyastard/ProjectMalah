@@ -1,9 +1,9 @@
 /*
  * FILE: PreDeclare.h
  *
- * DESCRIPTION: �ࡢ�ṹ��ö������Ԥ����
+ * DESCRIPTION: 类、结构和枚举量的预声明
  *
- * CREATED BY: ��Զ��, 2002/8/9
+ * CREATED BY: 王远明, 2002/8/9
  *
  * HISTORY:
  *

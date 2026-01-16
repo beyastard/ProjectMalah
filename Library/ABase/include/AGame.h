@@ -1,9 +1,9 @@
 /*
  * FILE: AGame.h
  *
- * DESCRIPTION: ÓÎÏ·ÕûÌåµÄÊµÏÖÀà
+ * DESCRIPTION: æ¸¸æˆæ•´ä½“çš„å®ç°ç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: ç‹è¿œæ˜, 2002/8/9
  *
  * HISTORY:
  *
@@ -115,7 +115,7 @@ public:
 	bool InitExtraGamePlay(AGamePlay * __pGamePlay);
 	bool logic_run(float fTimeSpan);
 	virtual int Run();
-	//ÖØÔØºóÒªµ÷ÓÃ»ùÀàµÄÊµÏÖ
+	//é‡è½½åè¦è°ƒç”¨åŸºç±»çš„å®ç°
 	virtual bool Release();
 	virtual bool Init(PINITAGAMESTRUCT pInitStruct);
 

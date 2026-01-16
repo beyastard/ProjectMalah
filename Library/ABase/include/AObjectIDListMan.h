@@ -1,9 +1,9 @@
 /*
  * FILE: AObjectIDListMan.h
  *
- * DESCRIPTION: ¹ÜÀíÒÔÁ¬±í·½Ê½¹ÜÀíµÄID¶ÔÏó
+ * DESCRIPTION: ç®¡ç†ä»¥è¿žè¡¨æ–¹å¼ç®¡ç†çš„IDå¯¹è±¡
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/24
+ * CREATED BY: çŽ‹è¿œæ˜Ž, 2002/8/24
  *
  * HISTORY:
  *

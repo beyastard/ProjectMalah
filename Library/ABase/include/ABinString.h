@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ABinString.h
-// Creator: Wei Hua (Îº»ª)
-// Í·²¿°üº¬×Ü³¤¶ÈµÄ×Ö´®
+// Creator: Wei Hua (é­å)
+// å¤´éƒ¨åŒ…å«æ€»é•¿åº¦çš„å­—ä¸²
 
 #ifndef	__ABINSTRING_H__
 #define	__ABINSTRING_H__
@@ -11,10 +11,10 @@ typedef	short	BINSTRSIZE;
 
 int	BinStrCpy(char *pszDst, int nMaxSize, const char *pszSrc);
 int	BinStrCmp(const char *pszStr1, const char *pszStr2);
-int	BinStrCatStr(char *pszDst, int nMaxSize, const char *pSrc);								// Cat»á¸Ä±ä³¤¶È
+int	BinStrCatStr(char *pszDst, int nMaxSize, const char *pSrc);								// Catä¼šæ”¹å˜é•¿åº¦
 int	BinStrCatBin(char *pszDs, int nMaxSizet, const void *pSrc, int nSrcLen);
-int	BinStrReadStr(const char *pszSrc, int nOffset, char *pszStr);				// ·µ»ØÏÂÒ»¶ÎÊı¾İ¿ªÊ¼µÄoffset
-int	BinStrReadBin(const char *pszSrc, int nOffset, int nSize, void *pBin);		// Í¬ÉÏ
+int	BinStrReadStr(const char *pszSrc, int nOffset, char *pszStr);				// è¿”å›ä¸‹ä¸€æ®µæ•°æ®å¼€å§‹çš„offset
+int	BinStrReadBin(const char *pszSrc, int nOffset, int nSize, void *pBin);		// åŒä¸Š
 int	BinStrGetSize(const char *pszStr, int *pnDataSize, int *pnTotalSize);
 inline unsigned long	BinStrHash(const char *s)
 {

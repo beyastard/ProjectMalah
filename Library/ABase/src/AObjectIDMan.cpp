@@ -95,7 +95,7 @@ bool AObjectIDMan::Load(AArchive &ar,AGame * __pAGame)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 	if(!ar.Read(&m_nNum,sizeof(m_nNum)))
 	{
 		ADebug::Msg(0,"%s %d read error",__FILE__,__LINE__);
@@ -105,7 +105,7 @@ bool AObjectIDMan::Load(AArchive &ar,AGame * __pAGame)
 	int maxID = -1;
 	for(int i=0;i<m_nNum;i++)
 	{
-		// ´´½¨ĞÂ¶ÔÏó
+		// åˆ›å»ºæ–°å¯¹è±¡
 		AIDObject  *ptr = (AIDObject*)ar.CreateObject();
 		
 		if(OwnerLoad(ptr,ar,__pAGame)==false)

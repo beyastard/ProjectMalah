@@ -83,7 +83,7 @@ void LexicalParse::goForward()
 
 unsigned long LexicalParse::extractComment(string& str,string::iterator& itor,string& out_token)
 {
-	//¹ØÓÚ×¢ÊÍµÄÓĞÏŞ×Ô¶¯»ú
+	//å…³äºæ³¨é‡Šçš„æœ‰é™è‡ªåŠ¨æœº
 	const string::iterator itor_extract_begin = itor;
 	
 	string  token		= "";
@@ -101,7 +101,7 @@ unsigned long LexicalParse::extractComment(string& str,string::iterator& itor,st
 		char character	= *itor; 
 		if(itor_extract_begin == itor)
 		{
-			//×¢ÊÍÖ»¿ÉÄÜÓÉ¡®/¡¯¿ªÊ¼
+			//æ³¨é‡Šåªå¯èƒ½ç”±â€˜/â€™å¼€å§‹
 			if(character == '/')
 			{
 				++itor;
@@ -132,13 +132,13 @@ unsigned long LexicalParse::extractComment(string& str,string::iterator& itor,st
 				goto COMMENT_MISS;
 			}
 		}
-		//»»ĞĞºÅ½«½áÊøĞĞ×¢ÊÍ
+		//æ¢è¡Œå·å°†ç»“æŸè¡Œæ³¨é‡Š
 		else if(character == '\n' && !bBlock)
 		{
 			out_token = token;
 			return TOKEN_EXTRACT_HIT;
 		}
-		//¿´¿´ÊÇ²»ÊÇ½áÊø¿é×¢ÊÍ
+		//çœ‹çœ‹æ˜¯ä¸æ˜¯ç»“æŸå—æ³¨é‡Š
 		else if(character == '*' && bBlock)
 		{
 			++itor;
@@ -157,7 +157,7 @@ unsigned long LexicalParse::extractComment(string& str,string::iterator& itor,st
 			token += character;
 		}
 	}
-	//µ¥ĞĞ×¢ÊÍ¿ÉÒÔÒÔ×Ö·û´®Î²×÷Îª½áÊø
+	//å•è¡Œæ³¨é‡Šå¯ä»¥ä»¥å­—ç¬¦ä¸²å°¾ä½œä¸ºç»“æŸ
 	if(!bBlock)
 	{
 		out_token = token;
@@ -189,7 +189,7 @@ unsigned long LexicalParse::extractIdentity(string& str,string::iterator& itor,u
 		char character	= *itor; 
 		if(itor == itor_extract_begin)
 		{
-			//±êÊ¶·û±ØĞëÊÇ×ÖÄ¸»òÏÂ»®Ïß¿ªÍ·
+			//æ ‡è¯†ç¬¦å¿…é¡»æ˜¯å­—æ¯æˆ–ä¸‹åˆ’çº¿å¼€å¤´
 			if(character == '_' || isalpha(character))
 			{
 				token += character;
@@ -227,7 +227,7 @@ unsigned long LexicalParse::extractIdentity(string& str,string::iterator& itor,u
 
 unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,string& out_token)
 {
-	//¹ØÓÚ×Ö·ûµÄÓĞÏŞ×Ô¶¯»ú
+	//å…³äºå­—ç¬¦çš„æœ‰é™è‡ªåŠ¨æœº
 	const string::iterator itor_extract_begin = itor;
 
 	char	token		= '\0';
@@ -242,7 +242,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 	for(; itor != str.end() ; ++itor)
 	{
 		char character	= *itor; 
-		//×Ö·û¶¨Òå¿ªÊ¼
+		//å­—ç¬¦å®šä¹‰å¼€å§‹
 		if(itor_extract_begin == itor)
 		{
 			if(character == '\'')
@@ -255,7 +255,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 				return TOKEN_EXTRACT_MISS;	
 			}
 		}
-		//×Ö·û¶¨Òå½áÊø
+		//å­—ç¬¦å®šä¹‰ç»“æŸ
 		else if(character == '\'')
 		{
 			++itor;
@@ -263,12 +263,12 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 			out_token += token;
 			return TOKEN_EXTRACT_HIT;
 		}
-		//×ªÒå×Ö·û
+		//è½¬ä¹‰å­—ç¬¦
 		else if(character == '\\')
 		{
 			string esc_string = "";
-			bool   char_esc	  = false;//ÊÇ·ñÊÇ×Ö·û×ªÒåÈç \t
-			//×ªÒåĞòÁĞµÄµÚÒ»¸ö×Ö·û
+			bool   char_esc	  = false;//æ˜¯å¦æ˜¯å­—ç¬¦è½¬ä¹‰å¦‚ \t
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬ä¸€ä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -281,7 +281,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 			}
 			switch(character)
 			{
-			//±ê×¼×ªÒå	
+			//æ ‡å‡†è½¬ä¹‰	
 			case	'a':	token = '\a';char_esc=true;goto END_DEF;
 			case	'b':	token = '\b';char_esc=true;goto END_DEF;
 			case	'f':	token = '\f';char_esc=true;goto END_DEF;
@@ -290,7 +290,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 			case	't':	token = '\t';char_esc=true;goto END_DEF;
 			case	'v':	token = '\v';char_esc=true;goto END_DEF;
 			case	'\'':	token = '\'';char_esc=true;goto END_DEF;	 
-			//Êı×Ö×ªÒå
+			//æ•°å­—è½¬ä¹‰
 			case	'0':case	'1':case	'2':case	'3':
 			case	'4':case	'5':case	'6':case	'7':
 				{
@@ -305,7 +305,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 					return TOKEN_EXTRACT_ERROR;
 				}
 			}
-			//×ªÒåĞòÁĞµÄµÚ¶ş¸ö×Ö·û
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬äºŒä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -326,7 +326,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 				--itor;
 				goto END_DEF;
 			}
-			//×ªÒåĞòÁĞµÄµÚÈı¸ö×Ö·û
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬ä¸‰ä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -370,7 +370,7 @@ unsigned long LexicalParse::extractChar(string& str,string::iterator& itor,strin
 
 unsigned long LexicalParse::extractString(string& str,string::iterator& itor,string& out_token)
 {
-	//¹ØÓÚ×Ö·û´®µÄÓĞÏŞ×Ô¶¯»ú
+	//å…³äºå­—ç¬¦ä¸²çš„æœ‰é™è‡ªåŠ¨æœº
 	const string::iterator itor_extract_begin = itor;
 	string	token	= "";
 	char character	= '\0';
@@ -383,7 +383,7 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 	for(; itor != str.end() ; ++itor)
 	{
 		char character	= *itor; 
-		//×Ö·û´®¶¨Òå¿ªÊ¼
+		//å­—ç¬¦ä¸²å®šä¹‰å¼€å§‹
 		if(itor_extract_begin == itor)
 		{
 			if(character == '"')
@@ -396,19 +396,19 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 				return TOKEN_EXTRACT_MISS;
 			}
 		}
-		//×Ö·û´®¶¨Òå½áÊø
+		//å­—ç¬¦ä¸²å®šä¹‰ç»“æŸ
 		else if(character == '"')
 		{
 			++itor;
 			out_token = token;
 			return TOKEN_EXTRACT_HIT;
 		}
-		//×ªÒå×Ö·û
+		//è½¬ä¹‰å­—ç¬¦
 		else if(character == '\\')
 		{
 			string esc_string = "";
-			bool   char_esc	  = false;//ÊÇ·ñÊÇ×Ö·û×ªÒåÈç \t
-			//×ªÒåĞòÁĞµÄµÚÒ»¸ö×Ö·û
+			bool   char_esc	  = false;//æ˜¯å¦æ˜¯å­—ç¬¦è½¬ä¹‰å¦‚ \t
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬ä¸€ä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -421,7 +421,7 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 			}
 			switch(character)
 			{
-			//±ê×¼×ªÒå	
+			//æ ‡å‡†è½¬ä¹‰	
 			case	'a':	esc_string += '\a'; char_esc = true; goto END_ESC;
 			case	'b':	esc_string += '\b'; char_esc = true; goto END_ESC;
 			case	'f':	esc_string += '\f'; char_esc = true; goto END_ESC;
@@ -431,7 +431,7 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 			case	'v':	esc_string += '\v'; char_esc = true; goto END_ESC;
 			case	'"':	esc_string += '"' ;	char_esc = true; goto END_ESC;
 			case	'\\':	esc_string += '\\' ;char_esc = true; goto END_ESC;
-			//Êı×Ö×ªÒå
+			//æ•°å­—è½¬ä¹‰
 			case	'0':case	'1':case	'2':case	'3':
 			case	'4':case	'5':case	'6':case	'7':
 				{
@@ -446,7 +446,7 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 					return TOKEN_EXTRACT_ERROR;
 				}
 			}
-			//×ªÒåĞòÁĞµÄµÚ¶ş¸ö×Ö·û
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬äºŒä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -467,7 +467,7 @@ unsigned long LexicalParse::extractString(string& str,string::iterator& itor,str
 				--itor;
 				goto END_ESC;
 			}
-			//×ªÒåĞòÁĞµÄµÚÈı¸ö×Ö·û
+			//è½¬ä¹‰åºåˆ—çš„ç¬¬ä¸‰ä¸ªå­—ç¬¦
 			if(itor!=str.end())
 			{
 				++itor;
@@ -526,15 +526,15 @@ unsigned long LexicalParse::extractDigital(string& str,string::iterator& itor,un
 
 		if(itor == itor_extract_begin)
 		{
-			//¿ªÍ·ÊÇĞ¡Êıµã¾ÍÒ»¶¨ÊÇ¸¡µãÊı£¨ÒÔºó¿ÉÄÜ»áÉı¼¶Îª¿ÆÑ§¼ÆÊıÊı£©
+			//å¼€å¤´æ˜¯å°æ•°ç‚¹å°±ä¸€å®šæ˜¯æµ®ç‚¹æ•°ï¼ˆä»¥åå¯èƒ½ä¼šå‡çº§ä¸ºç§‘å­¦è®¡æ•°æ•°ï¼‰
 			if(character == '.')
 			{
 				digital_format = TOKEN_TYPE_DIGITIAL_FLOAT;
 				token += "0.";
 				continue;
 			}
-			//¿ªÍ·ÊÇ0ÄÇÃ´¾ßÌåÊÇÊ®Áù½øÖÆÊı»¹ÊÇ°Ë½øÖÆÊıÒª¿´ÏÂÒ»¸ö×Ö·û
-			//×¢Òâ»¹ÓĞµ¥¸ö0µÄÇé¿ö
+			//å¼€å¤´æ˜¯0é‚£ä¹ˆå…·ä½“æ˜¯åå…­è¿›åˆ¶æ•°è¿˜æ˜¯å…«è¿›åˆ¶æ•°è¦çœ‹ä¸‹ä¸€ä¸ªå­—ç¬¦
+			//æ³¨æ„è¿˜æœ‰å•ä¸ª0çš„æƒ…å†µ
 			else if(character == '0')
 			{
 				if( (++itor) != str.end())
@@ -572,7 +572,7 @@ unsigned long LexicalParse::extractDigital(string& str,string::iterator& itor,un
 				}
 				continue;
 			}
-			//¿ªÍ·ÊÇ·ÇÁãÊı×Ö¾ÍÊÇÊ®½øÖÆÊıÁË£¨ÒÔºó¿ÉÄÜ»áÉı¼¶Îª¸¡µãÊı£¬¿ÆÑ§¼ÆÊıÊı£©
+			//å¼€å¤´æ˜¯éé›¶æ•°å­—å°±æ˜¯åè¿›åˆ¶æ•°äº†ï¼ˆä»¥åå¯èƒ½ä¼šå‡çº§ä¸ºæµ®ç‚¹æ•°ï¼Œç§‘å­¦è®¡æ•°æ•°ï¼‰
 			else if('1'<=character && character<='9')
 			{
 				digital_format = TOKEN_TYPE_DIGITIAL_DEC;
@@ -587,9 +587,9 @@ unsigned long LexicalParse::extractDigital(string& str,string::iterator& itor,un
 		}
 		else
 		{
-			//ÔÚ´ÓÇ°ÈÏÎªµÄÊ®½øÖÆÊıÖĞ·¢ÏÖĞ¡ÊıµãÉı¼¶Îª¸¡µãÊı
-			//ÆäËüÇé¿öÏÂ¶¼ÊÇ·Ç·¨µÄ£¬¿ÆÑ§¼ÆÊı·¨ÖĞĞ¡Êıµã²»¿ÉÄÜ³öÏÖÔÚEºóÃæ
-			//»»¾ä»°ËµÈ·¶¨ÊÇ¿ÆÑ§¼ÆÊıÊıºóÔÙÉ¨Ãèµ½Ğ¡ÊıµãÊÇ·Ç·¨µÄ
+			//åœ¨ä»å‰è®¤ä¸ºçš„åè¿›åˆ¶æ•°ä¸­å‘ç°å°æ•°ç‚¹å‡çº§ä¸ºæµ®ç‚¹æ•°
+			//å…¶å®ƒæƒ…å†µä¸‹éƒ½æ˜¯éæ³•çš„ï¼Œç§‘å­¦è®¡æ•°æ³•ä¸­å°æ•°ç‚¹ä¸å¯èƒ½å‡ºç°åœ¨Eåé¢
+			//æ¢å¥è¯è¯´ç¡®å®šæ˜¯ç§‘å­¦è®¡æ•°æ•°åå†æ‰«æåˆ°å°æ•°ç‚¹æ˜¯éæ³•çš„
 			if(character == '.')
 			{
 				if(digital_format == TOKEN_TYPE_DIGITIAL_DEC)
@@ -607,7 +607,7 @@ unsigned long LexicalParse::extractDigital(string& str,string::iterator& itor,un
 			}
 			else if( character == 'E' || character == 'e' )
 			{
-				//Õâ¸öEÊÇ¿ÆÑ§¼ÆÊı·¨ÖĞµÄ
+				//è¿™ä¸ªEæ˜¯ç§‘å­¦è®¡æ•°æ³•ä¸­çš„
 				if(digital_format == TOKEN_TYPE_DIGITIAL_DEC || digital_format == TOKEN_TYPE_DIGITIAL_FLOAT)
 				{
 					digital_format = TOKEN_TYPE_DIGITIAL_SCIENCE;
@@ -625,7 +625,7 @@ unsigned long LexicalParse::extractDigital(string& str,string::iterator& itor,un
 					}
 					continue;
 				}
-				//ÊÇÊ®Áù½øÖÆÊıµÄ
+				//æ˜¯åå…­è¿›åˆ¶æ•°çš„
 				else if(digital_format == TOKEN_TYPE_DIGITIAL_HEX)
 				{
 					token += 'E';

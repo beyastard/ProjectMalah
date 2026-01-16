@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceMan.cpp
-// Creator: Wei Hua (Îº»ª)
-// Éè±¸¹ÜÀíÀà
+// Creator: Wei Hua (é­åŽ)
+// è®¾å¤‡ç®¡ç†ç±»
 
 #include "AUList.h"
 #include "ADeviceMan.h"
@@ -37,7 +37,7 @@ bool	ADeviceMan::RemoveDevice(ADevice *pADevice)
 }
 bool	ADeviceMan::RemoveAllDevice()
 {
-	// Çå¿ÕÁÐ±íÖÐµÄË÷Òý
+	// æ¸…ç©ºåˆ—è¡¨ä¸­çš„ç´¢å¼•
 	m_pDeviceList->RemoveAll();
 
 	return	true;

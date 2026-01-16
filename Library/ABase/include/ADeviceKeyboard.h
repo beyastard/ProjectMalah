@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceKeyboard.h
-// Creator: Wei Hua (Îº»ª)
-// ¼üÅÌÉè±¸
+// Creator: Wei Hua (é­å)
+// é”®ç›˜è®¾å¤‡
 
 #ifndef	___ADEVICEKEYBOARD_H__
 #define	___ADEVICEKEYBOARD_H__
@@ -15,14 +15,14 @@
 class	ADeviceKeyboard		: public ADevice1vs1, public AWinMsgDevice
 {
 public:
-	// ~ ÓÉÓÚ¸¸ÀàÖĞÊÇĞéµÄÎö¹¹£¬ËùÒÔ×ÖÀàÖĞÖ»ÒªÊµÏÖĞéµÄÎö¹¹¾Í»á±»µ÷µ½
-	// ·µ»ØÖ¸¶¨ĞéÄâ¼üµÄ°´ÏÂ×´Ì¬
+	// ~ ç”±äºçˆ¶ç±»ä¸­æ˜¯è™šçš„ææ„ï¼Œæ‰€ä»¥å­—ç±»ä¸­åªè¦å®ç°è™šçš„ææ„å°±ä¼šè¢«è°ƒåˆ°
+	// è¿”å›æŒ‡å®šè™šæ‹Ÿé”®çš„æŒ‰ä¸‹çŠ¶æ€
 	virtual bool	VK_FirstPress(int nVK)					= 0;
 	virtual bool	VK_LastPress(int nVK)					= 0;
 	virtual bool	VK_Pressing(int nVK)					= 0;
-	// »ñµÃWM_CHARµÄ¿É¼û×Ö´®(·µ»Ø×Ö´®³¤¶È)
+	// è·å¾—WM_CHARçš„å¯è§å­—ä¸²(è¿”å›å­—ä¸²é•¿åº¦)
 	virtual int		GetChars(char *pszChars, int nSize)		= 0;
-	// »ñµÃWM_KEYDOWNµÄ¹¦ÄÜ¼ü×Ö´®(·µ»Ø×Ö´®³¤¶È)
+	// è·å¾—WM_KEYDOWNçš„åŠŸèƒ½é”®å­—ä¸²(è¿”å›å­—ä¸²é•¿åº¦)
 	virtual int		GetKeys(char *pszChars, int nSize)		= 0;
 };
 ADeviceKeyboard	* NewADeviceKeyboard();

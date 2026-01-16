@@ -1,13 +1,13 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: DataQueue.cpp
-// Creator: Wei Hua (Îº»ª)
-// Êı¾İ¶ÓÁĞ
+// Creator: Wei Hua (é­å)
+// æ•°æ®é˜Ÿåˆ—
 
 #include "DataQueue.h"
 #include <string.h>
 
-typedef		int			DQDS_T;				// ÓÃÓÚ±íÊ¾Ò»ÌõÊı¾İ´óĞ¡µÄÊı¾İÀàĞÍ
+typedef		int			DQDS_T;				// ç”¨äºè¡¨ç¤ºä¸€æ¡æ•°æ®å¤§å°çš„æ•°æ®ç±»å‹
 #define		DQDS_SIZE	sizeof(DQDS_T)
 
 DataQueue::DataQueue()
@@ -32,7 +32,7 @@ bool	DataQueue::TestIncTail(int nDelta)
 	{
 		if( nDelta >= m_nHead )
 		{
-			// ÎŞ·¨¼ÓÈëÁË
+			// æ— æ³•åŠ å…¥äº†
 			return	false;
 		}
 		m_nLogicBytes	= m_nTail;
@@ -42,7 +42,7 @@ bool	DataQueue::TestIncTail(int nDelta)
 	{
 		if( m_nTail<m_nHead && nTail>=m_nHead )
 		{
-			// ÎŞ·¨¼ÓÈëÁË
+			// æ— æ³•åŠ å…¥äº†
 			return	false;
 		}
 	}

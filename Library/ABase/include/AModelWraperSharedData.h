@@ -63,11 +63,11 @@ struct model_item
 
 struct	shared_role_info
 {
-	AListT<hh_item>											SRI_list_ST_HH;//Ö§³ÖµÄ¹ÒÔØµã
-	AListT<model_item>										SRI_list_MOD;//ÒÀ´Î³öÏÖµÄÄ£ĞÍ
-	AListT<gfx_item>										SRI_list_GFX;//×´Ì¬³öÏÖµÄĞ§¹û
-	AListT<gfx_item>										SRI_list_CNV_GFX;//×´Ì¬³öÏÖµÄ¹ı¶ÉĞ§¹û
-	hashtab<hl_action*,AUString,_hash_function_austring>	SRI_map_HL_LL;//¸ß¼¶¶¯»­Ãûµ½µÍ¼¶¶¯»­ĞòÁĞµÄÓ³Éä
+	AListT<hh_item>											SRI_list_ST_HH;//æ”¯æŒçš„æŒ‚è½½ç‚¹
+	AListT<model_item>										SRI_list_MOD;//ä¾æ¬¡å‡ºç°çš„æ¨¡å‹
+	AListT<gfx_item>										SRI_list_GFX;//çŠ¶æ€å‡ºç°çš„æ•ˆæœ
+	AListT<gfx_item>										SRI_list_CNV_GFX;//çŠ¶æ€å‡ºç°çš„è¿‡æ¸¡æ•ˆæœ
+	hashtab<hl_action*,AUString,_hash_function_austring>	SRI_map_HL_LL;//é«˜çº§åŠ¨ç”»ååˆ°ä½çº§åŠ¨ç”»åºåˆ—çš„æ˜ å°„
 	shared_role_info():SRI_map_HL_LL(128){}
 };
 

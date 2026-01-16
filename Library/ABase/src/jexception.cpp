@@ -178,7 +178,7 @@ int jexception_handle(const char * logfile, int idStack, DWORD error_code, LPEXC
 	AGetFileTitle(es->stack[es->sp - 1].filename, szTitle, MAX_PATH);
 	*/
 
-	// Èç¹ûÊÇ´¿·şÎñÆ÷³ö´í¾ÍÖ±½ÓÍË³ö
+	// å¦‚æœæ˜¯çº¯æœåŠ¡å™¨å‡ºé”™å°±ç›´æ¥é€€å‡º
 	//if( !g_vw_data.Network.IsPureServer )
 	{
 		sprintf(szMsg, "Fatal error occurs at\n\nFile: %s\nLine: %d\nAddr: 0x%08X ReaLine:%d\n\nPlease contact the software vendor.",

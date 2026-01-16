@@ -31,7 +31,7 @@ bool ACamera::Move(int __dir)
 {
 	A3DVECTOR3	vecDir, vecDir2, dV;
 	float		a, sa, ca;
-	// ÑØ×Åµ±Ç°µÄ³¯Ïò
+	// æ²¿ç€å½“å‰çš„æœå‘
 	vecDir	= Normalize(GetA3DCamera()->GetDirH());
 	vecDir2.x	= -vecDir.z;
 	vecDir2.y	= 0;
@@ -44,19 +44,19 @@ bool ACamera::Move(int __dir)
 	m_velocity	= m_velocity + dV;
 	return	true;
 }
-// __dir(Õı¸º)
+// __dir(æ­£è´Ÿ)
 bool ACamera::Lift(int __dir)
 {
 	m_velocity.y	+= float(__dir) * m_fSpeed;
 	return	true;
 }
-// Í£Ö¹
+// åœæ­¢
 bool ACamera::Stop()
 {
 	memset(&m_velocity, 0, sizeof(m_velocity));
 	return	true;
 }
-// ×ªÏò
+// è½¬å‘
 bool ACamera::Turn(float h)
 {
 	m_turn = h*m_fTurnSpeed;
@@ -83,7 +83,7 @@ bool ACamera::LogicRun(float __TimeSpan)
 	//change to second
 	__TimeSpan = __TimeSpan/1000.f;
 	A3DVECTOR3	vecPos, vecDir;
-	// ÎïÀí¹æÂÉ
+	// ç‰©ç†è§„å¾‹
 	vecPos	= GetA3DCamera()->GetPos();
 	vecPos	= vecPos + m_velocity * __TimeSpan;
 
@@ -95,7 +95,7 @@ bool ACamera::LogicRun(float __TimeSpan)
 //	A3DVECTOR3 u = GetA3DCamera()->GetUp();
 //	ADebug::Msg(0,"%f\n",DotProduct(d,u));	
 
-	// ËÙ¶ÈË¥¼õ
+	// é€Ÿåº¦è¡°å‡
 	m_velocity	= m_velocity * m_fDamp;
 
 	m_look = 0.f;

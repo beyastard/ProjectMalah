@@ -496,8 +496,8 @@ bool AWorld::RayTraceMatterInHashTable(
 		{
 			try
 			{
-				//Ó¦¸ÃÔÙ×öÒ»¸öÕë¶ÔÅö×²¼ì²âµÄÉ¢ÁÐ±í£¬µ«ÊÇÃ»Ê±¼ä¸Ä
-				//ÏÖÓÐµÄËùÓÐ¼ÓÈëµ½±íÀïµÄ¶ÔÏó¶¼ÊÇAModelUnitËùÒÔÕâÑùÐ´ÁË
+				//åº”è¯¥å†åšä¸€ä¸ªé’ˆå¯¹ç¢°æ’žæ£€æµ‹çš„æ•£åˆ—è¡¨ï¼Œä½†æ˜¯æ²¡æ—¶é—´æ”¹
+				//çŽ°æœ‰çš„æ‰€æœ‰åŠ å…¥åˆ°è¡¨é‡Œçš„å¯¹è±¡éƒ½æ˜¯AModelUnitæ‰€ä»¥è¿™æ ·å†™äº†
 				AModelUnit * pItem = *(res.first);
 				if(pItem)
 				{

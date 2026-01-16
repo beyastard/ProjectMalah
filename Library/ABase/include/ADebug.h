@@ -1,9 +1,9 @@
 /*
  * FILE: AGame.h
  *
- * DESCRIPTION: µ÷ÊÔÐÅÏ¢Àà
+ * DESCRIPTION: è°ƒè¯•ä¿¡æ¯ç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: çŽ‹è¿œæ˜Ž, 2002/8/9
  *
  * HISTORY:
  *
@@ -16,9 +16,9 @@
 
 enum 
 {
-	DEBUGLEVEL_FATAL	= 0,		//ÖÂÃü´íÎó
-	DEBUGLEVEL_WARNING	= 1,		//¾¯¸æ£¬£¨¿ÉÄÜ³öÏÖµÄ´íÎó£©
-	DEBUGLEVEL_TRACE	= 2,		//³ÌÐòµ÷ÊÔÐÅÏ¢
+	DEBUGLEVEL_FATAL	= 0,		//è‡´å‘½é”™è¯¯
+	DEBUGLEVEL_WARNING	= 1,		//è­¦å‘Šï¼Œï¼ˆå¯èƒ½å‡ºçŽ°çš„é”™è¯¯ï¼‰
+	DEBUGLEVEL_TRACE	= 2,		//ç¨‹åºè°ƒè¯•ä¿¡æ¯
 
 };
 //#define		AERROR(errorMsg)	

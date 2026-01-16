@@ -1,9 +1,9 @@
 /*
  * FILE: AProcessor.h
  *
- * DESCRIPTION: ËùÓÐ´¦ÀíÆ÷µÄ»ùÀà
+ * DESCRIPTION: æ‰€æœ‰å¤„ç†å™¨çš„åŸºç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: çŽ‹è¿œæ˜Ž, 2002/8/9
  *
  * HISTORY:
  *

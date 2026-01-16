@@ -1,11 +1,11 @@
 /*
  * FILE: AWC.h
  *
- * DESCRIPTION: ���ڹ�����
+ * DESCRIPTION: 窗口管理类
  *
- * CREATED BY: ��Զ��, 2002/8/9
+ * CREATED BY: 王远明, 2002/8/9
  *
- * HISTORY:	JiangLi, 2002-08-26. ʵ�ִ��ڹ�����ĸ���ܡ�
+ * HISTORY:	JiangLi, 2002-08-26. 实现窗口管理类的各项功能。
  *
  * Copyright (c) 2001~2008 Epie-Game, All Rights Reserved.
  */

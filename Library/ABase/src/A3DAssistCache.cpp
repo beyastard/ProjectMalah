@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistCache.cpp
-// Creator: Wei Hua (魏华)
-// 通用缓存
+// Creator: Wei Hua (榄忓崕)
+// 閫氱敤缂撳瓨
 
 #include "A3DAssistCache.h"
 #include <string.h>
@@ -99,7 +99,7 @@ bool	A3DAssistCache_StrDup::SearchAndAct(char *szStr, int *pnMEUU, bool bFindOld
 	{
 		for(i=0;i<m_nTotal;i++)
 		{
-			// 如果没有使用就不用查
+			// 濡傛灉娌℃湁浣跨敤灏变笉鐢ㄦ煡
 			if( !m_pUnits[i].m_bTaken )
 			{
 				continue;

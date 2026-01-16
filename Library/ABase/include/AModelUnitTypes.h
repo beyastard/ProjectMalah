@@ -1,9 +1,9 @@
 /*
  * FILE: AModelUnitTypes.h
  *
- * DESCRIPTION: ËùÓÐÅÉÉúÓÚAModelUnitµÄÀàÐÍ¶¼»áÔÚÕâÀïÓÐÒ»¸öÎ¨Ò»µÄÀàÐÍ
- *          ±êÖ¾¡£Ã¿Ìí¼ÓÒ»¸öÐÂµÄÀàÐÍÒ²ÐèÒªÔÚÕâÀïµÄÃ¶¾ÙÀàÐÍÖÐÌí¼ÓÒ»¸ö
- *          ÐÂµÄÃ¶¾Ù³£Á¿¡£
+ * DESCRIPTION: æ‰€æœ‰æ´¾ç”ŸäºŽAModelUnitçš„ç±»åž‹éƒ½ä¼šåœ¨è¿™é‡Œæœ‰ä¸€ä¸ªå”¯ä¸€çš„ç±»åž‹
+ *          æ ‡å¿—ã€‚æ¯æ·»åŠ ä¸€ä¸ªæ–°çš„ç±»åž‹ä¹Ÿéœ€è¦åœ¨è¿™é‡Œçš„æžšä¸¾ç±»åž‹ä¸­æ·»åŠ ä¸€ä¸ª
+ *          æ–°çš„æžšä¸¾å¸¸é‡ã€‚
  *
  * CREATED BY: JiangLi, 2002-8-15
  *
@@ -17,13 +17,13 @@
 
 enum AMODELUNIT_TYPE
 {
-	// AMatter ·ÖÀà£ºBy JiangLi
-	// Í¨ÓÃÀàµÄÃ¶¾ÙÁ¿ÓÐ¿ÉÄÜÓÃ²»ÉÏ£¬Ð´ÔÚÕâÀïÓÃÀ´±í´ïÆä²ã´Î¡£
-	AMATTER_CANBESHOTED,	// ÕâÊÇÒ»¸öÍ¨ÓÃÀà£¬Í¨Ö¸¿ÉÒÔ±»´òËéµÄÎïÆ·¡£
-		AMATTER_CHEST,		// Ïä×Ó£¬¿ÉÒÔ±»´òËé¡£ÅÉÉúÓÚAMATTER_CANBESHOTED
-	AMATTER_CANBEPICKED,	// ÕâÊÇÒ»¸öÍ¨ÓÃÀà£¬Í¨Ö¸¿ÉÒÔ±»Ê°È¡µÄÎïÆ·¡£
-		AMATTER_WEAPON,		// ÎäÆ÷£¬°üÀ¨Ç¹Ðµ£¬ÊÖÁñµ¯£¬×Óµ¯£¬·Àµ¯ÒÂµÈ¡£
-		AMATTER_MEDICINE,	// Ò©Æ·£¬°üÀ¨ÉúÃü»Ö¸´£¬½â¶¾£¨Èç¹ûÄÜÖÐ¶¾£©µÈ¡£
+	// AMatter åˆ†ç±»ï¼šBy JiangLi
+	// é€šç”¨ç±»çš„æžšä¸¾é‡æœ‰å¯èƒ½ç”¨ä¸ä¸Šï¼Œå†™åœ¨è¿™é‡Œç”¨æ¥è¡¨è¾¾å…¶å±‚æ¬¡ã€‚
+	AMATTER_CANBESHOTED,	// è¿™æ˜¯ä¸€ä¸ªé€šç”¨ç±»ï¼Œé€šæŒ‡å¯ä»¥è¢«æ‰“ç¢Žçš„ç‰©å“ã€‚
+		AMATTER_CHEST,		// ç®±å­ï¼Œå¯ä»¥è¢«æ‰“ç¢Žã€‚æ´¾ç”ŸäºŽAMATTER_CANBESHOTED
+	AMATTER_CANBEPICKED,	// è¿™æ˜¯ä¸€ä¸ªé€šç”¨ç±»ï¼Œé€šæŒ‡å¯ä»¥è¢«æ‹¾å–çš„ç‰©å“ã€‚
+		AMATTER_WEAPON,		// æ­¦å™¨ï¼ŒåŒ…æ‹¬æžªæ¢°ï¼Œæ‰‹æ¦´å¼¹ï¼Œå­å¼¹ï¼Œé˜²å¼¹è¡£ç­‰ã€‚
+		AMATTER_MEDICINE,	// è¯å“ï¼ŒåŒ…æ‹¬ç”Ÿå‘½æ¢å¤ï¼Œè§£æ¯’ï¼ˆå¦‚æžœèƒ½ä¸­æ¯’ï¼‰ç­‰ã€‚
 };
 
 #endif	// __AMODELUNITTYPES_H__

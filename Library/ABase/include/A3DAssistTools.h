@@ -1,117 +1,117 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistTools.h
-// Creator: Wei Hua (Îº»ª)
-// ÓÃÓÚ¼ò»¯Ó¦ÓÃµÄ¹¤¾ß¼¯£¬ÔÚÒıÇæ³õÊ¼»¯ºó´´½¨¸Ã¶ÔÏó¡£
+// Creator: Wei Hua (é­å)
+// ç”¨äºç®€åŒ–åº”ç”¨çš„å·¥å…·é›†ï¼Œåœ¨å¼•æ“åˆå§‹åŒ–ååˆ›å»ºè¯¥å¯¹è±¡ã€‚
 
 #ifndef	__A3DASSISTTOOLS_H__
 #define	__A3DASSISTTOOLS_H__
 
 ////////////////////////////////////////////////////////////////////
-// ¹¦ÄÜº¯Êı
+// åŠŸèƒ½å‡½æ•°
 ////////////////////////////////////////////////////////////////////
-// ÓÃÓÚÔÚÆÕÍ¨×Ö´®ºÍhtml¸ñÊ½×Ö´®¼ä×ª»¯
+// ç”¨äºåœ¨æ™®é€šå­—ä¸²å’Œhtmlæ ¼å¼å­—ä¸²é—´è½¬åŒ–
 int	CmnToHtml(char *__html, int __size, char *__cmn);
 int	HtmlToCmn(char *__cmn, int __size, char *__html);
-// ÉèÖÃµ±Ç°Ê±¼ä£¬ÓÃÓÚÈ·¶¨Ò»¸ö»º³åµ¥ÔªµÄ×îºóÊ¹ÓÃÊ±¼ä
-// Ö»ĞèÒªÔÚLogicRunÖĞ×Ô¼ºÔö¼Ó×Ô¼ºµÄTick¾Í¿ÉÒÔÁË
-// £¨Õâ¸öº¯ÊıÈ¡Ïû£©
+// è®¾ç½®å½“å‰æ—¶é—´ï¼Œç”¨äºç¡®å®šä¸€ä¸ªç¼“å†²å•å…ƒçš„æœ€åä½¿ç”¨æ—¶é—´
+// åªéœ€è¦åœ¨LogicRunä¸­è‡ªå·±å¢åŠ è‡ªå·±çš„Tickå°±å¯ä»¥äº†
+// ï¼ˆè¿™ä¸ªå‡½æ•°å–æ¶ˆï¼‰
 // void	SetCurTickToA3DAssistTools(int nTick);
 
 ////////////////////////////////////////////////////////////////////
-// A3DAssistTools½Ó¿Ú¶¨Òå
+// A3DAssistToolsæ¥å£å®šä¹‰
 ////////////////////////////////////////////////////////////////////
 #include <A3DTypes.h>
 class	A3DEngine;
 
 #define	AATS_HTMLSTR_MAX_LEN				1024
 
-// ÓÃÓÚ×¢²áÆÕÍ¨×ÖÌå
+// ç”¨äºæ³¨å†Œæ™®é€šå­—ä½“
 typedef struct	__A3DFONT_INFO_T
 {
 	char	*pszName;
 	int		nHeight;
 	int		nFlag;
-	int		nBufNum;							// A3DStringµÄ»º³å¸÷Êı
-	int		nStrLen;							// ×î´ó×Ö´®³¤¶È
-	int		nSetBufNum;							// A3DStringSetµÄ»º³å¸÷Êı
-	int		nSetStrLen;							// ×î´ó×Ö´®³¤¶È
+	int		nBufNum;							// A3DStringçš„ç¼“å†²å„æ•°
+	int		nStrLen;							// æœ€å¤§å­—ä¸²é•¿åº¦
+	int		nSetBufNum;							// A3DStringSetçš„ç¼“å†²å„æ•°
+	int		nSetStrLen;							// æœ€å¤§å­—ä¸²é•¿åº¦
 }A3DFONT_INFO_T;
-// ÓÃÓÚ×¢²áLCDÍ¼Æ¬×ÖÌå
+// ç”¨äºæ³¨å†ŒLCDå›¾ç‰‡å­—ä½“
 typedef struct	__A3DLCD_INFO_T
 {
-	char	*pszChars;							// ÄÜÊä³öµÄ×Ö·ûÁĞ±í
-	char	*pszCharGraphFile;					// ºÍÊä³ö×Ö·û¶ÔÓ¦µÄÒ»ĞĞµÈ¿íĞ¡Í¼ÎÄ¼ş
-	int		nRow;								// Í¼µÄĞĞÊı
-	int		nCol;								// Í¼µÄÁĞÊı
-	int		nUnitW;								// Ã¿¸öĞ¡Í¼¿í
-	int		nUnitH;								// Ã¿¸öĞ¡Í¼¸ß
+	char	*pszChars;							// èƒ½è¾“å‡ºçš„å­—ç¬¦åˆ—è¡¨
+	char	*pszCharGraphFile;					// å’Œè¾“å‡ºå­—ç¬¦å¯¹åº”çš„ä¸€è¡Œç­‰å®½å°å›¾æ–‡ä»¶
+	int		nRow;								// å›¾çš„è¡Œæ•°
+	int		nCol;								// å›¾çš„åˆ—æ•°
+	int		nUnitW;								// æ¯ä¸ªå°å›¾å®½
+	int		nUnitH;								// æ¯ä¸ªå°å›¾é«˜
 }A3DLCD_INFO_T;
 
 class	A3DAssistTools
 {
 public:
 	virtual			~A3DAssistTools()										{;}
-	virtual void	SetSystemTickcount(unsigned long nT)					= 0;	// ÉèÖÃÏµÍ³µ±Ç°µÄÊ±¼ä£¨ºÁÃë£©£¬ÓÃÓÚÉùÒôµÄfade ¡£Ó¦¸ÃÔÚÖ÷Âß¼­Ã¿´Î»ñµÃÊ±¼äµÄÊ±ºòÉèÖÃÕâ¸ö
-	virtual void	AddSystemTickcount(unsigned long nT)					= 0;	// ÀÛ¼Óµ±Ç°µÄÊ±¼ä¼ä¸ô£¨ºÁÃë£©£¬ÓÃÓÚÉùÒôµÄfade ¡£Ó¦¸ÃÔÚÖ÷Âß¼­Ã¿´Î»ñµÃÊ±¼äµÄÊ±ºòÉèÖÃÕâ¸ö
-	virtual bool	LogicRun()												= 0;	// ÀïÃæ¿ØÖÆµÄÒ»Ğ©¶«Î÷ĞèÒªTick
-	// ÖØÖÃ
-	virtual bool	ResetResource()											= 0;	// ÖØÖÃËùÓĞ×ÊÔ´£¨Ò»°ãÔÚÒ»¸öÓÎÏ·½×¶Î½áÊøÊ±£©
-	// ×ÖÌåÏà¹Ø
-	virtual bool	F_RegisterFont(int nFont, A3DFONT_INFO_T *pInfo)		= 0;	// ×¢²á¡£ÔÚ³ÌĞò¿ªÊ¼Ç°È·¶¨×Ü¹²ĞèÒªÄÇĞ©×ÖÌå£¬È»ºóÒ»´ÎÈ«²¿×¢²á¡£
-	virtual bool	F_RegisterColor(int nColor, A3DCOLOR acolor)			= 0;	// ×¢²áhtmlÖĞ»áÊ¹ÓÃµ½µÄÑÕÉ«¡£
-	virtual bool	F_SetCurFont(int nFont, int nNewSize = 0)				= 0;// ÉèÖÃÂíÉÏĞèÒªÊ¹ÓÃµÄ2D×ÖÌå¡£
+	virtual void	SetSystemTickcount(unsigned long nT)					= 0;	// è®¾ç½®ç³»ç»Ÿå½“å‰çš„æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰ï¼Œç”¨äºå£°éŸ³çš„fade ã€‚åº”è¯¥åœ¨ä¸»é€»è¾‘æ¯æ¬¡è·å¾—æ—¶é—´çš„æ—¶å€™è®¾ç½®è¿™ä¸ª
+	virtual void	AddSystemTickcount(unsigned long nT)					= 0;	// ç´¯åŠ å½“å‰çš„æ—¶é—´é—´éš”ï¼ˆæ¯«ç§’ï¼‰ï¼Œç”¨äºå£°éŸ³çš„fade ã€‚åº”è¯¥åœ¨ä¸»é€»è¾‘æ¯æ¬¡è·å¾—æ—¶é—´çš„æ—¶å€™è®¾ç½®è¿™ä¸ª
+	virtual bool	LogicRun()												= 0;	// é‡Œé¢æ§åˆ¶çš„ä¸€äº›ä¸œè¥¿éœ€è¦Tick
+	// é‡ç½®
+	virtual bool	ResetResource()											= 0;	// é‡ç½®æ‰€æœ‰èµ„æºï¼ˆä¸€èˆ¬åœ¨ä¸€ä¸ªæ¸¸æˆé˜¶æ®µç»“æŸæ—¶ï¼‰
+	// å­—ä½“ç›¸å…³
+	virtual bool	F_RegisterFont(int nFont, A3DFONT_INFO_T *pInfo)		= 0;	// æ³¨å†Œã€‚åœ¨ç¨‹åºå¼€å§‹å‰ç¡®å®šæ€»å…±éœ€è¦é‚£äº›å­—ä½“ï¼Œç„¶åä¸€æ¬¡å…¨éƒ¨æ³¨å†Œã€‚
+	virtual bool	F_RegisterColor(int nColor, A3DCOLOR acolor)			= 0;	// æ³¨å†Œhtmlä¸­ä¼šä½¿ç”¨åˆ°çš„é¢œè‰²ã€‚
+	virtual bool	F_SetCurFont(int nFont, int nNewSize = 0)				= 0;// è®¾ç½®é©¬ä¸Šéœ€è¦ä½¿ç”¨çš„2Då­—ä½“ã€‚
 	virtual	int		F_GetCurFont()											= 0;
 	virtual int		F_GetFont(int nFont)									= 0;
-	virtual bool	F_SetCur3DFont(int nFont, float fRatio = 0)				= 0;	// ÉèÖÃÂíÉÏĞèÒªÊ¹ÓÃµÄ3D×ÖÌå¡£
-	virtual bool	F_GetTextExtent(char *szText, int *pnW, int *pnH)		= 0;	// »ñµÃµ±Ç°×ÖÌåÏÂ£¬Ö¸¶¨×Ö´®µÄÆÁÄ»Êä³ö³ß´ç
-	virtual bool	F_TextOut(int nX, int nY, char *szText, A3DCOLOR color, bool bShade)= 0;	// ÔÚÆÁÄ»Ö¸¶¨Î»ÖÃÊä³öÖ¸¶¨ÑÕÉ«µÄ×Ö´®
-	virtual bool	F_HtmlTextOut(int nX, int nY, char *szText, A3DCOLOR color, bool bShade)=0;	// Êä³ö×Ö´®ÖĞ¿ÉÒÔÀûÓÃÀàhtml¸ñÊ½¸Ä±äÄ³Ò»¶ÎµÄ×ÖÌåÑÕÉ«
-	virtual bool	F_TextOut3D(A3DVECTOR3 vecPos, char *szText, A3DCOLOR color)		= 0;	// ÔÚÈıÎ¬ÊÀ½çµÄÒ»¸öÎ»ÖÃÊä³ö×Ö´®
-	//		ÒÔĞĞ±í¸ñ×Ö·û´®Êä³ö
-	//		nX, nYÊÇÆğÊ¼×ø±ê
+	virtual bool	F_SetCur3DFont(int nFont, float fRatio = 0)				= 0;	// è®¾ç½®é©¬ä¸Šéœ€è¦ä½¿ç”¨çš„3Då­—ä½“ã€‚
+	virtual bool	F_GetTextExtent(char *szText, int *pnW, int *pnH)		= 0;	// è·å¾—å½“å‰å­—ä½“ä¸‹ï¼ŒæŒ‡å®šå­—ä¸²çš„å±å¹•è¾“å‡ºå°ºå¯¸
+	virtual bool	F_TextOut(int nX, int nY, char *szText, A3DCOLOR color, bool bShade)= 0;	// åœ¨å±å¹•æŒ‡å®šä½ç½®è¾“å‡ºæŒ‡å®šé¢œè‰²çš„å­—ä¸²
+	virtual bool	F_HtmlTextOut(int nX, int nY, char *szText, A3DCOLOR color, bool bShade)=0;	// è¾“å‡ºå­—ä¸²ä¸­å¯ä»¥åˆ©ç”¨ç±»htmlæ ¼å¼æ”¹å˜æŸä¸€æ®µçš„å­—ä½“é¢œè‰²
+	virtual bool	F_TextOut3D(A3DVECTOR3 vecPos, char *szText, A3DCOLOR color)		= 0;	// åœ¨ä¸‰ç»´ä¸–ç•Œçš„ä¸€ä¸ªä½ç½®è¾“å‡ºå­—ä¸²
+	//		ä»¥è¡Œè¡¨æ ¼å­—ç¬¦ä¸²è¾“å‡º
+	//		nX, nYæ˜¯èµ·å§‹åæ ‡
 	virtual bool	F_TextOut_Begin()										= 0;
-	//		nDXÊÇ×ø±êÔöÁ¿
+	//		nDXæ˜¯åæ ‡å¢é‡
 	virtual bool	F_TextOut_AddString(int nDX, A3DCOLOR color, char *szText)			= 0;
-	//		bShade±íÊ¾ÊÇ·ñÓĞÓ°×Ó±ß
+	//		bShadeè¡¨ç¤ºæ˜¯å¦æœ‰å½±å­è¾¹
 	virtual bool	F_TextOut_End(int nX, int nY, bool bShade)				= 0;
-	// LCD×Ö·ûÏà¹Ø
-	virtual bool	LCD_RegisterFont(int nLCDFont, A3DLCD_INFO_T *pInfo)	= 0;	// ×¢²á¡£¿ÉÒÔ×¢²á¶àÖÖLCD×ÖÌå¡£
-	virtual bool	LCD_GetTextExtent(char *szText, int *nW, int *nH)		= 0;	// »ñµÃÈç¹û±ä³ÉLCD×Ö´®ºóµÄÆÁÄ»Êä³ö³ß´ç
-	virtual bool	LCD_SetCurFont(int nLCDFont, float fRatio = 0)			= 0;	// ÉèÖÃÂíÉÏĞèÒªÊ¹ÓÃµÄLCD×ÖÌå¡£
-	virtual bool	LCD_SetSep(int nSep)									= 0;	// ÉèÖÃ×Ö¼ä¾à
-	virtual bool	LCD_TextOut(int nX, int nY, char *szText, A3DCOLOR color)			= 0;	// ÔÚÖ¸¶¨Î»ÖÃÊä³öÖ¸¶¨ÑÕÉ«µÄLCDÑù×ÓµÄ×Ö´®
-	// ÉùÒôÏà¹Ø
+	// LCDå­—ç¬¦ç›¸å…³
+	virtual bool	LCD_RegisterFont(int nLCDFont, A3DLCD_INFO_T *pInfo)	= 0;	// æ³¨å†Œã€‚å¯ä»¥æ³¨å†Œå¤šç§LCDå­—ä½“ã€‚
+	virtual bool	LCD_GetTextExtent(char *szText, int *nW, int *nH)		= 0;	// è·å¾—å¦‚æœå˜æˆLCDå­—ä¸²åçš„å±å¹•è¾“å‡ºå°ºå¯¸
+	virtual bool	LCD_SetCurFont(int nLCDFont, float fRatio = 0)			= 0;	// è®¾ç½®é©¬ä¸Šéœ€è¦ä½¿ç”¨çš„LCDå­—ä½“ã€‚
+	virtual bool	LCD_SetSep(int nSep)									= 0;	// è®¾ç½®å­—é—´è·
+	virtual bool	LCD_TextOut(int nX, int nY, char *szText, A3DCOLOR color)			= 0;	// åœ¨æŒ‡å®šä½ç½®è¾“å‡ºæŒ‡å®šé¢œè‰²çš„LCDæ ·å­çš„å­—ä¸²
+	// å£°éŸ³ç›¸å…³
 	virtual bool	S_SndInit(int * n2DBufTypeBuf,int n2DBufTypeCount, int n2DDupBuf,
-							  int* n3DBufTypeBuf, int n3DBufTypeCount, int nFNLen)		= 0;	// ³õÊ¼»¯»º³å¸öÊı£¨nFNLenÊÇÎÄ¼şÃû¶Ô´ó³¤¶È£©
-	virtual void	S_SetJustLoad(bool bSet)								= 0;	// ÉèÖÃÉùÒôÖ»load²»²¥
+							  int* n3DBufTypeBuf, int n3DBufTypeCount, int nFNLen)		= 0;	// åˆå§‹åŒ–ç¼“å†²ä¸ªæ•°ï¼ˆnFNLenæ˜¯æ–‡ä»¶åå¯¹å¤§é•¿åº¦ï¼‰
+	virtual void	S_SetJustLoad(bool bSet)								= 0;	// è®¾ç½®å£°éŸ³åªloadä¸æ’­
 	virtual bool	S_2DSndPlay(int type,char *szSndFile, bool bImmEffect, bool bLoop, bool bCanFade)	= 0;
 	virtual bool	S_2DSndStop(int type,char *szSndFile)							= 0;
 	virtual bool	S_2DSndPause(int type,char *szSndFile)							= 0;
 	virtual bool	S_2DSndIsStopped(int type,char *szSndFile)						= 0;
-	virtual bool	S_2DDupSndPlay(char *szSndFile, bool bImmEffect, bool bCanFade)		= 0;	// ¿ÉÒÔÒ»¸öÉùÒôÓĞ¶àÖØ
+	virtual bool	S_2DDupSndPlay(char *szSndFile, bool bImmEffect, bool bCanFade)		= 0;	// å¯ä»¥ä¸€ä¸ªå£°éŸ³æœ‰å¤šé‡
 	virtual bool	S_3DSndPlay(int iType, char *szSndFile, A3DVECTOR3 &vecPos, float fMinDist, float fMaxDist
 					, bool bImmEffect, bool bForce2D, bool bCanFade)		= 0;
-	virtual void	S_SetVolume(unsigned int nVol)							= 0;	// ÒôÁ¿
-	virtual void	S_2DSndFadeIn(int type,int ms)									= 0;	// ÔÚÕâÖ®ºómsºÁÃëÄÚµÄËùÓĞĞèÒªfadeµÄ2DÉùÒô¶¼»áfadein
-	virtual void	S_2DSndFadeOut(int type)										= 0;	// µ±Ç°ÕıÔÚ²¥·ÅµÄËùÓĞĞèÒªfadeµÄ2DÉùÒô¶¼»áfadeout
-	virtual void	S_3DSndFadeIn(int iType, int ms)								= 0;	// ÔÚÕâÖ®ºómsºÁÃëÄÚµÄËùÓĞĞèÒªfadeµÄ2DÉùÒô¶¼»áfadein
-	virtual void	S_3DSndFadeOut(int iType)										= 0;	// µ±Ç°ÕıÔÚ²¥·ÅµÄËùÓĞĞèÒªfadeµÄ2DÉùÒô¶¼»áfadeout
-	// ±³¾°ÒôÀÖ
+	virtual void	S_SetVolume(unsigned int nVol)							= 0;	// éŸ³é‡
+	virtual void	S_2DSndFadeIn(int type,int ms)									= 0;	// åœ¨è¿™ä¹‹åmsæ¯«ç§’å†…çš„æ‰€æœ‰éœ€è¦fadeçš„2Då£°éŸ³éƒ½ä¼šfadein
+	virtual void	S_2DSndFadeOut(int type)										= 0;	// å½“å‰æ­£åœ¨æ’­æ”¾çš„æ‰€æœ‰éœ€è¦fadeçš„2Då£°éŸ³éƒ½ä¼šfadeout
+	virtual void	S_3DSndFadeIn(int iType, int ms)								= 0;	// åœ¨è¿™ä¹‹åmsæ¯«ç§’å†…çš„æ‰€æœ‰éœ€è¦fadeçš„2Då£°éŸ³éƒ½ä¼šfadein
+	virtual void	S_3DSndFadeOut(int iType)										= 0;	// å½“å‰æ­£åœ¨æ’­æ”¾çš„æ‰€æœ‰éœ€è¦fadeçš„2Då£°éŸ³éƒ½ä¼šfadeout
+	// èƒŒæ™¯éŸ³ä¹
 	virtual bool	BM_Play(char *szSndFile)								= 0;
 	virtual bool	BM_Stop()												= 0;
 	virtual bool	BM_Pause(bool bPause)									= 0;
 	virtual bool	BM_IsStopped()											= 0;
 	virtual void	BM_SetLoop(bool bLoop)									= 0;
 	virtual bool	BM_GetLoop()											= 0;
-	virtual void	BM_SetVolume(unsigned int nVol)							= 0;	// ÒôÁ¿
+	virtual void	BM_SetVolume(unsigned int nVol)							= 0;	// éŸ³é‡
 	virtual unsigned int	BM_GetVolume()									= 0;
 	virtual bool	BM_FadeOut(float fOT, char *szNextFile = NULL, float fIT = 0)	= 0;
 	virtual bool	BM_FadeIn(char *szNextFile, float fIT)					= 0;
-																					// µ­³öµ±Ç°ÒôÀÖ£¬È»ºóµ­ÈëÏÂÒ»¸öÒôÀÖ
+																					// æ·¡å‡ºå½“å‰éŸ³ä¹ï¼Œç„¶åæ·¡å…¥ä¸‹ä¸€ä¸ªéŸ³ä¹
 };
 
-// ÔÚNewA3DAssistToolsÖĞÓÃÓÚ³õÊ¼»¯¸Ã¶ÔÏó
+// åœ¨NewA3DAssistToolsä¸­ç”¨äºåˆå§‹åŒ–è¯¥å¯¹è±¡
 typedef struct	__A3DASSISTTOOLS_INFO_T
 {
 	A3DEngine	*pA3DEngine;

@@ -1,9 +1,9 @@
 /*
  * FILE: AMainFrame.h
  *
- * DESCRIPTION: ��Ϸ�Ŀ�ܴ�����
+ * DESCRIPTION: 游戏的框架窗口类
  *
- * CREATED BY: ��Զ��, 2002/8/9
+ * CREATED BY: 王远明, 2002/8/9
  *
  * HISTORY:
  *

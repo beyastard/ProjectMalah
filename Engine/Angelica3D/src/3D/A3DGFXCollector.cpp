@@ -46,7 +46,7 @@ int A3DGFXCollector::Release()
 
 int A3DGFXCollector::PushBack(const char * filename , A3DGraphicsFX * gfx)
 {
-	//ÏßÐÔ search......
+	//çº¿æ€§ search......
 	int i;
 	for(i = 0; i < m_elecount;i++)
 	{
@@ -57,7 +57,7 @@ int A3DGFXCollector::PushBack(const char * filename , A3DGraphicsFX * gfx)
 		}
 	}
 
-	//¼ÓÈëµ½tabÖÐ
+	//åŠ å…¥åˆ°tabä¸­
 	if(m_elecount >= m_capability)
 	{
 		A3DGFXCollectorElement *p;

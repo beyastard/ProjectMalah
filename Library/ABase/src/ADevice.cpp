@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADevice.cpp
-// Creator: Wei Hua (魏华)
-// 设备基类
+// Creator: Wei Hua (榄忓崕)
+// 璁惧鍩虹被
 
 #include "AUList.h"
 #include "ATrans.h"
@@ -79,7 +79,7 @@ bool	ADevice1vsN::TranslateIn()
 	while(pos)
 	{
 		pATrans = m_pTransList->GetNext(pos);
-		bval	= pATrans->TranslateIn(this);		// 不过一环出错也不应该影响后面的翻译
+		bval	= pATrans->TranslateIn(this);		// 涓嶈繃涓�鐜嚭閿欎篃涓嶅簲璇ュ奖鍝嶅悗闈㈢殑缈昏瘧
 	}
 	return	true;
 }
@@ -92,7 +92,7 @@ bool	ADevice1vsN::TranslateOut()
 	while(pos)
 	{
 		pATrans = m_pTransList->GetNext(pos);
-		bval	= pATrans->TranslateOut(this);		// 不过一环出错也不应该影响后面的翻译
+		bval	= pATrans->TranslateOut(this);		// 涓嶈繃涓�鐜嚭閿欎篃涓嶅簲璇ュ奖鍝嶅悗闈㈢殑缈昏瘧
 	}
 	return	true;
 }

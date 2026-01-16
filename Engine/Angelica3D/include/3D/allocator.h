@@ -25,7 +25,7 @@ private:
 		size_t		_size;
 		abuf_node	*_next;
 	};	
-	typedef struct fbuf_node{ //ÕâÊÇ±£´æÁÙÊ±¿Õ¼äµÄ½áµã
+	typedef struct fbuf_node{ //è¿™æ˜¯ä¿å­˜ä¸´æ—¶ç©ºé—´çš„ç»“ç‚¹
 		fbuf_node * _next;
 	};
 
@@ -43,7 +43,7 @@ public:
 	enum{
 		CHECK_MEM_LEAK
 	};
-	int  check(int type);		//0 ±íÊ¾Ã»ÓĞÈÎºÎ´íÎó
+	int  check(int type);		//0 è¡¨ç¤ºæ²¡æœ‰ä»»ä½•é”™è¯¯
 
 public:
 	allocator(size_t __block_size, size_t __default_n, size_t __grow);

@@ -30,7 +30,7 @@ public:
 		AUString	m_strText;
 		UINT		m_nStrColor;
 		bool		m_bOwnColor;
-		bool		m_bFilledArea;//如果文字比一个ITEM的区域小，则自动调整间距来适应这个区域的宽
+		bool		m_bFilledArea;//濡傛灉鏂囧瓧姣斾竴涓狪TEM鐨勫尯鍩熷皬锛屽垯鑷姩璋冩暣闂磋窛鏉ラ�傚簲杩欎釜鍖哄煙鐨勫
 		AListBoxItem()
 		{
 			m_bOwnColor = false;

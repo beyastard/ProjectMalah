@@ -48,10 +48,10 @@ public:
 	virtual int  OnMsg(PAMSG pMsg);
 };
 
-// ÄÜ¹»±»»÷ÖÐµÄÎïÆ·£¬±»´òËéÒÔºó²¥·Å¶¯»­£¬²úÉúÆäËü
-// µÄÎïÆ·¡£²úÉúÎïÆ·¾ßÓÐÒ»¶¨µÄ¼¸ÂÊ£¬ÄÜ¹»´Ó¶à¸öºòÑ¡
-// ÎïÆ·ÖÐËæ»úÑ¡È¡¡£±»´òÖÐÒÔºóÓ¦¸Ã»áÓÐÒ»¶¨µÄ·ÖÊý£¬
-// ²¢ÇÒÓÐ¿ÉÄÜÐèÒª·¢ËÍÐÅÏ¢¸øÉä»÷Õß¡£
+// èƒ½å¤Ÿè¢«å‡»ä¸­çš„ç‰©å“ï¼Œè¢«æ‰“ç¢Žä»¥åŽæ’­æ”¾åŠ¨ç”»ï¼Œäº§ç”Ÿå…¶å®ƒ
+// çš„ç‰©å“ã€‚äº§ç”Ÿç‰©å“å…·æœ‰ä¸€å®šçš„å‡ çŽ‡ï¼Œèƒ½å¤Ÿä»Žå¤šä¸ªå€™é€‰
+// ç‰©å“ä¸­éšæœºé€‰å–ã€‚è¢«æ‰“ä¸­ä»¥åŽåº”è¯¥ä¼šæœ‰ä¸€å®šçš„åˆ†æ•°ï¼Œ
+// å¹¶ä¸”æœ‰å¯èƒ½éœ€è¦å‘é€ä¿¡æ¯ç»™å°„å‡»è€…ã€‚
 class AMatterCanBeShoted : public AMatter
 {
 public:
@@ -59,15 +59,15 @@ public:
 
 protected:
 
-	// ±»´òÖÐÒÔºó²úÉúµÄÎïÆ·
+	// è¢«æ‰“ä¸­ä»¥åŽäº§ç”Ÿçš„ç‰©å“
 	class AShotGenerate
 	{
 	public:
-		//AMODELUNIT_TYPE	m_Type;		// ÎïÆ·ÀàÐÍ
-		int				m_nProb;	// ²úÉú¼¸ÂÊ
-		int				m_nDelay;	// ²úÉúÎïÆ·µÄÑÓ³Ù
-		///INITMODELUNIT	m_Init;		// ³õÊ¼²ÎÊý
-		union	// ²»Í¬ÀàÐÍÎïÆ·µÄ³õÊ¼²ÎÊý¡£
+		//AMODELUNIT_TYPE	m_Type;		// ç‰©å“ç±»åž‹
+		int				m_nProb;	// äº§ç”Ÿå‡ çŽ‡
+		int				m_nDelay;	// äº§ç”Ÿç‰©å“çš„å»¶è¿Ÿ
+		///INITMODELUNIT	m_Init;		// åˆå§‹å‚æ•°
+		union	// ä¸åŒç±»åž‹ç‰©å“çš„åˆå§‹å‚æ•°ã€‚
 		{
 			int		m_nReserve;
 		};
@@ -84,8 +84,8 @@ public:
 	virtual bool OnShot(AModelUnit *pShotInfo);
 };
 
-// ÄÜ¹»±»Ê°È¡µÄÎïÆ·£¬Ê°È¡ÒÔºó¿ÉÄÜÐèÒª²¥·ÅÉùÒô¡£
-// ±»Ê°È¡ÒÔºó£¬°ÑÎïÆ·Àà±ð·¢ËÍ¸øShotInfoµÄ¹ØÁª¶ÔÏó¡£
+// èƒ½å¤Ÿè¢«æ‹¾å–çš„ç‰©å“ï¼Œæ‹¾å–ä»¥åŽå¯èƒ½éœ€è¦æ’­æ”¾å£°éŸ³ã€‚
+// è¢«æ‹¾å–ä»¥åŽï¼ŒæŠŠç‰©å“ç±»åˆ«å‘é€ç»™ShotInfoçš„å…³è”å¯¹è±¡ã€‚
 class AMatterCanBePicked : public AMatter
 {
 public:

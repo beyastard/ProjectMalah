@@ -1,9 +1,9 @@
 /*
  * FILE: AVisualUnit.h
  *
- * DESCRIPTION: ���п������ԵĶ���Ļ���
+ * DESCRIPTION: 具有可视属性的对象的基类
  *
- * CREATED BY: ��Զ��, 2002/8/9
+ * CREATED BY: 王远明, 2002/8/9
  *
  * HISTORY:
  *

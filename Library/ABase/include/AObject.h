@@ -1,9 +1,9 @@
 /*
  * FILE: AObject.h
  *
- * DESCRIPTION: ÅÉÉú¶¯×÷ºÍ½Ó¿ÚÃèÊöAObject
+ * DESCRIPTION: æ´¾ç”ŸåŠ¨ä½œå’Œæ¥å£æè¿°AObject
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -17,7 +17,7 @@
 #include "AClassInfo.h"
 #include "ADebug.h"
 
-//È¡µÃÀàÃû
+//å–å¾—ç±»å
 #define CLASSNAME(name) #name
 
 
@@ -26,13 +26,13 @@
 //--------------------------
 
 
-/////¸ñÊ½: DECLARE_ASERIAL(classname) in .h
+/////æ ¼å¼: DECLARE_ASERIAL(classname) in .h
 #define DECLARE_ASERIAL(name) \
 	static AClassInfo m_class##name;\
 	virtual AClassInfo * GetClassInfo(); \
 	static name * CreateObject();
 
-/////¸ñÊ½£ºIMPLEMENT_ASERIAL(classname, baseclassname, integer) in .cpp
+/////æ ¼å¼ï¼šIMPLEMENT_ASERIAL(classname, baseclassname, integer) in .cpp
 #define IMPLEMENT_ASERIAL(name, base, version) \
 	AClassInfo name::m_class##name(CLASSNAME(name), (AObject *(*)(void))name::CreateObject, &base::m_class##base, version);\
 	name * name::CreateObject()\

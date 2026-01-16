@@ -1,9 +1,9 @@
 /*
  * FILE: AGamePlay.h
  *
- * DESCRIPTION: ÓÎÏ·ºËĞÄÀà
+ * DESCRIPTION: æ¸¸æˆæ ¸å¿ƒç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: ç‹è¿œæ˜, 2002/8/9
  *
  * HISTORY:
  *
@@ -32,7 +32,7 @@ class AGamePlay : public AProcessor
 {
 protected:
 	int				m_exitCode;
-	//¹ÜÀíÆ÷ÁĞ±í
+	//ç®¡ç†å™¨åˆ—è¡¨
 	AManager *		m_managerList[MAX_MANAGER_NUM];
 	AManager *		m_managerLastDarw;
 	ACamera *		m_pACamera;

@@ -2,7 +2,7 @@
  * FILE: AProperty.h
  *
  * DESCRIPTION: 
- *	ÊµÏÖÊôĞÔ¶¨ÒåËùĞèµÄÀàºÍ½Ó¿Ú¶¨Òå
+ *	å®ç°å±æ€§å®šä¹‰æ‰€éœ€çš„ç±»å’Œæ¥å£å®šä¹‰
  *		ARange;
  *		ASet;
  *		AProperty;
@@ -11,7 +11,7 @@
  *		ASetElement;
  *		APropertyTemplate;
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -27,34 +27,34 @@
 #include "AUString.h"
 #include "stdarg.h"
 
-// ÎªÊµÏÖ´úÂë¼ò»¯¶ø¶¨Òåºê
+// ä¸ºå®ç°ä»£ç ç®€åŒ–è€Œå®šä¹‰å®
 #define EXTERN_DEFINESET(type, name) extern ASetTemplate<type> name;
 #define	DEFINE_SETBEGIN(type, name) ASetTemplate<type> name(
 #define DEFINE_SETELEMENT(type, name, value) ASetTemplate<type>::ASetElement<type>(name, value),
 #define DEFINE_SETEND(type) ASetTemplate<type>::ASetElement<type>());
 
-// ±à¼­Æ÷¶Ô´ıÊôĞÔµÄÍÆ¼ö·½Ê½
+// ç¼–è¾‘å™¨å¯¹å¾…å±æ€§çš„æ¨èæ–¹å¼
 enum 
 {
-	WAY_DEFAULT,		// È±Ê¡·½Ê½£¬ÓÉ±à¼­Æ÷×Ô¶¯¼ì²âAVariantµÄÀàĞÍ²¢´¦Àí
-	WAY_BOOLEAN,		// ²¼¶ûÁ¿´¦Àí·½Ê½
-	WAY_INTEGER,		// ÕûĞÍ´¦Àí·½Ê½
-	WAY_FLOAT,			// ¸¡µã´¦Àí·½Ê½
-	WAY_STRING,			// ×Ö´®´¦Àí·½Ê½
-	WAY_FILENAME,		// ÎÄ¼şÃû
-	WAY_COLOR,			// ÑÕÉ«Öµ
-	WAY_VECTOR,			// ÏòÁ¿Öµ
-	WAY_BINARY,			// ¶ş½øÖÆ¿é
-	WAY_OBJECT,			// ¶ÔÏó
-	WAY_UNITID,			// ¶ÔÏóID
-	WAY_PATHID,			// Â·¾¶ID
-	WAY_STRID,			// (ÎÄµµÄÚ)×Ö·û´®×ÊÔ´ID
-	WAY_SFXID,			// (ÎÄµµÄÚ)ÒôĞ§×ÊÔ´ID
-	// ´¦Àí·½Ê½ËµÃ÷
-	WAY_READONLY	= (1 << 31),// ÊôĞÔÖ»¶Á·ÃÎÊ
+	WAY_DEFAULT,		// ç¼ºçœæ–¹å¼ï¼Œç”±ç¼–è¾‘å™¨è‡ªåŠ¨æ£€æµ‹AVariantçš„ç±»å‹å¹¶å¤„ç†
+	WAY_BOOLEAN,		// å¸ƒå°”é‡å¤„ç†æ–¹å¼
+	WAY_INTEGER,		// æ•´å‹å¤„ç†æ–¹å¼
+	WAY_FLOAT,			// æµ®ç‚¹å¤„ç†æ–¹å¼
+	WAY_STRING,			// å­—ä¸²å¤„ç†æ–¹å¼
+	WAY_FILENAME,		// æ–‡ä»¶å
+	WAY_COLOR,			// é¢œè‰²å€¼
+	WAY_VECTOR,			// å‘é‡å€¼
+	WAY_BINARY,			// äºŒè¿›åˆ¶å—
+	WAY_OBJECT,			// å¯¹è±¡
+	WAY_UNITID,			// å¯¹è±¡ID
+	WAY_PATHID,			// è·¯å¾„ID
+	WAY_STRID,			// (æ–‡æ¡£å†…)å­—ç¬¦ä¸²èµ„æºID
+	WAY_SFXID,			// (æ–‡æ¡£å†…)éŸ³æ•ˆèµ„æºID
+	// å¤„ç†æ–¹å¼è¯´æ˜
+	WAY_READONLY	= (1 << 31),// å±æ€§åªè¯»è®¿é—®
 };
 
-/////ARange½Ó¿Ú
+/////ARangeæ¥å£
 class ARange
 {
 public:
@@ -64,7 +64,7 @@ public:
 	virtual bool IsInRange(AVariant value) = 0;
 };
 
-/////ASet½Ó¿Ú
+/////ASetæ¥å£
 class ASet
 {
 public:
@@ -79,7 +79,7 @@ public:
 
 };
 
-/////AProperty½Ó¿Ú
+/////APropertyæ¥å£
 class AProperty
 {
 public:
@@ -95,7 +95,7 @@ public:
 	virtual ~AProperty() {};
 };
 
-/////ARangeTemplateÀà
+/////ARangeTemplateç±»
 template <class TYPE> class ARangeTemplate : public ARange
 {
 public:
@@ -120,12 +120,12 @@ private:
 	TYPE m_max;
 };
 
-/////ASetTemplateÀà
+/////ASetTemplateç±»
 template <class TYPE> class ASetTemplate : public ASet
 {
 public:
 
-	// ÄÚ½¨ÔªËØÀà
+	// å†…å»ºå…ƒç´ ç±»
 	template <class TYPE> class ASetElement
 	{
 	public:
@@ -163,7 +163,7 @@ protected:
 
 public:
 
-	// ¹¹Ôìº¯Êı
+	// æ„é€ å‡½æ•°
 	ASetTemplate(ASetElement<TYPE> first, ...)
 	{
 		va_list elements, elements2;
@@ -202,13 +202,13 @@ public:
 		}
 	}
 
-	//ÔªËØ¸öÊı
+	//å…ƒç´ ä¸ªæ•°
 	int GetCount()
 	{
 		return m_iCount;
 	}
 
-	// ¸ù¾İË÷Òı»ñÈ¡Ãû³Æ
+	// æ ¹æ®ç´¢å¼•è·å–åç§°
 	AUString GetNameByIndex(int index)
 	{
 		assert(m_pElements);
@@ -216,7 +216,7 @@ public:
 		return m_pElements[index].GetName();
 	}
 
-	// ¸ù¾İË÷Òı»ñÈ¡Öµ
+	// æ ¹æ®ç´¢å¼•è·å–å€¼
 	AVariant GetValueByIndex(int index)
 	{
 		assert(m_pElements);
@@ -224,7 +224,7 @@ public:
 		return AVariant(m_pElements[index].GetData());
 	}
 
-	// ¸ù¾İÃû³Æ²éÖµ
+	// æ ¹æ®åç§°æŸ¥å€¼
 	AVariant GetValueByName(AUString szName)
 	{
 		assert(m_pElements);
@@ -238,10 +238,10 @@ public:
 			}
 		}
 
-		return AVariant();	//Î´ÕÒµ½ÔªËØµÄÇé¿öÏÂ£¬·µ»ØÒ»¸ö¿ÕÁ¿£¬ÆäÀàĞÍÎªAVT_INVALIDTYPE¡£
+		return AVariant();	//æœªæ‰¾åˆ°å…ƒç´ çš„æƒ…å†µä¸‹ï¼Œè¿”å›ä¸€ä¸ªç©ºé‡ï¼Œå…¶ç±»å‹ä¸ºAVT_INVALIDTYPEã€‚
 	}
 
-	// ¸ù¾İÖµ²éÃû³Æ
+	// æ ¹æ®å€¼æŸ¥åç§°
 	AUString GetNameByValue(AVariant value)
 	{
 		assert(m_pElements);
@@ -257,7 +257,7 @@ public:
 		return AUString();
 	}
 
-	// ²éÖµË÷Òı
+	// æŸ¥å€¼ç´¢å¼•
 	int FindValue(AVariant value)
 	{
 		assert(m_pElements);
@@ -272,7 +272,7 @@ public:
 		return -1;
 	}
 
-	// ²éÃû³ÆË÷Òı
+	// æŸ¥åç§°ç´¢å¼•
 	int FindName(AUString szName)
 	{
 		assert(m_pElements);
@@ -293,12 +293,12 @@ template <class TYPE> class APropertyTemplate : public AProperty
 public:
 	
 	APropertyTemplate(
-		const char * szName,			// ÊôĞÔÃû
-		int iOffset,					// Êı¾İÇøÆ«ÒÆÁ¿
-		ASet * pSet = NULL,				// ¼¯ºÏ
-		ARange * pRange = NULL,			// ·¶Î§
-		int way = WAY_DEFAULT,			// ÊôĞÔµÄ´¦Àí·½Ê½
-		const char * szPath = NULL)		// Â·¾¶£¨ÎÄ¼şÁ´½ÓµÄËÑÑ°Î»ÖÃ£¬ÎªNULLÊ±ÏŞÖÆÔÚÖ´ĞĞ³ÌĞò¿ªÊ¼µÄÂ·¾¶ÒÔÏÂ£©
+		const char * szName,			// å±æ€§å
+		int iOffset,					// æ•°æ®åŒºåç§»é‡
+		ASet * pSet = NULL,				// é›†åˆ
+		ARange * pRange = NULL,			// èŒƒå›´
+		int way = WAY_DEFAULT,			// å±æ€§çš„å¤„ç†æ–¹å¼
+		const char * szPath = NULL)		// è·¯å¾„ï¼ˆæ–‡ä»¶é“¾æ¥çš„æœå¯»ä½ç½®ï¼Œä¸ºNULLæ—¶é™åˆ¶åœ¨æ‰§è¡Œç¨‹åºå¼€å§‹çš„è·¯å¾„ä»¥ä¸‹ï¼‰
 	{
 		assert(szName);
 		m_szName	= szName;
@@ -355,11 +355,11 @@ public:
 
 private:
 
-	AUString			m_szName;		// ÊôĞÔÃû
-	AUString			m_szPath;		// Â·¾¶(µ±ÊôĞÔÎªÎÄ¼şÁ´½ÓÊ±£¬ÏŞÖÆÎÄ¼şµÄËÑÑ° Î»ÖÃ)
-	int					m_iOffset;		// Êı¾İÆ«ÒÆÁ¿
-	int					m_iWay;			// ÊôĞÔµÄ´¦Àí·½Ê½
-	ARange *			m_pRange;		// ÊôĞÔÖµµÄ·¶Î§
-	ASet *				m_pSet;			// ÊôĞÔÖµµÄ¼¯ºÏ
+	AUString			m_szName;		// å±æ€§å
+	AUString			m_szPath;		// è·¯å¾„(å½“å±æ€§ä¸ºæ–‡ä»¶é“¾æ¥æ—¶ï¼Œé™åˆ¶æ–‡ä»¶çš„æœå¯» ä½ç½®)
+	int					m_iOffset;		// æ•°æ®åç§»é‡
+	int					m_iWay;			// å±æ€§çš„å¤„ç†æ–¹å¼
+	ARange *			m_pRange;		// å±æ€§å€¼çš„èŒƒå›´
+	ASet *				m_pSet;			// å±æ€§å€¼çš„é›†åˆ
 };
 #endif

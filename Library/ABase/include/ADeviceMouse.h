@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceMouse.h
-// Creator: Wei Hua (Îº»ª)
-// Êó±êÉè±¸
+// Creator: Wei Hua (é­å)
+// é¼ æ ‡è®¾å¤‡
 
 #ifndef	__ADEVICEMOUSE_H__
 #define	__ADEVICEMOUSE_H__
@@ -16,8 +16,8 @@
 class	ADeviceMouse		: public ADevice1vs1, public AWinMsgDevice
 {
 public:
-	// ~ ÓÉÓÚ¸¸ÀàÖĞÊÇĞéµÄÎö¹¹£¬ËùÒÔ×ÖÀàÖĞÖ»ÒªÊµÏÖĞéµÄÎö¹¹¾Í»á±»µ÷µ½
-	// ·µ»ØÖ¸¶¨ĞéÄâ¼üµÄ°´ÏÂ×´Ì¬
+	// ~ ç”±äºçˆ¶ç±»ä¸­æ˜¯è™šçš„ææ„ï¼Œæ‰€ä»¥å­—ç±»ä¸­åªè¦å®ç°è™šçš„ææ„å°±ä¼šè¢«è°ƒåˆ°
+	// è¿”å›æŒ‡å®šè™šæ‹Ÿé”®çš„æŒ‰ä¸‹çŠ¶æ€
 	virtual bool	VK_FirstPress(int nVK)					= 0;
 	virtual bool	VK_LastPress(int nVK)					= 0;
 	virtual bool	VK_Pressing(int nVK)					= 0;
@@ -31,7 +31,7 @@ typedef struct	__ADEVICEMOUSE_INFO_T
 {
 	HWND		hWnd;
 	HINSTANCE	hInst;
-	bool		bWindow;			// ´°¿ÚÄ£Ê½²»ÉèÖÃ¿ØÖÆ¼¶±ğ
+	bool		bWindow;			// çª—å£æ¨¡å¼ä¸è®¾ç½®æ§åˆ¶çº§åˆ«
 	// CursorRange
 	int			nLeft;
 	int			nTop;

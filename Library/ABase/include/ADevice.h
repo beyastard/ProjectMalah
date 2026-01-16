@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADevice.h
-// Creator: Wei Hua (Îº»ª)
-// Éè±¸»ùÀà
+// Creator: Wei Hua (é­å)
+// è®¾å¤‡åŸºç±»
 
 #ifndef	__ADEVICE_H__
 #define	__ADEVICE_H__
@@ -13,7 +13,7 @@ class	ATrans;
 class	AUListS;
 
 ////////////////////////////////////////////////////////////////////
-// ¹ãÒåÉè±¸
+// å¹¿ä¹‰è®¾å¤‡
 ////////////////////////////////////////////////////////////////////
 class	ADevice
 {
@@ -38,7 +38,7 @@ public:
 class	ADevice1vs1	: public ADevice
 {
 protected:
-	ATrans			* m_pTrans;				// ¹ØÁªµÄ·­ÒëÆ÷
+	ATrans			* m_pTrans;				// å…³è”çš„ç¿»è¯‘å™¨
 public:
 	ADevice1vs1();
 	virtual			~ADevice1vs1();
@@ -50,7 +50,7 @@ public:
 class	ADevice1vsN	: public ADevice
 {
 protected:
-	AListT<ATrans *>	*m_pTransList;			// ¹ØÁªµÄ·­ÒëÆ÷ÁĞ±í
+	AListT<ATrans *>	*m_pTransList;			// å…³è”çš„ç¿»è¯‘å™¨åˆ—è¡¨
 public:
 	ADevice1vsN();
 	virtual			~ADevice1vsN();
@@ -61,9 +61,9 @@ public:
 };
 
 ////////////////////////////////////////////////////////////////////
-// ÌØÊâÉè±¸½Ó¿Ú
+// ç‰¹æ®Šè®¾å¤‡æ¥å£
 ////////////////////////////////////////////////////////////////////
-class	AWinMsgDevice						// ¿¿WindowsÏûÏ¢Çı¶¯µÄÉè±¸
+class	AWinMsgDevice						// é Windowsæ¶ˆæ¯é©±åŠ¨çš„è®¾å¤‡
 {
 public:
 	virtual bool	FilterWinMsg(void *pWinMsg)	= 0;

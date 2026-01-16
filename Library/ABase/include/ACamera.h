@@ -1,7 +1,7 @@
 /*
  * FILE: AGame.h
  *
- * DESCRIPTION: AI类的基类
+ * DESCRIPTION: AI绫荤殑鍩虹被
  *
  * CREATED BY: Tom Zhou
  *
@@ -28,9 +28,9 @@ protected:
 
 	A3DVECTOR3			m_pos;
 	A3DVECTOR3			m_dir;
-	float				m_fSpeed;		// 移动速度
-	float				m_fTurnSpeed;	// 转动速度
-	float				m_fDamp;		// 阻尼系数
+	float				m_fSpeed;		// 绉诲姩閫熷害
+	float				m_fTurnSpeed;	// 杞姩閫熷害
+	float				m_fDamp;		// 闃诲凹绯绘暟
 	float				m_turn;
 	float				m_look;
 
@@ -56,11 +56,11 @@ public:
 
 	// __dir(0~360)
 	bool Move(int __dir);
-	// __dir(正负)
+	// __dir(姝ｈ礋)
 	bool Lift(int __dir);
-	// 停止
+	// 鍋滄
 	bool Stop();
-	// 转向
+	// 杞悜
 	bool Turn(float h);
 	bool Look(float v);
 };

@@ -44,7 +44,7 @@ bool AUnit::Load(AArchive &ar, AGame *__pAGame)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 	APointerAutoT<AData*> pData	= (AData*)ar.CreateObject();
 
 	assert(pData != NULL);

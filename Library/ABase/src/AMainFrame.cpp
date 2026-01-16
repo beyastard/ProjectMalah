@@ -122,7 +122,7 @@ bool AMainFrame::InitInstance(HINSTANCE hInstance, LPSTR lpCmdLine,
 		return false;
 	}
 
-	// 埋设产品标识
+	// 鍩嬭浜у搧鏍囪瘑
 	for(int lc = 0;lc < sizeof(m_product.data) / sizeof(long);lc++)
 	{
 		SetWindowLong(m_hWnd, lc * 4, m_product.data[lc]);

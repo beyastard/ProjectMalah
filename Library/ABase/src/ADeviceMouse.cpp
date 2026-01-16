@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: ADeviceMouse.cpp
-// Creator: Wei Hua (Îº»ª)
-// Êó±êÉè±¸
+// Creator: Wei Hua (é­å)
+// é¼ æ ‡è®¾å¤‡
 
 #include "ADeviceMouse.h"
 #include "APlatform.h"
@@ -25,8 +25,8 @@ class	ADeviceMouse_Internal	: public ADeviceMouse
 {
 private:
 	bool	m_bVKeyState[2][ADEVICEMOUSE_NUM_VKEYS];
-	int		m_nGroupNow;								// ±¾´Î¸üĞÂ×´Ì¬×éµÄË÷Òı
-	int		m_nGroupPrev;								// ÉÏ´Î×´Ì¬×éµÄË÷Òı
+	int		m_nGroupNow;								// æœ¬æ¬¡æ›´æ–°çŠ¶æ€ç»„çš„ç´¢å¼•
+	int		m_nGroupPrev;								// ä¸Šæ¬¡çŠ¶æ€ç»„çš„ç´¢å¼•
 	int		m_nWheelRoll[2];
 	int		m_nX, m_nY;
 	int		m_nDX, m_nDY;
@@ -51,7 +51,7 @@ public:
 	//
 	virtual bool	UpdateIn();
 	virtual bool	UpdateOut();
-	// ·µ»ØÖ¸¶¨ĞéÄâ¼üµÄ°´ÏÂ×´Ì¬
+	// è¿”å›æŒ‡å®šè™šæ‹Ÿé”®çš„æŒ‰ä¸‹çŠ¶æ€
 	virtual bool	VK_FirstPress(int nVK);
 	virtual bool	VK_LastPress(int nVK);
 	virtual bool	VK_Pressing(int nVK);
@@ -59,7 +59,7 @@ public:
 	virtual void	GetCursorDeltaPos(int *pnDX, int *pnDY);
 	virtual void	SetCursorRange(int nL, int nT, int nR, int nB);
 	virtual int		GetWheelRoll();
-	// ±ÈÈç´¦ÀíWM_MOUSEWHEELÏûÏ¢
+	// æ¯”å¦‚å¤„ç†WM_MOUSEWHEELæ¶ˆæ¯
 	virtual bool	FilterWinMsg(void *pWinMsg);
 };
 ADeviceMouse	* NewADeviceMouse(ADEVICEMOUSE_INFO_T *pInfo)
@@ -143,7 +143,7 @@ bool	ADeviceMouse_Internal::ReleaseDXMouse()
 {
 	if( m_pDIDMouse )
 	{
-		// ??????»¹²»ÖªµÀÔõÃ´ÊÍ·Å
+		// ??????è¿˜ä¸çŸ¥é“æ€ä¹ˆé‡Šæ”¾
 		m_pDIDMouse->Unacquire();
 		// By JiangLi.
 		m_pDIDMouse->Release();
@@ -167,14 +167,14 @@ bool	ADeviceMouse_Internal::UpdateIn()
 {
 	SwapGroup();
 
-	// ºÍVK¶ÔÓ¦µÄ¼ü
+	// å’ŒVKå¯¹åº”çš„é”®
 	m_bVKeyState[m_nGroupNow][ADMOUSE_VK_LBUTTON]	= PRESSING(VK_LBUTTON);
 	m_bVKeyState[m_nGroupNow][ADMOUSE_VK_RBUTTON]	= PRESSING(VK_RBUTTON);
 	m_bVKeyState[m_nGroupNow][ADMOUSE_VK_MBUTTON]	= PRESSING(VK_MBUTTON);
 	
-	// ºÍ¹öÂÖ¶ÔÓ¦µÄÔÚm_nWheelRoll[m_nGroupPrev]Àï
+	// å’Œæ»šè½®å¯¹åº”çš„åœ¨m_nWheelRoll[m_nGroupPrev]é‡Œ
 
-	// Êó±êÎ»ÖÃ
+	// é¼ æ ‡ä½ç½®
 	HRESULT			hval;
 	DIMOUSESTATE	dims;
 

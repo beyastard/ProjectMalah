@@ -61,23 +61,23 @@ void * ABinary::GetBufferSetLength(int length)
 {
 	assert(length >= 0);
 
-	if(length > 0)		// ·ÖÅä·ÇÁã³¤¶È
+	if(length > 0)		// åˆ†é…éé›¶é•¿åº¦
 	{
-		if(!m_pData)	// ·ÖÅä
+		if(!m_pData)	// åˆ†é…
 		{
 			m_pData = malloc(length);
 		}
-		else			// ÖØ·ÖÅä
+		else			// é‡åˆ†é…
 		{
 			m_pData = realloc(m_pData, length);
 		}
 
-		if(length > m_iLength) // ÄÚ´æÔö³¤»ò±»·ÖÅä
+		if(length > m_iLength) // å†…å­˜å¢é•¿æˆ–è¢«åˆ†é…
 		{
 			memset((char *)m_pData + m_iLength, 0, length - m_iLength);
 		}
 	}
-	else				// ·ÖÅäÁã³¤¶È£¨ÊÍ·Å¶¯×÷£©
+	else				// åˆ†é…é›¶é•¿åº¦ï¼ˆé‡Šæ”¾åŠ¨ä½œï¼‰
 	{
 		free(m_pData);
 		m_pData = NULL;
@@ -105,7 +105,7 @@ bool ABinary::Load(AArchive &ar)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 
 	ar.Read(&m_guidType, sizeof(m_guidType));
 	int length = 0;

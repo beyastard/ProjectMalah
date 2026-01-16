@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistLCD.h
-// Creator: Wei Hua (Îº»ª)
-// Êä³öLCD×ÖÄ¸×ÖÌå
+// Creator: Wei Hua (é­å)
+// è¾“å‡ºLCDå­—æ¯å­—ä½“
 
 #ifndef	__A3DASSISTLCD_H__
 #define	__A3DASSISTLCD_H__

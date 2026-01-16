@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistA3dString.cpp
-// Creator: Wei Hua (Îº»ª)
-// ÎªA3dString×öµÄ»º´æ
+// Creator: Wei Hua (é­åŽ)
+// ä¸ºA3dStringåšçš„ç¼“å­˜
 
 #include "A3DAssistA3dString.h"
 
@@ -76,7 +76,7 @@ int		A3DAssistA3dString::CheckAndSetString(char *szText)
 		{
 			return	-1;
 		}
-		// ÎªÁË±£ÏÕÏÈÒªÊÍ·ÅÒ»´Î
+		// ä¸ºäº†ä¿é™©å…ˆè¦é‡Šæ”¾ä¸€æ¬¡
 		m_pA3DString[nIdx].Release();
 		m_pA3DString[nIdx].Init(m_pA3DEngine->GetA3DDevice(), szText, m_hFont, true);
 	}

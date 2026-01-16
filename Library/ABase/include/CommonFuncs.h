@@ -1,26 +1,26 @@
 // File		: CommonFuncs.h
 // Creator	: Wei Hua
-// ´ó¼Ò¶¼¿ÉÒÔÓÃµÄÒ»Ğ©Í¨ÓÃº¯Êı
+// å¤§å®¶éƒ½å¯ä»¥ç”¨çš„ä¸€äº›é€šç”¨å‡½æ•°
 
 #ifndef	__COMMONFUNCS_H__
 #define	__COMMONFUNCS_H__
 
 #include "A3DTypes.h"
 #include "A3DFuncs.h"
-// ¹«¹²º¯Êı
-// ²åÖµ
+// å…¬å…±å‡½æ•°
+// æ’å€¼
 float	_GetInterpolation(float f, float f1, float f2, float v1, float v2);
-// ÅĞ¶ÏÒ»ĞĞÖĞÊÇ·ñÓĞÖĞÎÄ
+// åˆ¤æ–­ä¸€è¡Œä¸­æ˜¯å¦æœ‰ä¸­æ–‡
 bool	_HaveChineseInStr(char *__str);
 float	_GetHDistance(A3DVECTOR3 Pos1, A3DVECTOR3 Pos2, float fMaxVLen);
 int		_StrTrimC(char *__str, char __c);
 float	_RandBetweenFloat(float __r1, float __r2);
-int		_RandBetweenInt(int __r1, int __r2);		// Èç¹û__r2 > __r1 , Ëæ»ú·¶Î§ÊÇ __r1 µ½ __r2-1
+int		_RandBetweenInt(int __r1, int __r2);		// å¦‚æœ__r2 > __r1 , éšæœºèŒƒå›´æ˜¯ __r1 åˆ° __r2-1
 bool	_IsPathExist(const char *__path, bool __searchpck = true);
 int		_GetFileLen(const char *__file);
-// ·µ»ØCDROMÇı¶¯Æ÷ÊıÄ¿£¬__drivesÊÇÓÉCDROMÇı¶¯Æ÷ÅÌ·û×é³ÉµÄ×Ö´®
+// è¿”å›CDROMé©±åŠ¨å™¨æ•°ç›®ï¼Œ__drivesæ˜¯ç”±CDROMé©±åŠ¨å™¨ç›˜ç¬¦ç»„æˆçš„å­—ä¸²
 int		_GetLogicalCDROM(char *__drives, int __len);
-// ÅĞ¶ÏÕâĞ©ÎÄ¼şÊÇ·ñÔÚ¹âÅÌÉÏ
+// åˆ¤æ–­è¿™äº›æ–‡ä»¶æ˜¯å¦åœ¨å…‰ç›˜ä¸Š
 bool	_HaveTheseFilesOnCDROM(int __fnum, char **__files);
 
 #endif	// __COMMONFUNCS_H__

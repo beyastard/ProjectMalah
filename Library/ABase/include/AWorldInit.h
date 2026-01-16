@@ -18,7 +18,7 @@
 #include "ADebug.h"
 #include "AData.h"
 
-// ÓÎÏ·ÖĞ³öÏÖµÄÌì¿ÕÀàĞÍ
+// æ¸¸æˆä¸­å‡ºç°çš„å¤©ç©ºç±»å‹
 EXTERN_DEFINESET(int, global_skytypes)
 
 typedef struct tagAWORLD_INIT_ENVIRONMENT
@@ -110,14 +110,14 @@ protected:
 
 
 	STATICPROPERIES_BEGIN(AData, AEnvironmentInit)
- 		STATICPROPERTY(AEnvironmentInit, "ÌìÆøÀàĞÍ", long, Weather, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AEnvironmentInit, "ÎíÑÕÉ«", unsigned long, FogColor, NULL, NULL, WAY_COLOR, NULL)
-		STATICPROPERTY(AEnvironmentInit, "ÎíÆğÊ¼¾àÀë",float, FogStart, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AEnvironmentInit, "ÎíÖÕÖ¹¾àÀë",float, FogEnd, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AEnvironmentInit, "ÎíÅ¨¶È",float, FogDensity, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AEnvironmentInit, "»·¾³¹â",unsigned long, Ambient, NULL, NULL, WAY_COLOR, NULL)
-		STATICPROPERTY(AEnvironmentInit, "Ö±Éä¹â",unsigned long, Directional, NULL, NULL, WAY_COLOR, NULL)
-		STATICPROPERTY(AEnvironmentInit, "Ö±Éä¹â·½Ïò",A3DVECTOR3, LightDir, NULL, NULL, WAY_DEFAULT, NULL)
+ 		STATICPROPERTY(AEnvironmentInit, "å¤©æ°”ç±»å‹", long, Weather, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AEnvironmentInit, "é›¾é¢œè‰²", unsigned long, FogColor, NULL, NULL, WAY_COLOR, NULL)
+		STATICPROPERTY(AEnvironmentInit, "é›¾èµ·å§‹è·ç¦»",float, FogStart, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AEnvironmentInit, "é›¾ç»ˆæ­¢è·ç¦»",float, FogEnd, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AEnvironmentInit, "é›¾æµ“åº¦",float, FogDensity, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AEnvironmentInit, "ç¯å¢ƒå…‰",unsigned long, Ambient, NULL, NULL, WAY_COLOR, NULL)
+		STATICPROPERTY(AEnvironmentInit, "ç›´å°„å…‰",unsigned long, Directional, NULL, NULL, WAY_COLOR, NULL)
+		STATICPROPERTY(AEnvironmentInit, "ç›´å°„å…‰æ–¹å‘",A3DVECTOR3, LightDir, NULL, NULL, WAY_DEFAULT, NULL)
 	STATICPROPERIES_END(AEnvironmentInit)
 
 public:
@@ -194,7 +194,7 @@ public:
 			assert(0);
 			return false;
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 		return true;
 	}
 	virtual ~AEnvironmentInit(){}
@@ -206,9 +206,9 @@ public:
 
 	enum
 	{
-		SKY_BOX,		// ºĞ×´Ìì¿Õ
-		SKY_SPHERE,		// Çò×´Ìì¿Õ
-		SKY_GRADIENT	// ½¥±äÌì¿Õ
+		SKY_BOX,		// ç›’çŠ¶å¤©ç©º
+		SKY_SPHERE,		// çƒçŠ¶å¤©ç©º
+		SKY_GRADIENT	// æ¸å˜å¤©ç©º
 	};
 
 	DECLARE_ASERIAL(ASkyInit)
@@ -222,31 +222,31 @@ protected:
 	AUString m_strSurround4;
 	AUString m_strSurround5;
 
-	int		m_int_skytype;		// Ìì¿ÕÀàĞÍ
+	int		m_int_skytype;		// å¤©ç©ºç±»å‹
 
-	AUString	m_str_textfront;	// Ç°·½ÎÆÀí
-	AUString	m_str_textback;		// ºó·½ÎÆÀí
-	AUString	m_str_textflat;		// ¸¡¶¯ÔÆÍ¼
-	AUString	m_str_textcap;		// ¶¥²¿ÔÆÍ¼
+	AUString	m_str_textfront;	// å‰æ–¹çº¹ç†
+	AUString	m_str_textback;		// åæ–¹çº¹ç†
+	AUString	m_str_textflat;		// æµ®åŠ¨äº‘å›¾
+	AUString	m_str_textcap;		// é¡¶éƒ¨äº‘å›¾
 
-	AUString	m_str_cloud;		// ¸¡¶¯ÔÆÍ¼
-	AUString	m_str_gradient;		// Ìİ¶ÈÔÆÍ¼
+	AUString	m_str_cloud;		// æµ®åŠ¨äº‘å›¾
+	AUString	m_str_gradient;		// æ¢¯åº¦äº‘å›¾
 
 	STATICPROPERIES_BEGIN(AData, ASkyInit)
 		
-		STATICPROPERTY(ASkyInit, "Ìì¿ÕÀàĞÍ", int, m_int_skytype, &global_skytypes, NULL, WAY_DEFAULT, NULL)
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş0", AUString, m_strSurround0, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş1", AUString, m_strSurround1, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş2", AUString, m_strSurround2, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş3", AUString, m_strSurround3, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş4", AUString, m_strSurround4, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ºĞ×´Ìì¿ÕÎÄ¼ş5", AUString, m_strSurround5, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		STATICPROPERTY(ASkyInit, "ÇòĞÎÌì¿Õ-Ç°·½ÔÆÍ¼", AUString, m_str_textfront, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		STATICPROPERTY(ASkyInit, "ÇòĞÎÌì¿Õ-ºó·½ÔÆÍ¼", AUString, m_str_textback, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "ÇòĞÎÌì¿Õ-¸¡¶¯ÔÆÍ¼(ÒÑ·ÏÆú)", AUString, m_str_textflat, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		STATICPROPERTY(ASkyInit, "ÇòĞÎÌì¿Õ-¶¥²¿ÔÆÍ¼", AUString, m_str_textcap, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "½¥±äÌì¿Õ-ÔÆÍ¼", AUString, m_str_cloud, NULL, NULL, WAY_FILENAME, "textures\\sky")
-		//STATICPROPERTY(ASkyInit, "½¥±äÌì¿Õ-Ìİ¶ÈÍ¼", AUString, m_str_gradient, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		STATICPROPERTY(ASkyInit, "å¤©ç©ºç±»å‹", int, m_int_skytype, &global_skytypes, NULL, WAY_DEFAULT, NULL)
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶0", AUString, m_strSurround0, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶1", AUString, m_strSurround1, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶2", AUString, m_strSurround2, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶3", AUString, m_strSurround3, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶4", AUString, m_strSurround4, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "ç›’çŠ¶å¤©ç©ºæ–‡ä»¶5", AUString, m_strSurround5, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		STATICPROPERTY(ASkyInit, "çƒå½¢å¤©ç©º-å‰æ–¹äº‘å›¾", AUString, m_str_textfront, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		STATICPROPERTY(ASkyInit, "çƒå½¢å¤©ç©º-åæ–¹äº‘å›¾", AUString, m_str_textback, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "çƒå½¢å¤©ç©º-æµ®åŠ¨äº‘å›¾(å·²åºŸå¼ƒ)", AUString, m_str_textflat, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		STATICPROPERTY(ASkyInit, "çƒå½¢å¤©ç©º-é¡¶éƒ¨äº‘å›¾", AUString, m_str_textcap, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "æ¸å˜å¤©ç©º-äº‘å›¾", AUString, m_str_cloud, NULL, NULL, WAY_FILENAME, "textures\\sky")
+		//STATICPROPERTY(ASkyInit, "æ¸å˜å¤©ç©º-æ¢¯åº¦å›¾", AUString, m_str_gradient, NULL, NULL, WAY_FILENAME, "textures\\sky")
 
 	STATICPROPERIES_END(ASkyInit)
 
@@ -255,7 +255,7 @@ public:
 	ASkyInit()
 	{
 		INITIALIZE_STATICPROPERIES(ASkyInit);
-		m_int_skytype = SKY_BOX;	// Ä¬ÈÏ×´Ì¬ÏÂÎªºĞ×´Ìì¿Õ
+		m_int_skytype = SKY_BOX;	// é»˜è®¤çŠ¶æ€ä¸‹ä¸ºç›’çŠ¶å¤©ç©º
 	}
 
 	void ToKernelDatum(AWORLD_INIT_SKY* __pDatum)
@@ -313,7 +313,7 @@ public:
 			assert(0);
 			return false;
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 		if(nVersion > 0x0100)
 		{
 			ar.Read(&m_int_skytype, sizeof(m_int_skytype));
@@ -322,7 +322,7 @@ public:
 			ar.ReadString(m_str_textflat);	
 			ar.ReadString(m_str_textcap);	
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 		if(nVersion > 0x0200)
 		{
 			ar.ReadString(m_str_cloud);
@@ -373,9 +373,9 @@ protected:
 
 
 	STATICPROPERIES_BEGIN(AData, ASceneInit)
-		STATICPROPERTY(ASceneInit, "ESP ÎÄ¼ş", AUString, m_strESPName, NULL, NULL, WAY_FILENAME, "")
-		STATICPROPERTY(ASceneInit, "BSP ÎÄ¼ş", AUString, m_strBSPName, NULL, NULL, WAY_FILENAME, "")
-		STATICPROPERTY(ASceneInit, "Ä£ĞÍÎÄ¼ş", AUString, m_strModelName, NULL, NULL, WAY_FILENAME, "")
+		STATICPROPERTY(ASceneInit, "ESP æ–‡ä»¶", AUString, m_strESPName, NULL, NULL, WAY_FILENAME, "")
+		STATICPROPERTY(ASceneInit, "BSP æ–‡ä»¶", AUString, m_strBSPName, NULL, NULL, WAY_FILENAME, "")
+		STATICPROPERTY(ASceneInit, "æ¨¡å‹æ–‡ä»¶", AUString, m_strModelName, NULL, NULL, WAY_FILENAME, "")
 	STATICPROPERIES_END(ASceneInit)
 
 public:
@@ -411,7 +411,7 @@ public:
 			assert(0);
 			return false;
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 
 		return true;
 	}
@@ -452,17 +452,17 @@ class ATerrainInit : public AData
 
 	STATICPROPERIES_BEGIN(AData, ATerrainInit)
 
-		STATICPROPERTY(ATerrainInit, "¿í¶È",int,Width, NULL, NULL, WAY_DEFAULT, NULL)			
-		STATICPROPERTY(ATerrainInit, "¸ß¶È",int,Height, NULL, NULL, WAY_DEFAULT, NULL)		
-		STATICPROPERTY(ATerrainInit, "¿É¼û·¶Î§",int,SightRange, NULL, NULL, WAY_DEFAULT, NULL)	
-		STATICPROPERTY(ATerrainInit, "ÎÆÀí¸²¸Ç¶È",int,TextureCover, NULL, NULL, WAY_DEFAULT, NULL)	
-		STATICPROPERTY(ATerrainInit, "ÎÆÀíÊı",int,NumTexture, NULL, NULL, WAY_DEFAULT, NULL)	
-		STATICPROPERTY(ATerrainInit, "µ¥Ôª³ß´ç",float,CellSize, NULL, NULL, WAY_DEFAULT, NULL)		
-		STATICPROPERTY(ATerrainInit, "Æ«ÒÆ",float,Offset, NULL, NULL, WAY_DEFAULT, NULL)		
-		STATICPROPERTY(ATerrainInit, "±ÈÀı",float,Scale, NULL, NULL, WAY_DEFAULT, NULL)	
-		STATICPROPERTY(ATerrainInit, "»ù±¾ÎÄ¼ş", AUString, m_strBase, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(ATerrainInit, "¸ß¶È³¡ÎÄ¼ş", AUString, m_strHeightMap, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(ATerrainInit, "ÎÆÀíÎÄ¼ş", AUString, m_strTexMap, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(ATerrainInit, "å®½åº¦",int,Width, NULL, NULL, WAY_DEFAULT, NULL)			
+		STATICPROPERTY(ATerrainInit, "é«˜åº¦",int,Height, NULL, NULL, WAY_DEFAULT, NULL)		
+		STATICPROPERTY(ATerrainInit, "å¯è§èŒƒå›´",int,SightRange, NULL, NULL, WAY_DEFAULT, NULL)	
+		STATICPROPERTY(ATerrainInit, "çº¹ç†è¦†ç›–åº¦",int,TextureCover, NULL, NULL, WAY_DEFAULT, NULL)	
+		STATICPROPERTY(ATerrainInit, "çº¹ç†æ•°",int,NumTexture, NULL, NULL, WAY_DEFAULT, NULL)	
+		STATICPROPERTY(ATerrainInit, "å•å…ƒå°ºå¯¸",float,CellSize, NULL, NULL, WAY_DEFAULT, NULL)		
+		STATICPROPERTY(ATerrainInit, "åç§»",float,Offset, NULL, NULL, WAY_DEFAULT, NULL)		
+		STATICPROPERTY(ATerrainInit, "æ¯”ä¾‹",float,Scale, NULL, NULL, WAY_DEFAULT, NULL)	
+		STATICPROPERTY(ATerrainInit, "åŸºæœ¬æ–‡ä»¶", AUString, m_strBase, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(ATerrainInit, "é«˜åº¦åœºæ–‡ä»¶", AUString, m_strHeightMap, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(ATerrainInit, "çº¹ç†æ–‡ä»¶", AUString, m_strTexMap, NULL, NULL, WAY_DEFAULT, NULL)
 
 	STATICPROPERIES_END(ATerrainInit)
 
@@ -553,7 +553,7 @@ public:
 			assert(0);
 			return false;
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 
 		return true;
 	}

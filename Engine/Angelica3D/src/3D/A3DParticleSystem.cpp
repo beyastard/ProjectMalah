@@ -709,9 +709,9 @@ bool A3DParticleSystem::UpdateInstancedGeometryParticles()
 							else
 							{
 								// Now we should play an action to invoke the hit ground sound
-								if( pParticle->pModel->FindGroupActionByName("[ยไตุ]", NULL) )
+								if( pParticle->pModel->FindGroupActionByName("[่ฝๅฐ]", NULL) )
 								{
-									pParticle->pModel->PlayActionByName("[ยไตุ]", true);
+									pParticle->pModel->PlayActionByName("[่ฝๅฐ]", true);
 								}
 							}
 						}

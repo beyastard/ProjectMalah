@@ -1,9 +1,9 @@
 /*
  * FILE: AUnit.h
  *
- * DESCRIPTION: ËùÓÐ¾ßÓÐÂß¼­¶¯×÷µÄ¶ÔÏóµÄ»ùÀà
+ * DESCRIPTION: æ‰€æœ‰å…·æœ‰é€»è¾‘åŠ¨ä½œçš„å¯¹è±¡çš„åŸºç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: çŽ‹è¿œæ˜Ž, 2002/8/9
  *
  * HISTORY:
  *
@@ -40,15 +40,15 @@ protected:
 	unsigned long	m_iTicks;
 
 	// By JiangLi
-	// ´´½¨Ò»¸öÅÉÉúÓÚADataµÄ¶ÔÏó£¬Èç¹û×ÓÀà½øÐÐ¶ÁÐ´Êý¾Ý
-	// µÄ²Ù×÷£¬¾Í±ØÐëÖØÔØÕâ¸öº¯Êý´´½¨ºÏÊÊµÄÊý¾Ý¶ÔÏó¡£
+	// åˆ›å»ºä¸€ä¸ªæ´¾ç”ŸäºŽADataçš„å¯¹è±¡ï¼Œå¦‚æžœå­ç±»è¿›è¡Œè¯»å†™æ•°æ®
+	// çš„æ“ä½œï¼Œå°±å¿…é¡»é‡è½½è¿™ä¸ªå‡½æ•°åˆ›å»ºåˆé€‚çš„æ•°æ®å¯¹è±¡ã€‚
 	virtual AData* CreateData();
-	// °ÑÊý¾ÝÐ´Èëµ½Êý¾Ý¶ÔÏóÀï¡£Í¨³£±£´æÒ»¸ö¶ÔÏóµÄÊ±ºòÐèÒªÖ´ÐÐÕâ
-	// ¸öº¯Êý¡£±£´æµÄÊý¾ÝÓ¦¸ÃÊÇÄÜ¹»ÓÃÀ´ÍêÈ«»Ö¸´×ÔÉíµÄ¡£
+	// æŠŠæ•°æ®å†™å…¥åˆ°æ•°æ®å¯¹è±¡é‡Œã€‚é€šå¸¸ä¿å­˜ä¸€ä¸ªå¯¹è±¡çš„æ—¶å€™éœ€è¦æ‰§è¡Œè¿™
+	// ä¸ªå‡½æ•°ã€‚ä¿å­˜çš„æ•°æ®åº”è¯¥æ˜¯èƒ½å¤Ÿç”¨æ¥å®Œå…¨æ¢å¤è‡ªèº«çš„ã€‚
 	virtual bool OnWriteData(AData* pData);
-	// ´ÓÊý¾Ý¶ÔÏóÖÐ¶ÁÈ¡Êý¾Ý¡£Õâ¸öÊý¾ÝÓÐ¿ÉÄÜÀ´Ô´ÓÚÁ÷£¬»òÕßÀ´Ô´ÓÚ
-	// ÄÚ´æÖÐµÄÊý¾Ý£»Ò²ÓÐ¿ÉÄÜÊÇ¸üÐÂÊý¾ÝµÄ¹ý³Ì¡£ËùÒÔ×îºÃ²»Òª°ÑÕâ
-	// ¸öº¯Êý½ö½öµ±×ö³õÊ¼»¯µÄ¹ý³Ì¡£
+	// ä»Žæ•°æ®å¯¹è±¡ä¸­è¯»å–æ•°æ®ã€‚è¿™ä¸ªæ•°æ®æœ‰å¯èƒ½æ¥æºäºŽæµï¼Œæˆ–è€…æ¥æºäºŽ
+	// å†…å­˜ä¸­çš„æ•°æ®ï¼›ä¹Ÿæœ‰å¯èƒ½æ˜¯æ›´æ–°æ•°æ®çš„è¿‡ç¨‹ã€‚æ‰€ä»¥æœ€å¥½ä¸è¦æŠŠè¿™
+	// ä¸ªå‡½æ•°ä»…ä»…å½“åšåˆå§‹åŒ–çš„è¿‡ç¨‹ã€‚
 	virtual bool OnReadData(AData* pData);
 public:
 	virtual bool IsDel();

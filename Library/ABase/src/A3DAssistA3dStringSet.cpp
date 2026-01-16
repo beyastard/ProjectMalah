@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistA3dStringSet.cpp
-// Creator: Wei Hua (魏华)
-// 为A3dString做的缓存
+// Creator: Wei Hua (榄忓崕)
+// 涓篈3dString鍋氱殑缂撳瓨
 
 #include "A3DAssistA3dStringSet.h"
 
@@ -127,7 +127,7 @@ bool	A3DAssistA3dStringSet::Release()
 
 bool	A3DAssistA3dStringSet::ResetAll()
 {
-	// 因为只初始化一次，所以不能在这里Release
+	// 鍥犱负鍙垵濮嬪寲涓�娆★紝鎵�浠ヤ笉鑳藉湪杩欓噷Release
 	A3DAssistCache_BinString::ResetAll();
 	return	true;
 }

@@ -47,7 +47,7 @@ int A3DModelCollector::Release()
 
 int A3DModelCollector::PushBack(const char * filename , A3DModel * pModel)
 {
-	//ÏßÐÔ search......
+	//çº¿æ€§ search......
 	int i;
 	for(i = 0; i < m_elecount;i++)
 	{
@@ -58,7 +58,7 @@ int A3DModelCollector::PushBack(const char * filename , A3DModel * pModel)
 		}
 	}
 
-	//¼ÓÈëµ½tabÖÐ
+	//åŠ å…¥åˆ°tabä¸­
 	if(m_elecount >= m_capability)
 	{
 		A3DModelCollectorElement *p;

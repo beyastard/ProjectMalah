@@ -215,7 +215,7 @@ int __cdecl ADumpMemoryLeak::vc_report_hook( int reportType, char *message, int 
 		_CrtSetReportHook(m_old_report_hook);
 		if(nCount > 0)
 		{
-			ADebug::MsgStr(0, "нчнд╪Чпео╒╣ддз╢Фп╧б╘ %d ╢╕ё╛вэЁ╓╤х %d вж╫з║ё\n", nCount, nSize);
+			ADebug::MsgStr(0, "Ф≈═Ф√┤Д╩╤Д©║Ф│╞Г └Е├┘Е╜≤ФЁ└Ф╪▐ %d Е╓└О╪▄Ф─╩И∙©Е╨╕ %d Е╜≈Х┼┌Ц─┌\n", nCount, nSize);
 		}
 	}
 	returnValue	= 0;

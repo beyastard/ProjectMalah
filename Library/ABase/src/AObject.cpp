@@ -1,9 +1,9 @@
 /*
  * FILE: AObject.h
  *
- * DESCRIPTION: AObjectµÄ·½·¨ÊµÏÖ
+ * DESCRIPTION: AObjectçš„æ–¹æ³•å®ç°
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -41,7 +41,7 @@ bool AObject::Load(AArchive &ar)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 	return true;
 }
 
@@ -56,7 +56,7 @@ bool AObject::Save(AArchive &ar)
 	return true;
 }
 
-// ¶ÔÏóÊÇ·ñÅÉÉú×ÔÄ³Àà
+// å¯¹è±¡æ˜¯å¦æ´¾ç”Ÿè‡ªæŸç±»
 bool AObject::IsKindOf(AClassInfo * pClassInfo)
 {
 	if(!pClassInfo) return false;

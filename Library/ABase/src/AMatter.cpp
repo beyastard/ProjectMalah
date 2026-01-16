@@ -100,12 +100,12 @@ bool AMatterCanBeShoted::OnShot(AModelUnit *pShotInfo)
 	{
 		return false;
 	}
-	// ²úÉúÎïÆ·£¨¾ßÓÐÒ»¶¨ÑÓ³Ù£©
+	// äº§ç”Ÿç‰©å“ï¼ˆå…·æœ‰ä¸€å®šå»¶è¿Ÿï¼‰
 
-	// ²¥·Å¶¯»­£¨ÔÚ´ËÆÚ¼ä£¬OnShotÓ¦¸Ã±»½ûÓÃ£©
+	// æ’­æ”¾åŠ¨ç”»ï¼ˆåœ¨æ­¤æœŸé—´ï¼ŒOnShotåº”è¯¥è¢«ç¦ç”¨ï¼‰
 
-	// ·¢ËÍÖÕÖ¹×ÔÉí¡°ÉúÃü¡±µÄÏûÏ¢¸øAMatterMan.
-	// ÓÐ¿ÉÄÜ²»ÖÕÖ¹£¬ÔÚÆÁÄ»ÉÏ±£ÁôÒ»Ð©Ð§¹û¡£
+	// å‘é€ç»ˆæ­¢è‡ªèº«â€œç”Ÿå‘½â€çš„æ¶ˆæ¯ç»™AMatterMan.
+	// æœ‰å¯èƒ½ä¸ç»ˆæ­¢ï¼Œåœ¨å±å¹•ä¸Šä¿ç•™ä¸€äº›æ•ˆæžœã€‚
 	return true;
 }
 
@@ -133,11 +133,11 @@ bool AMatterCanBePicked::OnShot(AModelUnit *pShotInfo)
 		return false;
 	}
 
-	// ²¥·ÅÉùÒô
+	// æ’­æ”¾å£°éŸ³
 
-	// ·¢ËÍÊ°»ñÎïÆ·µÄÏûÏ¢
+	// å‘é€æ‹¾èŽ·ç‰©å“çš„æ¶ˆæ¯
 
-	// ·¢ËÍÖÕÖ¹ÏûÏ¢ 
+	// å‘é€ç»ˆæ­¢æ¶ˆæ¯ 
 
 	return true;
 }*/

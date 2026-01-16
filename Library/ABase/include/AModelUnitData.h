@@ -8,17 +8,17 @@
 struct AMODEL_KERNEL_DATUM
 {
 	// do not move this var. be used as copy starting point.
-	A3DVECTOR3			pos;					//×ËÌ¬		
+	A3DVECTOR3			pos;					//å§¿æ€		
 	// -----------------------------------------------------
-	A3DVECTOR3			dir;					//×ËÌ¬
-	A3DVECTOR3			up;						//×ËÌ¬
-	bool				ray_trace_enable;		//ÊÇ·ñ¿É±»ray_trace¼ì²â
-	bool				aabb_trace_enable;		//ÊÇ·ñ¿É±»aabb_trace¼ì²â
-	bool				visibility;				//ÊÇ·ñ¿É¼û
+	A3DVECTOR3			dir;					//å§¿æ€
+	A3DVECTOR3			up;						//å§¿æ€
+	bool				ray_trace_enable;		//æ˜¯å¦å¯è¢«ray_traceæ£€æµ‹
+	bool				aabb_trace_enable;		//æ˜¯å¦å¯è¢«aabb_traceæ£€æµ‹
+	bool				visibility;				//æ˜¯å¦å¯è§
 
 	// do not move this var. be used as copy ending point.
-	AUString			config_file;			//ÅäÖÃÎÄ¼şÃû
-	AUString			state;					//×´Ì¬
+	AUString			config_file;			//é…ç½®æ–‡ä»¶å
+	AUString			state;					//çŠ¶æ€
 
 	AMODEL_KERNEL_DATUM():
 	ray_trace_enable(true),
@@ -58,14 +58,14 @@ public:
 	DECLARE_ASERIAL(AModelUnitData)
 
 	STATICPROPERIES_BEGIN(AData, AModelUnitData)
-		STATICPROPERTY(AModelUnitData, "Î»ÖÃ", A3DVECTOR3, m_model_datum.pos, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "³¯Ïò", A3DVECTOR3, m_model_datum.dir, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "Ë®Æ½", A3DVECTOR3, m_model_datum.up, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "ÊÇ·ñ¿ÉÒÔ±»rayTrace", bool, m_model_datum.ray_trace_enable, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "ÊÇ·ñ¿ÉÒÔ±»aabbTrace", bool, m_model_datum.aabb_trace_enable, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "ÊÇ·ñ¿É¼û", bool, m_model_datum.visibility, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "ÅäÖÃÎÄ¼şÃû", AUString, m_model_datum.config_file, NULL, NULL, WAY_DEFAULT, NULL)
-		STATICPROPERTY(AModelUnitData, "³õÊ¼×´Ì¬", AUString, m_model_datum.state, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "ä½ç½®", A3DVECTOR3, m_model_datum.pos, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "æœå‘", A3DVECTOR3, m_model_datum.dir, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "æ°´å¹³", A3DVECTOR3, m_model_datum.up, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "æ˜¯å¦å¯ä»¥è¢«rayTrace", bool, m_model_datum.ray_trace_enable, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "æ˜¯å¦å¯ä»¥è¢«aabbTrace", bool, m_model_datum.aabb_trace_enable, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "æ˜¯å¦å¯è§", bool, m_model_datum.visibility, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "é…ç½®æ–‡ä»¶å", AUString, m_model_datum.config_file, NULL, NULL, WAY_DEFAULT, NULL)
+		STATICPROPERTY(AModelUnitData, "åˆå§‹çŠ¶æ€", AUString, m_model_datum.state, NULL, NULL, WAY_DEFAULT, NULL)
 	STATICPROPERIES_END(AModelUnitData)
 
 public:
@@ -91,7 +91,7 @@ public:
 			assert(0);
 			return false;
 		}
-		//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+		//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 
 		return m_model_datum.Load(ar);
 	}

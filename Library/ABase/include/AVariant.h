@@ -1,12 +1,12 @@
 /*
  * FILE: AVariant.h
  *
- * DESCRIPTION: ÊµÏÖÍòÓÃÊı¾İÀàAVariant
+ * DESCRIPTION: å®ç°ä¸‡ç”¨æ•°æ®ç±»AVariant
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
- * HISTORY: By JiangLi¡£Ê¹ÓÃÄ£°å¹¹Ôìº¯ÊıÒÔ¼°Ä£°åÀàĞÍ×ª»»²Ù×÷·ûÓ¦¸ÃÊÇ²»¿ÉĞĞµÄ¡£
- *               Òò´ËÖØĞÂ¶¨ÒåÁËÏà¹Ø²¿·Ö¡£
+ * HISTORY: By JiangLiã€‚ä½¿ç”¨æ¨¡æ¿æ„é€ å‡½æ•°ä»¥åŠæ¨¡æ¿ç±»å‹è½¬æ¢æ“ä½œç¬¦åº”è¯¥æ˜¯ä¸å¯è¡Œçš„ã€‚
+ *               å› æ­¤é‡æ–°å®šä¹‰äº†ç›¸å…³éƒ¨åˆ†ã€‚
  *
  * Copyright (c) 2001~2008 Epie-Game, All Rights Reserved.
  */
@@ -32,27 +32,27 @@ public:
 
 	enum AVARTYPE
 	{
-		AVT_INVALIDTYPE,	// ·Ç·¨ÀàĞÍ£¬ÓÃÓÚÄ¬ÈÏ¹¹Ôì,´ËÊ±ÈÎºÎÊı¾İ³ÉÔ±¶¼²»¿ÉÓÃ
-		AVT_BOOL,			// ²¼¶ûÁ¿				m_avData.bV;
-		AVT_CHAR,			// ×Ö·û					m_avData.cV;	
-		AVT_UCHAR,			// ÎŞ·ûºÅ×Ö·û			m_avData.ucV;	
-		AVT_SHORT,			// ¶ÌÕûĞÍ				m_avData.sV;	
-		AVT_USHORT,			// ÎŞ·ûºÅ¶ÌÕûĞÍ			m_avData.usV;	
-		AVT_INT,			// ÕûĞÍ					m_avData.iV;	
-		AVT_UINT,			// ÎŞ·ûºÅÕûĞÍ			m_avData.uiV;	
-		AVT_LONG,			// ³¤ÕûĞÍ				m_avData.lV;	
-		AVT_ULONG,			// ÎŞ·ûºÅ³¤ÕûĞÍ			m_avData.ulV;	
-		AVT_INT64,			// 64BitÕûĞÍ			m_avData.i64V;	
-		AVT_UINT64,			// ÎŞ·ûºÅ64BitÕûĞÍ		m_avData.ui64V;
-		AVT_FLOAT,			// ¸¡µãÊı				m_avData.fV;	
-		AVT_DOUBLE,			// Ë«¾«¶È¸¡µãÊı			m_avData.dV;	
-		AVT_POBJECT,		// ¶ÔÏóÖ¸Õë				m_avData.paV;
-		AVT_A3DVECTOR3,		// ÏòÁ¿					m_avData.a3dvV;
-		AVT_A3DMATRIX4,		// ¾ØÕó					m_avData.pa3dmV;
-		AVT_STRING,			// ×Ö·û´®				m_avData.pstrV;
-		AVT_PABINARY,		// ¶ş½øÖÆ¿é				m_avData.binV;
-		AVT_PACLASSINFO,	// Àà´®ĞĞ»¯ĞÅÏ¢Ö¸Õë		m_avData.paciV;
-		AVT_PASET,			// ¼¯ºÏÖ¸Õë				m_avData.pasetV;
+		AVT_INVALIDTYPE,	// éæ³•ç±»å‹ï¼Œç”¨äºé»˜è®¤æ„é€ ,æ­¤æ—¶ä»»ä½•æ•°æ®æˆå‘˜éƒ½ä¸å¯ç”¨
+		AVT_BOOL,			// å¸ƒå°”é‡				m_avData.bV;
+		AVT_CHAR,			// å­—ç¬¦					m_avData.cV;	
+		AVT_UCHAR,			// æ— ç¬¦å·å­—ç¬¦			m_avData.ucV;	
+		AVT_SHORT,			// çŸ­æ•´å‹				m_avData.sV;	
+		AVT_USHORT,			// æ— ç¬¦å·çŸ­æ•´å‹			m_avData.usV;	
+		AVT_INT,			// æ•´å‹					m_avData.iV;	
+		AVT_UINT,			// æ— ç¬¦å·æ•´å‹			m_avData.uiV;	
+		AVT_LONG,			// é•¿æ•´å‹				m_avData.lV;	
+		AVT_ULONG,			// æ— ç¬¦å·é•¿æ•´å‹			m_avData.ulV;	
+		AVT_INT64,			// 64Bitæ•´å‹			m_avData.i64V;	
+		AVT_UINT64,			// æ— ç¬¦å·64Bitæ•´å‹		m_avData.ui64V;
+		AVT_FLOAT,			// æµ®ç‚¹æ•°				m_avData.fV;	
+		AVT_DOUBLE,			// åŒç²¾åº¦æµ®ç‚¹æ•°			m_avData.dV;	
+		AVT_POBJECT,		// å¯¹è±¡æŒ‡é’ˆ				m_avData.paV;
+		AVT_A3DVECTOR3,		// å‘é‡					m_avData.a3dvV;
+		AVT_A3DMATRIX4,		// çŸ©é˜µ					m_avData.pa3dmV;
+		AVT_STRING,			// å­—ç¬¦ä¸²				m_avData.pstrV;
+		AVT_PABINARY,		// äºŒè¿›åˆ¶å—				m_avData.binV;
+		AVT_PACLASSINFO,	// ç±»ä¸²è¡ŒåŒ–ä¿¡æ¯æŒ‡é’ˆ		m_avData.paciV;
+		AVT_PASET,			// é›†åˆæŒ‡é’ˆ				m_avData.pasetV;
 	};
 
 
@@ -95,7 +95,7 @@ public:
 	DEFINEOPERATOR(__int64)
 	DEFINEOPERATOR(unsigned __int64)
 
-	// ¶ÔfloatµÄ×ª»»×öÌØÊâÉè¼Æ
+	// å¯¹floatçš„è½¬æ¢åšç‰¹æ®Šè®¾è®¡
 	operator float()
 	{
 		assert(m_iType != AVT_INVALIDTYPE);
@@ -106,7 +106,7 @@ public:
 		return (float)(*(__int64 *)(&m_avData));
 	}
 
-	// ¶ÔdoubleµÄ×ª»»×öÌØÊâÉè¼Æ
+	// å¯¹doubleçš„è½¬æ¢åšç‰¹æ®Šè®¾è®¡
 	operator double()
 	{
 		assert(m_iType != AVT_INVALIDTYPE);
@@ -129,29 +129,29 @@ private:
 
 	union AVARIANT
 	{
-		bool					bV;			// ²¼¶ûÁ¿
-		char					cV;			// ×Ö·û
-		unsigned char			ucV;		// ÎŞ·ûºÅ×Ö·û
-		short					sV;			// ¶ÌÕûĞÍ
-		unsigned short			usV;		// ÎŞ·ûºÅ¶ÌÕûĞÍ
-		int						iV;			// ÕûĞÍ
-		unsigned int			uiV;		// ÎŞ·ûºÅÕûĞÍ
-		long					lV;			// ³¤ÕûĞÍ
-		unsigned long			ulV;		// ÎŞ·ûºÅ³¤ÕûĞÍ
-		__int64					i64V;		// 64BitÕûĞÍ
-		unsigned __int64		ui64V;		// ÎŞ·ûºÅ64BitÕûĞÍ
-		float					fV;			// ¸¡µãÊı
-		double					dV;			// Ë«¾«¶È¸¡µãÊı
-		AObject *				paV;		// ¶ÔÏóÖ¸Õë
-		char					a3dvV[sizeof(A3DVECTOR3)];	// ÏòÁ¿Êı¾İÇø
-		char					a3dmV[sizeof(A3DMATRIX4)];	// ¾ØÕóÊı¾İÇø
-		AUString *				pstrV;		// ×Ö·û´® 
-		const ABinary *			pbinV;		// ¶ş½øÖÆ¿é¶ÔÏóÖ¸Õë
-		AClassInfo *			paciV;		// ´®ĞĞ»¯ĞÅÏ¢Ö¸Õë
-		ASet *					pasetV;		// ¼¯ºÏÖ¸Õë
+		bool					bV;			// å¸ƒå°”é‡
+		char					cV;			// å­—ç¬¦
+		unsigned char			ucV;		// æ— ç¬¦å·å­—ç¬¦
+		short					sV;			// çŸ­æ•´å‹
+		unsigned short			usV;		// æ— ç¬¦å·çŸ­æ•´å‹
+		int						iV;			// æ•´å‹
+		unsigned int			uiV;		// æ— ç¬¦å·æ•´å‹
+		long					lV;			// é•¿æ•´å‹
+		unsigned long			ulV;		// æ— ç¬¦å·é•¿æ•´å‹
+		__int64					i64V;		// 64Bitæ•´å‹
+		unsigned __int64		ui64V;		// æ— ç¬¦å·64Bitæ•´å‹
+		float					fV;			// æµ®ç‚¹æ•°
+		double					dV;			// åŒç²¾åº¦æµ®ç‚¹æ•°
+		AObject *				paV;		// å¯¹è±¡æŒ‡é’ˆ
+		char					a3dvV[sizeof(A3DVECTOR3)];	// å‘é‡æ•°æ®åŒº
+		char					a3dmV[sizeof(A3DMATRIX4)];	// çŸ©é˜µæ•°æ®åŒº
+		AUString *				pstrV;		// å­—ç¬¦ä¸² 
+		const ABinary *			pbinV;		// äºŒè¿›åˆ¶å—å¯¹è±¡æŒ‡é’ˆ
+		AClassInfo *			paciV;		// ä¸²è¡ŒåŒ–ä¿¡æ¯æŒ‡é’ˆ
+		ASet *					pasetV;		// é›†åˆæŒ‡é’ˆ
 	} m_avData;
 
-	int m_iType;	// Êı¾İÀàĞÍ
+	int m_iType;	// æ•°æ®ç±»å‹
 };
 
 #endif

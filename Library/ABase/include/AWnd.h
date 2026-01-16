@@ -1,7 +1,7 @@
 /*
  * FILE: AWnd.h
  *
- * DESCRIPTION: ´°¿ÚÀà
+ * DESCRIPTION: çª—å£ç±»
  *
  * CREATED BY: JiangLi, 2002-8-26
  *

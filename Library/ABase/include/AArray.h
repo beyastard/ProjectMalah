@@ -16,7 +16,7 @@
 #include "APlatform.h"
 #include "ADebug.h"
 
-// ֻ֧�ּ����ͻ��߼򵥽ṹ�������С�������Ҫ�ġ������͹��캯����
+// 只支持简单类型或者简单结构。不能有“功能重要的”析构和构造函数。
 template<typename TYPE> class AArrayT
 {
 protected:
@@ -44,7 +44,7 @@ public:
 	const TYPE& operator [] (int nIndex) const;
 };
 
-// һ���ַ��������飬�������ڶ����ı��༭���б���ȡ�
+// 一个字符串的数组，可以用于多行文本编辑，列表框等。
 class AArrayString
 {
 protected:

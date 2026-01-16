@@ -120,7 +120,7 @@ bool AGamePlay::Run(int& __nRet,float fTimeSpan)
 
 	DeviceDealIn();
 	
-BEGIN_STAT("ËùÓÐµÄÂß¼­");
+BEGIN_STAT("æ‰€æœ‰çš„é€»è¾‘");
 	if(m_nEarIn%10 == 0)
 	{
 		if(m_pAGame->GetA3DCamera())
@@ -128,8 +128,8 @@ BEGIN_STAT("ËùÓÐµÄÂß¼­");
 		m_nEarIn = 0;
 	}
 	m_nEarIn++;
-//½çÃæ
-	BEGIN_STAT("½çÃæµÄLogicRunÍ³¼Æ");
+//ç•Œé¢
+	BEGIN_STAT("ç•Œé¢çš„LogicRunç»Ÿè®¡");
 	if(GetBits() & INTERFACE_MASK && m_pAInterface && m_pAInterface->GetActiveStatus())
 	{
 		if( m_pAInterface->LogicRun(fTimeSpan) == false)
@@ -140,8 +140,8 @@ BEGIN_STAT("ËùÓÐµÄÂß¼­");
 		}
 	}
 	END_STAT();
-//×Ô¼º	
-	BEGIN_STAT("ËùÓÐ¹ÜÀíÆ÷µÄLogicRunÍ³¼Æ");
+//è‡ªå·±	
+	BEGIN_STAT("æ‰€æœ‰ç®¡ç†å™¨çš„LogicRunç»Ÿè®¡");
 	if(GetActiveStatus())
 	{
 		if( this->LogicRun(fTimeSpan) == false)
@@ -166,8 +166,8 @@ BEGIN_STAT("ËùÓÐµÄÂß¼­");
 	}
 	assert(m_fTickAnimationTime<ENGINETICKTIME);
 	END_STAT();
-//»æÖÆ
-	BEGIN_STAT("ËùÓÐµÄDraw");
+//ç»˜åˆ¶
+	BEGIN_STAT("æ‰€æœ‰çš„Draw");
 	if(Draw() == false )
 	{
 		ADebug::Msg(0,"AEnyaGamePlay draw error");
@@ -209,7 +209,7 @@ bool AGamePlay::Draw()
 	
 	pA3DEngine->BeginCacheAlphaMesh(pA3DViewport);
 
-	BEGIN_STAT("AWorldµÄRenderÍ³¼Æ");
+	BEGIN_STAT("AWorldçš„Renderç»Ÿè®¡");
 
 	if(m_bGamePlayRender && m_pAWorld && !m_pAWorld->Render(pA3DViewport))
 	{
@@ -219,7 +219,7 @@ bool AGamePlay::Draw()
 	}
 	END_STAT();
 
-	BEGIN_STAT("ManagerµÄDrawÍ³¼Æ");
+	BEGIN_STAT("Managerçš„Drawç»Ÿè®¡");
 	for(int i=0;i<MAX_MANAGER_NUM;i++)
 	{
 		if(m_bGamePlayRender && m_managerList[i])
@@ -232,7 +232,7 @@ bool AGamePlay::Draw()
 		}
 	}
 	END_STAT();
-	BEGIN_STAT("Rain SnowµÄLogicRunÍ³¼Æ");
+	BEGIN_STAT("Rain Snowçš„LogicRunç»Ÿè®¡");
 	if(m_bGamePlayRender && m_bRain)
 	{
 		if(m_pAGame->GetA3DRain())
@@ -432,7 +432,7 @@ void AGamePlay::DeviceDealOut()
 
 bool AGamePlay::A3DAssistToolsLogicRun(float time)
 {
-	// ±£Ö¤A3DAssistTools¿ÉÒÔÕý³£ÔËÐÐ
+	// ä¿è¯A3DAssistToolså¯ä»¥æ­£å¸¸è¿è¡Œ
 	if(m_pAGame->GetA3DAssistTools())
 	{
 		m_pAGame->GetA3DAssistTools()->LogicRun();

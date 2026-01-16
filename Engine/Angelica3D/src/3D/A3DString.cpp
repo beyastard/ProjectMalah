@@ -409,7 +409,7 @@ bool A3DString::RecordCharWidth(char* szText, HDC hDC, HFONT hFont)
 		return false;
 	}
 
-	GetTextExtentPoint32(hDC, "ÖÐ", 2, &ChinaSize);
+	GetTextExtentPoint32(hDC, "ä¸­", 2, &ChinaSize);
 
 	for (i=0; i < iLen; i++)
 	{

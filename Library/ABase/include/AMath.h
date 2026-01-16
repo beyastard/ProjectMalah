@@ -1,9 +1,9 @@
 /*
  * FILE: AMath.h
  *
- * DESCRIPTION: »ù±¾ÊıÑ§º¯Êı
+ * DESCRIPTION: åŸºæœ¬æ•°å­¦å‡½æ•°
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/19
+ * CREATED BY: ç‹è¿œæ˜, 2002/8/19
  *
  * HISTORY:
  *
@@ -17,12 +17,12 @@
 #include <math.h>
 #include "abasea3d.h"
 
-// ¿´Ò»¸ö¸¡µãÊıÊÇ·ñ¿ÉÒÔÈÏÎªÊÇ0
+// çœ‹ä¸€ä¸ªæµ®ç‚¹æ•°æ˜¯å¦å¯ä»¥è®¤ä¸ºæ˜¯0
 int	IsFloatZero(float __f);
 
-// ½«·½ÏòÏòÁ¿×ª»¯ÎªË®Æ½×ª½Ç(0~2PIE)ºÍ´¹Ö±×ª½Ç(-PIE/2~PIE/2)£¬
-// __anglehºÍ__anglev·Ö±ğÊÇ½Ç¶ÈµÄË®Æ½ÊıÖµºÍÊúÖ±ÊıÖµ
-// __htotalºÍ__vtotal·Ö±ğÊÇË®Æ½Ô²ÖÜºÍÊúÖ±°ëÔ°ÖÜµÄµÈ·Ö¸ñÊı
+// å°†æ–¹å‘å‘é‡è½¬åŒ–ä¸ºæ°´å¹³è½¬è§’(0~2PIE)å’Œå‚ç›´è½¬è§’(-PIE/2~PIE/2)ï¼Œ
+// __anglehå’Œ__anglevåˆ†åˆ«æ˜¯è§’åº¦çš„æ°´å¹³æ•°å€¼å’Œç«–ç›´æ•°å€¼
+// __htotalå’Œ__vtotalåˆ†åˆ«æ˜¯æ°´å¹³åœ†å‘¨å’Œç«–ç›´åŠå›­å‘¨çš„ç­‰åˆ†æ ¼æ•°
 int	Dir2TwoAngle(float __dx, float __dy, float __dz
 	, int *__angleh, int *__anglev, int __htotal, int __vtotal);
 int	TwoAngle2Dir(int __angleh, int __anglev, int __htotal, int __vtotal
@@ -31,21 +31,21 @@ int	TwoAngle2Dir(float __angleh, float __anglev
 	, float *__dx, float *__dy, float *__dz);
 int	NormalizeDir(float *__dx, float *__dy, float *__dz);
 
-// Ë®Æ½½Ç¶È(0~2PIE)£¬´¹Ö±½Ç¶È(-PIE/2~PIE/2)
+// æ°´å¹³è§’åº¦(0~2PIE)ï¼Œå‚ç›´è§’åº¦(-PIE/2~PIE/2)
 int	TwoAngle2Int(float __fh, float __fv, int *__ih, int *__iv, int __htotal, int __vtotal);
 int	Int2TwoAngle(int __ih, int __iv, int __htotal, int __vtotal, float *__fh, float *__fv);
 
-//Ë®Æ½ÎªÏòÁ¿£¬´¹Ö±Îª(-PIE/2~PIE/2)
+//æ°´å¹³ä¸ºå‘é‡ï¼Œå‚ç›´ä¸º(-PIE/2~PIE/2)
 int	DirAngle2Vector(float __dx, float __dz, float __av, float *__dirx, float *__diry, float *__dirz);
 int	Vector2DirAngle(float __dirx, float __diry, float __dirz, float *__dx, float *__dz, float *__av);
-// ·½ÏòÏòÁ¿±ä³É½Ç¶È[0,2PIE)£¬·µ»Ø-1±íÊ¾Ã»ÓĞ½Ç¶È
+// æ–¹å‘å‘é‡å˜æˆè§’åº¦[0,2PIE)ï¼Œè¿”å›-1è¡¨ç¤ºæ²¡æœ‰è§’åº¦
 int	Dir2Degree(float __dx, float __dz, float *__degree);
 int	Degree2Dir(float __degree, float *__dx, float *__dz);
-// ±ä³É[1,360]£¬0±íÊ¾Ã»ÓĞ½Ç¶È
+// å˜æˆ[1,360]ï¼Œ0è¡¨ç¤ºæ²¡æœ‰è§’åº¦
 int	Dir2IntDegree(float __dx, float __dz, int *__degree);
-//·µ»Ø-1±íÊ¾ÏòÁ¿(x1,z1)Ïà¶ÔÓÚÏòÁ¿(x,z)×óÆ«£¬·ñÔòÓÒÆ«
+//è¿”å›-1è¡¨ç¤ºå‘é‡(x1,z1)ç›¸å¯¹äºå‘é‡(x,z)å·¦åï¼Œå¦åˆ™å³å
 int GetPointWay(float x,float z,float x1,float z1);
-// ²åÖµ
+// æ’å€¼
 float	GetInterpolation(float f, float f1, float f2, float v1, float v2);
 A3DVECTOR3 UpProduct(A3DVECTOR3 vecDir);
 

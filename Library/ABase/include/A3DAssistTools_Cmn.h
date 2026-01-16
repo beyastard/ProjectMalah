@@ -1,8 +1,8 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: A3DAssistTools_Cmn.h
-// Creator: Wei Hua (Îº»ª)
-// A3DAssistTools¹¤¾ß¼¯µÄÄÚ²¿¹«ÓÃÍ·ÎÄ¼ş
+// Creator: Wei Hua (é­å)
+// A3DAssistToolså·¥å…·é›†çš„å†…éƒ¨å…¬ç”¨å¤´æ–‡ä»¶
 
 #ifndef	__A3DASSISTTOOLS_CMN_H__
 #define	__A3DASSISTTOOLS_CMN_H__

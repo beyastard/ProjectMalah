@@ -1,7 +1,7 @@
 /*
  * FILE: AIDRec.h
  *
- * DESCRIPTION: ID信息记录;
+ * DESCRIPTION: ID淇℃伅璁板綍;
  *
  * CREATED BY: wangyuanming, 2001/8/20
  *
@@ -17,10 +17,10 @@
 class AObject;
 
 
-//大小的单位为指针个数
+//澶у皬鐨勫崟浣嶄负鎸囬拡涓暟
 class AIDRec : public ABinary  
 {
-	int		m_nCaheSize;		//缓冲大小
+	int		m_nCaheSize;		//缂撳啿澶у皬
 public:
 	bool Malloc(int __newSize, int __newValue=NULL);
 	bool ReMalloc(int __newSize,int __newValue= NULL);

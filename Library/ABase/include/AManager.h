@@ -1,9 +1,9 @@
 /*
  * FILE: AUnit.h
  *
- * DESCRIPTION: ���й������Ļ���
+ * DESCRIPTION: 所有管理器的基类
  *
- * CREATED BY: ��Զ��, 2002/8/9
+ * CREATED BY: 王远明, 2002/8/9
  *
  * HISTORY:
  *
@@ -18,10 +18,10 @@
 
 
 #define		MAN_SELF	-1
-//manager ID,���ID_MAN_GAME�ĺ�������
+//manager ID,请从ID_MAN_GAME的后面添加
 enum
 {
-	//��Щֵ������д�����ļ��Ͷ������ļ���˳�����Բ�Ӧ�øı�
+	//这些值决定了写存盘文件和读存盘文件的顺序，所以不应该改变
 	ID_MAN_BEGIN = 0,
 	ID_MAN_CAMERA		= ID_MAN_BEGIN,
 	ID_MAN_EVENT		= 1,

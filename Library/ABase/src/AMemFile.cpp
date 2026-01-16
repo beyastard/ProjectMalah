@@ -1,9 +1,9 @@
 /*
  * FILE: AMemFile.cpp
  *
- * DESCRIPTION: ÄÚ´æÎÄ¼ş
+ * DESCRIPTION: å†…å­˜æ–‡ä»¶
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/10/27
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/10/27
  *
  * HISTORY:
  *
@@ -39,7 +39,7 @@ bool AMemFile::Write(const void * buff, int size)
 
 	if(m_dw_position + size >= ::GlobalSize(m_handle_memory))
 	{
-		// À©³äÄÚ´æÇø
+		// æ‰©å……å†…å­˜åŒº
 		m_handle_memory = ::GlobalReAlloc(
 			m_handle_memory, 
 			(((m_dw_length + size) / 1024) + 1) * 1024,
@@ -134,7 +134,7 @@ bool AMemFile::DupData(AObject *pSrc, AObject *pDst)
 
 	AMemFile memfile;
 	{
-		// ±£´æÊı¾İ
+		// ä¿å­˜æ•°æ®
 		AArchive ar(&memfile, true);
 		if(!pSrc->Save(ar)) return false;
 	}
@@ -142,7 +142,7 @@ bool AMemFile::DupData(AObject *pSrc, AObject *pDst)
 	memfile.SeekToBegin();
 
 	{
-		// ×°ÔØÊı¾İ
+		// è£…è½½æ•°æ®
 		AArchive ar(&memfile, false);
 		if(!pDst->Load(ar)) return false;
 	}

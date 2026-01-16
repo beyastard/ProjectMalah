@@ -4,7 +4,7 @@
  * DESCRIPTION: A class which is the base of all the data objects;
  *
  * CREATED BY: JiangLi, 2002/08/08
- *             ÑîÖÇÓ¯ 2002/8/20 properies manager & analyze
+ *             æ¨æ™ºç›ˆ 2002/8/20 properies manager & analyze
  *
  * HISTORY: 
  *
@@ -22,10 +22,10 @@
 
 // AObject -> AIDObject -> class AData;
 
-// ³õÊ¼»¯¾²Ì¬ÊôÐÔ¼¯ºÏ£¨½öÏÞÓÚÔÚ¹¹Ôìº¯ÊýÖÐ³öÏÖ£©
+// åˆå§‹åŒ–é™æ€å±žæ€§é›†åˆï¼ˆä»…é™äºŽåœ¨æž„é€ å‡½æ•°ä¸­å‡ºçŽ°ï¼‰
 #define INITIALIZE_STATICPROPERIES(classname) 
 
-// ¶¨Òå¾²Ì¬ÊôÐÔ¼¯ºÏÆðÊ¼µã£¬²ÎÊý£ºÀàÃû£¬»ùÀàÃû
+// å®šä¹‰é™æ€å±žæ€§é›†åˆèµ·å§‹ç‚¹ï¼Œå‚æ•°ï¼šç±»åï¼ŒåŸºç±»å
 #define STATICPROPERIES_BEGIN(base, classname) \
 	virtual int ProperiesCount() \
 	{ \
@@ -53,7 +53,7 @@
 			static AProperty * pProps[] = \
 			{
 
-// ¶¨Òå¾²Ì¬ÊôÐÔÖÕ½áµã£¬²ÎÊý£ºÀàÃû
+// å®šä¹‰é™æ€å±žæ€§ç»ˆç»“ç‚¹ï¼Œå‚æ•°ï¼šç±»å
 #define STATICPROPERIES_END(classname) \
 			};\
 			static int count = sizeof(pProps) / sizeof(AProperty *);\
@@ -86,42 +86,42 @@
 		return properies.properies(pCount, pName, index);\
 	}
 
-// ¶¨ÒåÊôÐÔÏîÄ¿£¬²ÎÊý£ºÊôÐÔÃû£¬±äÁ¿ÀàÐÍ£¬±äÁ¿Ö¸Õë£¬ÊôÐÔÖµ¼¯ºÏ£¬ÊôÐÔÖµ·¶Î§£¬ÊôÐÔµÄ´¦Àí·½Ê½£¬ÎÄ¼þÃûµÄËÑÑ°Î»ÖÃ£¨Èç¹ûÊôÐÔÖµÎªÎÄ¼þÁ´½ÓµÄ»°£©
+// å®šä¹‰å±žæ€§é¡¹ç›®ï¼Œå‚æ•°ï¼šå±žæ€§åï¼Œå˜é‡ç±»åž‹ï¼Œå˜é‡æŒ‡é’ˆï¼Œå±žæ€§å€¼é›†åˆï¼Œå±žæ€§å€¼èŒƒå›´ï¼Œå±žæ€§çš„å¤„ç†æ–¹å¼ï¼Œæ–‡ä»¶åçš„æœå¯»ä½ç½®ï¼ˆå¦‚æžœå±žæ€§å€¼ä¸ºæ–‡ä»¶é“¾æŽ¥çš„è¯ï¼‰
 #define STATICPROPERTY(classname, name, prop_type, prop_data, prop_set, prop_range, prop_way, prop_path) \
 			new APropertyTemplate<prop_type>(name, offsetof(classname, prop_data), prop_set, prop_range, prop_way, prop_path),
 
 
 /*
-  µäÐÍµÄÊôÐÔ¶¨ÒåÓÐÈýÖÖ£º
+  å…¸åž‹çš„å±žæ€§å®šä¹‰æœ‰ä¸‰ç§ï¼š
 
-  ¼òµ¥ÀàÐÍ
+  ç®€å•ç±»åž‹
   STATICPROPERTY("property", int, m_int_value, NULL, NULL, WAY_DEFAULT, NULL)
 
-  ¼òµ¥ÀàÐÍµ«Ö¸¶¨´¦ÀíÄ£Ê½
+  ç®€å•ç±»åž‹ä½†æŒ‡å®šå¤„ç†æ¨¡å¼
   STATICPROPERTY("property", A3DCOLOR, m_a3c_value, NULL, NULL, WAY_COLOR, NULL)
 
-  ÎÄ¼þÁ´½Ó
+  æ–‡ä»¶é“¾æŽ¥
   STATICPROPERTY("property", AUString, m_str_skytexture, NULL, NULL, WAY_FILENAME, "texture\\sky")
 
-  ¹ØÓÚ´¦Àí·½Ê½µÄ¶¨Òå£¬ÈçÏÂ£º
+  å…³äºŽå¤„ç†æ–¹å¼çš„å®šä¹‰ï¼Œå¦‚ä¸‹ï¼š
 	enum 
 	{
-		WAY_DEFAULT,		// È±Ê¡·½Ê½£¬ÓÉ±à¼­Æ÷×Ô¶¯¼ì²âAVariantµÄÀàÐÍ²¢´¦Àí
-		WAY_BOOLEAN,		// ²¼¶ûÁ¿´¦Àí·½Ê½
-		WAY_INTEGER,		// ÕûÐÍ´¦Àí·½Ê½
-		WAY_FLOAT,			// ¸¡µã´¦Àí·½Ê½
-		WAY_STRING,			// ×Ö´®´¦Àí·½Ê½
-		WAY_FILENAME,		// ÎÄ¼þÃû
-		WAY_COLOR,			// ÑÕÉ«Öµ
-		WAY_VECTOR,			// ÏòÁ¿Öµ
-		WAY_BINARY,			// ¶þ½øÖÆ¿é
-		WAY_OBJECT,			// ¶ÔÏó
-		WAY_UNITID,			// ¶ÔÏóID
-		WAY_PATHID,			// Â·¾¶ID
-		WAY_STRID,			// (ÎÄµµÄÚ)×Ö·û´®×ÊÔ´ID
-		WAY_SFXID,			// (ÎÄµµÄÚ)ÒôÐ§×ÊÔ´ID
-		// ´¦Àí·½Ê½ËµÃ÷
-		WAY_READONLY	= (1 << 31),// ÊôÐÔÖ»¶Á·ÃÎÊ
+		WAY_DEFAULT,		// ç¼ºçœæ–¹å¼ï¼Œç”±ç¼–è¾‘å™¨è‡ªåŠ¨æ£€æµ‹AVariantçš„ç±»åž‹å¹¶å¤„ç†
+		WAY_BOOLEAN,		// å¸ƒå°”é‡å¤„ç†æ–¹å¼
+		WAY_INTEGER,		// æ•´åž‹å¤„ç†æ–¹å¼
+		WAY_FLOAT,			// æµ®ç‚¹å¤„ç†æ–¹å¼
+		WAY_STRING,			// å­—ä¸²å¤„ç†æ–¹å¼
+		WAY_FILENAME,		// æ–‡ä»¶å
+		WAY_COLOR,			// é¢œè‰²å€¼
+		WAY_VECTOR,			// å‘é‡å€¼
+		WAY_BINARY,			// äºŒè¿›åˆ¶å—
+		WAY_OBJECT,			// å¯¹è±¡
+		WAY_UNITID,			// å¯¹è±¡ID
+		WAY_PATHID,			// è·¯å¾„ID
+		WAY_STRID,			// (æ–‡æ¡£å†…)å­—ç¬¦ä¸²èµ„æºID
+		WAY_SFXID,			// (æ–‡æ¡£å†…)éŸ³æ•ˆèµ„æºID
+		// å¤„ç†æ–¹å¼è¯´æ˜Ž
+		WAY_READONLY	= (1 << 31),// å±žæ€§åªè¯»è®¿é—®
 	};
 */
 
@@ -142,19 +142,19 @@ public:
 	virtual bool Save(AArchive &ar);
 	virtual bool Load(AArchive &ar);
 
-	// ÊôÐÔ¸öÊý
+	// å±žæ€§ä¸ªæ•°
 	int GetPropertyCount()
 	{
 		return ProperiesCount();
 	}
 
-	// ²éÕÒÊôÐÔ
-	AProperty * GetProperty(int index)			// Ê¹ÓÃÐòºÅ»ñµÃÊôÐÔ
+	// æŸ¥æ‰¾å±žæ€§
+	AProperty * GetProperty(int index)			// ä½¿ç”¨åºå·èŽ·å¾—å±žæ€§
 	{
 		return Properies(index);
 	}
 
-	AProperty * GetProperty(AUString name)		// Ê¹ÓÃÃû³Æ»ñµÃÊôÐÔ
+	AProperty * GetProperty(AUString name)		// ä½¿ç”¨åç§°èŽ·å¾—å±žæ€§
 	{
 		return Properies(name);
 	}
@@ -164,7 +164,7 @@ public:
 
 protected:
 
-	AUString				m_str_name;			// ¶ÔÏóÃû³Æ
+	AUString				m_str_name;			// å¯¹è±¡åç§°
 
 	virtual int ProperiesCount()
 	{
@@ -189,7 +189,7 @@ protected:
 		{
 			static AProperty * pProps[] = 
 			{
-				new APropertyTemplate<AUString>("Ãû³Æ", offsetof(AData, m_str_name), NULL, NULL, WAY_DEFAULT, NULL),
+				new APropertyTemplate<AUString>("åç§°", offsetof(AData, m_str_name), NULL, NULL, WAY_DEFAULT, NULL),
 			};
 
 			static int count = sizeof(pProps) / sizeof(AProperty *);

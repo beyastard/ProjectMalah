@@ -1,33 +1,33 @@
 // Copyright (C) Beijing E-Pie Entertainment & Technology Co., Ltd.
 // All rights reserved.
 // File: DataQueue.h
-// Creator: Wei Hua (Îº»ª)
-// Êı¾İ¶ÓÁĞ
+// Creator: Wei Hua (é­å)
+// æ•°æ®é˜Ÿåˆ—
 
 #ifndef	__DATAQUEUE_H__
 #define	__DATAQUEUE_H__
 
-#define	DATAQUEUE_ERROR_OVERFLOW				-1	// ¶ÓÁĞÂú
-#define	DATAQUEUE_ERROR_EMPTY					-2	// ¶ÓÁĞ¿Õ
-#define	DATAQUEUE_ERROR_DATATOOBIG				-3	// Êı¾İÌ«´ó»òÕßÓÃÓÚ½ÓÊÜÊı¾İµÄ»º³åÇøÌ«Ğ¡
+#define	DATAQUEUE_ERROR_OVERFLOW				-1	// é˜Ÿåˆ—æ»¡
+#define	DATAQUEUE_ERROR_EMPTY					-2	// é˜Ÿåˆ—ç©º
+#define	DATAQUEUE_ERROR_DATATOOBIG				-3	// æ•°æ®å¤ªå¤§æˆ–è€…ç”¨äºæ¥å—æ•°æ®çš„ç¼“å†²åŒºå¤ªå°
 
 #define	DATAQUEUE_DFT_MAXDATASIZE				255
 
 class	DataQueue
 {
 protected:
-	char	*m_pBuffer;								// ×ÜµÄÄÚ´æÆğÊ¼
-	int		m_nTotalBytes;							// ÎïÀíÉÏ×Ü¹²¿ÉÒÔ´æ·ÅµÄ×Ö½ÚÊı
-	int		m_nLogicBytes;							// Âß¼­ÉÏ×Ü¹²¿ÉÒÔ´æ·ÅµÄ×Ö½ÚÊı(ÓÃÓÚ×îºóÓĞ¿ÕÏĞµÄÇé¿ö)
-	int		m_nHead;								// ÓĞĞ§Êı¾İµÄÆğÊ¼Î»ÖÃ
-	int		m_nTail;								// ÓĞĞ§Êı¾İµÄ½áÊøÎ»ÖÃ
-	int		m_nNum;									// Êı¾İ×ÜÌõÊı
-	int		m_nMaxDataSize;							// ×î´óÔÊĞíµÄÊı¾İ³¤¶È
+	char	*m_pBuffer;								// æ€»çš„å†…å­˜èµ·å§‹
+	int		m_nTotalBytes;							// ç‰©ç†ä¸Šæ€»å…±å¯ä»¥å­˜æ”¾çš„å­—èŠ‚æ•°
+	int		m_nLogicBytes;							// é€»è¾‘ä¸Šæ€»å…±å¯ä»¥å­˜æ”¾çš„å­—èŠ‚æ•°(ç”¨äºæœ€åæœ‰ç©ºé—²çš„æƒ…å†µ)
+	int		m_nHead;								// æœ‰æ•ˆæ•°æ®çš„èµ·å§‹ä½ç½®
+	int		m_nTail;								// æœ‰æ•ˆæ•°æ®çš„ç»“æŸä½ç½®
+	int		m_nNum;									// æ•°æ®æ€»æ¡æ•°
+	int		m_nMaxDataSize;							// æœ€å¤§å…è®¸çš„æ•°æ®é•¿åº¦
 protected:
-	bool	TestIncTail(int nDelta);				// ²âÊÔÔö¼Óµ½Î²²¿ÊÇ·ñ»¹ÔÚÈİĞí·¶Î§ÄÚ
-													// ·µ»ØtrueÊ±£¬m_nDataTail±äÎªĞÂµÄ¿ÉÔö¼ÓµÄÎ²²¿Î»ÖÃ(¿ÉÄÜÒÑ¾­»ØÈÆ±ä³É0ÁË)
-													// È»ºó¿ÉÒÔÔÚÕâ¸öÎ²²¿Ôö¼ÓnDeltaµÄÊı¾İÒ»¶¨²»»á³¬½ç
-													// ·µ»Øfalse±íÊ¾Êı¾İÒç³ö
+	bool	TestIncTail(int nDelta);				// æµ‹è¯•å¢åŠ åˆ°å°¾éƒ¨æ˜¯å¦è¿˜åœ¨å®¹è®¸èŒƒå›´å†…
+													// è¿”å›trueæ—¶ï¼Œm_nDataTailå˜ä¸ºæ–°çš„å¯å¢åŠ çš„å°¾éƒ¨ä½ç½®(å¯èƒ½å·²ç»å›ç»•å˜æˆ0äº†)
+													// ç„¶åå¯ä»¥åœ¨è¿™ä¸ªå°¾éƒ¨å¢åŠ nDeltaçš„æ•°æ®ä¸€å®šä¸ä¼šè¶…ç•Œ
+													// è¿”å›falseè¡¨ç¤ºæ•°æ®æº¢å‡º
 public:
 	inline void	SetMaxDataSize(int nMax)			{ m_nMaxDataSize = nMax; }
 public:
@@ -35,12 +35,12 @@ public:
 	~DataQueue();
 	int		Init(int nTotalBytes);
 	int		Release();
-	int		Push(void *pData, int nSize);			// Ñ¹Èë
+	int		Push(void *pData, int nSize);			// å‹å…¥
 	int		PopQueue(void *pData, int *pnSize);
 	int		PeekQueue(void **ppData, int *pnSize);
 	int		DelQueueHead();
 	int		ClearAll();
-	int		GetNum();								// »ñµÃÄ¿Ç°¶ÓÁĞÖĞµÄÊı¾İÌõÊı
+	int		GetNum();								// è·å¾—ç›®å‰é˜Ÿåˆ—ä¸­çš„æ•°æ®æ¡æ•°
 };
 
 #endif

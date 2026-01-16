@@ -1,9 +1,9 @@
 /*
  * FILE: AArchive.cpp
  *
- * DESCRIPTION: ´®ĞĞ»¯¶¯×÷ÀàAArchiveµÄ·½·¨ÊµÏÖ
+ * DESCRIPTION: ä¸²è¡ŒåŒ–åŠ¨ä½œç±»AArchiveçš„æ–¹æ³•å®ç°
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -56,7 +56,7 @@ AObject * AArchive::CreateObject()
 	AClassInfo * pClassInfo = ReadClassInfo();
 	assert(pClassInfo);
 
-	// ´ÓÀàĞÅÏ¢´´½¨Àà¶ÔÏó
+	// ä»ç±»ä¿¡æ¯åˆ›å»ºç±»å¯¹è±¡
 	CREATEMETHOD pfCreateObject = pClassInfo->GetCreateMethod();
 	assert(pfCreateObject);
 	if(!pfCreateObject)
@@ -64,7 +64,7 @@ AObject * AArchive::CreateObject()
 		return NULL;
 	}
 
-	// ´´½¨ĞÂ¶ÔÏó
+	// åˆ›å»ºæ–°å¯¹è±¡
 	pObject = pfCreateObject();
 	if(!pObject)
 	{
@@ -113,19 +113,19 @@ bool AArchive::WriteClassInfo(AClassInfo *pClassInfo)
 		return false;
 	}
 
-	// ÀàÃû³¤¶È
+	// ç±»åé•¿åº¦
 	if(!Write(&namelen, sizeof(namelen)))
 	{
 		return false;
 	}
 
-	// ÀàÃû
+	// ç±»å
 	if(!Write(pszClassName, namelen))
 	{
 		return false;
 	}
 
-	// °æ±¾
+	// ç‰ˆæœ¬
 	int iVersion = pClassInfo->GetVersion();
 	if(!Write(&iVersion, sizeof(iVersion)))
 	{
@@ -137,7 +137,7 @@ bool AArchive::WriteClassInfo(AClassInfo *pClassInfo)
 
 AClassInfo * AArchive::ReadClassInfo()
 {
-	// ÀàÃû³Æ³¤¶È
+	// ç±»åç§°é•¿åº¦
 	char * pszName = NULL;
 
 	int namelen = 0;
@@ -146,13 +146,13 @@ AClassInfo * AArchive::ReadClassInfo()
 		return NULL;
 	}
 
-	// ³¤¶È±ØĞë´óÓÚÁã
+	// é•¿åº¦å¿…é¡»å¤§äºé›¶
 	if(namelen <= 0)
 	{
 		return NULL;
 	}
 
-	// ÀàÃû³Æ
+	// ç±»åç§°
 	pszName = new char[namelen + 1];
 	if(!Read(pszName, namelen))
 	{
@@ -161,7 +161,7 @@ AClassInfo * AArchive::ReadClassInfo()
 	}
 	pszName[namelen] = 0;
 
-	// °æ±¾
+	// ç‰ˆæœ¬
 	int iVersion = 0;
 	if(!Read(&iVersion, sizeof(iVersion)))
 	{
@@ -169,7 +169,7 @@ AClassInfo * AArchive::ReadClassInfo()
 		return NULL;
 	}
 
-	// ¸ù¾İÀàÃûÈ¡µÃÀàĞÅÏ¢
+	// æ ¹æ®ç±»åå–å¾—ç±»ä¿¡æ¯
 	AClassInfo * pClassInfo = AClassInfo::GetClassInfo(pszName);
 	assert(pClassInfo);
 	if(!pClassInfo)

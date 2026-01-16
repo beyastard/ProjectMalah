@@ -25,7 +25,7 @@ bool AIDObject::Load(AArchive &ar)
 		assert(0);
 		return false;
 	}
-	//ÀûÓÃÕâ¸ö°æ±¾ºÅ½øĞĞ°æ±¾¿ØÖÆ
+	//åˆ©ç”¨è¿™ä¸ªç‰ˆæœ¬å·è¿›è¡Œç‰ˆæœ¬æ§åˆ¶
 
 	if(!ar.Read(&m_nId,sizeof(m_nId)))
 	{

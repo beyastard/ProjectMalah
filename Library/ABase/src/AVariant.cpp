@@ -1,9 +1,9 @@
 /*
  * FILE: AVariant.cpp
  *
- * DESCRIPTION: ¶¨ÒåAVariantÀàĞÍµÄ·½·¨ÊµÏÖ
+ * DESCRIPTION: å®šä¹‰AVariantç±»å‹çš„æ–¹æ³•å®ç°
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -17,7 +17,7 @@
 
 AVariant::AVariant()
 {
-	m_iType = AVT_INVALIDTYPE;		//³õÊ¼»¯Îª·Ç·¨ÀàĞÍ
+	m_iType = AVT_INVALIDTYPE;		//åˆå§‹åŒ–ä¸ºéæ³•ç±»å‹
 	memset(&m_avData, 0, sizeof(AVARIANT));
 }
 
@@ -116,7 +116,7 @@ AVariant::AVariant(A3DVECTOR3 avec3)
 	m_iType = AVT_A3DVECTOR3;
 	memcpy(m_avData.a3dvV, &avec3, sizeof(m_avData.a3dvV));
 	/*
-		ÒòÎªm_avData.a3dvVµÄ¶¨ÒåÎª¡°char [sizeof(A3DVECTOR3)]¡±£¬¹ÊÓÃ¡°memcpy¡±¶ø·Ç¡°=¡±¡£
+		å› ä¸ºm_avData.a3dvVçš„å®šä¹‰ä¸ºâ€œchar [sizeof(A3DVECTOR3)]â€ï¼Œæ•…ç”¨â€œmemcpyâ€è€Œéâ€œ=â€ã€‚
 	*/
 }
 
@@ -125,7 +125,7 @@ AVariant::AVariant(A3DMATRIX4 amat4)
 	m_iType = AVT_A3DMATRIX4;
 	memcpy(m_avData.a3dmV, &amat4, sizeof(m_avData.a3dmV));
 	/*
-		ÒòÎªm_avData.a3dmVµÄ¶¨ÒåÎª¡°char [sizeof(A3DMATRIX4)]¡±£¬¹ÊÓÃ¡°memcpy¡±¶ø·Ç¡°=¡±¡£
+		å› ä¸ºm_avData.a3dmVçš„å®šä¹‰ä¸ºâ€œchar [sizeof(A3DMATRIX4)]â€ï¼Œæ•…ç”¨â€œmemcpyâ€è€Œéâ€œ=â€ã€‚
 	*/
 }
 

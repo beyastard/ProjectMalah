@@ -1,9 +1,9 @@
 /*
  * FILE: AIDObject.h
  *
- * DESCRIPTION: ¹ÜÀí¾ßÓÐIDµÄ¶ÔÏóµÄ¹ÜÀíÆ÷µÄ»ùÀà
+ * DESCRIPTION: ç®¡ç†å…·æœ‰IDçš„å¯¹è±¡çš„ç®¡ç†å™¨çš„åŸºç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷, 2002/8/9
+ * CREATED BY: çŽ‹è¿œæ˜Ž, 2002/8/9
  *
  * HISTORY:
  *

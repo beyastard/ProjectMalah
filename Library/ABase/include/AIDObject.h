@@ -1,9 +1,9 @@
 /*
  * FILE: lAIDObject.h
  *
- * DESCRIPTION: ËùÓÐ¾ßÓÐIDµÄ¶ÔÏóµÄ»ùÀà
+ * DESCRIPTION: æ‰€æœ‰å…·æœ‰IDçš„å¯¹è±¡çš„åŸºç±»
  *
- * CREATED BY: ÍõÔ¶Ã÷ 2002/08/9
+ * CREATED BY: çŽ‹è¿œæ˜Ž 2002/08/9
  *
  * HISTORY:
  *
@@ -43,7 +43,7 @@ public:
 
 protected:
 
-	int			m_nId;		// ¶ÔÏóID
+	int			m_nId;		// å¯¹è±¡ID
 };
 
 #endif // __AIDOBJECT__H__

@@ -121,9 +121,9 @@ bool AModelWraper::GetInvolvedGFX(const char * pseudo_file_name,AListT<AUString>
 //////////////////////////////////////////////////////////////
 namespace enumfun
 {
-	//ÓÉÓÚ hashtable Ã»ÓĞÊµÏÖbegin\endËùÒÔ½«±éÀúµÄ´úÂëĞ´ÔÚÕâÀïÁË
+	//ç”±äº hashtable æ²¡æœ‰å®ç°begin\endæ‰€ä»¥å°†éå†çš„ä»£ç å†™åœ¨è¿™é‡Œäº†
 	
-	//Õâ¸ö·Âº¯¸ºÔğ½«hash±íÖĞµÄËùÓĞÄ£ĞÍÊÍ·Åµô
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£å°†hashè¡¨ä¸­çš„æ‰€æœ‰æ¨¡å‹é‡Šæ”¾æ‰
 	struct enum_fun_release
 	{
 		A3DEngine* pEngine;
@@ -136,7 +136,7 @@ namespace enumfun
 			}
 		}
 	};
-	//Õâ¸ö·Âº¯¸ºÔğ½«hash±íÖĞµÄËùÓĞÃ»ÓĞÁ¬½Óµ½¸¸½ÚµãµÄÄ£ĞÍÉèÖÃµ½Ö¸¶¨Î»ÖÃ
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£å°†hashè¡¨ä¸­çš„æ‰€æœ‰æ²¡æœ‰è¿æ¥åˆ°çˆ¶èŠ‚ç‚¹çš„æ¨¡å‹è®¾ç½®åˆ°æŒ‡å®šä½ç½®
 	struct enum_fun_pos
 	{
 		A3DVECTOR3 pos;
@@ -149,7 +149,7 @@ namespace enumfun
 			}
 		}
 	};
-	//Õâ¸ö·Âº¯¸ºÔğ½«hash±íÖĞµÄËùÓĞÃ»ÓĞÁ¬½Óµ½¸¸½ÚµãµÄÄ£ĞÍÉèÖÃµ½Ö¸¶¨×ËÌ¬
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£å°†hashè¡¨ä¸­çš„æ‰€æœ‰æ²¡æœ‰è¿æ¥åˆ°çˆ¶èŠ‚ç‚¹çš„æ¨¡å‹è®¾ç½®åˆ°æŒ‡å®šå§¿æ€
 	struct enum_fun_dir_up
 	{
 		A3DVECTOR3 dir;
@@ -163,7 +163,7 @@ namespace enumfun
 			}
 		}
 	};
-	//Õâ¸ö·Âº¯¸ºÔğäÖÈ¾hash±íÖĞµÄËùÓĞÃ»ÓĞÁ¬½Óµ½¸¸½ÚµãµÄÄ£ĞÍ
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£æ¸²æŸ“hashè¡¨ä¸­çš„æ‰€æœ‰æ²¡æœ‰è¿æ¥åˆ°çˆ¶èŠ‚ç‚¹çš„æ¨¡å‹
 	struct enum_fun_render
 	{
 		A3DViewport * pV;
@@ -179,7 +179,7 @@ namespace enumfun
 			}
 		}
 	};
-	//Õâ¸ö·Âº¯¸ºÔğtick hash±íÖĞµÄËùÓĞµÄÄ£ĞÍ
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£tick hashè¡¨ä¸­çš„æ‰€æœ‰çš„æ¨¡å‹
 	struct enum_fun_tickanim
 	{
 		void operator()(A3DModel* pItem)// throw(const char*)
@@ -193,7 +193,7 @@ namespace enumfun
 			}
 		}
 	};
-	//Õâ¸ö·Âº¯¸ºÔğ ray trace hash±íÖĞµÄËùÓĞÃ»ÓĞÁ¬½Óµ½¸¸½ÚµãµÄÄ£ĞÍ
+	//è¿™ä¸ªä»¿å‡½è´Ÿè´£ ray trace hashè¡¨ä¸­çš„æ‰€æœ‰æ²¡æœ‰è¿æ¥åˆ°çˆ¶èŠ‚ç‚¹çš„æ¨¡å‹
 	struct enum_fun_raytrace
 	{
 		A3DVECTOR3 start;
@@ -224,7 +224,7 @@ namespace enumfun
 		}
 	};
 };
-//¹¹Ôìº¯Êı£¬ÖÆ¶¨hash±íµÄÄ¬ÈÏ³ß´ç£¬Ã»±ØÒªºÜ´ó£¬·ñÔòÀË·ÑÄÚ´æ
+//æ„é€ å‡½æ•°ï¼Œåˆ¶å®šhashè¡¨çš„é»˜è®¤å°ºå¯¸ï¼Œæ²¡å¿…è¦å¾ˆå¤§ï¼Œå¦åˆ™æµªè´¹å†…å­˜
 AModelWraper::AModelWraper():
 m_AssistantModelMap(16),
 m_FrameMapInt(16),
@@ -713,39 +713,39 @@ void AModelWraper::ClearActionQueue()
 }
 bool AModelWraper::handleActionQueue()
 {
-	//Ê×ÏÈ¼ì²é¿ØÖÆ¿ª¹ØÊÇ·ñÊÇ¿ª·ÅµÄ
+	//é¦–å…ˆæ£€æŸ¥æ§åˆ¶å¼€å…³æ˜¯å¦æ˜¯å¼€æ”¾çš„
 	if(m_ReadyToPlayAnimation)
 	{	
-		//µ±Ç°Ö´ĞĞ¶ÓÁĞ·Ç¿ÕÊ±
+		//å½“å‰æ‰§è¡Œé˜Ÿåˆ—éç©ºæ—¶
 		if(m_CurrentActionQueue.GetCount() != 0)
 		{
 
 			ll_action item = m_CurrentActionQueue.GetHead();
-			//µ¯³ö²¢²¥·Å¶ÓÁĞÖĞµÄÔªËØ
+			//å¼¹å‡ºå¹¶æ’­æ”¾é˜Ÿåˆ—ä¸­çš„å…ƒç´ 
 			AUString anim_name = item.anim_name;
-			//¼ÇÂ¼ÏÂÓÅÏÈ¼¶
+			//è®°å½•ä¸‹ä¼˜å…ˆçº§
 			m_CurrentAnimationPrivilege = item.privilege;
-			//Èç¹ûÕâ¸öÔªËØÓĞÑ­»·±ê¼Ç£¬¾Í¼ÇÂ¼ÏÂÀ´
+			//å¦‚æœè¿™ä¸ªå…ƒç´ æœ‰å¾ªç¯æ ‡è®°ï¼Œå°±è®°å½•ä¸‹æ¥
 			if(!item.loop_name.IsEmpty())
 			{
 				m_LoopNextAnimationDelay = item.loop_delay;
 				m_LoopNextAnimationName = item.loop_name;
 			}
-			//²¥·Å¶¯»­ÁË
+			//æ’­æ”¾åŠ¨ç”»äº†
 			if(m_pMainModel && !m_pMainModel->PlayActionByName(anim_name,true,false))
 			{
 				ADebug::Msg(0,"play LL animation named < %s > failure.",anim_name.GetBuffer());
 				assert(0);
 				return false;
 			}
-			//°Ñ¿ØÖÆ¿ª¹Ø¹ØÉÏ,µÈ×Å»Øµ÷º¯Êı½«Æä´ò¿ª
+			//æŠŠæ§åˆ¶å¼€å…³å…³ä¸Š,ç­‰ç€å›è°ƒå‡½æ•°å°†å…¶æ‰“å¼€
 			m_ReadyToPlayAnimation = false;
-			//Í¨ÖªËŞÖ÷
+			//é€šçŸ¥å®¿ä¸»
 			m_pListener->anim_change(anim_name,item.p_outer_data);
 			m_AnimationInEngine = anim_name;
 			m_CurrentActionQueue.RemoveHead();
 		}
-		else//µ±Ç°¶ÓÁĞÎª¿ÕÊ±£¬¼ì²éÊÇ·ñÓĞÑ­»·ĞÅÏ¢£¬ÓĞµÄ»°¾Íµİ¼õÑÓ³Ù¼ÆÊıÆ÷¼õµ½ÁãÊ±½øĞĞÑ­»·
+		else//å½“å‰é˜Ÿåˆ—ä¸ºç©ºæ—¶ï¼Œæ£€æŸ¥æ˜¯å¦æœ‰å¾ªç¯ä¿¡æ¯ï¼Œæœ‰çš„è¯å°±é€’å‡å»¶è¿Ÿè®¡æ•°å™¨å‡åˆ°é›¶æ—¶è¿›è¡Œå¾ªç¯
 		{
 			if(!m_LoopNextAnimationName.IsEmpty() && -- m_LoopNextAnimationDelay <= 0)
 			{
@@ -771,7 +771,7 @@ bool AModelWraper::AppendHighLevelActionToQueueTail(const char * action_name,voi
 		assert(0);
 		return false;
 	}
-	//¸ß¼¶¶¯»­Ãû²»´æÔÚ¾ÍºöÂÔ
+	//é«˜çº§åŠ¨ç”»åä¸å­˜åœ¨å°±å¿½ç•¥
 	pair<hl_action**,bool> find_res = m_pSharedInfo->SRI_map_HL_LL.get(action_name);
 	if(!find_res.second)
 	{
@@ -779,11 +779,11 @@ bool AModelWraper::AppendHighLevelActionToQueueTail(const char * action_name,voi
 		assert(0);
 		return false;
 	}
-	//µÃµ½¸ß¼¶¶¯»­Ãû¶ÔÓ¦µÄµÍ¼¶¶¯»­ĞòÁĞ
+	//å¾—åˆ°é«˜çº§åŠ¨ç”»åå¯¹åº”çš„ä½çº§åŠ¨ç”»åºåˆ—
 	hl_action* pHLAction = *find_res.first;
-	//Ç§Íò²»Òª¸Ä¶¯ÕâÀï£¬ËüÊÇ¹²ÏíµÄÊı¾İ
+	//åƒä¸‡ä¸è¦æ”¹åŠ¨è¿™é‡Œï¼Œå®ƒæ˜¯å…±äº«çš„æ•°æ®
 	const AListT<ll_action>* act_list = &(pHLAction->act_queue);
-	//½«¹²ÏíÊı¾İÇøµÄµÍ¼¶¶¯×÷ĞòÁĞÊı¾İ¸½¼Óµ½µ±Ç°Ö´ĞĞ¶ÓÁĞµÄÎ²²¿
+	//å°†å…±äº«æ•°æ®åŒºçš„ä½çº§åŠ¨ä½œåºåˆ—æ•°æ®é™„åŠ åˆ°å½“å‰æ‰§è¡Œé˜Ÿåˆ—çš„å°¾éƒ¨
 	bool bfirst = true;
 	AListPosition pos = act_list->GetHeadPosition();
 	while(pos)
@@ -791,7 +791,7 @@ bool AModelWraper::AppendHighLevelActionToQueueTail(const char * action_name,voi
 		m_CurrentActionQueue.AddTail(
 			act_list->GetNext(pos)
 			);
-		//½«ÓÃ»§Êı¾İ¼Óµ½µÚÒ»¸öµÍ¼¶¶¯×÷ÖĞÈ¥
+		//å°†ç”¨æˆ·æ•°æ®åŠ åˆ°ç¬¬ä¸€ä¸ªä½çº§åŠ¨ä½œä¸­å»
 		if(bfirst)
 		{
 			bfirst = false;
@@ -809,7 +809,7 @@ bool AModelWraper::AddLowLevelActionToQueueHead(const char * action_name,void * 
 		assert(0);
 		return false;
 	}
-	//¹¹ÔìÒ»¸öµÍ¼¶¶¯»­¶ÔÏó
+	//æ„é€ ä¸€ä¸ªä½çº§åŠ¨ç”»å¯¹è±¡
 	ll_action item;
 	item.anim_name = action_name;	
 	item.loop_name.Empty();
@@ -820,7 +820,7 @@ bool AModelWraper::AddLowLevelActionToQueueHead(const char * action_name,void * 
 	if(m_CurrentAnimationPrivilege <= item.privilege)
 	{
 		m_CurrentActionQueue.AddHead(item);
-		//Ç¿ĞĞ²¥·ÅÏÂÒ»¸ö¶¯»­
+		//å¼ºè¡Œæ’­æ”¾ä¸‹ä¸€ä¸ªåŠ¨ç”»
 		m_ReadyToPlayAnimation = true;
 		return true;
 	}
@@ -836,7 +836,7 @@ bool AModelWraper::AppendLowLevelActionToQueueTail(const char * action_name,void
 		return false;
 	}
 
-	//¹¹ÔìÒ»¸öµÍ¼¶¶¯»­¶ÔÏó
+	//æ„é€ ä¸€ä¸ªä½çº§åŠ¨ç”»å¯¹è±¡
 	ll_action item;
 	item.anim_name = action_name;	
 	item.loop_name.Empty();
@@ -847,7 +847,7 @@ bool AModelWraper::AppendLowLevelActionToQueueTail(const char * action_name,void
 	if(m_CurrentAnimationPrivilege <= item.privilege)
 	{
 		m_CurrentActionQueue.AddTail(item);
-		//Ç¿ĞĞ²¥·ÅÏÂÒ»¸ö¶¯»­
+		//å¼ºè¡Œæ’­æ”¾ä¸‹ä¸€ä¸ªåŠ¨ç”»
 		m_ReadyToPlayAnimation = true;
 		return true;
 	}
@@ -895,7 +895,7 @@ bool AModelWraper::ForcePlayAnim(const char * anim_name)
 }
 void AModelWraper::call_back_logic_event(A3DMODEL_LOGIC_EVENT * pLogicEvent, LPVOID pArg)
 {
-	//µ÷ÓÃ·´À¡½Ó¿Ú
+	//è°ƒç”¨åé¦ˆæ¥å£
 	AModelWraper * pThis = static_cast<AModelWraper * >(pArg);
 	if(pThis->m_pListener)
 	{
@@ -904,7 +904,7 @@ void AModelWraper::call_back_logic_event(A3DMODEL_LOGIC_EVENT * pLogicEvent, LPV
 }
 void AModelWraper::call_back_action_end(A3DModel * pNoUsing, LPVOID pArg)
 {
-	//¶¯»­ÏîÖ´ĞĞ½áÊøÊ±´ò¿ª¿ª¹Ø
+	//åŠ¨ç”»é¡¹æ‰§è¡Œç»“æŸæ—¶æ‰“å¼€å¼€å…³
 	AModelWraper * pThis = static_cast<AModelWraper * >(pArg);
 	pThis->m_ReadyToPlayAnimation = true;
 	pThis->m_CurrentAnimationPrivilege = -10;

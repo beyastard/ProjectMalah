@@ -63,7 +63,7 @@ public:
 
 typedef AUList * PAUList;
 
-// 只要保证加入的指针不为空即可
+// 鍙淇濊瘉鍔犲叆鐨勬寚閽堜笉涓虹┖鍗冲彲
 class	AUListS	: public AUList
 {
 private:

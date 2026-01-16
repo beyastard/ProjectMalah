@@ -24,7 +24,7 @@ bool config_file_c_imp::pseudo_open()
 
 void config_file_c_imp::_matters_files()
 {
-file_begin("data/model/ÊÖÁñµ¯.txt");
+file_begin("data/model/æ‰‹æ¦´å¼¹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -34,9 +34,9 @@ file_begin("data/model/ÊÖÁñµ¯.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÊÖÁñµ¯.mod","Ğı×ª");
+	model("matters/æ‰‹æ¦´å¼¹.mod","æ—‹è½¬");
 
 state_end();
 /*
@@ -46,13 +46,13 @@ state_begin("");
 
 state_end();
 */
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÖÀµ¯±ø.txt");
+file_begin("data/model/æ·å¼¹å…µ.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -62,9 +62,9 @@ file_begin("data/model/ÖÀµ¯±ø.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÖÀµ¯±ø_Ó²¶¯»­.mod");
+	model("characters/æ·å¼¹å…µ_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -77,155 +77,155 @@ state_end();
 
 
 //
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾Í¶µ¯",false);
-
-	anim("[ÓÉ¶×µ½Õ¾Í¶µ¯]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
 
 action_end();
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±è¹²åˆ°ç«™æŠ•å¼¹",false);
 
-	anim("[ÓÉÕ¾µ½¶×]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾Í¶µ¯ÏÂ¶×_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
-	anim("[ÓÉ¶×µ½Õ¾Í¶µ¯]"		,2		);
-	anim("[ÓÉÕ¾µ½¶×]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™æŠ•å¼¹]"		,2		);
 
 action_end();
 
-action_begin("ÓÉ¶×µ½Õ¾Í¶µ¯_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
+action_begin("ç”±ç«™åˆ°è¹²",false);
 
-	anim("[ÓÉ¶×µ½Õ¾Í¶µ¯]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí",false);
-
-	anim("[×ó×ªÉí]"		,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"		,2		);
 
 action_end();
 
-action_begin("×ó×ªÉíÍ¶µ¯",false);
+action_begin("ç”±è¹²åˆ°ç«™æŠ•å¼¹ä¸‹è¹²_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
 
-	anim("[×ó×ªÉíÍ¶µ¯]"		,2		);
-
-action_end();
-
-action_begin("ÏòÓÒÉÁ±Ü",false);
-
-	anim("[ÏòÓÒÉÁ±Ü]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™æŠ•å¼¹]"		,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"		,2		);
 
 action_end();
 
-action_begin("×ó×ªÉíÍ¶µ¯ÓÒÉÁ±Ü_Ñ­»·",true);//Ğè¼ÓÑ­»·
+action_begin("ç”±è¹²åˆ°ç«™æŠ•å¼¹_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
 
-	anim("[×ó×ªÉí]"		,2		);
-	anim("[×ó×ªÉíÍ¶µ¯]"		,2		);
-	anim("[ÏòÓÒÉÁ±Ü]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™æŠ•å¼¹]"		,2		);
 
 action_end();
 
-action_begin("×ó×ªÉíÍ¶µ¯_Ñ­»·",true);//Ğè¼ÓÑ­»·
+action_begin("å·¦è½¬èº«",false);
 
-	anim("[×ó×ªÉíÍ¶µ¯]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí",false);
-
-	anim("[ÓÒ×ªÉí]"		,2		);
+	anim("[å·¦è½¬èº«]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉíÍ¶µ¯",false);
+action_begin("å·¦è½¬èº«æŠ•å¼¹",false);
 
-	anim("[ÓÒ×ªÉíÍ¶µ¯]"		,2		);
-
-action_end();
-
-action_begin("Ïò×óÉÁ±Ü",false);
-
-	anim("[Ïò×óÉÁ±Ü]"		,2		);
+	anim("[å·¦è½¬èº«æŠ•å¼¹]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉíÍ¶µ¯×óÉÁ±Ü_Ñ­»·",true);//Ğè¼ÓÑ­»·
+action_begin("å‘å³é—ªé¿",false);
 
-	anim("[ÓÒ×ªÉí]"		,2		);
-	anim("[ÓÒ×ªÉíÍ¶µ¯]"		,2		);
-	anim("[Ïò×óÉÁ±Ü]"		,2		);
+	anim("[å‘å³é—ªé¿]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉíÍ¶µ¯_Ñ­»·",true);//Ğè¼ÓÑ­»·
+action_begin("å·¦è½¬èº«æŠ•å¼¹å³é—ªé¿_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
 
-	anim("[ÓÒ×ªÉíÍ¶µ¯]"		,2		);
+	anim("[å·¦è½¬èº«]"		,2		);
+	anim("[å·¦è½¬èº«æŠ•å¼¹]"		,2		);
+	anim("[å‘å³é—ªé¿]"		,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("å·¦è½¬èº«æŠ•å¼¹_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
+
+	anim("[å·¦è½¬èº«æŠ•å¼¹]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«",false);
+
+	anim("[å³è½¬èº«]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«æŠ•å¼¹",false);
+
+	anim("[å³è½¬èº«æŠ•å¼¹]"		,2		);
+
+action_end();
+
+action_begin("å‘å·¦é—ªé¿",false);
+
+	anim("[å‘å·¦é—ªé¿]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«æŠ•å¼¹å·¦é—ªé¿_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
+
+	anim("[å³è½¬èº«]"		,2		);
+	anim("[å³è½¬èº«æŠ•å¼¹]"		,2		);
+	anim("[å‘å·¦é—ªé¿]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«æŠ•å¼¹_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
+
+	anim("[å³è½¬èº«æŠ•å¼¹]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("¸ß´¦ËÀÍö2",false);
+//12-21 æ›´æ–°
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
 file_end();
-file_begin("data/model/Ïû·ÀË¨.txt");
+file_begin("data/model/æ¶ˆé˜²æ “.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -235,21 +235,21 @@ file_begin("data/model/Ïû·ÀË¨.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ïû·ÀË¨.mod");
+	model("matters/æ¶ˆé˜²æ “.mod");
 
 state_end();
 
 state_begin("");
 
-	model("matters/Ïû·ÀË¨Ëğ»Ù.mod");
+	model("matters/æ¶ˆé˜²æ “æŸæ¯.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÌúË¿Íø.txt");
+file_begin("data/model/é“ä¸ç½‘.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -259,15 +259,15 @@ file_begin("data/model/ÌúË¿Íø.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÌúË¿Íø.mod");
+	model("matters/é“ä¸ç½‘.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÊÕÒô»ú.txt");
+file_begin("data/model/æ”¶éŸ³æœº.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -277,76 +277,9 @@ file_begin("data/model/ÊÕÒô»ú.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÊÕÒô»ú.mod");
-
-state_end();
-
-state_begin("");
-
-	model("");
-
-state_end();
-
-convert_begin("Ñ°³£","");
-
-	gfx("»÷»Ù_ÊÕÒô»ú.gfx","");
-
-convert_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/Ä¾Ïä1.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/ÆÕÍ¨Ä¾Ïä.mod");
-
-state_end();
-
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/Ä¾Ïä2.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/ÆÕÍ¨Ä¾Ïä2.mod");
-
-state_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/¾ÆÆ¿01.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/¾ÆÆ¿01.mod");
+	model("matters/æ”¶éŸ³æœº.mod");
 
 state_end();
 
@@ -356,14 +289,15 @@ state_begin("");
 
 state_end();
 
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("»÷»Ù_¾ÆÆ¿.gfx","");
+	gfx("å‡»æ¯_æ”¶éŸ³æœº.gfx","");
 
 convert_end();
+
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¹ã¸æÅÆ04.txt");
+file_begin("data/model/æœ¨ç®±1.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -373,9 +307,75 @@ file_begin("data/model/¹ã¸æÅÆ04.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/¹ã¸æÅÆ04.mod");
+	model("matters/æ™®é€šæœ¨ç®±.mod");
+
+state_end();
+
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/æœ¨ç®±2.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/æ™®é€šæœ¨ç®±2.mod");
+
+state_end();
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/é…’ç“¶01.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/é…’ç“¶01.mod");
+
+state_end();
+
+state_begin("");
+
+	model("");
+
+state_end();
+
+convert_begin("å¯»å¸¸","");
+
+	gfx("å‡»æ¯_é…’ç“¶.gfx","");
+
+convert_end();
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/å¹¿å‘Šç‰Œ04.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/å¹¿å‘Šç‰Œ04.mod");
 
 state_end();
 state_begin("");
@@ -384,14 +384,14 @@ state_begin("");
 
 state_end();
 
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("»÷»Ù_ÅÆØÒ.gfx","");
+	gfx("å‡»æ¯_ç‰ŒåŒ¾.gfx","");
 
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/µ¯Ò©Ïä.txt");
+file_begin("data/model/å¼¹è¯ç®±.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -400,9 +400,9 @@ file_begin("data/model/µ¯Ò©Ïä.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/µ¯Ò©Ïä.mod");
+	model("matters/å¼¹è¯ç®±.mod");
 
 state_end();
 
@@ -412,96 +412,14 @@ state_begin("");
 
 state_end();
 
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("»÷»Ù_µ¯Ò©Ïä.gfx","");
-
-convert_end();
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/½ÖµÀÉ³°üÑÚÌå01.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/½ÖµÀÉ³°üÑÚÌå01.mod");
-
-state_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/½ÖµÀÉ³°üÑÚÌå02.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/½ÖµÀÉ³°üÑÚÌå02.mod");
-
-state_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/½ÖµÀÉ³°üÑÚÌå03.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/½ÖµÀÉ³°üÑÚÌå03.mod");
-
-state_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/»¨01.txt");
-/*--------------------------------------------------------------------------
-
-	Copy Right EpieGame 
- 	Japanese soldier - NO.7 character define file .
-	Create By MengXin 
-	This is sample file 
-
---------------------------------------------------------------------------*/	
-
-state_begin("Ñ°³£");
-
-	model("matters/»¨01.mod");
-
-state_end();
-
-state_begin("");
-	
-	model("");
-
-state_end();
-convert_begin("Ñ°³£","");
-
-	gfx("»÷»Ù_»¨Åè.gfx","");
+	gfx("å‡»æ¯_å¼¹è¯ç®±.gfx","");
 
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/»¨02.txt");
+file_begin("data/model/è¡—é“æ²™åŒ…æ©ä½“01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -511,9 +429,63 @@ file_begin("data/model/»¨02.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/»¨02.mod");
+	model("matters/è¡—é“æ²™åŒ…æ©ä½“01.mod");
+
+state_end();
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/è¡—é“æ²™åŒ…æ©ä½“02.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/è¡—é“æ²™åŒ…æ©ä½“02.mod");
+
+state_end();
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/è¡—é“æ²™åŒ…æ©ä½“03.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/è¡—é“æ²™åŒ…æ©ä½“03.mod");
+
+state_end();
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/èŠ±01.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/èŠ±01.mod");
 
 state_end();
 
@@ -522,15 +494,43 @@ state_begin("");
 	model("");
 
 state_end();
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("»÷»Ù_»¨Åè.gfx","");
+	gfx("å‡»æ¯_èŠ±ç›†.gfx","");
+
+convert_end();
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/èŠ±02.txt");
+/*--------------------------------------------------------------------------
+
+	Copy Right EpieGame 
+ 	Japanese soldier - NO.7 character define file .
+	Create By MengXin 
+	This is sample file 
+
+--------------------------------------------------------------------------*/	
+
+state_begin("å¯»å¸¸");
+
+	model("matters/èŠ±02.mod");
+
+state_end();
+
+state_begin("");
+	
+	model("");
+
+state_end();
+convert_begin("å¯»å¸¸","");
+
+	gfx("å‡»æ¯_èŠ±ç›†.gfx","");
 
 convert_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÀËÈË2.txt");
+file_begin("data/model/æµªäºº2.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -540,9 +540,9 @@ file_begin("data/model/ÀËÈË2.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÀËÈË2_Ó²¶¯»­.mod");
+	model("characters/æµªäºº2_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -553,249 +553,249 @@ state_begin("");
 state_end();
 
 //
-action_begin("¾Ùµ¶Ç°ÅÜ_Ñ­»·",true);
+action_begin("ä¸¾åˆ€å‰è·‘_å¾ªç¯",true);
 	
-	anim("[¾Ùµ¶Ç°ÅÜ]"	,2		);
+	anim("[ä¸¾åˆ€å‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("×óÅÜ×ªÉí",false);
+action_begin("å·¦è·‘è½¬èº«",false);
 
-	anim("[×óÅÜ»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("¾Ùµ¶",false);
-
-	anim("[¾Ùµ¶]"		,2		);
+	anim("[å·¦è·‘æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("Ç°¿³",false);
+action_begin("ä¸¾åˆ€",false);
 
-	anim("[Ç°¿³]"		,2		);
-
-action_end();
-
-action_begin("Ç°¿³_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÔÙ¿³]"		,2		);
+	anim("[ä¸¾åˆ€]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂ¿³",false);
+action_begin("å‰ç ",false);
 
-	anim("[ÌøÆğ]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
-	anim("[ÌøÏÂ¿³]"		,2		);
+	anim("[å‰ç ]"		,2		);
 
 action_end();
 
-action_begin("Ç°·­¹ö_Ñ­»·",true);
+action_begin("å‰ç _å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[å†ç ]"		,2		);
+
+action_end();
+
+action_begin("é«˜ç©ºè·³ä¸‹ç ",false);
+
+	anim("[è·³èµ·]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
+	anim("[è·³ä¸‹ç ]"		,2		);
+
+action_end();
+
+action_begin("å‰ç¿»æ»š_å¾ªç¯",true);
 	
-	anim("[Ç°¹ö·­]"	,4		);
+	anim("[å‰æ»šç¿»]"	,4		);
 
 action_end(); 
 
-action_begin("Ç°´Ì",false);
+action_begin("å‰åˆº",false);
 
-	anim("[Ç°´Ì]"		,2		);
-
-action_end();
-
-action_begin("Ç°´Ì_Ñ­»·",true);//Ğè¼ÓÑ­»·
-
-	anim("[Ç°´Ì]"		,2		);
+	anim("[å‰åˆº]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí»Óµ¶",false);
+action_begin("å‰åˆº_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
 
-	anim("[ÓÒ×ªÉí»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí»Óµ¶×ËÊÆ",false);
-
-	anim("[ÓÒ×ªÉí»Óµ¶×ËÊÆ]"		,2		);
+	anim("[å‰åˆº]"		,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí»Óµ¶",false);
+action_begin("å³è½¬èº«æŒ¥åˆ€",false);
 
-	anim("[×ó×ªÉí»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí»Óµ¶×ËÊÆ",false);
-
-	anim("[×ó×ªÉí»Óµ¶×ËÊÆ]"		,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("ºóÍË¾Ùµ¶",false);
+action_begin("å³è½¬èº«æŒ¥åˆ€å§¿åŠ¿",false);
 
-	anim("[ºóÍË¾Ùµ¶]"		,2		);
-
-action_end();
-
-action_begin("ºóÍËÑ­»·",true);
-
-	anim("[ºóÍË]"		,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€å§¿åŠ¿]"		,2		);
 
 action_end();
 
-action_begin("Õ¾Á¢¾Ùµ¶",false);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€",false);
 
-	anim("[Õ¾Á¢¾Ùµ¶]"		,2		);
-
-action_end();
-
-action_begin("ÔÙ¿³",false);
-
-	anim("[ÔÙ¿³]"		,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("Ô¤±¸×ËÊÆ",false);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€å§¿åŠ¿",false);
 
-	anim("[Ô¤±¸×ËÊÆ]"		,2		);
-
-action_end();
-
-action_begin("×óÅÜ_Ñ­»·",true);
-
-	anim("[Ìáµ¶Ïò×óÅÜ]"		,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€å§¿åŠ¿]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂ",false);
+action_begin("åé€€ä¸¾åˆ€",false);
 
-	anim("[ÌøÆğ2]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ2]"		,2		);
-	anim("[ÂäµØ]"		,2		);
+	anim("[åé€€ä¸¾åˆ€]"		,2		);
 
 action_end();
 
-action_begin("ÌøÆğÔÚ¿ÕÖĞ",false);
+action_begin("åé€€å¾ªç¯",true);
 
-	anim("[ÌøÆğ2]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ2]"		,2		);
-
-action_end();
-
-action_begin("ÌøÆğÂäµØ",false);
-
-	anim("[ÂäµØ]"		,2		);
+	anim("[åé€€]"		,2		);
 
 action_end();
 
-action_begin("Ç°·­¹ö",false);
+action_begin("ç«™ç«‹ä¸¾åˆ€",false);
+
+	anim("[ç«™ç«‹ä¸¾åˆ€]"		,2		);
+
+action_end();
+
+action_begin("å†ç ",false);
+
+	anim("[å†ç ]"		,2		);
+
+action_end();
+
+action_begin("é¢„å¤‡å§¿åŠ¿",false);
+
+	anim("[é¢„å¤‡å§¿åŠ¿]"		,2		);
+
+action_end();
+
+action_begin("å·¦è·‘_å¾ªç¯",true);
+
+	anim("[æåˆ€å‘å·¦è·‘]"		,2		);
+
+action_end();
+
+action_begin("é«˜ç©ºè·³ä¸‹",false);
+
+	anim("[è·³èµ·2]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­2]"		,2		);
+	anim("[è½åœ°]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·åœ¨ç©ºä¸­",false);
+
+	anim("[è·³èµ·2]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­2]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·è½åœ°",false);
+
+	anim("[è½åœ°]"		,2		);
+
+action_end();
+
+action_begin("å‰ç¿»æ»š",false);
 	
-	anim("[Ç°¹ö·­]"	,4		);
+	anim("[å‰æ»šç¿»]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß¿ÕÌøÏÂÆğÌø",false);
+action_begin("é«˜ç©ºè·³ä¸‹èµ·è·³",false);
 
-	anim("[ÌøÆğ]"		,2		);
-
-action_end();
-
-action_begin("¸ß¿ÕÌøÏÂÔÚ¿ÕÖĞ",true);
-
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
+	anim("[è·³èµ·]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂÌøÏÂ¿³",false);
+action_begin("é«˜ç©ºè·³ä¸‹åœ¨ç©ºä¸­",true);
 
-	anim("[ÌøÏÂ¿³]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜ç©ºè·³ä¸‹è·³ä¸‹ç ",false);
+
+	anim("[è·³ä¸‹ç ]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//11-13-2 ĞÂÌí¶¯×÷
-action_begin("Ìáµ¶×óÅÜ_Ñ­»·",true);
+//11-13-2 æ–°æ·»åŠ¨ä½œ
+action_begin("æåˆ€å·¦è·‘_å¾ªç¯",true);
 	
-	anim("[Ìáµ¶Ïò×øÅÜ]"	,4		);
+	anim("[æåˆ€å‘åè·‘]"	,4		);
 
 action_end(); 
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("¸ß´¦ËÀÍö2",false);
+//12-21 æ›´æ–°
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
 file_end();
-file_begin("data/model/°Í×æ¿¨»ğ¼ı.txt");
+file_begin("data/model/å·´ç¥–å¡ç«ç®­.txt");
 
-state_begin("Ñ°³£");
-	model("matters/°Í×æ¿¨»ğ¼ı.mod","Ğı×ª");
+state_begin("å¯»å¸¸");
+	model("matters/å·´ç¥–å¡ç«ç®­.mod","æ—‹è½¬");
 state_end();
 
 state_begin("");
@@ -804,13 +804,13 @@ state_begin("");
 
 state_end();
 
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/°Í×æ¿¨»ğ¼ıµ¯.txt");
+file_begin("data/model/å·´ç¥–å¡ç«ç®­å¼¹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -820,44 +820,9 @@ file_begin("data/model/°Í×æ¿¨»ğ¼ıµ¯.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/°Í×æ¿¨»ğ¼ıµ¯.mod","Ğı×ª");
-
-state_end();
-
-state_begin("");
-
-	model("");
-
-state_end();
-
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
-action_end();
-
-//-------------------------------------------------------------
-file_end();
-file_begin("data/model/½İ¿ËZB26Çá»úÇ¹.txt");
-
-state_begin("Ñ°³£");
-
-	model("matters/½İ¿ËZB26Çá»úÇ¹.mod","Ğı×ª");
-
-state_end();
-
-
-
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
-action_end();
-
-file_end();
-
-file_begin("data/model/Ã«Éª¾Ñ»÷²½Ç¹.txt");
-state_begin("Ñ°³£");
-
-	model("matters/Ã«Éª¾Ñ»÷²½Ç¹.mod","Ğı×ª");
+	model("matters/å·´ç¥–å¡ç«ç®­å¼¹.mod","æ—‹è½¬");
 
 state_end();
 
@@ -867,13 +832,48 @@ state_begin("");
 
 state_end();
 
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÌÀÄ·É­³å·æÇ¹.txt");
+file_begin("data/model/æ·å…‹ZB26è½»æœºæª.txt");
+
+state_begin("å¯»å¸¸");
+
+	model("matters/æ·å…‹ZB26è½»æœºæª.mod","æ—‹è½¬");
+
+state_end();
+
+
+
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
+action_end();
+
+file_end();
+
+file_begin("data/model/æ¯›ç‘Ÿç‹™å‡»æ­¥æª.txt");
+state_begin("å¯»å¸¸");
+
+	model("matters/æ¯›ç‘Ÿç‹™å‡»æ­¥æª.mod","æ—‹è½¬");
+
+state_end();
+
+state_begin("");
+
+	model("");
+
+state_end();
+
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
+action_end();
+
+//-------------------------------------------------------------
+file_end();
+file_begin("data/model/æ±¤å§†æ£®å†²é”‹æª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -883,9 +883,9 @@ file_begin("data/model/ÌÀÄ·É­³å·æÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÌÀÄ·É­³å·æÇ¹.mod","Ğı×ª");
+	model("matters/æ±¤å§†æ£®å†²é”‹æª.mod","æ—‹è½¬");
 
 state_end();
 
@@ -895,13 +895,13 @@ state_begin("");
 
 state_end();
 
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ.txt");
+file_begin("data/model/ä¸»è§’ç”¨å­å¼¹å¤¹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -911,9 +911,9 @@ file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷½ÇÓÃ×Óµ¯¼Ğ.mod","Ğı×ª");
+	model("matters/ä¸»è§’ç”¨å­å¼¹å¤¹.mod","æ—‹è½¬");
 
 state_end();
 
@@ -922,13 +922,13 @@ state_begin("");
 	model("");
 
 state_end();
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Âí¿ËÇßÖØ»úÇ¹.txt");
+file_begin("data/model/é©¬å…‹æ²é‡æœºæª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -938,9 +938,9 @@ file_begin("data/model/Âí¿ËÇßÖØ»úÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/¾Å¶şÊ½ÖØ»úÇ¹.mod");
+	model("characters/ä¹äºŒå¼é‡æœºæª.mod");
 
 state_end();
 
@@ -951,7 +951,7 @@ state_begin("");
 state_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ01.txt");
+file_begin("data/model/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -961,28 +961,28 @@ file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ01.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µ01.mod");
-
-state_end();
-
-state_begin("»÷»Ù");
-
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µËğ»µ01.mod");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦01.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+state_begin("å‡»æ¯");
 
-	gfx("³µÁ¾±»»÷»ÙĞ§¹û.gfx","");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦æŸå01.mod");
+
+state_end();
+
+convert_begin("å¯»å¸¸","å‡»æ¯");
+
+	gfx("è½¦è¾†è¢«å‡»æ¯æ•ˆæœ.gfx","");
 
 convert_end();
 
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ03.txt");
+file_begin("data/model/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦03.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -992,26 +992,26 @@ file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ03.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µ03.mod");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦03.mod");
 
 state_end();
 
 state_begin("");
 
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µËğ»µ03.mod");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦æŸå03.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("³µÁ¾±»»÷»ÙĞ§¹û.gfx","");
+	gfx("è½¦è¾†è¢«å‡»æ¯æ•ˆæœ.gfx","");
 
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ04.txt");
+file_begin("data/model/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦04.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1021,27 +1021,27 @@ file_begin("data/model/Õ½ÉÏº£_ÀÏÊ½Æû³µ04.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µ04.mod");
-
-state_end();
-
-state_begin("»÷»Ù");
-
-	model("matters/Õ½ÉÏº£_ÀÏÊ½Æû³µËğ»µ04.mod");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦04.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+state_begin("å‡»æ¯");
 
-	gfx("³µÁ¾±»»÷»ÙĞ§¹û.gfx","");
+	model("matters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦æŸå04.mod");
+
+state_end();
+
+convert_begin("å¯»å¸¸","å‡»æ¯");
+
+	gfx("è½¦è¾†è¢«å‡»æ¯æ•ˆæœ.gfx","");
 
 convert_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÖØ»úÇ¹ÊÖ.txt");
+file_begin("data/model/é‡æœºæªæ‰‹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1051,9 +1051,9 @@ file_begin("data/model/ÖØ»úÇ¹ÊÖ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÖØ»úÇ¹ÊÖ_Ó²¶¯»­.mod");
+	model("characters/é‡æœºæªæ‰‹_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1066,143 +1066,143 @@ state_end();
 
 
 //
-action_begin("Ïò×óÌáÇ¹ÅÜ",false);
+action_begin("å‘å·¦ææªè·‘",false);
 
-	anim("[Ïò×óÌáÇ¹ÅÜ]"		,2		);
-
-action_end();
-
-action_begin("×óÅÜ¼±Í£×ªÉí",false);
-
-	anim("[×óÅÜ¼±Í£×ªÉí]"		,2		);
+	anim("[å‘å·¦ææªè·‘]"		,2		);
 
 action_end();
 
-action_begin("ÏòÓÒÌáÇ¹ÅÜ",false);
+action_begin("å·¦è·‘æ€¥åœè½¬èº«",false);
 
-	anim("[ÏòÓÒÌáÇ¹ÅÜ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒÅÜ¼±Í£×ªÉí",false);
-
-	anim("[ÓÒÅÜ¼±Í£×ªÉí]"		,2		);
+	anim("[å·¦è·‘æ€¥åœè½¬èº«]"		,2		);
 
 action_end();
 
-action_begin("¶××ÅÃé×¼_Ñ­»·",true);
+action_begin("å‘å³ææªè·‘",false);
 
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-
-action_end();
-
-action_begin("ÌøÆğ",false);
-
-	anim("[ÌøÆğ]"		,2		);
+	anim("[å‘å³ææªè·‘]"		,2		);
 
 action_end();
 
-action_begin("ÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("å³è·‘æ€¥åœè½¬èº«",false);
 
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
-
-action_end();
-
-action_begin("ÂäµØ",false);
-
-	anim("[ÂäµØ]"		,2		);
+	anim("[å³è·‘æ€¥åœè½¬èº«]"		,2		);
 
 action_end();
 
-action_begin("Õ¾×ÅÃé×¼_Ñ­»·",true);
+action_begin("è¹²ç€ç„å‡†_å¾ªç¯",true);
 
-	anim("[ÌøÆğÃé×¼]"		,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("è·³èµ·",false);
+
+	anim("[è·³èµ·]"		,2		);
+
+action_end();
+
+action_begin("è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
+
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
+
+action_end();
+
+action_begin("è½åœ°",false);
+
+	anim("[è½åœ°]"		,2		);
+
+action_end();
+
+action_begin("ç«™ç€ç„å‡†_å¾ªç¯",true);
+
+	anim("[è·³èµ·ç„å‡†]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-20
-action_begin("Ïò×óÌáÇ¹ÅÜ_Ñ­»·",true);
+action_begin("å‘å·¦ææªè·‘_å¾ªç¯",true);
 
-	anim("[Ïò×óÌáÇ¹ÅÜ]"		,2		);
+	anim("[å‘å·¦ææªè·‘]"		,2		);
 
 action_end();
 
-action_begin("ÏòÓÒÌáÇ¹ÅÜ_Ñ­»·",true);
+action_begin("å‘å³ææªè·‘_å¾ªç¯",true);
 
-	anim("[ÏòÓÒÌáÇ¹ÅÜ]"		,2		);
+	anim("[å‘å³ææªè·‘]"		,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("¸ß´¦ËÀÍö2",false);
+//12-21 æ›´æ–°
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();file_end();
-file_begin("data/model/Éú»¯±ø.txt");
+file_begin("data/model/ç”ŸåŒ–å…µ.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1212,9 +1212,9 @@ file_begin("data/model/Éú»¯±ø.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Éú»¯±ø_°ëÓ²¶¯»­.mod");
+	model("characters/ç”ŸåŒ–å…µ_åŠç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1225,49 +1225,49 @@ state_begin("");
 state_end();
 
 //
-action_begin("Õ¾Á¢_Ñ­»·",true);
+action_begin("ç«™ç«‹_å¾ªç¯",true);
 	
-	anim("[Ô¤±¸×ËÊÆ]"	,2		);
+	anim("[é¢„å¤‡å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("³ö³¡¶¯×÷",false);
+action_begin("å‡ºåœºåŠ¨ä½œ",false);
 	
-	anim("[³ö³¡¶¯×÷]"	,2		);
+	anim("[å‡ºåœºåŠ¨ä½œ]"	,2		);
 
 action_end(); 
 
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("Ç°¿³",false);
+action_begin("å‰ç ",false);
 	
-	anim("[Ç°¿³]"	,2		);
+	anim("[å‰ç ]"	,2		);
 
 action_end(); 
 
-action_begin("Ç°¿³_Ñ­»·",true);
+action_begin("å‰ç _å¾ªç¯",true);
 	
-	anim("[Ç°¿³]"	,2		);
+	anim("[å‰ç ]"	,2		);
 
 action_end(); 
 
-action_begin("Í¶ÖÀ",false);
+action_begin("æŠ•æ·",false);
 	
-	anim("[Í¶ÖÀ]"	,2		);
+	anim("[æŠ•æ·]"	,2		);
 
 action_end(); 
 
-action_begin("Í¶ÖÀ_Ñ­»·",true);
+action_begin("æŠ•æ·_å¾ªç¯",true);
 	
-	anim("[Í¶ÖÀ]"	,2		);
+	anim("[æŠ•æ·]"	,2		);
 
 action_end(); 
 file_end();
-file_begin("data/model/ÓĞ¹ìµç³µ.txt");
+file_begin("data/model/æœ‰è½¨ç”µè½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1277,20 +1277,20 @@ file_begin("data/model/ÓĞ¹ìµç³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
-	model("characters/ÓĞ¹ìµç³µ.mod");
+state_begin("å¯»å¸¸");
+	model("characters/æœ‰è½¨ç”µè½¦.mod");
 	gfx("","");
 state_end();
 state_begin("");
 	model("");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
 state_end();
-convert_begin("Ñ°³£","");
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+convert_begin("å¯»å¸¸","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÉÏº£ÀÏÍ·.txt");
+file_begin("data/model/ä¸Šæµ·è€å¤´.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1300,9 +1300,9 @@ file_begin("data/model/ÉÏº£ÀÏÍ·.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÉÏº£ÀÏÍ·_Ó²¶¯»­.mod");
+	model("characters/ä¸Šæµ·è€å¤´_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1313,106 +1313,106 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("¾ª»ÌÌÓÅÜ_Ñ­»·",true);
+action_begin("æƒŠæƒ¶é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[¾ª»ÅÌÓÅÜ]"	,2		);
+	anim("[æƒŠæ…Œé€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("±§Í·ÌÓÅÜ_Ñ­»·",true);
+action_begin("æŠ±å¤´é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[±§Í·ÌÓÅÜ]"	,2		);
+	anim("[æŠ±å¤´é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Æğºô¾È_Ñ­»·",true);
+action_begin("ç«™èµ·å‘¼æ•‘_å¾ªç¯",true);
 	
-	anim("[Õ¾Æğºô¾È]"	,2		);
+	anim("[ç«™èµ·å‘¼æ•‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
-//12-21 ĞÂÔö
-action_begin("»ñ¾È¸Ğ¼¤",false);
+//12-21 æ–°å¢
+action_begin("è·æ•‘æ„Ÿæ¿€",false);
 	
-	anim("[»ñ¾È¸Ğ¼¤]"	,2		);
+	anim("[è·æ•‘æ„Ÿæ¿€]"	,2		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,2		);
+	anim("[æ™®é€šè·‘]"	,2		);
 
 action_end();
 
 file_end();
-file_begin("data/model/ÈÌÕß.txt");
+file_begin("data/model/å¿è€….txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1422,9 +1422,9 @@ file_begin("data/model/ÈÌÕß.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÌÕß_Ó²¶¯»­.mod");
+	model("characters/å¿è€…_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1435,168 +1435,168 @@ state_begin("");
 state_end();
 
 //
-action_begin("Ïò×óÅÜ·¢ïÚ",false);
+action_begin("å‘å·¦è·‘å‘é•–",false);
 	
-	anim("[Ïò×óÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å·¦è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÅÜ·¢ïÚ",false);
+action_begin("å‘å³è·‘å‘é•–",false);
 	
-	anim("[ÏòÓÒÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å³è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("Ïò×óÅÜ·¢ïÚ_Ñ­»·",true);
+action_begin("å‘å·¦è·‘å‘é•–_å¾ªç¯",true);
 	
-	anim("[Ïò×óÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å·¦è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÅÜ·¢ïÚ_Ñ­»·",true);
+action_begin("å‘å³è·‘å‘é•–_å¾ªç¯",true);
 	
-	anim("[ÏòÓÒÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å³è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ_Ñ­»·",true);
+action_begin("å‘å‰è·‘_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°ÅÜ]"	,2		);
+	anim("[å‘å‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ»Óµ¶",false);
+action_begin("å‘å‰è·‘æŒ¥åˆ€",false);
 	
-	anim("[ÏòÇ°ÅÜ»Óµ¶]"	,2		);
+	anim("[å‘å‰è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ»Óµ¶_Ñ­»·",true);
+action_begin("å‘å‰è·‘æŒ¥åˆ€_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°ÅÜ»Óµ¶]"	,2		);
+	anim("[å‘å‰è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÆğ",false);
+action_begin("ç«™ç«‹è·³èµ·",false);
 	
-	anim("[Õ¾Á¢ÌøÆğ]"	,2		);
+	anim("[ç«™ç«‹è·³èµ·]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("ç«™ç«‹è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[Õ¾Á¢ÌøÔÚ¿ÕÖĞ]"	,2		);
+	anim("[ç«™ç«‹è·³åœ¨ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÆğºóÂäµØÏÂ¶×",false);
+action_begin("ç«™ç«‹è·³èµ·åè½åœ°ä¸‹è¹²",false);
 	
-	anim("[ÂäµØ]"	,2		);
+	anim("[è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("±£³ÖÏÂ¶×_Ñ­»·",true);
+action_begin("ä¿æŒä¸‹è¹²_å¾ªç¯",true);
 	
-	anim("[ÂäµØ×¼±¸×ËÊÆ]"	,2		);
+	anim("[è½åœ°å‡†å¤‡å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×»Óµ¶¹¥»÷",false);
+action_begin("ä¸‹è¹²æŒ¥åˆ€æ”»å‡»",false);
 	
-	anim("[ÏÂ¶×»Óµ¶¹¥»÷]"	,2		);
+	anim("[ä¸‹è¹²æŒ¥åˆ€æ”»å‡»]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×»Óµ¶¹¥»÷_Ñ­»·",true);
+action_begin("ä¸‹è¹²æŒ¥åˆ€æ”»å‡»_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×»Óµ¶¹¥»÷]"	,2		);
+	anim("[ä¸‹è¹²æŒ¥åˆ€æ”»å‡»]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍË",false);
+action_begin("ä¸‹è¹²è·³èµ·åé€€",false);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍË]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍËÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("ä¸‹è¹²è·³èµ·åé€€åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍË¿ÕÖĞ]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍËÂäµØ",false);
+action_begin("ä¸‹è¹²è·³èµ·åé€€è½åœ°",false);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍËÂäµØ]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("ºó¿Õ·­",false);
+action_begin("åç©ºç¿»",false);
 	
-	anim("[ºó¿Õ·­]"	,2		);
+	anim("[åç©ºç¿»]"	,2		);
 
 action_end(); 
 
-action_begin("ºó¿Õ·­_Ñ­»·",true);
+action_begin("åç©ºç¿»_å¾ªç¯",true);
 	
-	anim("[ºó¿Õ·­]"	,2		);
-
-action_end(); 
-
-
-//11/08 14:25 ¸üĞÂ
-action_begin("×óÅÜ_Ñ­»·",true);
-	
-	anim("[×óÅÜ]"	,2		);
-
-action_end(); 
-
-action_begin("ÓÒÅÜ_Ñ­»·",true);
-	
-	anim("[ÓÒÅÜ]"	,2		);
+	anim("[åç©ºç¿»]"	,2		);
 
 action_end(); 
 
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11/08 14:25 æ›´æ–°
+action_begin("å·¦è·‘_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[å·¦è·‘]"	,2		);
+
+action_end(); 
+
+action_begin("å³è·‘_å¾ªç¯",true);
+	
+	anim("[å³è·‘]"	,2		);
+
+action_end(); 
+
+
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//12-17 ĞÂÌí¶¯×÷
-action_begin("Õ¾Á¢ºó¿Õ·­",false);
+//12-17 æ–°æ·»åŠ¨ä½œ
+action_begin("ç«™ç«‹åç©ºç¿»",false);
 	
-	anim("[Õ¾Á¢ºó¿Õ·­]"	,4		);
+	anim("[ç«™ç«‹åç©ºç¿»]"	,4		);
 
 action_end();
 
-action_begin("ÏÂ¶×ºó¿Õ·­",false);
+action_begin("ä¸‹è¹²åç©ºç¿»",false);
 	
-	anim("[ÏÂ¶×ºó¿Õ·­]"	,4		);
+	anim("[ä¸‹è¹²åç©ºç¿»]"	,4		);
 
 action_end();
 
-action_begin("Ç°¿Õ·­",false);
+action_begin("å‰ç©ºç¿»",false);
 	
-	anim("[Ç°¿Õ·­]"	,4		);
+	anim("[å‰ç©ºç¿»]"	,4		);
 
 action_end();
 file_end();
-file_begin("data/model/Ö÷ÈË¹«.txt");
+file_begin("data/model/ä¸»äººå…¬.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1606,9 +1606,9 @@ file_begin("data/model/Ö÷ÈË¹«.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Ö÷ÈË¹«_Ó²¶¯»­.mod");
+	model("characters/ä¸»äººå…¬_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1619,108 +1619,108 @@ state_begin("");
 state_end();
 
 //
-action_begin("´­Æø_Ñ­»·",true);
+action_begin("å–˜æ°”_å¾ªç¯",true);
 	
-	anim("[´­Æø]"	,2		);
+	anim("[å–˜æ°”]"	,2		);
 
 action_end(); 
 
-action_begin("ÅÜ_Ñ­»·",true);
+action_begin("è·‘_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°ÅÜ]"	,2		);
+	anim("[å‘å‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("Á¢¶¨¾ÙÇ¹",false);
+action_begin("ç«‹å®šä¸¾æª",false);
 	
-	anim("[Á¢¶¨¾ÙÇ¹]"	,2		);
+	anim("[ç«‹å®šä¸¾æª]"	,2		);
 
 action_end(); 
 
-action_begin("¾ÙÇ¹Á¢¶¨_Ñ­»·",true);
+action_begin("ä¸¾æªç«‹å®š_å¾ªç¯",true);
 	
-	anim("[Á¢¶¨¾ÙÇ¹×ËÊÆ]"	,2		);
+	anim("[ç«‹å®šä¸¾æªå§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("Ç°×ßÀ­Ç¹Ë¨",false);
+action_begin("å‰èµ°æ‹‰æªæ “",false);
 	
-	anim("[Ç°×ßÀ­Ç¹Ë¨]"	,2		);
+	anim("[å‰èµ°æ‹‰æªæ “]"	,2		);
 
 action_end(); 
 
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[ÌáÇ¹ÏòÇ°×ß]"	,2		);
+	anim("[ææªå‘å‰èµ°]"	,2		);
 
 action_end(); 
 
-//12-21¸üĞÂ
-action_begin("¿ªÇ¹ºó×ªÉí×ß",false);
+//12-21æ›´æ–°
+action_begin("å¼€æªåè½¬èº«èµ°",false);
 	
-	anim("[¿ªÇ¹ºó×ªÉí×ß]"	,2		);
+	anim("[å¼€æªåè½¬èº«èµ°]"	,2		);
 
 action_end(); 
 
 
-action_begin("À­Ç¹Ë¨Á¢¶¨",false);
+action_begin("æ‹‰æªæ “ç«‹å®š",false);
 	
-	anim("[À­Ç¹Ë¨Á¢¶¨]"	,2		);
+	anim("[æ‹‰æªæ “ç«‹å®š]"	,2		);
 
 action_end(); 
 
-action_begin("Ö÷½Ç¿ªÇ¹",false);
+action_begin("ä¸»è§’å¼€æª",false);
 	
-	anim("[Ö÷½Ç¿ªÇ¹]"	,2		);
+	anim("[ä¸»è§’å¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("Ö÷½Ç¿ªÇ¹_Ñ­»·",true);
+action_begin("ä¸»è§’å¼€æª_å¾ªç¯",true);
 	
-	anim("[Ö÷½Ç¿ªÇ¹]"	,2		);
+	anim("[ä¸»è§’å¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("ÌøÔ¾ÆğÌø",false);
+action_begin("è·³è·ƒèµ·è·³",false);
 	
-	anim("[ÌøÔ¾]"	,2		);
+	anim("[è·³è·ƒ]"	,2		);
 
 action_end();
 
-action_begin("ÌøÔ¾ÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("è·³è·ƒåœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[ÌøÔÚ¿ÕÖĞ]"	,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"	,2		);
 
 action_end();
 
-action_begin("ÌøÔ¾ÂäµØ",false);
+action_begin("è·³è·ƒè½åœ°",false);
 	
-	anim("[ÂäµØ]"	,2		);
+	anim("[è½åœ°]"	,2		);
 
 action_end();
 
-//01-06 ¸üĞÂ
-action_begin("¿ªÇ¹¶¯×÷",false);
+//01-06 æ›´æ–°
+action_begin("å¼€æªåŠ¨ä½œ",false);
 	
-	anim("[¿ªÇ¹¶¯×÷]"	,2		);
+	anim("[å¼€æªåŠ¨ä½œ]"	,2		);
 
 action_end(); 
 
-action_begin("¿ªÇ¹¶¯×÷_Ñ­»·",true);
+action_begin("å¼€æªåŠ¨ä½œ_å¾ªç¯",true);
 	
-	anim("[¿ªÇ¹¶¯×÷]"	,2		);
+	anim("[å¼€æªåŠ¨ä½œ]"	,2		);
 
 action_end(); 
 
-//01-25¸üĞÂ
-action_begin("ÆÕÍ¨Õ¾Á¢",false);
+//01-25æ›´æ–°
+action_begin("æ™®é€šç«™ç«‹",false);
 	
-	anim("[Õ¾Á¢]"	,2		);
+	anim("[ç«™ç«‹]"	,2		);
 
 action_end(); 
 
 file_end();
-file_begin("data/model/Ë¾Áî.txt");
+file_begin("data/model/å¸ä»¤.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1730,9 +1730,9 @@ file_begin("data/model/Ë¾Áî.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Ë¾Áî_Ó²¶¯»­.mod");
+	model("characters/å¸ä»¤_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1743,61 +1743,61 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ø×Å_Ñ­»·",true);
+action_begin("åç€_å¾ªç¯",true);
 	
-	anim("[×ø×Å]"	,2		);
+	anim("[åç€]"	,2		);
 
 action_end(); 
 
-action_begin("×ø×Å½²»°_Ñ­»·",true);
+action_begin("åç€è®²è¯_å¾ªç¯",true);
 	
-	anim("[×ø×Å½²»°]"	,2		);
+	anim("[åç€è®²è¯]"	,2		);
 
 action_end(); 
 
-action_begin("×ø×Å»ÓÊÖÕ¾Æğ×ªÉí",false);
+action_begin("åç€æŒ¥æ‰‹ç«™èµ·è½¬èº«",false);
 	
-	anim("[»ÓÊÖ×ªÉí]"	,2		);
+	anim("[æŒ¥æ‰‹è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("ºóÍË",false);
+action_begin("åé€€",false);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("°ÎÇ¹",false);
+action_begin("æ‹”æª",false);
 	
-	anim("[°ÎÇ¹]"	,2		);
+	anim("[æ‹”æª]"	,2		);
 
 action_end(); 
 
-action_begin("Ãé×¼_Ñ­»·",true);
+action_begin("ç„å‡†_å¾ªç¯",true);
 	
-	anim("[Ãé×¼]"	,2		);
+	anim("[ç„å‡†]"	,2		);
 
 action_end(); 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,2		);
+	anim("[å¼€ç«]"	,2		);
 
 action_end(); 
 
-action_begin("µÃÊÖ¿ñĞ¦",false);
+action_begin("å¾—æ‰‹ç‹‚ç¬‘",false);
 	
-	anim("[µÃÊÖ¿ñĞ¦]"	,2		);
+	anim("[å¾—æ‰‹ç‹‚ç¬‘]"	,2		);
 
 action_end(); 
 file_end();
-file_begin("data/model/ÈÕ±¾¸ÒËÀ¶ÓÔ±.txt");
+file_begin("data/model/æ—¥æœ¬æ•¢æ­»é˜Ÿå‘˜.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1807,9 +1807,9 @@ file_begin("data/model/ÈÕ±¾¸ÒËÀ¶ÓÔ±.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÕ±¾¸ÒËÀ¶ÓÔ±_Ó²¶¯»­.mod");
+	model("characters/æ—¥æœ¬æ•¢æ­»é˜Ÿå‘˜_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -1820,168 +1820,168 @@ state_begin("");
 state_end();
 
 //
-action_begin("×óÌøÆğ",false);
+action_begin("å·¦è·³èµ·",false);
 	
-	anim("[×óÌø]"	,2		);
+	anim("[å·¦è·³]"	,2		);
 
 action_end(); 
 
-action_begin("×óÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("å·¦è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[×óÌøÔÚ¿ÕÖĞ]"	,2		);
+	anim("[å·¦è·³åœ¨ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("×óÌøÂäµØ",false);
+action_begin("å·¦è·³è½åœ°",false);
 	
-	anim("[×óÌøÂäµØ]"	,2		);
+	anim("[å·¦è·³è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×óÌøÂäµØ×ËÊÆ_Ñ­»·",true);
+action_begin("å·¦è·³è½åœ°å§¿åŠ¿_å¾ªç¯",true);
 	
-	anim("[×óÌøÂäµØ×ËÊÆ]"	,2		);
+	anim("[å·¦è·³è½åœ°å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("ÅÜ_Ñ­»·",true);
+action_begin("è·‘_å¾ªç¯",true);
 	
-	anim("[ÅÜ]"	,2		);
+	anim("[è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÆğÌø",false);
+action_begin("ä¸‹è¹²èµ·è·³",false);
 	
-	anim("[ÏÂ¶×ÆğÌø]"	,2		);
+	anim("[ä¸‹è¹²èµ·è·³]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÆğÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("ä¸‹è¹²èµ·è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×ÆğÌø¿ÕÖĞ]"	,2		);
+	anim("[ä¸‹è¹²èµ·è·³ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÆğÌøÂäµØ",false);
+action_begin("ä¸‹è¹²èµ·è·³è½åœ°",false);
 	
-	anim("[ÏÂ¶×ÆğÌøÂäµØ]"	,2		);
+	anim("[ä¸‹è¹²èµ·è·³è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("Í¶µ¯",false);
+action_begin("æŠ•å¼¹",false);
 	
-	anim("[Í¶µ¯]"	,2		);
+	anim("[æŠ•å¼¹]"	,2		);
 
 action_end(); 
 
-action_begin("Í¶µ¯_Ñ­»·",true);
+action_begin("æŠ•å¼¹_å¾ªç¯",true);
 	
-	anim("[Í¶µ¯]"	,2		);
+	anim("[æŠ•å¼¹]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒÌøÆğ",false);
+action_begin("å³è·³èµ·",false);
 	
-	anim("[ÓÒÌø]"	,2		);
+	anim("[å³è·³]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("å³è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[ÓÒÌøÔÚ¿ÕÖĞ]"	,2		);
+	anim("[å³è·³åœ¨ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒÌøÂäµØ",false);
+action_begin("å³è·³è½åœ°",false);
 	
-	anim("[ÓÒÌøÂäµØ]"	,2		);
+	anim("[å³è·³è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒÌøÂäµØ×ËÊÆ_Ñ­»·",true);
+action_begin("å³è·³è½åœ°å§¿åŠ¿_å¾ªç¯",true);
 	
-	anim("[ÓÒÌøÂäµØ×ËÊÆ]"	,2		);
+	anim("[å³è·³è½åœ°å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶××ËÊÆ]"	,2		);
+	anim("[ä¸‹è¹²å§¿åŠ¿]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("¸ß´¦ËÀÍö2",false);
+//12-21 æ›´æ–°
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
 
 //01-04
-action_begin("Õ¨ËÀ",false);
+action_begin("ç‚¸æ­»",false);
 	
-	anim("[Õ¨ËÀ4]"	,2		);
+	anim("[ç‚¸æ­»4]"	,2		);
 
 action_end();
 file_end();
-file_begin("data/model/¹«¹²Æû³µ.txt");
+file_begin("data/model/å…¬å…±æ±½è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -1990,27 +1990,27 @@ file_begin("data/model/¹«¹²Æû³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/Õ½ÉÏº£_¹«¹²Æû³µ.mod");
+	model("characters/æˆ˜ä¸Šæµ·_å…¬å…±æ±½è½¦.mod");
 
 state_end();
 
 state_begin("");
 
 	model("");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
 state_end();
 
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ï´Ôè¹í×Ó.txt");
+file_begin("data/model/æ´—æ¾¡é¬¼å­.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2020,9 +2020,9 @@ file_begin("data/model/Ï´Ôè¹í×Ó.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Ï´Ôè¹í×Ó_Ó²¶¯»­01.mod");
+	model("characters/æ´—æ¾¡é¬¼å­_ç¡¬åŠ¨ç”»01.mod");
 
 state_end();
 
@@ -2033,49 +2033,49 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí±¼ÅÜ_Ñ­»·",true);
+action_begin("è½¬èº«å¥”è·‘_å¾ªç¯",true);
 	
-	anim("[×ªÉí±¼ÅÜ]"	,2		);
+	anim("[è½¬èº«å¥”è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉíºô½Ğ",false);
+action_begin("è½¬èº«å‘¼å«",false);
 	
-	anim("[×ªÉíºô½Ğ]"	,2		);
+	anim("[è½¬èº«å‘¼å«]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉíºô½ĞÌÓÅÜ_Ñ­»·",true);
+action_begin("è½¬èº«å‘¼å«é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[×ªÉíºô½ĞÌÓÅÜ]"	,2		);
+	anim("[è½¬èº«å‘¼å«é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 file_end();
-file_begin("data/model/±ê¼Ç·û.txt");
+file_begin("data/model/æ ‡è®°ç¬¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2085,13 +2085,13 @@ file_begin("data/model/±ê¼Ç·û.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("denote/ÀúÊ·Ñ§¼Ò.mod");
+	model("denote/å†å²å­¦å®¶.mod");
 
 state_end();
 file_end();
-file_begin("data/model/ÀÏÊ½Æû³µ02.txt");
+file_begin("data/model/è€å¼æ±½è½¦02.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2101,58 +2101,58 @@ file_begin("data/model/ÀÏÊ½Æû³µ02.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/Õ½ÉÏº£_ÀÏÊ½Æû³µ02.mod");
+	model("characters/æˆ˜ä¸Šæµ·_è€å¼æ±½è½¦02.mod");
 
 state_end();
 
-state_begin("»÷»Ù");
+state_begin("å‡»æ¯");
 
-	gfx("»÷»Ù_³µÁ¾.gfx","");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
 	model("");
 
 state_end();
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 
 
 
 //-------------------------------------------------------------
-define_HH("HH_ÓÒ±ß³ÉÔ±",0);
-define_HH("HH_×ó±ß³ÉÔ±",1);
-define_HH("HH_ºó×ù",2);
+define_HH("HH_å³è¾¹æˆå‘˜",0);
+define_HH("HH_å·¦è¾¹æˆå‘˜",1);
+define_HH("HH_ååº§",2);
 //-------------------------------------------------------------
 
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,4		);
+	anim("[å¼€è½¦]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ_Ñ­»·",true,10.0);
+action_begin("å¼€ç«_å¾ªç¯",true,10.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,4		);
+	anim("[åœè½¦]"	,4		);
 
 action_end(); 
 file_end();
-file_begin("data/model/ÉÏº£Å®Ö°Ô±.txt");
+file_begin("data/model/ä¸Šæµ·å¥³èŒå‘˜.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2162,9 +2162,9 @@ file_begin("data/model/ÉÏº£Å®Ö°Ô±.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÉÏº£Å®Ö°Ô±_Ó²¶¯»­.mod");
+	model("characters/ä¸Šæµ·å¥³èŒå‘˜_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -2175,113 +2175,113 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("¾ª»ÌÌÓÅÜ_Ñ­»·",true);
+action_begin("æƒŠæƒ¶é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[¾ª»ÅÌÓÅÜ]"	,2		);
+	anim("[æƒŠæ…Œé€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("±§Í·ÌÓÅÜ_Ñ­»·",true);
+action_begin("æŠ±å¤´é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[±§Í·ÌÓÅÜ]"	,2		);
+	anim("[æŠ±å¤´é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Æğºô¾È_Ñ­»·",true);
+action_begin("ç«™èµ·å‘¼æ•‘_å¾ªç¯",true);
 	
-	anim("[Õ¾Æğºô¾È]"	,2		);
+	anim("[ç«™èµ·å‘¼æ•‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
-//12-21 ĞÂÔö
-action_begin("»ñ¾È¸Ğ¼¤",false);
+//12-21 æ–°å¢
+action_begin("è·æ•‘æ„Ÿæ¿€",false);
 	
-	anim("[»ñ¾È¸Ğ¼¤]"	,2		);
+	anim("[è·æ•‘æ„Ÿæ¿€]"	,2		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,2		);
+	anim("[æ™®é€šè·‘]"	,2		);
 
 action_end();
 
-//01-25 ĞÂÔö
-action_begin("ÆÕÍ¨Õ¾Æğ",false);
+//01-25 æ–°å¢
+action_begin("æ™®é€šç«™èµ·",false);
 	
-	anim("[ÆÕÍ¨Õ¾Æğ]"	,2		);
+	anim("[æ™®é€šç«™èµ·]"	,2		);
 
 action_end();
 
 file_end();
-file_begin("data/model/Â½¾ü.txt");
+file_begin("data/model/é™†å†›.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2291,9 +2291,9 @@ file_begin("data/model/Â½¾ü.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÕ±¾Â½¾ü_Ó²¶¯»­01.mod");
+	model("characters/æ—¥æœ¬é™†å†›_ç¡¬åŠ¨ç”»01.mod");
 
 state_end();
 
@@ -2306,82 +2306,82 @@ state_end();
 
 
 
-//++++++ĞÂÔö+++++
-action_begin("¶××ÅÒÆ¶¯_Ñ­»·",true);
+//++++++æ–°å¢+++++
+action_begin("è¹²ç€ç§»åŠ¨_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×ÒÆ¶¯]"	,2		);
+	anim("[ä¸‹è¹²ç§»åŠ¨]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÌáÇ¹ÅÜ_Ñ­»·",true);
+action_begin("å‘å³ææªè·‘_å¾ªç¯",true);
 	
-	anim("[ÏòÓÒÌáÇ¹ÅÜ]"	,2		);
+	anim("[å‘å³ææªè·‘]"	,2		);
 
 action_end();
 
-action_begin("Ïò×óÌáÇ¹ÅÜ_Ñ­»·",true);
+action_begin("å‘å·¦ææªè·‘_å¾ªç¯",true);
 	
-	anim("[Ïò×óÌáÇ¹ÅÜ]"	,2		);
+	anim("[å‘å·¦ææªè·‘]"	,2		);
 
 action_end();
 
-action_begin("×·Öğ_Ñ­»·",true);
+action_begin("è¿½é€_å¾ªç¯",true);
 
-	anim("[×·Öğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾Ãé×¼_Ñ­»·",true);
-
-	anim("[ÓÉ¶×µ½Õ¾Ãé×¼]"		,2		);
+	anim("[è¿½é€]"		,2		);
 
 action_end();
 
-action_begin("Õ¾Á¢¶ËÇ¹",false);
+action_begin("ç”±è¹²åˆ°ç«™ç„å‡†_å¾ªç¯",true);
 
-	anim("[Õ¾Á¢¶ËÇ¹]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™ç„å‡†]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("ç«™ç«‹ç«¯æª",false);
 
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ·­¹ö_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÒ¹ö·­]"		,4		);
+	anim("[ç«™ç«‹ç«¯æª]"		,2		);
 
 action_end();
 
-action_begin("×ó·­¹ö_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("å·¦è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 
-	anim("[×ó¹ö·­]"		,4		);
-
-action_end();
-
-action_begin("³ÖĞøÓÒ²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷_Ñ­»·",true);
-
-	anim("[ÓÒ¹ö·­]"		,4		);
-	anim("[ÓÒ¹ö·­Ãé×¼]"		,2		);
-	anim("[ÓÒ¹ö·­¿ª»ğ]"		,2		);
-	anim("[ÓÒ¹ö·­À­Ë¨]"		,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
 
 action_end();
 
-action_begin("³ÖĞø×ó²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷_Ñ­»·",true);
+action_begin("å³è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 
-	anim("[×ó¹ö·­]"		,4			);
-	anim("[×ó¹ö·­Ãé×¼]"		,2		);
-	anim("[×ó¹ö·­¿ª»ğ]"		,2		);
-	anim("[×ó¹ö·­À­Ç¹Ë¨]"		,2		);
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å³ç¿»æ»š_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
+
+	anim("[å³æ»šç¿»]"		,4		);
+
+action_end();
+
+action_begin("å·¦ç¿»æ»š_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
+
+	anim("[å·¦æ»šç¿»]"		,4		);
+
+action_end();
+
+action_begin("æŒç»­å³ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»_å¾ªç¯",true);
+
+	anim("[å³æ»šç¿»]"		,4		);
+	anim("[å³æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å³æ»šç¿»å¼€ç«]"		,2		);
+	anim("[å³æ»šç¿»æ‹‰æ “]"		,2		);
+
+action_end();
+
+action_begin("æŒç»­å·¦ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»_å¾ªç¯",true);
+
+	anim("[å·¦æ»šç¿»]"		,4			);
+	anim("[å·¦æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å·¦æ»šç¿»å¼€ç«]"		,2		);
+	anim("[å·¦æ»šç¿»æ‹‰æªæ “]"		,2		);
 
 action_end();
 
@@ -2389,401 +2389,401 @@ action_end();
 //+++++++++
 
 //-------------------------------------------------------------
-action_begin("¶ËÇ¹»ºÂıÑ²Âß_Ñ­»·",true);
+action_begin("ç«¯æªç¼“æ…¢å·¡é€»_å¾ªç¯",true);
 	
-	anim("[Ñ²Âß×ß]"	,2		);
+	anim("[å·¡é€»èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("´Ó³µÉÏÌøÏÂ",false);
+action_begin("ä»è½¦ä¸Šè·³ä¸‹",false);
 
-	anim("[ÌøÆğ]"			,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
-	anim("[ÂäµØ]"			,2		);
+	anim("[è·³èµ·]"			,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
+	anim("[è½åœ°]"			,2		);
 
 action_end(); 
 
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("ÅÜ_Ñ­»·",true);
+action_begin("è·‘_å¾ªç¯",true);
 	
-	anim("[¶ËÇ¹Ç°ÅÜ]"	,2		);
+	anim("[ç«¯æªå‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÌáÇ¹ÂıÅÜ×ó×ª",false);
+action_begin("ææªæ…¢è·‘å·¦è½¬",false);
 
-	anim("[ÓÒÅÜ¼±Í£×ªÉí]"	,2		);
+	anim("[å³è·‘æ€¥åœè½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("ÌáÇ¹ÂıÅÜÓÒ×ª",false);
+action_begin("ææªæ…¢è·‘å³è½¬",false);
 
-	anim("[×óÅÜ¼±Í£×ªÉí]"	,2		);
+	anim("[å·¦è·‘æ€¥åœè½¬èº«]"	,2		);
 
 action_end();
 
-action_begin("¶ËÇ¹¿ìÅÜ",false);
+action_begin("ç«¯æªå¿«è·‘",false);
 
-	anim("[¶ËÇ¹Ç°ÅÜ]"		,2		);
+	anim("[ç«¯æªå‰è·‘]"		,2		);
 
 action_end();
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
 
 action_end();
 
 ////
 
 
-action_begin("ÓÉ¶×µ½Õ¾¿ª»ğ",false);
+action_begin("ç”±è¹²åˆ°ç«™å¼€ç«",false);
 
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾¿ª»ğ_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
 
 action_end();
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±è¹²åˆ°ç«™å¼€ç«_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
 
-	anim("[ÏÂ¶×Ì§Ç¹]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
 
 action_end();
 
-action_begin("ÓÉ¶×µ½Õ¾_Ñ­»·",true);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
-	anim("[ÓÉ¶×µ½Õ¾Ãé×¼]"	,2		);
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
-	anim("[ÓÉÕ¾µ½¶×]"		,2		);
+	anim("[ä¸‹è¹²æŠ¬æª]"		,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™_å¾ªç¯",true);
+
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™ç„å‡†]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"		,2		);
 
 action_end();
 
 /////
 
-action_begin("Õ¾Á¢Ãé×¼Éä»÷À­Ç¹Ë¨",false);//Ğè¼ÓÑÓÊ±
+action_begin("ç«™ç«‹ç„å‡†å°„å‡»æ‹‰æªæ “",false);//éœ€åŠ å»¶æ—¶
 
-	anim("[Õ¾Á¢¶ËÇ¹]"		,2		);
-	anim("[Õ¾Á¢¶ËÇ¹Ãé×¼]"	,2		);
-	anim("[Õ¾Á¢¶ËÇ¹¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("Õ¾Á¢Ãé×¼Éä»÷À­Ç¹Ë¨_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[Õ¾Á¢¶ËÇ¹Ãé×¼]"	,2		);
-	anim("[Õ¾Á¢¶ËÇ¹¿ª»ğ]"	,2		);
-	anim("[Õ¾Á¢¶ËÇ¹À­Ç¹Ë¨]"	,2		);
+	anim("[ç«™ç«‹ç«¯æª]"		,2		);
+	anim("[ç«™ç«‹ç«¯æªç„å‡†]"	,2		);
+	anim("[ç«™ç«‹ç«¯æªå¼€ç«]"	,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí¶ËÇ¹Ãé×¼Éä»÷",false);//Ğè¼ÓÑÓÊ±
+action_begin("ç«™ç«‹ç„å‡†å°„å‡»æ‹‰æªæ “_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
 
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
+	anim("[ç«™ç«‹ç«¯æªç„å‡†]"	,2		);
+	anim("[ç«™ç«‹ç«¯æªå¼€ç«]"	,2		);
+	anim("[ç«™ç«‹ç«¯æªæ‹‰æªæ “]"	,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí¶ËÇ¹Ãé×¼Éä»÷ÉÁÉí¶ã±Ü_Ñ­»·",true);
+action_begin("å·¦è½¬èº«ç«¯æªç„å‡†å°„å‡»",false);//éœ€åŠ å»¶æ—¶
 
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-	anim("[ÏòÓÒÉÁ±Ü]"		,2		);
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å·¦è½¬èº«ç«¯æªç„å‡†å°„å‡»é—ªèº«èº²é¿_å¾ªç¯",true);
+
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+	anim("[å‘å³é—ªé¿]"		,2		);
 
 action_end();
 
 /////////
 
-action_begin("ÓÒ×ªÉí¶ËÇ¹Ãé×¼Éä»÷",false);//Ğè¼ÓÑÓÊ±
+action_begin("å³è½¬èº«ç«¯æªç„å‡†å°„å‡»",false);//éœ€åŠ å»¶æ—¶
 
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-	anim("[ÓÒ×ªÉíÃé×¼]"		,2		);
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí¶ËÇ¹Ãé×¼Éä»÷ÉÁÉí¶ã±Ü_Ñ­»·",true);
-
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-	anim("[ÓÒ×ªÉíÃé×¼]"		,2		);
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-	anim("[Ïò×óÉÁ±Ü]"		,2		);
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å³è½¬èº«ç„å‡†]"		,2		);
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
 
 action_end();
 
-action_begin("ÏÂ¶×Ãé×¼Éä»÷À­Ç¹Ë¨",false);
+action_begin("å³è½¬èº«ç«¯æªç„å‡†å°„å‡»é—ªèº«èº²é¿_å¾ªç¯",true);
 
-	anim("[ÏÂ¶×Ì§Ç¹]"		,2		);
-	anim("[ÏÂ¶×Ãé×¼]"		,2		);
-	anim("[ÏÂ¶×¿ª»ğ]"		,2		);
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å³è½¬èº«ç„å‡†]"		,2		);
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
+	anim("[å‘å·¦é—ªé¿]"		,2		);
 
 action_end();
 
-action_begin("ÏÂ¶×Ãé×¼Éä»÷À­Ç¹Ë¨_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
+action_begin("ä¸‹è¹²ç„å‡†å°„å‡»æ‹‰æªæ “",false);
 
-	anim("[ÏÂ¶×Ãé×¼]"		,2		);
-	anim("[ÏÂ¶×¿ª»ğ]"		,2		);
-	anim("[ÏÂ¶×À­Ç¹Ë¨]"		,2		);
+	anim("[ä¸‹è¹²æŠ¬æª]"		,2		);
+	anim("[ä¸‹è¹²ç„å‡†]"		,2		);
+	anim("[ä¸‹è¹²å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("ä¸‹è¹²ç„å‡†å°„å‡»æ‹‰æªæ “_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[ä¸‹è¹²ç„å‡†]"		,2		);
+	anim("[ä¸‹è¹²å¼€ç«]"		,2		);
+	anim("[ä¸‹è¹²æ‹‰æªæ “]"		,2		);
 
 action_end();
 
 //////
 
-action_begin("ÓÒ²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷",false);//Ğè¼ÓÑÓÊ±
+action_begin("å³ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»",false);//éœ€åŠ å»¶æ—¶
 
-	anim("[ÓÒ¹ö·­Ãé×¼]"		,2		);
-	anim("[ÓÒ¹ö·­¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("×ó²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷",false);
-
-	anim("[×ó¹ö·­Ãé×¼]"		,2		);
-	anim("[×ó¹ö·­¿ª»ğ]"		,2		);
+	anim("[å³æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å³æ»šç¿»å¼€ç«]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷_Ñ­»·",true,0.5);//Ğè¼ÓÑÓÊ±
+action_begin("å·¦ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»",false);
 
-	anim("[ÓÒ¹ö·­Ãé×¼]"		,2		);
-	anim("[ÓÒ¹ö·­¿ª»ğ]"		,2		);
-	anim("[ÓÒ¹ö·­À­Ë¨]"		,2		);
+	anim("[å·¦æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å·¦æ»šç¿»å¼€ç«]"		,2		);
 
 action_end();
 
-action_begin("×ó²à¹ö·­ÏÂ¶×Ãé×¼Éä»÷_Ñ­»·",true,0.5);//Ğè¼ÓÑÓÊ±
+action_begin("å³ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»_å¾ªç¯",true,0.5);//éœ€åŠ å»¶æ—¶
 
-	anim("[×ó¹ö·­Ãé×¼]"		,2		);
-	anim("[×ó¹ö·­¿ª»ğ]"		,2		);
-	anim("[×ó¹ö·­À­Ç¹Ë¨]"		,2		);
+	anim("[å³æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å³æ»šç¿»å¼€ç«]"		,2		);
+	anim("[å³æ»šç¿»æ‹‰æ “]"		,2		);
+
+action_end();
+
+action_begin("å·¦ä¾§æ»šç¿»ä¸‹è¹²ç„å‡†å°„å‡»_å¾ªç¯",true,0.5);//éœ€åŠ å»¶æ—¶
+
+	anim("[å·¦æ»šç¿»ç„å‡†]"		,2		);
+	anim("[å·¦æ»šç¿»å¼€ç«]"		,2		);
+	anim("[å·¦æ»šç¿»æ‹‰æªæ “]"		,2		);
 
 action_end();
 
 /////
-action_begin("Ã¨Ñü¶ËÇ¹ÒÆ¶¯_Ñ­»·",true);
+action_begin("çŒ«è…°ç«¯æªç§»åŠ¨_å¾ªç¯",true);
 
-	anim("[ÏÂ¶×ÒÆ¶¯]"		,2		);
-
-action_end();
-
-
-action_begin("×¼±¸×·Öğ",false);
-
-	anim("[×¼±¸×·Öğ]"		,2		);
+	anim("[ä¸‹è¹²ç§»åŠ¨]"		,2		);
 
 action_end();
 
-action_begin("×·Öğ",false);
 
-	anim("[×·Öğ]"		,2		);
+action_begin("å‡†å¤‡è¿½é€",false);
+
+	anim("[å‡†å¤‡è¿½é€]"		,2		);
 
 action_end();
 
-action_begin("ÌøÆğÔÚ¿ÕÖĞ",false);
+action_begin("è¿½é€",false);
 
-	anim("[ÌøÆğ]"			,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
+	anim("[è¿½é€]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·åœ¨ç©ºä¸­",false);
+
+	anim("[è·³èµ·]"			,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
 
 action_end(); 
 
-action_begin("ÌøÆğÂäµØ",false);
+action_begin("è·³èµ·è½åœ°",false);
 
-	anim("[ÂäµØ]"			,2		);
-
-action_end(); 
-
-action_begin("ÓÒ·­¹ö",false); 
-
-	anim("[ÓÒ¹ö·­]"		,4		);
-
-action_end();
-
-action_begin("×ó·­¹ö",false); 
-
-	anim("[×ó¹ö·­]"		,4		);
-
-action_end();
-
-action_begin("×ó×ªÉíÌ§Ç¹",false);
-
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉíÃé×¼",false);
-
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¿ª»ğ",false);
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉíÌ§Ç¹",false);
-
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉíÃé×¼",false);
-
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí¿ª»ğ",false);
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("¸ß´¦ËÀÍö",false);
-	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
-
-action_end();
-
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
-	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[è½åœ°]"			,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
-	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+action_begin("å³ç¿»æ»š",false); 
+
+	anim("[å³æ»šç¿»]"		,4		);
 
 action_end();
 
-//11/08 15:44 ĞÂÌí¶¯×÷
-action_begin("Ñ²Âß×ªÉí",false);
-	
-	anim("[Ñ²Âß×ªÉí]"	,2		);
+action_begin("å·¦ç¿»æ»š",false); 
+
+	anim("[å·¦æ»šç¿»]"		,4		);
 
 action_end();
 
+action_begin("å·¦è½¬èº«æŠ¬æª",false);
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
-	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("å·¦è½¬èº«ç„å‡†",false);
+
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+
+action_end();
+
+action_begin("å·¦è½¬èº«å¼€ç«",false);
+
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«æŠ¬æª",false);
+
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«ç„å‡†",false);
+
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«å¼€ç«",false);
+
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
+	
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
+
+action_end();
+
+//11/08 15:44 æ–°æ·»åŠ¨ä½œ
+action_begin("å·¡é€»è½¬èº«",false);
+	
+	anim("[å·¡é€»è½¬èº«]"	,2		);
+
+action_end();
+
+
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
+
+action_end();
+
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
+	
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
+
+action_end(); 
+
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("ÏòÓÒÆ½ÒÆ",false);
+//12-21 æ›´æ–°
+action_begin("å‘å³å¹³ç§»",false);
 	
-	anim("[ÏòÓÒÆ½ÒÆÉä»÷]"	,2		);
+	anim("[å‘å³å¹³ç§»å°„å‡»]"	,2		);
 
 action_end();
 
-action_begin("ÏòÓÒÆ½ÒÆ_Ñ­»·",true);
+action_begin("å‘å³å¹³ç§»_å¾ªç¯",true);
 	
-	anim("[ÏòÓÒÆ½ÒÆÉä»÷]"	,2		);
+	anim("[å‘å³å¹³ç§»å°„å‡»]"	,2		);
 
 action_end();
 
-action_begin("Ïò×óÆ½ÒÆ",false);
+action_begin("å‘å·¦å¹³ç§»",false);
 	
-	anim("[Ïò×óÆ½ÒÆÉä»÷]"	,2		);
+	anim("[å‘å·¦å¹³ç§»å°„å‡»]"	,2		);
 
 action_end();
 
-action_begin("Ïò×óÆ½ÒÆ_Ñ­»·",true);
+action_begin("å‘å·¦å¹³ç§»_å¾ªç¯",true);
 	
-	anim("[Ïò×óÆ½ÒÆÉä»÷]"	,2		);
+	anim("[å‘å·¦å¹³ç§»å°„å‡»]"	,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí",false);
+action_begin("å·¦è½¬èº«",false);
 	
-	anim("[×ó×ªÉí]"	,2		);
+	anim("[å·¦è½¬èº«]"	,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí",false);
+action_begin("å³è½¬èº«",false);
 	
-	anim("[ÓÒ×ªÉí]"	,2		);
+	anim("[å³è½¬èº«]"	,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö2",false);
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
-action_begin("ÏÂ¶×ÒÆ¶¯¿ª»ğ",false);
+action_begin("ä¸‹è¹²ç§»åŠ¨å¼€ç«",false);
 	
-	anim("[ÏÂ¶×ÒÆ¶¯¿ª»ğ]"	,4		);
+	anim("[ä¸‹è¹²ç§»åŠ¨å¼€ç«]"	,4		);
 
 action_end();
 
-action_begin("ÏÂ¶×ÒÆ¶¯¿ª»ğ_Ñ­»·",true);
+action_begin("ä¸‹è¹²ç§»åŠ¨å¼€ç«_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×ÒÆ¶¯¿ª»ğ]"	,4		);
+	anim("[ä¸‹è¹²ç§»åŠ¨å¼€ç«]"	,4		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,4		);
+	anim("[æ™®é€šè·‘]"	,4		);
 
 action_end();file_end();
-file_begin("data/model/¾ü²Ü_Ö¸»Óµ¶.txt");
+file_begin("data/model/å†›æ›¹_æŒ‡æŒ¥åˆ€.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -2793,9 +2793,9 @@ file_begin("data/model/¾ü²Ü_Ö¸»Óµ¶.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/¾ü²Ü_Ö¸»Óµ¶_Ó²¶¯»­.mod");
+	model("characters/å†›æ›¹_æŒ‡æŒ¥åˆ€_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -2809,196 +2809,196 @@ state_end();
 
 
 //
-action_begin("Ìáµ¶Ïò×óÅÜ_Ñ­»·",true);
+action_begin("æåˆ€å‘å·¦è·‘_å¾ªç¯",true);
 	
-	anim("[Ìáµ¶ÏòÓÒÅÜ]"	,2		);
+	anim("[æåˆ€å‘å³è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("×óÅÜ»Óµ¶",false);
+action_begin("å·¦è·‘æŒ¥åˆ€",false);
 	
-	anim("[×óÅÜ»Óµ¶]"	,2		);
+	anim("[å·¦è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("Ìáµ¶ÏòÓÒÅÜ_Ñ­»·",true);
+action_begin("æåˆ€å‘å³è·‘_å¾ªç¯",true);
 	
-	anim("[Ìáµ¶Ïò×óÅÜ]"	,2		);
+	anim("[æåˆ€å‘å·¦è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒÅÜ»Óµ¶",false);
+action_begin("å³è·‘æŒ¥åˆ€",false);
 	
-	anim("[ÓÒÅÜ»Óµ¶]"	,2		);
+	anim("[å³è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("±ê×¼»Óµ¶",false);
+action_begin("æ ‡å‡†æŒ¥åˆ€",false);
 	
-	anim("[±ê×¼»Óµ¶]"	,2		);
+	anim("[æ ‡å‡†æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("±ê×¼Õ¾Á¢»Óµ¶Ö¸»Ó_Ñ­»·",true);
+action_begin("æ ‡å‡†ç«™ç«‹æŒ¥åˆ€æŒ‡æŒ¥_å¾ªç¯",true);
 	
-	anim("[±ê×¼Õ¾Á¢»Óµ¶Ö¸»Ó]"	,2		);
+	anim("[æ ‡å‡†ç«™ç«‹æŒ¥åˆ€æŒ‡æŒ¥]"	,2		);
 
 action_end(); 
 
-action_begin("³Öµ¶Õ¾Á¢_Ñ­»·",true);
+action_begin("æŒåˆ€ç«™ç«‹_å¾ªç¯",true);
 	
-	anim("[³Öµ¶Õ¾Á¢]"	,2		);
+	anim("[æŒåˆ€ç«™ç«‹]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾»Óµ¶",false);
+action_begin("ç”±è¹²åˆ°ç«™æŒ¥åˆ€",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾»Óµ¶Ö¸»Ó_Ñ­»·",true);
+action_begin("ç”±è¹²åˆ°ç«™æŒ¥åˆ€æŒ‡æŒ¥_å¾ªç¯",true);
 	
-	anim("[ÓÉ¶×µ½Õ¾»Óµ¶Ö¸»Ó]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™æŒ¥åˆ€æŒ‡æŒ¥]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("×ó×ªÉí»Óµ¶",false);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€",false);
 	
-	anim("[×ó×ªÉí»Óµ¶]"	,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€]"	,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí»Óµ¶Ö¸»Ó_Ñ­»·",true);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€æŒ‡æŒ¥_å¾ªç¯",true);
 	
-	anim("[×ó×ªÉí»Óµ¶Ö¸»Ó]"	,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€æŒ‡æŒ¥]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÉÁ±Ü",false);
+action_begin("å‘å³é—ªé¿",false);
 	
-	anim("[ÏòÓÒÉÁ±Ü]"	,2		);
+	anim("[å‘å³é—ªé¿]"	,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí»Óµ¶",false);
+action_begin("å³è½¬èº«æŒ¥åˆ€",false);
 	
-	anim("[ÓÒ×ªÉí»Óµ¶]"	,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€]"	,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí»Óµ¶Ö¸»Ó_Ñ­»·",true);
+action_begin("å³è½¬èº«æŒ¥åˆ€æŒ‡æŒ¥_å¾ªç¯",true);
 	
-	anim("[ÓÒ×ªÉí»Óµ¶Ö¸»Ó]"	,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€æŒ‡æŒ¥]"	,2		);
 
 action_end(); 
 
-action_begin("Ïò×óÉÁ±Ü",false);
+action_begin("å‘å·¦é—ªé¿",false);
 	
-	anim("[Ïò×óÉÁ±Ü]"	,2		);
+	anim("[å‘å·¦é—ªé¿]"	,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 
-//11/08 14:25 ¸üĞÂ
-action_begin("ÊÕµ¶",false);
+//11/08 14:25 æ›´æ–°
+action_begin("æ”¶åˆ€",false);
 	
-	anim("[ÊÕµ¶]"	,2		);
+	anim("[æ”¶åˆ€]"	,2		);
 
 action_end();
  
-action_begin("»Óµ¶Ö¸»ÓÊÕµ¶_Ñ­»·",true);
+action_begin("æŒ¥åˆ€æŒ‡æŒ¥æ”¶åˆ€_å¾ªç¯",true);
 	
-	anim("[±ê×¼»Óµ¶]"	,2		);
-	anim("[ÊÕµ¶]"	,2		);
+	anim("[æ ‡å‡†æŒ¥åˆ€]"	,2		);
+	anim("[æ”¶åˆ€]"	,2		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
  
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21¸üĞÂ
-action_begin("ÕıÃæÅÜ_Ñ­»·",true);
+//12-21æ›´æ–°
+action_begin("æ­£é¢è·‘_å¾ªç¯",true);
 	
-	anim("[ÕıÃæÅÜ]"	,2		);
+	anim("[æ­£é¢è·‘]"	,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö2",false);
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍö",false);
+action_begin("ç©ºä¸­æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 file_end();
 
 
-file_begin("data/model/¾ü²Ü_ÊÖÇ¹.txt");
+file_begin("data/model/å†›æ›¹_æ‰‹æª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3008,9 +3008,9 @@ file_begin("data/model/¾ü²Ü_ÊÖÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/¾ü²Ü_ÊÖÇ¹_Ó²¶¯»­.mod");
+	model("characters/å†›æ›¹_æ‰‹æª_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3024,61 +3024,61 @@ state_end();
 
 
 //
-action_begin("×ó×ªÉíÌ§Ç¹",false);
+action_begin("å·¦è½¬èº«æŠ¬æª",false);
 	
-	anim("[×ó×ªÉíÌ§Ç¹]"	,2		);
+	anim("[å·¦è½¬èº«æŠ¬æª]"	,2		);
 
 action_end(); 
 
-action_begin("×ó×ªÉíÃé×¼_Ñ­»·",true);
+action_begin("å·¦è½¬èº«ç„å‡†_å¾ªç¯",true);
 	
-	anim("[×ó×ªÉíÃé×¼]"	,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"	,2		);
 
 action_end(); 
 
-action_begin("×ó×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("å·¦è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 	
-	anim("[×ó×ªÉí¿ª»ğ]"	,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"	,2		);
 
 action_end(); 
 
-action_begin("×ó×ªÉíÌ§Ç¹¿ª»ğ¶ã±Ü_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("å·¦è½¬èº«æŠ¬æªå¼€ç«èº²é¿_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 
-	anim("[×ó×ªÉíÌ§Ç¹]"	,2		);	
-	anim("[×ó×ªÉíÃé×¼]"	,2		);	
-	anim("[×ó×ªÉí¿ª»ğ]"	,2		);
-	anim("[ÏòÓÒÉÁ±Ü]"	,2		);	
+	anim("[å·¦è½¬èº«æŠ¬æª]"	,2		);	
+	anim("[å·¦è½¬èº«ç„å‡†]"	,2		);	
+	anim("[å·¦è½¬èº«å¼€ç«]"	,2		);
+	anim("[å‘å³é—ªé¿]"	,2		);	
 
 action_end(); 
 
-action_begin("ÓÒ×ªÉíÌ§Ç¹",false);
+action_begin("å³è½¬èº«æŠ¬æª",false);
 	
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"	,2		);
+	anim("[å³è½¬èº«æŠ¬æª]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒ×ªÉíÃé×¼_Ñ­»·",true);
+action_begin("å³è½¬èº«ç„å‡†_å¾ªç¯",true);
 	
-	anim("[ÓÒ×ªÉíÃé×¼]"	,2		);
+	anim("[å³è½¬èº«ç„å‡†]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒ×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("å³è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 	
-	anim("[ÓÒ×ªÉí¿ª»ğ]"	,2		);
+	anim("[å³è½¬èº«å¼€ç«]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÒ×ªÉíÌ§Ç¹¿ª»ğ¶ã±Ü_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
+action_begin("å³è½¬èº«æŠ¬æªå¼€ç«èº²é¿_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
 
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"	,2		);	
-	anim("[ÓÒ×ªÉíÃé×¼]"	,2		);	
-	anim("[ÓÒ×ªÉí¿ª»ğ]"	,2		);
-	anim("[Ïò×óÉÁ±Ü]"	,2		);	
+	anim("[å³è½¬èº«æŠ¬æª]"	,2		);	
+	anim("[å³è½¬èº«ç„å‡†]"	,2		);	
+	anim("[å³è½¬èº«å¼€ç«]"	,2		);
+	anim("[å‘å·¦é—ªé¿]"	,2		);	
 
 action_end(); 
 file_end();
-file_begin("data/model/Ïû·À³µ.txt");
+file_begin("data/model/æ¶ˆé˜²è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3088,26 +3088,26 @@ file_begin("data/model/Ïû·À³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/Õ½ÉÏº£_Ïû·À³µ.mod");
+	model("characters/æˆ˜ä¸Šæµ·_æ¶ˆé˜²è½¦.mod");
 
 state_end();
 
 state_begin("");
 
-	gfx("»÷»Ù_³µÁ¾.gfx","");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
 	model("");
 
 state_end();
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÉÏº£Å®Æ½Ãñ.txt");
+file_begin("data/model/ä¸Šæµ·å¥³å¹³æ°‘.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3117,9 +3117,9 @@ file_begin("data/model/ÉÏº£Å®Æ½Ãñ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÉÏº£Å®Æ½Ãñ_°ëÓ²¶¯»­.mod");
+	model("characters/ä¸Šæµ·å¥³å¹³æ°‘_åŠç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3130,113 +3130,113 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("¾ª»ÌÌÓÅÜ_Ñ­»·",true);
+action_begin("æƒŠæƒ¶é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[¾ª»ÅÌÓÅÜ]"	,2		);
+	anim("[æƒŠæ…Œé€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("±§Í·ÌÓÅÜ_Ñ­»·",true);
+action_begin("æŠ±å¤´é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[±§Í·ÌÓÅÜ]"	,2		);
+	anim("[æŠ±å¤´é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Æğºô¾È_Ñ­»·",true);
+action_begin("ç«™èµ·å‘¼æ•‘_å¾ªç¯",true);
 	
-	anim("[Õ¾Æğºô¾È]"	,2		);
+	anim("[ç«™èµ·å‘¼æ•‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
-//12-21 ĞÂÔö
-action_begin("»ñ¾È¸Ğ¼¤",false);
+//12-21 æ–°å¢
+action_begin("è·æ•‘æ„Ÿæ¿€",false);
 	
-	anim("[»ñ¾È¸Ğ¼¤]"	,2		);
+	anim("[è·æ•‘æ„Ÿæ¿€]"	,2		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,2		);
+	anim("[æ™®é€šè·‘]"	,2		);
 
 action_end();
 
-//01-25 ĞÂÔö
-action_begin("ÆÕÍ¨Õ¾Æğ",false);
+//01-25 æ–°å¢
+action_begin("æ™®é€šç«™èµ·",false);
 	
-	anim("[ÆÕÍ¨Õ¾Æğ]"	,2		);
+	anim("[æ™®é€šç«™èµ·]"	,2		);
 
 action_end();
 
 file_end();
-file_begin("data/model/ÄĞÆ½Ãñ.txt");
+file_begin("data/model/ç”·å¹³æ°‘.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3246,9 +3246,9 @@ file_begin("data/model/ÄĞÆ½Ãñ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÄĞÆ½Ãñ_Ó²¶¯»­.mod");
+	model("characters/ç”·å¹³æ°‘_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3259,104 +3259,104 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("¾ª»ÌÌÓÅÜ_Ñ­»·",true);
+action_begin("æƒŠæƒ¶é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[¾ª»ÅÌÓÅÜ]"	,2		);
+	anim("[æƒŠæ…Œé€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("±§Í·ÌÓÅÜ_Ñ­»·",true);
+action_begin("æŠ±å¤´é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[±§Í·ÌÓÅÜ]"	,2		);
+	anim("[æŠ±å¤´é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Æğºô¾È_Ñ­»·",true);
+action_begin("ç«™èµ·å‘¼æ•‘_å¾ªç¯",true);
 	
-	anim("[Õ¾Æğºô¾È]"	,2		);
+	anim("[ç«™èµ·å‘¼æ•‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
-//12-21 ĞÂÔö
-action_begin("»ñ¾È¸Ğ¼¤",false);
+//12-21 æ–°å¢
+action_begin("è·æ•‘æ„Ÿæ¿€",false);
 	
-	anim("[»ñ¾È¸Ğ¼¤]"	,2		);
+	anim("[è·æ•‘æ„Ÿæ¿€]"	,2		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,2		);
+	anim("[æ™®é€šè·‘]"	,2		);
 
 action_end();file_end();
-file_begin("data/model/ÉÏº£ÇàÄêÄĞÖ°Ô±.txt");
+file_begin("data/model/ä¸Šæµ·é’å¹´ç”·èŒå‘˜.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3366,9 +3366,9 @@ file_begin("data/model/ÉÏº£ÇàÄêÄĞÖ°Ô±.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÉÏº£ÇàÄêÄĞÖ°Ô±_Ó²¶¯»­.mod");
+	model("characters/ä¸Šæµ·é’å¹´ç”·èŒå‘˜_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3379,104 +3379,104 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("×ªÉí",false);
+action_begin("è½¬èº«",false);
 	
-	anim("[×ªÉí]"	,2		);
+	anim("[è½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("¾ª»ÌÌÓÅÜ_Ñ­»·",true);
+action_begin("æƒŠæƒ¶é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[¾ª»ÅÌÓÅÜ]"	,2		);
+	anim("[æƒŠæ…Œé€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("±§Í·ÌÓÅÜ_Ñ­»·",true);
+action_begin("æŠ±å¤´é€ƒè·‘_å¾ªç¯",true);
 	
-	anim("[±§Í·ÌÓÅÜ]"	,2		);
+	anim("[æŠ±å¤´é€ƒè·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉ¶×µ½Õ¾",false);
+action_begin("ç”±è¹²åˆ°ç«™",false);
 	
-	anim("[ÓÉ¶×µ½Õ¾]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Æğºô¾È_Ñ­»·",true);
+action_begin("ç«™èµ·å‘¼æ•‘_å¾ªç¯",true);
 	
-	anim("[Õ¾Æğºô¾È]"	,2		);
+	anim("[ç«™èµ·å‘¼æ•‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÓÉÕ¾µ½¶×",false);
+action_begin("ç”±ç«™åˆ°è¹²",false);
 	
-	anim("[ÓÉÕ¾µ½¶×]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"	,2		);
 
 action_end(); 
 
-action_begin("µø×øÔÚµØ",false);
+action_begin("è·Œååœ¨åœ°",false);
 	
-	anim("[µø×øÔÚµØ]"	,2		);
+	anim("[è·Œååœ¨åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØºóÍË_Ñ­»·",true);
+action_begin("ååœ°åé€€_å¾ªç¯",true);
 	
-	anim("[ºóÍË]"	,2		);
+	anim("[åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("×øµØÇóÈÄ_Ñ­»·",true);
+action_begin("ååœ°æ±‚é¥¶_å¾ªç¯",true);
 	
-	anim("[×øµØÇóÈÄ]"	,2		);
+	anim("[ååœ°æ±‚é¥¶]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
-//12-21 ĞÂÔö
-action_begin("»ñ¾È¸Ğ¼¤",false);
+//12-21 æ–°å¢
+action_begin("è·æ•‘æ„Ÿæ¿€",false);
 	
-	anim("[»ñ¾È¸Ğ¼¤]"	,2		);
+	anim("[è·æ•‘æ„Ÿæ¿€]"	,2		);
 
 action_end();
 
-action_begin("ÆÕÍ¨ÅÜ_Ñ­»·",true);
+action_begin("æ™®é€šè·‘_å¾ªç¯",true);
 	
-	anim("[ÆÕÍ¨ÅÜ]"	,2		);
+	anim("[æ™®é€šè·‘]"	,2		);
 
 action_end();file_end();
-file_begin("data/model/ÈÕ±¾Ä¦ÍĞ³µ»úÇ¹±ø.txt");
+file_begin("data/model/æ—¥æœ¬æ‘©æ‰˜è½¦æœºæªå…µ.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3486,9 +3486,9 @@ file_begin("data/model/ÈÕ±¾Ä¦ÍĞ³µ»úÇ¹±ø.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÕ¾üÄ¦ÍĞ³µ»úÇ¹±ø_Ó²¶¯»­.mod");
+	model("characters/æ—¥å†›æ‘©æ‰˜è½¦æœºæªå…µ_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3499,51 +3499,51 @@ state_begin("");
 state_end();
 
 //
-action_begin("×ø_Ñ­»·",true);
+action_begin("å_å¾ªç¯",true);
 	
-	anim("[×ø×Å]"	,2		);
+	anim("[åç€]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°¿ªÇ¹_Ñ­»·",true);
+action_begin("å‘å‰å¼€æª_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°¿ªÇ¹]"	,2		);
+	anim("[å‘å‰å¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°¿ªÇ¹",false);
+action_begin("å‘å‰å¼€æª",false);
 	
-	anim("[ÏòÇ°¿ªÇ¹]"	,2		);
+	anim("[å‘å‰å¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("Ïòºó×ª",false);
+action_begin("å‘åè½¬",false);
 	
-	anim("[Ïòºó×ª]"	,2		);
+	anim("[å‘åè½¬]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòºóÃé×¼",false);
+action_begin("å‘åç„å‡†",false);
 	
-	anim("[ÏòºóÃé×¼]"	,2		);
+	anim("[å‘åç„å‡†]"	,2		);
 
 action_end(); 
 
-action_begin("Ïòºó¿ªÇ¹_Ñ­»·",true);
+action_begin("å‘åå¼€æª_å¾ªç¯",true);
 	
-	anim("[Ïòºó¿ªÇ¹]"	,2		);
+	anim("[å‘åå¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("Ïòºó¿ªÇ¹",false);
+action_begin("å‘åå¼€æª",false);
 	
-	anim("[Ïòºó¿ªÇ¹]"	,2		);
+	anim("[å‘åå¼€æª]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°×ª",false);
+action_begin("å‘å‰è½¬",false);
 	
-	anim("[ÏòÇ°×ª]"	,2		);
+	anim("[å‘å‰è½¬]"	,2		);
 
 action_end(); 
 
@@ -3553,7 +3553,7 @@ action_end();
 
 
 file_end();
-file_begin("data/model/ÈÕ±¾Ä¦ÍĞ³µ¼İÊ»Ô±.txt");
+file_begin("data/model/æ—¥æœ¬æ‘©æ‰˜è½¦é©¾é©¶å‘˜.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3563,9 +3563,9 @@ file_begin("data/model/ÈÕ±¾Ä¦ÍĞ³µ¼İÊ»Ô±.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÕ¾üÄ¦ÍĞ³µ¼İÊ»Ô±_Ó²¶¯»­.mod");
+	model("characters/æ—¥å†›æ‘©æ‰˜è½¦é©¾é©¶å‘˜_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -3576,19 +3576,19 @@ state_begin("");
 state_end();
 
 //
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ×ËÊÆ]"	,2		);
+	anim("[å¼€è½¦å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("ËÀÍö",false);
+action_begin("æ­»äº¡",false);
 	
-	anim("[ÓÒ±ßËÀ]"	,2		);
+	anim("[å³è¾¹æ­»]"	,2		);
 
 action_end(); 
 file_end();
-file_begin("data/model/»Æ°ü³µ.txt");
+file_begin("data/model/é»„åŒ…è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3598,16 +3598,16 @@ file_begin("data/model/»Æ°ü³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/»Æ°ü³µ.mod");
+	model("matters/é»„åŒ…è½¦.mod");
 
 state_end();
 
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¾Å¶şÊ½ÖØ»úÇ¹_Õ¾Á¢Ê½.txt");
+file_begin("data/model/ä¹äºŒå¼é‡æœºæª_ç«™ç«‹å¼.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3617,9 +3617,9 @@ file_begin("data/model/¾Å¶şÊ½ÖØ»úÇ¹_Õ¾Á¢Ê½.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/¾Å¶şÊ½ÖØ»úÇ¹_Õ¾Á¢Ê½.mod");
+	model("characters/ä¹äºŒå¼é‡æœºæª_ç«™ç«‹å¼.mod");
 
 state_end();
 
@@ -3630,25 +3630,25 @@ state_begin("");
 state_end();
 
 //
-action_begin("¿ª»ğ_Ñ­»·",true, 3.0);
+action_begin("å¼€ç«_å¾ªç¯",true, 3.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£Ö¹",false);
+action_begin("åœæ­¢",false);
 	
-	anim("[Í£Ö¹]"	,4		);
+	anim("[åœæ­¢]"	,4		);
 
 action_end(); 
 file_end();
-file_begin("data/model/½»Í¨¸ÚÍ¤.txt");
+file_begin("data/model/äº¤é€šå²—äº­.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3658,15 +3658,15 @@ file_begin("data/model/½»Í¨¸ÚÍ¤.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/½»Í¨¸ÚÍ¤.mod");
+	model("matters/äº¤é€šå²—äº­.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¾Å¶şÊ½ÖØ»úÇ¹.txt");
+file_begin("data/model/ä¹äºŒå¼é‡æœºæª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3676,9 +3676,9 @@ file_begin("data/model/¾Å¶şÊ½ÖØ»úÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/¾Å¶şÊ½ÖØ»úÇ¹.mod");
+	model("characters/ä¹äºŒå¼é‡æœºæª.mod");
 
 state_end();
 
@@ -3689,25 +3689,25 @@ state_begin("");
 state_end();
 
 //
-action_begin("¿ª»ğ_Ñ­»·",true, 3.0);
+action_begin("å¼€ç«_å¾ªç¯",true, 3.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£Ö¹",false);
+action_begin("åœæ­¢",false);
 	
-	anim("[Í£Ö¹]"	,4		);
+	anim("[åœæ­¢]"	,4		);
 
 action_end(); 
 file_end();
-file_begin("data/model/ĞéÄâÎïÌå.txt");
+file_begin("data/model/è™šæ‹Ÿç‰©ä½“.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3717,15 +3717,15 @@ file_begin("data/model/ĞéÄâÎïÌå.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/·¢ÉäĞéÄâÌå.mod");
+	model("matters/å‘å°„è™šæ‹Ÿä½“.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÊÖÍÆ³µ.txt");
+file_begin("data/model/æ‰‹æ¨è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3735,15 +3735,15 @@ file_begin("data/model/ÊÖÍÆ³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÊÖÍÆ³µ.mod");
+	model("matters/æ‰‹æ¨è½¦.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ3.txt");
+file_begin("data/model/ä¸»è§’ç”¨å­å¼¹å¤¹3.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3753,9 +3753,9 @@ file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ3.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷½ÇÓÃ×Óµ¯¼Ğ3.mod","Ğı×ª");
+	model("matters/ä¸»è§’ç”¨å­å¼¹å¤¹3.mod","æ—‹è½¬");
 
 state_end();
 
@@ -3764,13 +3764,13 @@ state_begin("");
 	model("");
 
 state_end();
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ2.txt");
+file_begin("data/model/ä¸»è§’ç”¨å­å¼¹å¤¹2.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3780,9 +3780,9 @@ file_begin("data/model/Ö÷½ÇÓÃ×Óµ¯¼Ğ2.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷½ÇÓÃ×Óµ¯¼Ğ2.mod","Ğı×ª");
+	model("matters/ä¸»è§’ç”¨å­å¼¹å¤¹2.mod","æ—‹è½¬");
 
 state_end();
 
@@ -3791,13 +3791,13 @@ state_begin("");
 	model("");
 
 state_end();
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ğ¡»ğÂÖ.txt");
+file_begin("data/model/å°ç«è½®.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3807,23 +3807,23 @@ file_begin("data/model/Ğ¡»ğÂÖ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Ğ¡»ğÂÖ.mod");
+	model("characters/å°ç«è½®.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 
-define_HH("HH_Ê¿±ø1",0);
-define_HH("HH_Ê¿±ø2",1);
-define_HH("HH_Ê¿±ø3",2);
-define_HH("HH_Ê¿±ø4",3);
-define_HH("HH_Ê¿±ø5",4);
-define_HH("HH_Ê¿±ø6",5);
-define_HH("HH_Ê¿±ø7",6);
+define_HH("HH_å£«å…µ1",0);
+define_HH("HH_å£«å…µ2",1);
+define_HH("HH_å£«å…µ3",2);
+define_HH("HH_å£«å…µ4",3);
+define_HH("HH_å£«å…µ5",4);
+define_HH("HH_å£«å…µ6",5);
+define_HH("HH_å£«å…µ7",6);
 file_end();
-file_begin("data/model/ÊÖÁñµ¯3.txt");
+file_begin("data/model/æ‰‹æ¦´å¼¹3.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3833,9 +3833,9 @@ file_begin("data/model/ÊÖÁñµ¯3.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÊÖÁñµ¯3.mod","Ğı×ª");
+	model("matters/æ‰‹æ¦´å¼¹3.mod","æ—‹è½¬");
 
 state_end();
 /*
@@ -3845,13 +3845,13 @@ state_begin("");
 
 state_end();
 */
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÊÖÁñµ¯2.txt");
+file_begin("data/model/æ‰‹æ¦´å¼¹2.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3861,9 +3861,9 @@ file_begin("data/model/ÊÖÁñµ¯2.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÊÖÁñµ¯2.mod","Ğı×ª");
+	model("matters/æ‰‹æ¦´å¼¹2.mod","æ—‹è½¬");
 
 state_end();
 /*
@@ -3873,13 +3873,13 @@ state_begin("");
 
 state_end();
 */
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ñª°ü01.txt");
+file_begin("data/model/è¡€åŒ…01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3889,19 +3889,19 @@ file_begin("data/model/Ñª°ü01.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ñª°ü01.mod","Ğı×ª");
+	model("matters/è¡€åŒ…01.mod","æ—‹è½¬");
 
 state_end();
 
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÆÆ³µ3.txt");
+file_begin("data/model/ç ´è½¦3.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3910,15 +3910,15 @@ file_begin("data/model/ÆÆ³µ3.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆÆ³µ3.mod");
+	model("matters/ç ´è½¦3.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÆÆ³µ2.txt");
+file_begin("data/model/ç ´è½¦2.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3927,15 +3927,15 @@ file_begin("data/model/ÆÆ³µ2.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆÆ³µ2.mod");
+	model("matters/ç ´è½¦2.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ñª°ü02.txt");
+file_begin("data/model/è¡€åŒ…02.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3945,19 +3945,19 @@ file_begin("data/model/Ñª°ü02.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ñª°ü02.mod","Ğı×ª");
+	model("matters/è¡€åŒ…02.mod","æ—‹è½¬");
 
 state_end();
 
-action_begin("Ğı×ª",true);
-	anim("[Ğı×ª]"	,4		);
+action_begin("æ—‹è½¬",true);
+	anim("[æ—‹è½¬]"	,4		);
 action_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¾üÓÃÔË±ø³µ.txt");
+file_begin("data/model/å†›ç”¨è¿å…µè½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -3967,46 +3967,46 @@ file_begin("data/model/¾üÓÃÔË±ø³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/¾üÓÃÔË±ø³µ.mod");
+	model("characters/å†›ç”¨è¿å…µè½¦.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 
-state_begin("»÷»Ù");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/¾üÓÃÔË±ø³µ»÷»Ù.mod");
+state_begin("å‡»æ¯");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/å†›ç”¨è¿å…µè½¦å‡»æ¯.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 
-define_HH("HH_¾üÓÃÔËÊä³µ±¬Õ¨",0);
-define_HH("HH_Ê¿±ø05",1);
-define_HH("HH_Ê¿±ø04",2);
-define_HH("HH_Ê¿±ø01",3);
-define_HH("HH_Ê¿±ø03",4);
-define_HH("HH_Ê¿±ø02",5);
-define_HH("HH_ÆÕÍ¨Ä¾Ïä01",6);
-define_HH("HH_ÆûÓÍÍ°",7);
+define_HH("HH_å†›ç”¨è¿è¾“è½¦çˆ†ç‚¸",0);
+define_HH("HH_å£«å…µ05",1);
+define_HH("HH_å£«å…µ04",2);
+define_HH("HH_å£«å…µ01",3);
+define_HH("HH_å£«å…µ03",4);
+define_HH("HH_å£«å…µ02",5);
+define_HH("HH_æ™®é€šæœ¨ç®±01",6);
+define_HH("HH_æ±½æ²¹æ¡¶",7);
 
 
 //11-21
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,2		);
+	anim("[å¼€è½¦]"	,2		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,2		);
+	anim("[åœè½¦]"	,2		);
 
 action_end(); 
 
@@ -4015,7 +4015,7 @@ action_end();
 
 
 file_end();
-file_begin("data/model/ÀËÈË.txt");
+file_begin("data/model/æµªäºº.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4025,9 +4025,9 @@ file_begin("data/model/ÀËÈË.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÀËÈË_Ó²¶¯»­.mod");
+	model("characters/æµªäºº_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -4038,245 +4038,245 @@ state_begin("");
 state_end();
 
 //
-action_begin("¾Ùµ¶Ç°ÅÜ_Ñ­»·",true);
+action_begin("ä¸¾åˆ€å‰è·‘_å¾ªç¯",true);
 	
-	anim("[¾Ùµ¶Ç°ÅÜ]"	,2		);
+	anim("[ä¸¾åˆ€å‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("×óÅÜ×ªÉí",false);
+action_begin("å·¦è·‘è½¬èº«",false);
 
-	anim("[×óÅÜ»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("¾Ùµ¶",false);
-
-	anim("[¾Ùµ¶]"		,2		);
+	anim("[å·¦è·‘æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("Ç°¿³",false);
+action_begin("ä¸¾åˆ€",false);
 
-	anim("[Ç°¿³]"		,2		);
-
-action_end();
-
-action_begin("Ç°¿³_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÔÙ¿³]"		,2		);
+	anim("[ä¸¾åˆ€]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂ¿³",false);
+action_begin("å‰ç ",false);
 
-	anim("[ÌøÆğ]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
-	anim("[ÌøÏÂ¿³]"		,2		);
+	anim("[å‰ç ]"		,2		);
 
 action_end();
 
-action_begin("Ç°·­¹ö_Ñ­»·",true);
+action_begin("å‰ç _å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[å†ç ]"		,2		);
+
+action_end();
+
+action_begin("é«˜ç©ºè·³ä¸‹ç ",false);
+
+	anim("[è·³èµ·]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
+	anim("[è·³ä¸‹ç ]"		,2		);
+
+action_end();
+
+action_begin("å‰ç¿»æ»š_å¾ªç¯",true);
 	
-	anim("[Ç°¹ö·­]"	,4		);
+	anim("[å‰æ»šç¿»]"	,4		);
 
 action_end(); 
 
-action_begin("Ç°´Ì",false);
+action_begin("å‰åˆº",false);
 
-	anim("[Ç°´Ì]"		,2		);
-
-action_end();
-
-action_begin("Ç°´Ì_Ñ­»·",true);//Ğè¼ÓÑ­»·
-
-	anim("[Ç°´Ì]"		,2		);
+	anim("[å‰åˆº]"		,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí»Óµ¶",false);
+action_begin("å‰åˆº_å¾ªç¯",true);//éœ€åŠ å¾ªç¯
 
-	anim("[ÓÒ×ªÉí»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí»Óµ¶×ËÊÆ",false);
-
-	anim("[ÓÒ×ªÉí»Óµ¶×ËÊÆ]"		,2		);
+	anim("[å‰åˆº]"		,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí»Óµ¶",false);
+action_begin("å³è½¬èº«æŒ¥åˆ€",false);
 
-	anim("[×ó×ªÉí»Óµ¶]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí»Óµ¶×ËÊÆ",false);
-
-	anim("[×ó×ªÉí»Óµ¶×ËÊÆ]"		,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("ºóÍË¾Ùµ¶",false);
+action_begin("å³è½¬èº«æŒ¥åˆ€å§¿åŠ¿",false);
 
-	anim("[ºóÍË¾Ùµ¶]"		,2		);
-
-action_end();
-
-action_begin("ºóÍËÑ­»·",true);
-
-	anim("[ºóÍË]"		,2		);
+	anim("[å³è½¬èº«æŒ¥åˆ€å§¿åŠ¿]"		,2		);
 
 action_end();
 
-action_begin("Õ¾Á¢¾Ùµ¶",false);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€",false);
 
-	anim("[Õ¾Á¢¾Ùµ¶]"		,2		);
-
-action_end();
-
-action_begin("ÔÙ¿³",false);
-
-	anim("[ÔÙ¿³]"		,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€]"		,2		);
 
 action_end();
 
-action_begin("Ô¤±¸×ËÊÆ",false);
+action_begin("å·¦è½¬èº«æŒ¥åˆ€å§¿åŠ¿",false);
 
-	anim("[Ô¤±¸×ËÊÆ]"		,2		);
-
-action_end();
-
-action_begin("×óÅÜ_Ñ­»·",true);
-
-	anim("[Ìáµ¶Ïò×óÅÜ]"		,2		);
+	anim("[å·¦è½¬èº«æŒ¥åˆ€å§¿åŠ¿]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂ",false);
+action_begin("åé€€ä¸¾åˆ€",false);
 
-	anim("[ÌøÆğ2]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ2]"		,2		);
-	anim("[ÂäµØ]"		,2		);
+	anim("[åé€€ä¸¾åˆ€]"		,2		);
 
 action_end();
 
-action_begin("ÌøÆğÔÚ¿ÕÖĞ",false);
+action_begin("åé€€å¾ªç¯",true);
 
-	anim("[ÌøÆğ2]"		,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ2]"		,2		);
-
-action_end();
-
-action_begin("ÌøÆğÂäµØ",false);
-
-	anim("[ÂäµØ]"		,2		);
+	anim("[åé€€]"		,2		);
 
 action_end();
 
-action_begin("Ç°·­¹ö",false);
+action_begin("ç«™ç«‹ä¸¾åˆ€",false);
+
+	anim("[ç«™ç«‹ä¸¾åˆ€]"		,2		);
+
+action_end();
+
+action_begin("å†ç ",false);
+
+	anim("[å†ç ]"		,2		);
+
+action_end();
+
+action_begin("é¢„å¤‡å§¿åŠ¿",false);
+
+	anim("[é¢„å¤‡å§¿åŠ¿]"		,2		);
+
+action_end();
+
+action_begin("å·¦è·‘_å¾ªç¯",true);
+
+	anim("[æåˆ€å‘å·¦è·‘]"		,2		);
+
+action_end();
+
+action_begin("é«˜ç©ºè·³ä¸‹",false);
+
+	anim("[è·³èµ·2]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­2]"		,2		);
+	anim("[è½åœ°]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·åœ¨ç©ºä¸­",false);
+
+	anim("[è·³èµ·2]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­2]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·è½åœ°",false);
+
+	anim("[è½åœ°]"		,2		);
+
+action_end();
+
+action_begin("å‰ç¿»æ»š",false);
 	
-	anim("[Ç°¹ö·­]"	,4		);
+	anim("[å‰æ»šç¿»]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß¿ÕÌøÏÂÆğÌø",false);
+action_begin("é«˜ç©ºè·³ä¸‹èµ·è·³",false);
 
-	anim("[ÌøÆğ]"		,2		);
-
-action_end();
-
-action_begin("¸ß¿ÕÌøÏÂÔÚ¿ÕÖĞ",true);
-
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
+	anim("[è·³èµ·]"		,2		);
 
 action_end();
 
-action_begin("¸ß¿ÕÌøÏÂÌøÏÂ¿³",false);
+action_begin("é«˜ç©ºè·³ä¸‹åœ¨ç©ºä¸­",true);
 
-	anim("[ÌøÏÂ¿³]"		,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö",false);
+action_begin("é«˜ç©ºè·³ä¸‹è·³ä¸‹ç ",false);
+
+	anim("[è·³ä¸‹ç ]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-13-2
-action_begin("Ìáµ¶×óÅÜ_Ñ­»·",true);
+action_begin("æåˆ€å·¦è·‘_å¾ªç¯",true);
 	
-	anim("[Ìáµ¶Ïò×óÅÜ]"	,4		);
+	anim("[æåˆ€å‘å·¦è·‘]"	,4		);
 
 action_end(); 
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
 
-//12-21 ¸üĞÂ
-action_begin("¸ß´¦ËÀÍö2",false);
+//12-21 æ›´æ–°
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();file_end();
-file_begin("data/model/97Ê½Ì¹¿Ë.txt");
+file_begin("data/model/97å¼å¦å…‹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4286,51 +4286,51 @@ file_begin("data/model/97Ê½Ì¹¿Ë.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/97Ê½Ì¹¿Ë.mod");
+	model("characters/97å¼å¦å…‹.mod");
 
 state_end();
 
 state_begin("");
 
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/97Ê½Ì¹¿Ë»÷»Ù.mod");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/97å¼å¦å…‹å‡»æ¯.mod");
 
 state_end();
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 
 //
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,4		);
+	anim("[å¼€è½¦]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ_Ñ­»·",true,10.0);
+action_begin("å¼€ç«_å¾ªç¯",true,10.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,4		);
+	anim("[åœè½¦]"	,4		);
 
 action_end(); 
 
-define_HH("HH_Ì¹¿ËĞéÄâÌå",2);
+define_HH("HH_å¦å…‹è™šæ‹Ÿä½“",2);
 
 file_end();
 file_begin("data/model/player1.txt");
@@ -4343,7 +4343,7 @@ file_begin("data/model/player1.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	model("characters/t.mod");
 
@@ -4356,26 +4356,26 @@ state_begin("");
 state_end();
 
 
-convert_begin("Ñ°³£","ÈÕ¾ü");
+convert_begin("å¯»å¸¸","æ—¥å†›");
 
-	gfx("ÊÖÁñµ¯±¬Õ¨¿Í¹ÛĞ§¹û.gfx","");
+	gfx("æ‰‹æ¦´å¼¹çˆ†ç‚¸å®¢è§‚æ•ˆæœ.gfx","");
 
 convert_end();
 
 //-------------------------------------------------------------
 
-action_begin("¿ª»ğ",false);
-	//	  ¶¯»­Ãû³Æ	ÓÅÏÈ¼¶	
-	//anim("[Õ¾µ½Ìø]"	,1		);
-	//anim("[Ìøµ½Õ¾]"	,2		);
-	//anim("[ÉÏÊÜÏ®]"	,2		);
+action_begin("å¼€ç«",false);
+	//	  åŠ¨ç”»åç§°	ä¼˜å…ˆçº§	
+	//anim("[ç«™åˆ°è·³]"	,1		);
+	//anim("[è·³åˆ°ç«™]"	,2		);
+	//anim("[ä¸Šå—è¢­]"	,2		);
 action_end(); 
 
-action_begin("×ß",false);
-	//	  ¶¯»­Ãû³Æ	ÓÅÏÈ¼¶	
-	anim("[Ñ²Âß]"	,1		);
+action_begin("èµ°",false);
+	//	  åŠ¨ç”»åç§°	ä¼˜å…ˆçº§	
+	anim("[å·¡é€»]"	,1		);
 action_end();file_end();
-file_begin("data/model/Çá»úÇ¹ÊÖ.txt");
+file_begin("data/model/è½»æœºæªæ‰‹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4385,9 +4385,9 @@ file_begin("data/model/Çá»úÇ¹ÊÖ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/Çá»úÇ¹ÊÖÓ²¶¯»­.mod");
+	model("characters/è½»æœºæªæ‰‹ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -4401,317 +4401,317 @@ state_end();
 
 
 //
-action_begin("×ß_Ñ­»·",true);
+action_begin("èµ°_å¾ªç¯",true);
 	
-	anim("[×ß]"	,2		);
+	anim("[èµ°]"	,2		);
 
 action_end(); 
 
-action_begin("¸ß¿ÕÌøÏÂ",false);
+action_begin("é«˜ç©ºè·³ä¸‹",false);
 
-	anim("[ÌøÆğ]"			,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
-	anim("[ÂäµØ]"			,2		);
-
-action_end(); 
-
-action_begin("ÏòÓÒÌáÇ¹ÅÜ_Ñ­»·",true);
-	
-	anim("[ÏòÓÒÌáÇ¹ÅÜ]"	,2		);
-
-action_end();
-
-action_begin("ÌáÇ¹ÂıÅÜ×ó×ª",false);
-
-	anim("[ÓÒÅÜ¼±Í£×ªÉí]"	,2		);
+	anim("[è·³èµ·]"			,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
+	anim("[è½åœ°]"			,2		);
 
 action_end(); 
 
-action_begin("Ïò×óÌáÇ¹ÅÜ_Ñ­»·",true);
+action_begin("å‘å³ææªè·‘_å¾ªç¯",true);
 	
-	anim("[Ïò×óÌáÇ¹ÅÜ]"	,2		);
+	anim("[å‘å³ææªè·‘]"	,2		);
 
 action_end();
 
-action_begin("ÌáÇ¹ÂıÅÜÓÒ×ª",false);
+action_begin("ææªæ…¢è·‘å·¦è½¬",false);
 
-	anim("[×óÅÜ¼±Í£×ªÉí]"	,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾",false);
-
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾Ãé×¼_Ñ­»·",true);
-
-	anim("[ÓÉ¶×µ½Õ¾Ãé×¼]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾¿ª»ğ",false);
-
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾¿ª»ğ_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("ÓÉÕ¾µ½¶×",false);
-
-	anim("[ÓÉÕ¾µ½¶×]"		,2		);
-
-action_end();
-
-action_begin("ÓÉ¶×µ½Õ¾_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÉ¶×µ½Õ¾]"		,2		);
-	anim("[ÓÉ¶×µ½Õ¾Ãé×¼]"	,2		);
-	anim("[ÓÉ¶×µ½Õ¾¿ª»ğ]"	,2		);
-	anim("[ÓÉÕ¾µ½¶×]"		,2		);
-
-action_end();
-
-action_begin("Õ¾Á¢¶ËÇ¹",false);
-
-	anim("[Õ¾Á¢¶ËÇ¹]"		,2		);
-
-action_end();
-
-action_begin("Õ¾Á¢Ãé×¼Éä»÷",false);
-
-	anim("[Õ¾Á¢¶ËÇ¹]"		,2		);
-	anim("[Õ¾Á¢¶ËÇ¹Ãé×¼]"	,2		);
-	anim("[Õ¾Á¢¶ËÇ¹¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("Õ¾Á¢Ãé×¼Éä»÷_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[Õ¾Á¢¶ËÇ¹Ãé×¼]"	,2		);
-	anim("[Õ¾Á¢¶ËÇ¹¿ª»ğ]"	,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¶ËÇ¹Ãé×¼Éä»÷",false);
-
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¶ËÇ¹Ãé×¼Éä»÷ÉÁÉí¶ã±Ü_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-	anim("[ÏòÓÒÉÁ±Ü]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí¶ËÇ¹Ãé×¼Éä»÷",false);
-
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-	anim("[ÓÒ×ªÉíÃé×¼]"		,2		);
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí¶ËÇ¹Ãé×¼Éä»÷ÉÁÉí¶ã±Ü_Ñ­»·",true);//Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-	anim("[ÓÒ×ªÉíÃé×¼]"		,2		);
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-	anim("[Ïò×óÉÁ±Ü]"		,2		);
-
-action_end();
-
-
-action_begin("ÓÒ×ªÉí¿ª»ğ_Ñ­»·",true); //Ğè¼ÓÑÓÊ±
-
-	anim("[ÓÒ×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÌøÆğÔÚ¿ÕÖĞ",false);
-
-	anim("[ÌøÆğ]"			,2		);
-	anim("[ÌøÔÚ¿ÕÖĞ]"		,2		);
+	anim("[å³è·‘æ€¥åœè½¬èº«]"	,2		);
 
 action_end(); 
 
-action_begin("ÌøÆğÂäµØ",false);
+action_begin("å‘å·¦ææªè·‘_å¾ªç¯",true);
+	
+	anim("[å‘å·¦ææªè·‘]"	,2		);
 
-	anim("[ÂäµØ]"			,2		);
+action_end();
+
+action_begin("ææªæ…¢è·‘å³è½¬",false);
+
+	anim("[å·¦è·‘æ€¥åœè½¬èº«]"	,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™",false);
+
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™ç„å‡†_å¾ªç¯",true);
+
+	anim("[ç”±è¹²åˆ°ç«™ç„å‡†]"		,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™å¼€ç«",false);
+
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™å¼€ç«_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
+
+action_end();
+
+action_begin("ç”±ç«™åˆ°è¹²",false);
+
+	anim("[ç”±ç«™åˆ°è¹²]"		,2		);
+
+action_end();
+
+action_begin("ç”±è¹²åˆ°ç«™_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[ç”±è¹²åˆ°ç«™]"		,2		);
+	anim("[ç”±è¹²åˆ°ç«™ç„å‡†]"	,2		);
+	anim("[ç”±è¹²åˆ°ç«™å¼€ç«]"	,2		);
+	anim("[ç”±ç«™åˆ°è¹²]"		,2		);
+
+action_end();
+
+action_begin("ç«™ç«‹ç«¯æª",false);
+
+	anim("[ç«™ç«‹ç«¯æª]"		,2		);
+
+action_end();
+
+action_begin("ç«™ç«‹ç„å‡†å°„å‡»",false);
+
+	anim("[ç«™ç«‹ç«¯æª]"		,2		);
+	anim("[ç«™ç«‹ç«¯æªç„å‡†]"	,2		);
+	anim("[ç«™ç«‹ç«¯æªå¼€ç«]"	,2		);
+
+action_end();
+
+action_begin("ç«™ç«‹ç„å‡†å°„å‡»_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[ç«™ç«‹ç«¯æªç„å‡†]"	,2		);
+	anim("[ç«™ç«‹ç«¯æªå¼€ç«]"	,2		);
+
+action_end();
+
+action_begin("å·¦è½¬èº«ç«¯æªç„å‡†å°„å‡»",false);
+
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å·¦è½¬èº«ç«¯æªç„å‡†å°„å‡»é—ªèº«èº²é¿_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+	anim("[å‘å³é—ªé¿]"		,2		);
+
+action_end();
+
+action_begin("å·¦è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
+
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«ç«¯æªç„å‡†å°„å‡»",false);
+
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å³è½¬èº«ç„å‡†]"		,2		);
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«ç«¯æªç„å‡†å°„å‡»é—ªèº«èº²é¿_å¾ªç¯",true);//éœ€åŠ å»¶æ—¶
+
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+	anim("[å³è½¬èº«ç„å‡†]"		,2		);
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
+	anim("[å‘å·¦é—ªé¿]"		,2		);
+
+action_end();
+
+
+action_begin("å³è½¬èº«å¼€ç«_å¾ªç¯",true); //éœ€åŠ å»¶æ—¶
+
+	anim("[å³è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("è·³èµ·åœ¨ç©ºä¸­",false);
+
+	anim("[è·³èµ·]"			,2		);
+	anim("[è·³åœ¨ç©ºä¸­]"		,2		);
 
 action_end(); 
 
-action_begin("×ó×ªÉíÌ§Ç¹",false);
+action_begin("è·³èµ·è½åœ°",false);
 
-	anim("[×ó×ªÉíÌ§Ç¹]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉíÃé×¼",false);
-
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-
-action_end();
-
-action_begin("×ó×ªÉí¿ª»ğ",false);
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉíÌ§Ç¹",false);
-
-	anim("[ÓÒ×ªÉíÌ§Ç¹]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉíÃé×¼",false);
-
-	anim("[×ó×ªÉíÃé×¼]"		,2		);
-
-action_end();
-
-action_begin("ÓÒ×ªÉí¿ª»ğ",false);
-
-	anim("[×ó×ªÉí¿ª»ğ]"		,2		);
-
-action_end();
-
-action_begin("¸ß´¦ËÀÍö",false);
-	
-	anim("[¸ß´¦ËÀÍö]"	,4		);
-
-action_end();
-
-action_begin("¸ß´¦ËÀÍöÏÂÂä_Ñ­»·",true);
-	
-	anim("[¸ß´¦ËÀÍöÏÂÂä]"	,4		);
+	anim("[è½åœ°]"			,2		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ",false);
-	
-	anim("[¸ß´¦ËÀÍöÂäµØ]"	,4		);
+action_begin("å·¦è½¬èº«æŠ¬æª",false);
+
+	anim("[å·¦è½¬èº«æŠ¬æª]"		,2		);
 
 action_end();
 
+action_begin("å·¦è½¬èº«ç„å‡†",false);
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
-	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("å·¦è½¬èº«å¼€ç«",false);
+
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«æŠ¬æª",false);
+
+	anim("[å³è½¬èº«æŠ¬æª]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«ç„å‡†",false);
+
+	anim("[å·¦è½¬èº«ç„å‡†]"		,2		);
+
+action_end();
+
+action_begin("å³è½¬èº«å¼€ç«",false);
+
+	anim("[å·¦è½¬èº«å¼€ç«]"		,2		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡",false);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡]"	,4		);
+
+action_end();
+
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½_å¾ªç¯",true);
+	
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°]"	,4		);
+
+action_end();
+
+
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
+
+action_end();
+
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
+	
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
+
+action_end(); 
+
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
 //11-18
-action_begin("ÏÂ¶×",false);
+action_begin("ä¸‹è¹²",false);
 	
-	anim("[ÏÂ¶×]"	,2		);
+	anim("[ä¸‹è¹²]"	,2		);
 
 action_end();
 
 //11-22
-action_begin("ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö",false);
+action_begin("èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡",false);
 	
-	anim("[ĞØ²¿ÖĞµ¯×²Ç½ËÀÍö]"	,2		);
+	anim("[èƒ¸éƒ¨ä¸­å¼¹æ’å¢™æ­»äº¡]"	,2		);
 
 action_end();
 
-//12-21 ¸üĞÂ
-action_begin("ÅÜ_Ñ­»·",true);
+//12-21 æ›´æ–°
+action_begin("è·‘_å¾ªç¯",true);
 	
-	anim("[¶ËÇ¹Ç°ÅÜ]"	,2		);
+	anim("[ç«¯æªå‰è·‘]"	,2		);
 
 action_end();
 
-action_begin("ÏòÓÒÆ½ÒÆ",false);
+action_begin("å‘å³å¹³ç§»",false);
 	
-	anim("[ÏòÓÒÆ½ÒÆ]"	,2		);
+	anim("[å‘å³å¹³ç§»]"	,2		);
 
 action_end();
 
-action_begin("ÏòÓÒÆ½ÒÆ_Ñ­»·",true);
+action_begin("å‘å³å¹³ç§»_å¾ªç¯",true);
 	
-	anim("[ÏòÓÒÆ½ÒÆ]"	,2		);
+	anim("[å‘å³å¹³ç§»]"	,2		);
 
 action_end();
 
-action_begin("Ïò×óÆ½ÒÆ",false);
+action_begin("å‘å·¦å¹³ç§»",false);
 	
-	anim("[Ïò×óÆ½ÒÆ]"	,2		);
+	anim("[å‘å·¦å¹³ç§»]"	,2		);
 
 action_end();
 
-action_begin("Ïò×óÆ½ÒÆ_Ñ­»·",true);
+action_begin("å‘å·¦å¹³ç§»_å¾ªç¯",true);
 	
-	anim("[Ïò×óÆ½ÒÆ]"	,2		);
+	anim("[å‘å·¦å¹³ç§»]"	,2		);
 
 action_end();
 
-action_begin("×ó×ªÉí",false);
+action_begin("å·¦è½¬èº«",false);
 	
-	anim("[ÆÕÍ¨×ó×ªÉí]"	,2		);
+	anim("[æ™®é€šå·¦è½¬èº«]"	,2		);
 
 action_end();
 
-action_begin("ÓÒ×ªÉí",false);
+action_begin("å³è½¬èº«",false);
 	
-	anim("[ÆÕÍ¨ÓÒ×ªÉí]"	,2		);
+	anim("[æ™®é€šå³è½¬èº«]"	,2		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍö2",false);
+action_begin("é«˜å¤„æ­»äº¡2",false);
 	
-	anim("[¸ß´¦ËÀÍö2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡2]"	,4		);
 
 action_end();
 
-action_begin("¸ß´¦ËÀÍöÏÂÂä2_Ñ­»·",true);
+action_begin("é«˜å¤„æ­»äº¡ä¸‹è½2_å¾ªç¯",true);
 	
-	anim("[¸ß´¦ËÀÍöÏÂÂä2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡ä¸‹è½2]"	,4		);
 
 action_end(); 
 
-action_begin("¸ß´¦ËÀÍöÂäµØ2",false);
+action_begin("é«˜å¤„æ­»äº¡è½åœ°2",false);
 	
-	anim("[¸ß´¦ËÀÍöÂäµØ2]"	,4		);
+	anim("[é«˜å¤„æ­»äº¡è½åœ°2]"	,4		);
 
 action_end();
 
 
 
 file_end();
-file_begin("data/model/ÆÆ³µ1.txt");
+file_begin("data/model/ç ´è½¦1.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4720,15 +4720,15 @@ file_begin("data/model/ÆÆ³µ1.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆÆ³µ1.mod");
+	model("matters/ç ´è½¦1.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/µç»°Í¤.txt");
+file_begin("data/model/ç”µè¯äº­.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4738,15 +4738,15 @@ file_begin("data/model/µç»°Í¤.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/µç»°Í¤.mod");
+	model("matters/ç”µè¯äº­.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/µõµÆ.txt");
+file_begin("data/model/åŠç¯.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4756,20 +4756,20 @@ file_begin("data/model/µõµÆ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/µõµÆ.mod");
+	model("matters/åŠç¯.mod");
 
 state_end();
 
 state_begin("");
 
-	model("matters/µõµÆËğ»µ.mod");
+	model("matters/åŠç¯æŸå.mod");
 
 state_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Â·µÆ01.txt");
+file_begin("data/model/è·¯ç¯01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4779,15 +4779,15 @@ file_begin("data/model/Â·µÆ01.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Â·µÆ01.mod");
+	model("matters/è·¯ç¯01.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÊÖÇ¹.txt");
+file_begin("data/model/ä¸»è§‚æ‰‹æª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4797,16 +4797,16 @@ file_begin("data/model/Ö÷¹ÛÊÖÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÊÖÇ¹Ä£ĞÍ_µ¥ÊÖ.mod");
+	model("matters/ä¸»è§‚æ‰‹æªæ¨¡å‹_å•æ‰‹.mod");
 
 state_end();
-define_HH("HH_ÍËÌÅ",0);
+define_HH("HH_é€€è†›",0);
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¹ã¸æÅÆ01.txt");
+file_begin("data/model/å¹¿å‘Šç‰Œ01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4816,9 +4816,9 @@ file_begin("data/model/¹ã¸æÅÆ01.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/¹ã¸æÅÆ01.mod");
+	model("matters/å¹¿å‘Šç‰Œ01.mod");
 
 state_end();
 state_begin("");
@@ -4827,14 +4827,14 @@ state_begin("");
 
 state_end();
 
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("»÷»Ù_ÅÆØÒ.gfx","");
+	gfx("å‡»æ¯_ç‰ŒåŒ¾.gfx","");
 
 convert_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Â·µÆ02.txt");
+file_begin("data/model/è·¯ç¯02.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4844,15 +4844,15 @@ file_begin("data/model/Â·µÆ02.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Â·µÆ02.mod");
+	model("matters/è·¯ç¯02.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÊÖÁñµ¯.txt");
+file_begin("data/model/ä¸»è§‚æ‰‹æ¦´å¼¹.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4862,14 +4862,14 @@ file_begin("data/model/Ö÷¹ÛÊÖÁñµ¯.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÊÖÁñµ¯Ä£ĞÍ.mod");
+	model("matters/ä¸»è§‚æ‰‹æ¦´å¼¹æ¨¡å‹.mod");
 
 state_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÉËº¦Ìå.txt");
+file_begin("data/model/ä¼¤å®³ä½“.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4877,19 +4877,19 @@ file_begin("data/model/ÉËº¦Ìå.txt");
 	Create By MengXin 
 
 --------------------------------------------------------------------------*/	
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆûÓÍÍ°.mod");
+	model("matters/æ±½æ²¹æ¡¶.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","ÈÕ¾ü");
+convert_begin("å¯»å¸¸","æ—¥å†›");
 
-	gfx("ÆûÓÍÍ°±¬Õ¨Ğ§¹û.gfx","");
+	gfx("æ±½æ²¹æ¡¶çˆ†ç‚¸æ•ˆæœ.gfx","");
 
 convert_end();
 
-state_begin("ÈÕ¾ü");
+state_begin("æ—¥å†›");
 
 	model("");
 
@@ -4897,7 +4897,7 @@ state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ä¦ÍĞ³µ.txt");
+file_begin("data/model/æ‘©æ‰˜è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4907,42 +4907,42 @@ file_begin("data/model/Ä¦ÍĞ³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/Ä¦ÍĞ³µ.mod");
+	model("characters/æ‘©æ‰˜è½¦.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
-state_begin("»÷»Ù");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/Ä¦ÍĞ³µ»÷»Ù.mod");
+state_begin("å‡»æ¯");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/æ‘©æ‰˜è½¦å‡»æ¯.mod");
 
 state_end();
 
 //-------------------------------------------------------------
-define_HH("HH_Ä¦ÍĞ³µ±¬Õ¨",0);
-define_HH("HH_Ä¦ÍĞ±ø»úÇ¹±ø",1);
-define_HH("HH_Ä¦ÍĞ³µ¼İÊ»Ô±",2);
+define_HH("HH_æ‘©æ‰˜è½¦çˆ†ç‚¸",0);
+define_HH("HH_æ‘©æ‰˜å…µæœºæªå…µ",1);
+define_HH("HH_æ‘©æ‰˜è½¦é©¾é©¶å‘˜",2);
 
 
 //11-21
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,2		);
+	anim("[å¼€è½¦]"	,2		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,2		);
+	anim("[åœè½¦]"	,2		);
 
 action_end(); file_end();
-file_begin("data/model/ÆûÓÍÍ°.txt");
+file_begin("data/model/æ±½æ²¹æ¡¶.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4952,25 +4952,25 @@ file_begin("data/model/ÆûÓÍÍ°.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆûÓÍÍ°.mod");
+	model("matters/æ±½æ²¹æ¡¶.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","ÈÕ¾ü");
-	gfx("»÷»Ù_ÆûÓÍÍ°.gfx","");
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");	
+convert_begin("å¯»å¸¸","æ—¥å†›");
+	gfx("å‡»æ¯_æ±½æ²¹æ¡¶.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");	
 convert_end();
 
-state_begin("ÈÕ¾ü");
+state_begin("æ—¥å†›");
 
 	model("");
 
 state_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÔË±ø³µÔØÎï.txt");
+file_begin("data/model/è¿å…µè½¦è½½ç‰©.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -4980,50 +4980,50 @@ file_begin("data/model/ÔË±ø³µÔØÎï.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/¾üÓÃÔË±ø³µ_ÔÔÎï.mod");
+	model("characters/å†›ç”¨è¿å…µè½¦_æ ½ç‰©.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
-state_begin("»÷»Ù");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/¾üÓÃÔË±ø³µ»÷»Ù.mod");
+state_begin("å‡»æ¯");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/å†›ç”¨è¿å…µè½¦å‡»æ¯.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 
-define_HH("HH_¾üÓÃÔËÊä³µ±¬Õ¨",0);
-define_HH("HH_Ê¿±ø05",1);
-define_HH("HH_Ê¿±ø04",2);
-define_HH("HH_Ê¿±ø01",3);
-define_HH("HH_Ê¿±ø03",4);
-define_HH("HH_Ê¿±ø02",5);
-define_HH("HH_ÆÕÍ¨Ä¾Ïä01",6);
-define_HH("HH_ÆûÓÍÍ°",7);
+define_HH("HH_å†›ç”¨è¿è¾“è½¦çˆ†ç‚¸",0);
+define_HH("HH_å£«å…µ05",1);
+define_HH("HH_å£«å…µ04",2);
+define_HH("HH_å£«å…µ01",3);
+define_HH("HH_å£«å…µ03",4);
+define_HH("HH_å£«å…µ02",5);
+define_HH("HH_æ™®é€šæœ¨ç®±01",6);
+define_HH("HH_æ±½æ²¹æ¡¶",7);
 
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,2		);
+	anim("[å¼€è½¦]"	,2		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,2		);
+	anim("[åœè½¦]"	,2		);
 
 action_end(); 
 
 
 
 file_end();
-file_begin("data/model/É³°ü04.txt");
+file_begin("data/model/æ²™åŒ…04.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5032,15 +5032,15 @@ file_begin("data/model/É³°ü04.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/½ÖµÀÉ³°üÑÚÌå04.mod");
+	model("matters/è¡—é“æ²™åŒ…æ©ä½“04.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¼¯×°Ïä02.txt");
+file_begin("data/model/é›†è£…ç®±02.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5049,15 +5049,15 @@ file_begin("data/model/¼¯×°Ïä02.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/¼¯×°Ïä02.mod");
+	model("matters/é›†è£…ç®±02.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¼¯×°Ïä03.txt");
+file_begin("data/model/é›†è£…ç®±03.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5066,15 +5066,15 @@ file_begin("data/model/¼¯×°Ïä03.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/¼¯×°Ïä03.mod");
+	model("matters/é›†è£…ç®±03.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/¼¯×°Ïä01.txt");
+file_begin("data/model/é›†è£…ç®±01.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5083,15 +5083,15 @@ file_begin("data/model/¼¯×°Ïä01.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/¼¯×°Ïä01.mod");
+	model("matters/é›†è£…ç®±01.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÈÌÕßÍ·Ä¿.txt");
+file_begin("data/model/å¿è€…å¤´ç›®.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5101,9 +5101,9 @@ file_begin("data/model/ÈÌÕßÍ·Ä¿.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("characters/ÈÌÕßÍ·Ä¿_Ó²¶¯»­.mod");
+	model("characters/å¿è€…å¤´ç›®_ç¡¬åŠ¨ç”».mod");
 
 state_end();
 
@@ -5114,168 +5114,168 @@ state_begin("");
 state_end();
 
 //
-action_begin("Ïò×óÅÜ·¢ïÚ",false);
+action_begin("å‘å·¦è·‘å‘é•–",false);
 	
-	anim("[Ïò×óÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å·¦è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÅÜ·¢ïÚ",false);
+action_begin("å‘å³è·‘å‘é•–",false);
 	
-	anim("[ÏòÓÒÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å³è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("Ïò×óÅÜ·¢ïÚ_Ñ­»·",true);
+action_begin("å‘å·¦è·‘å‘é•–_å¾ªç¯",true);
 	
-	anim("[Ïò×óÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å·¦è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÓÒÅÜ·¢ïÚ_Ñ­»·",true);
+action_begin("å‘å³è·‘å‘é•–_å¾ªç¯",true);
 	
-	anim("[ÏòÓÒÅÜ·¢ïÚ]"	,2		);
+	anim("[å‘å³è·‘å‘é•–]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ_Ñ­»·",true);
+action_begin("å‘å‰è·‘_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°ÅÜ]"	,2		);
+	anim("[å‘å‰è·‘]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ»Óµ¶",false);
+action_begin("å‘å‰è·‘æŒ¥åˆ€",false);
 	
-	anim("[ÏòÇ°ÅÜ»Óµ¶]"	,2		);
+	anim("[å‘å‰è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("ÏòÇ°ÅÜ»Óµ¶_Ñ­»·",true);
+action_begin("å‘å‰è·‘æŒ¥åˆ€_å¾ªç¯",true);
 	
-	anim("[ÏòÇ°ÅÜ»Óµ¶]"	,2		);
+	anim("[å‘å‰è·‘æŒ¥åˆ€]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÆğ",false);
+action_begin("ç«™ç«‹è·³èµ·",false);
 	
-	anim("[Õ¾Á¢ÌøÆğ]"	,2		);
+	anim("[ç«™ç«‹è·³èµ·]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("ç«™ç«‹è·³åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[Õ¾Á¢ÌøÔÚ¿ÕÖĞ]"	,2		);
+	anim("[ç«™ç«‹è·³åœ¨ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("Õ¾Á¢ÌøÆğºóÂäµØÏÂ¶×",false);
+action_begin("ç«™ç«‹è·³èµ·åè½åœ°ä¸‹è¹²",false);
 	
-	anim("[ÂäµØ]"	,2		);
+	anim("[è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("±£³ÖÏÂ¶×_Ñ­»·",true);
+action_begin("ä¿æŒä¸‹è¹²_å¾ªç¯",true);
 	
-	anim("[ÂäµØ×¼±¸×ËÊÆ]"	,2		);
+	anim("[è½åœ°å‡†å¤‡å§¿åŠ¿]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×»Óµ¶¹¥»÷",false);
+action_begin("ä¸‹è¹²æŒ¥åˆ€æ”»å‡»",false);
 	
-	anim("[ÏÂ¶×»Óµ¶¹¥»÷]"	,2		);
+	anim("[ä¸‹è¹²æŒ¥åˆ€æ”»å‡»]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×»Óµ¶¹¥»÷_Ñ­»·",true);
+action_begin("ä¸‹è¹²æŒ¥åˆ€æ”»å‡»_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×»Óµ¶¹¥»÷]"	,2		);
+	anim("[ä¸‹è¹²æŒ¥åˆ€æ”»å‡»]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍË",false);
+action_begin("ä¸‹è¹²è·³èµ·åé€€",false);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍË]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍËÔÚ¿ÕÖĞ_Ñ­»·",true);
+action_begin("ä¸‹è¹²è·³èµ·åé€€åœ¨ç©ºä¸­_å¾ªç¯",true);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍË¿ÕÖĞ]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€ç©ºä¸­]"	,2		);
 
 action_end(); 
 
-action_begin("ÏÂ¶×ÌøÆğºóÍËÂäµØ",false);
+action_begin("ä¸‹è¹²è·³èµ·åé€€è½åœ°",false);
 	
-	anim("[ÏÂ¶×ÌøÆğºóÍËÂäµØ]"	,2		);
+	anim("[ä¸‹è¹²è·³èµ·åé€€è½åœ°]"	,2		);
 
 action_end(); 
 
-action_begin("ºó¿Õ·­",false);
+action_begin("åç©ºç¿»",false);
 	
-	anim("[ºó¿Õ·­]"	,2		);
+	anim("[åç©ºç¿»]"	,2		);
 
 action_end(); 
 
-action_begin("ºó¿Õ·­_Ñ­»·",true);
+action_begin("åç©ºç¿»_å¾ªç¯",true);
 	
-	anim("[ºó¿Õ·­]"	,2		);
-
-action_end(); 
-
-
-//11/08 14:25 ¸üĞÂ
-action_begin("×óÅÜ_Ñ­»·",true);
-	
-	anim("[×óÅÜ]"	,2		);
-
-action_end(); 
-
-action_begin("ÓÒÅÜ_Ñ­»·",true);
-	
-	anim("[ÓÒÅÜ]"	,2		);
+	anim("[åç©ºç¿»]"	,2		);
 
 action_end(); 
 
 
-//11-13 ĞÂÌí¶¯×÷
-action_begin("¿ÕÖĞËÀÍö",false);
+//11/08 14:25 æ›´æ–°
+action_begin("å·¦è·‘_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍö]"	,4		);
+	anim("[å·¦è·‘]"	,2		);
+
+action_end(); 
+
+action_begin("å³è·‘_å¾ªç¯",true);
+	
+	anim("[å³è·‘]"	,2		);
+
+action_end(); 
+
+
+//11-13 æ–°æ·»åŠ¨ä½œ
+action_begin("ç©ºä¸­æ­»äº¡",false);
+	
+	anim("[ç©ºä¸­æ­»äº¡]"	,4		);
 
 action_end();
 
-action_begin("¿ÕÖĞËÀÍöÏÂÂä_Ñ­»·",true);
+action_begin("ç©ºä¸­æ­»äº¡ä¸‹è½_å¾ªç¯",true);
 	
-	anim("[¿ÕÖĞËÀÍöÏÂÂä]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡ä¸‹è½]"	,4		);
 
 action_end(); 
 
-action_begin("¿ÕÖĞËÀÍöÂäµØ",false);
+action_begin("ç©ºä¸­æ­»äº¡è½åœ°",false);
 	
-	anim("[¿ÕÖĞËÀÍöÂäµØ]"	,4		);
+	anim("[ç©ºä¸­æ­»äº¡è½åœ°]"	,4		);
 
 action_end();
 
-//12-17 ĞÂÌí¶¯×÷
-action_begin("Õ¾Á¢ºó¿Õ·­",false);
+//12-17 æ–°æ·»åŠ¨ä½œ
+action_begin("ç«™ç«‹åç©ºç¿»",false);
 	
-	anim("[Õ¾Á¢ºó¿Õ·­]"	,4		);
+	anim("[ç«™ç«‹åç©ºç¿»]"	,4		);
 
 action_end();
 
-action_begin("ÏÂ¶×ºó¿Õ·­",false);
+action_begin("ä¸‹è¹²åç©ºç¿»",false);
 	
-	anim("[ÏÂ¶×ºó¿Õ·­]"	,4		);
+	anim("[ä¸‹è¹²åç©ºç¿»]"	,4		);
 
 action_end();
 
-action_begin("Ç°¿Õ·­",false);
+action_begin("å‰ç©ºç¿»",false);
 	
-	anim("[Ç°¿Õ·­]"	,4		);
+	anim("[å‰ç©ºç¿»]"	,4		);
 
 action_end();
 file_end();
-file_begin("data/model/Ö÷¹Û°Í×æ¿¨»ğ¼ı.txt");
+file_begin("data/model/ä¸»è§‚å·´ç¥–å¡ç«ç®­.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5285,15 +5285,15 @@ file_begin("data/model/Ö÷¹Û°Í×æ¿¨»ğ¼ı.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹Û°Í×æ¿¨»ğ¼ı.mod");
+	model("matters/ä¸»è§‚å·´ç¥–å¡ç«ç®­.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÌÀÄ·É­³å·æÇ¹.txt");
+file_begin("data/model/ä¸»è§‚æ±¤å§†æ£®å†²é”‹æª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5303,16 +5303,16 @@ file_begin("data/model/Ö÷¹ÛÌÀÄ·É­³å·æÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÌÀÄ·É­³å·æÇ¹.mod");
+	model("matters/ä¸»è§‚æ±¤å§†æ£®å†²é”‹æª.mod");
 
 state_end();
-define_HH("HH_ÍËÌÅ",0);
+define_HH("HH_é€€è†›",0);
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÖØ»úÇ¹.txt");
+file_begin("data/model/ä¸»è§‚é‡æœºæª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5322,16 +5322,16 @@ file_begin("data/model/Ö÷¹ÛÖØ»úÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÖØ»úÇ¹.mod");
+	model("matters/ä¸»è§‚é‡æœºæª.mod");
 
 state_end();
-define_HH("HH_ÍËÌÅ",0);
+define_HH("HH_é€€è†›",0);
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÃ«Éª²½Ç¹.txt");
+file_begin("data/model/ä¸»è§‚æ¯›ç‘Ÿæ­¥æª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5341,16 +5341,16 @@ file_begin("data/model/Ö÷¹ÛÃ«Éª²½Ç¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÃ«Éª²½Ç¹.mod");
+	model("matters/ä¸»è§‚æ¯›ç‘Ÿæ­¥æª.mod");
 
 state_end();
-define_HH("HH_ÍËÌÅ",0);
+define_HH("HH_é€€è†›",0);
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/ÆûÓÍÍ°2.txt");
+file_begin("data/model/æ±½æ²¹æ¡¶2.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5360,26 +5360,26 @@ file_begin("data/model/ÆûÓÍÍ°2.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/ÆûÓÍÍ°2.mod");
+	model("matters/æ±½æ²¹æ¡¶2.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","ÈÕ¾ü");
+convert_begin("å¯»å¸¸","æ—¥å†›");
 
-	gfx("»÷»Ù_ÆûÓÍÍ°.gfx","");
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("å‡»æ¯_æ±½æ²¹æ¡¶.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 
-state_begin("ÈÕ¾ü");
+state_begin("æ—¥å†›");
 
 	model("");
 
 state_end();
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹ÛÆû³µ.txt");
+file_begin("data/model/ä¸»è§‚æ±½è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5389,15 +5389,15 @@ file_begin("data/model/Ö÷¹ÛÆû³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹ÛÆû³µ.mod");
+	model("matters/ä¸»è§‚æ±½è½¦.mod");
 
 state_end();
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ö÷¹Û½İ¿ËÇá»úÇ¹.txt");
+file_begin("data/model/ä¸»è§‚æ·å…‹è½»æœºæª.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5407,16 +5407,16 @@ file_begin("data/model/Ö÷¹Û½İ¿ËÇá»úÇ¹.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ö÷¹Û½İ¿ËÇá»úÇ¹.mod");
+	model("matters/ä¸»è§‚æ·å…‹è½»æœºæª.mod");
 
 state_end();
-define_HH("HH_ÍËÌÅ",0);
+define_HH("HH_é€€è†›",0);
 
 //-------------------------------------------------------------
 file_end();
-file_begin("data/model/Ç¿»¯×°¼×³µ.txt");
+file_begin("data/model/å¼ºåŒ–è£…ç”²è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5426,56 +5426,56 @@ file_begin("data/model/Ç¿»¯×°¼×³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/Ç¿»¯×°¼×³µ.mod");
+	model("characters/å¼ºåŒ–è£…ç”²è½¦.mod");
 
 state_end();
 
 state_begin("");
 
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/Ç¿»¯×°¼×³µ»÷»Ù.mod");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/å¼ºåŒ–è£…ç”²è½¦å‡»æ¯.mod");
 
 state_end();
-convert_begin("Ñ°³£","");
+convert_begin("å¯»å¸¸","");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
 //-------------------------------------------------------------
-define_HH("HH_Ç¿»¯×°¼×³µ±¬Õ¨",0);
+define_HH("HH_å¼ºåŒ–è£…ç”²è½¦çˆ†ç‚¸",0);
 
 
 //
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,4		);
+	anim("[å¼€è½¦]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ_Ñ­»·",true,10.0);
+action_begin("å¼€ç«_å¾ªç¯",true,10.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,4		);
+	anim("[åœè½¦]"	,4		);
 
 action_end(); 
 
-define_HH("HH_Ç¿»¯×°¼×³µ_ÅÚËş",1);
+define_HH("HH_å¼ºåŒ–è£…ç”²è½¦_ç‚®å¡”",1);
 file_end();
-file_begin("data/model/×°¼×³µ.txt");
+file_begin("data/model/è£…ç”²è½¦.txt");
 /*--------------------------------------------------------------------------
 
 	Copy Right EpieGame 
@@ -5485,57 +5485,57 @@ file_begin("data/model/×°¼×³µ.txt");
 
 --------------------------------------------------------------------------*/	
 
-state_begin("Ñ°³£");
+state_begin("å¯»å¸¸");
 
 	gfx("","");
-	model("characters/×°¼×³µ.mod");
+	model("characters/è£…ç”²è½¦.mod");
 
 state_end();
 
-convert_begin("Ñ°³£","»÷»Ù");
+convert_begin("å¯»å¸¸","å‡»æ¯");
 
-	gfx("±¬Õ¨¹âÓ°_´ó.gfx","");
+	gfx("çˆ†ç‚¸å…‰å½±_å¤§.gfx","");
 convert_end();
-state_begin("»÷»Ù");
-	gfx("»÷»Ù_³µÁ¾.gfx","");
-	model("characters/×°¼×³µ»÷»Ù.mod");
+state_begin("å‡»æ¯");
+	gfx("å‡»æ¯_è½¦è¾†.gfx","");
+	model("characters/è£…ç”²è½¦å‡»æ¯.mod");
 
 state_end();
 
 //
-action_begin("¿ª³µ_Ñ­»·",true);
+action_begin("å¼€è½¦_å¾ªç¯",true);
 	
-	anim("[¿ª³µ]"	,4		);
+	anim("[å¼€è½¦]"	,4		);
 
 action_end(); 
 
-action_begin("¿ª»ğ_Ñ­»·",true,10.0);
+action_begin("å¼€ç«_å¾ªç¯",true,10.0);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
 
-action_begin("¿ª»ğ",false);
+action_begin("å¼€ç«",false);
 	
-	anim("[¿ª»ğ]"	,4		);
+	anim("[å¼€ç«]"	,4		);
 
 action_end(); 
 
-action_begin("Í£³µ",false);
+action_begin("åœè½¦",false);
 	
-	anim("[Í£³µ]"	,4		);
+	anim("[åœè½¦]"	,4		);
 
 action_end(); 
 
-define_HH("HH_×°¼×³µÅÚËş",0);
+define_HH("HH_è£…ç”²è½¦ç‚®å¡”",0);
 
 file_end();
 
-file_begin("data/model/ÒÎ×Ó.txt");
-state_begin("Ñ°³£");
+file_begin("data/model/æ¤…å­.txt");
+state_begin("å¯»å¸¸");
 
-	model("matters/Ì«Ê¦ÒÎ.mod");
+	model("matters/å¤ªå¸ˆæ¤….mod");
 
 state_end();
 

@@ -23,7 +23,7 @@ AGame::AGame()
 	m_bIsWindow			= true;
 	m_logfps			= 30;
 	m_bFastPossible		= true;
-	m_fRunSpan			= 1000.f/m_logfps;//ºÁÃë
+	m_fRunSpan			= 1000.f/m_logfps;//æ¯«ç§’
 	m_bActive			= true;
 	m_nWidth			= 800;
 	m_nHeight			= 600;
@@ -99,7 +99,7 @@ bool AGame::Init(PINITAGAMESTRUCT pInitStruct)
 
 int AGame::Run()
 {
-	//ÏÔÊ¾Æ¬Í·¶¯»­µÈÒ»´ÎĞÔĞÅÏ¢
+	//æ˜¾ç¤ºç‰‡å¤´åŠ¨ç”»ç­‰ä¸€æ¬¡æ€§ä¿¡æ¯
 	long lBeginTime,lEndTime,lSpanTime;
 	int nRet = EXIT_CODE_NULL;
 
@@ -124,10 +124,10 @@ int AGame::Run()
 					break;
 			}
 		}	
-		//ÏŞèå
+		//é™æ¡¢
 		lEndTime = timeGetTime();
 		lSpanTime = lEndTime - lBeginTime;
-		//ºÁÃë
+		//æ¯«ç§’
 		m_fRunSpan	= lSpanTime/1000.f;
 		if(lSpanTime <= (1000000/m_logfps+1) && m_bFastPossible == false)
 			Sleep((1000000/m_logfps - lSpanTime+1)/1000);
@@ -300,8 +300,8 @@ bool AGame::InitA3DEngine(PINITAGAMESTRUCT pInitStruct)
 
 bool AGame::InitDevice(bool bWindow)
 {
-	//²úÉúADeviceManºÍADevice²¢¹ÒÔÚADeviceManÉÏ
-	//new ËüÃÇµÄÅÉÉúÀà
+	//äº§ç”ŸADeviceManå’ŒADeviceå¹¶æŒ‚åœ¨ADeviceManä¸Š
+	//new å®ƒä»¬çš„æ´¾ç”Ÿç±»
  	m_pADeviceMan = new ADeviceMan;
 
 	if(!m_pADeviceMan)
@@ -337,7 +337,7 @@ bool AGame::InitDevice(bool bWindow)
 		return false;
 	}
 
-	//¹ÒÉè±¸
+	//æŒ‚è®¾å¤‡
 	m_pADeviceMan->AddDevice(m_pAMouse);
 	m_pADeviceMan->AddDevice(m_pAKeyBoard);
 	
@@ -347,7 +347,7 @@ bool AGame::InitDevice(bool bWindow)
 		ADebug::Msg(0,"new AWinMsgDeviceGrp error");
 		return true;
 	}
-	//¹ÒÉè±¸
+	//æŒ‚è®¾å¤‡
 	m_pAWinMsgDevice->AddDevice(m_pAMouse);
 	m_pAWinMsgDevice->AddDevice(m_pAKeyBoard);
 	return true;
@@ -422,7 +422,7 @@ bool AGame::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		case WM_ACTIVATEAPP:
 			m_bActive = (wParam ? true : false);
-			// ¶ÔÓÚÈ«ÆÁÄ£Ê½²ÅĞèÒªÏÂÃæµÄ²Ù×÷
+			// å¯¹äºå…¨å±æ¨¡å¼æ‰éœ€è¦ä¸‹é¢çš„æ“ä½œ
 			if(!m_bIsWindow)
 			{
 				if(m_bActive)
@@ -690,7 +690,7 @@ bool AGame::ReleaseRainSnow()
 void AGame::SetLogicfps(int logicfps)
 {
 	m_logfps			= logicfps;
-	m_fRunSpan			= 1000.f/m_logfps;//ºÁÃë
+	m_fRunSpan			= 1000.f/m_logfps;//æ¯«ç§’
 }
 
 void AGame::SetForceRender(bool bForceRender)

@@ -1,6 +1,6 @@
 // File		: CommonFuncs.cpp
 // Creator	: Wei Hua
-// ´ó¼Ò¶¼¿ÉÒÔÓÃµÄÒ»Ğ©Í¨ÓÃº¯Êı
+// å¤§å®¶éƒ½å¯ä»¥ç”¨çš„ä¸€äº›é€šç”¨å‡½æ•°
 
 #include <assert.h>
 #include <io.h>
@@ -12,7 +12,7 @@
 
 #define A_RAND_MAX 65536
 
-// ²åÖµ
+// æ’å€¼
 float	_GetInterpolation(float f, float f1, float f2, float v1, float v2)
 {
 	float	r;
@@ -20,7 +20,7 @@ float	_GetInterpolation(float f, float f1, float f2, float v1, float v2)
 	return	v1 * (1-r) + v2 * (r);
 }
 
-// ÅĞ¶ÏÒ»ĞĞÖĞÊÇ·ñÓĞÖĞÎÄ
+// åˆ¤æ–­ä¸€è¡Œä¸­æ˜¯å¦æœ‰ä¸­æ–‡
 bool	_HaveChineseInStr(char *__str)
 {
 	static const int cst_MaxStrLen	= 1024;
@@ -44,7 +44,7 @@ float	_GetHDistance(A3DVECTOR3 Pos1, A3DVECTOR3 Pos2, float fMaxVLen)
 	return	MagnitudeH(Pos1 - Pos2);
 }
 
-// ½«×Ö´®Á½Í·Îª__cµÄµ±×÷¿Õ×Ö·ûÈ¥µô
+// å°†å­—ä¸²ä¸¤å¤´ä¸º__cçš„å½“ä½œç©ºå­—ç¬¦å»æ‰
 int		_StrTrimC(char *__str, char __c)
 {
 	int	i, l;
@@ -110,7 +110,7 @@ int	_GetFileLen(const char *__file)
 
 // return number of CDROMs
 // __drives must have a buffer of at least 32
-// ·µ»ØCDROMÇı¶¯Æ÷ÊıÄ¿£¬__drivesÊÇÓÉCDROMÇı¶¯Æ÷ÅÌ·û×é³ÉµÄ×Ö´®
+// è¿”å›CDROMé©±åŠ¨å™¨æ•°ç›®ï¼Œ__drivesæ˜¯ç”±CDROMé©±åŠ¨å™¨ç›˜ç¬¦ç»„æˆçš„å­—ä¸²
 int _GetLogicalCDROM(char *__drives, int __len)
 {
 	DWORD dwdrv, dw1=1;
@@ -145,7 +145,7 @@ End:
 	return count;
 }
 
-// ÅĞ¶ÏÕâĞ©ÎÄ¼şÊÇ·ñÔÚ¹âÅÌÉÏ
+// åˆ¤æ–­è¿™äº›æ–‡ä»¶æ˜¯å¦åœ¨å…‰ç›˜ä¸Š
 bool	_HaveTheseFilesOnCDROM(int __fnum, char **__files)
 {
 	int		i, j, cdnum;
@@ -154,7 +154,7 @@ bool	_HaveTheseFilesOnCDROM(int __fnum, char **__files)
 	cdnum	= _GetLogicalCDROM(drives, sizeof(drives));
 	if( cdnum<=0 )
 	{
-		// Ã»ÓĞ¹âÇı
+		// æ²¡æœ‰å…‰é©±
 		return	false;
 	}
 	char	file[MAX_PATH];
@@ -176,7 +176,7 @@ bool	_HaveTheseFilesOnCDROM(int __fnum, char **__files)
 		}
 		if( !bHaveIt )
 		{
-			// ÔÚËùÓĞµÄ¹âÇıÉÏ¶¼Ã»ÓĞÕÒµ½
+			// åœ¨æ‰€æœ‰çš„å…‰é©±ä¸Šéƒ½æ²¡æœ‰æ‰¾åˆ°
 			return	false;
 		}
 	}

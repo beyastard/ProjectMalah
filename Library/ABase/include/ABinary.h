@@ -1,9 +1,9 @@
 /*
  * FILE: ABinary.h
  *
- * DESCRIPTION: ¶ş½øÖÆ¿é¹ÜÀíÀà£¬¿éµÄ½âÊÍ·½Ê½ÓÉ¸½´øµÄGUID½øĞĞËµÃ÷
+ * DESCRIPTION: äºŒè¿›åˆ¶å—ç®¡ç†ç±»ï¼Œå—çš„è§£é‡Šæ–¹å¼ç”±é™„å¸¦çš„GUIDè¿›è¡Œè¯´æ˜
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/20
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/20
  *
  * HISTORY:
  *
@@ -27,7 +27,7 @@ typedef struct _GUID
 } GUID;
 #endif /* GUID_DEFINED */
 
-// {00000000-0000-0000-0000-0000000000000000} ¿Õ±êÊ¶£¬ÓÃÓÚ³õÊ¼»¯ºÍÅĞ¶Ï³õÊ¼»¯
+// {00000000-0000-0000-0000-0000000000000000} ç©ºæ ‡è¯†ï¼Œç”¨äºåˆå§‹åŒ–å’Œåˆ¤æ–­åˆå§‹åŒ–
 static const GUID BT_EMPTY = 
 { 0, 0, 0, { 0, 0, 0, 0, 0, 0, 0, 0 } };
 
@@ -40,13 +40,13 @@ public:
 
 public:
 
-	virtual bool Load(AArchive &ar);			// ´æÈ¡º¯Êı
+	virtual bool Load(AArchive &ar);			// å­˜å–å‡½æ•°
 	virtual bool Save(AArchive &ar);
 
-	int GetLength();							// »ñÈ¡Êı¾İÇø³¤
-	void * GetBufferSetLength(int length);		// ³õÊ¼/ÖØĞÂ ÖÃÊı¾İÇø³¤¶È
-	void SetType(GUID guidType);				// ÉèÖÃ½âÊÍÀàĞÍ
-	GUID GetType();								// »ñÈ¡½âÊÍÀàĞÍ
+	int GetLength();							// è·å–æ•°æ®åŒºé•¿
+	void * GetBufferSetLength(int length);		// åˆå§‹/é‡æ–° ç½®æ•°æ®åŒºé•¿åº¦
+	void SetType(GUID guidType);				// è®¾ç½®è§£é‡Šç±»å‹
+	GUID GetType();								// è·å–è§£é‡Šç±»å‹
 
 	const ABinary & operator = (const ABinary & bin);
 
@@ -55,14 +55,14 @@ public:
 	ABinary(const ABinary & bin);
 	~ABinary();
 
-	// ÏòÈÎÒâÀàĞÍÖ¸ÕëµÄ×ª»»
+	// å‘ä»»æ„ç±»å‹æŒ‡é’ˆçš„è½¬æ¢
 	void * GetBuffer() {return m_pData;}
 
 protected:
 
-	GUID	m_guidType;				// ½âÊÍ·½Ê½
-	void *	m_pData;				// Êı¾İÇø
-	int		m_iLength;				// Êı¾İÇø³¤¶È
+	GUID	m_guidType;				// è§£é‡Šæ–¹å¼
+	void *	m_pData;				// æ•°æ®åŒº
+	int		m_iLength;				// æ•°æ®åŒºé•¿åº¦
 };
 
 #endif

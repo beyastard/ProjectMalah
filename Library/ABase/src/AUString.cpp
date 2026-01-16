@@ -1,9 +1,9 @@
 /*
  * FILE: AUString.h
  *
- * DESCRIPTION:×Ö·û´¦ÀíÀà
+ * DESCRIPTION:å­—ç¬¦å¤„ç†ç±»
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/20
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/20
  *
  * HISTORY:
  *
@@ -115,7 +115,7 @@ void AUString::Free()
 	}
 }
 
-//ÉèÖÃ×Ö·û
+//è®¾ç½®å­—ç¬¦
 bool AUString::SetAt(int index,char ch)
 {
 	if(index < 0 || index > GetLength())
@@ -136,7 +136,7 @@ bool AUString::GetAt(int index,char & ch)
 	return true;
 }
 
-//ÒÆ³ı×Ö´®ÖĞµÄÖ¸¶¨×Ö·û£¬·µ»ØÉ¾³ı»òÓöµ½µÄ¸öÊı
+//ç§»é™¤å­—ä¸²ä¸­çš„æŒ‡å®šå­—ç¬¦ï¼Œè¿”å›åˆ é™¤æˆ–é‡åˆ°çš„ä¸ªæ•°
 int AUString::FilterChar(char ch,bool remove)
 {
 	if(!GetBuffer())
@@ -161,7 +161,7 @@ int AUString::FilterChar(char ch,bool remove)
 	return count;
 }
 
-//ÒÆ³ıºÍÌí¼Ó×Ö·û
+//ç§»é™¤å’Œæ·»åŠ å­—ç¬¦
 bool AUString::RemoveAt(int index)
 {
 	int length = GetLength();
@@ -179,7 +179,7 @@ bool AUString::RemoveAt(int index)
 	return true;
 }
 
-//ÖÃÎª´óĞ´
+//ç½®ä¸ºå¤§å†™
 void AUString::MakeUpper()
 {
 	char * buff = GetBuffer();
@@ -193,7 +193,7 @@ void AUString::MakeUpper()
 	}
 }
 
-//ÖÃÎªĞ¡Ğ´
+//ç½®ä¸ºå°å†™
 void AUString::MakeLower()
 {
 	char * buff = GetBuffer();
@@ -210,8 +210,8 @@ void AUString::MakeLower()
 bool AUString::InsertAt(int index,char ch)
 {
 	
-	//	ÔÚ 0 ~ (»º³åÇø³¤¶È - 1)Ö®¼ä²åÈë×Ö·û£¬Èç¹û³¤¶È´óÓÚ×Ö´®£¬
-	//	ÔòÔÚ²åÈëÎ»ÖÃÓë×Ö·û´®Î²²¿Ö®¼äÓÃ' '£¨¿Õ¸ñ£©½øĞĞÌî³ä
+	//	åœ¨ 0 ~ (ç¼“å†²åŒºé•¿åº¦ - 1)ä¹‹é—´æ’å…¥å­—ç¬¦ï¼Œå¦‚æœé•¿åº¦å¤§äºå­—ä¸²ï¼Œ
+	//	åˆ™åœ¨æ’å…¥ä½ç½®ä¸å­—ç¬¦ä¸²å°¾éƒ¨ä¹‹é—´ç”¨' 'ï¼ˆç©ºæ ¼ï¼‰è¿›è¡Œå¡«å……
 	
 	int length = GetLength();
 
@@ -450,8 +450,8 @@ int AUString::FindString(AUString strP, int nStart)
 	return -1;
 }
 
-//¹¹ÔìÊ§°ÜÁ´½Ó
-//Ê§°ÜÁ´½ÓÊÇ¡°¿ªÊ¼¶ÁÈ¡½Úµã¡±+¡°Æ¥Åä½Úµã¡±+¡°½áÊø½Úµã¡±
+//æ„é€ å¤±è´¥é“¾æ¥
+//å¤±è´¥é“¾æ¥æ˜¯â€œå¼€å§‹è¯»å–èŠ‚ç‚¹â€+â€œåŒ¹é…èŠ‚ç‚¹â€+â€œç»“æŸèŠ‚ç‚¹â€
 bool AUString::FailLink(int iLen, char *pFailLink)
 {
 	pFailLink[1]=0;

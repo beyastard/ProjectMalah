@@ -1,9 +1,9 @@
 /*
  * FILE: AClassInfo.h
  *
- * DESCRIPTION: ¶¨ÒåËùÓÐÒÀ¿¿AObjectÊµÏÖ´®ÐÐ»¯µÄÃèÊöÀàAClassInfo
+ * DESCRIPTION: å®šä¹‰æ‰€æœ‰ä¾é AObjectå®žçŽ°ä¸²è¡ŒåŒ–çš„æè¿°ç±»AClassInfo
  *
- * CREATED BY: ÑîÖÇÓ¯, 2002/8/7
+ * CREATED BY: æ¨æ™ºç›ˆ, 2002/8/7
  *
  * HISTORY:
  *
@@ -31,13 +31,13 @@ public:
 
 private:
 
-	const char *	m_pcszName;		//ÀàÃû
-	AClassInfo *	m_pciBase;		//»ùÀàÐÅÏ¢
-	int				m_iVersion;		//Àà´®ÐÐ»¯°æ±¾
-	CREATEMETHOD	m_pfCreate;		//´´½¨¶ÔÏóµÄº¯ÊýÖ¸Õë
+	const char *	m_pcszName;		//ç±»å
+	AClassInfo *	m_pciBase;		//åŸºç±»ä¿¡æ¯
+	int				m_iVersion;		//ç±»ä¸²è¡ŒåŒ–ç‰ˆæœ¬
+	CREATEMETHOD	m_pfCreate;		//åˆ›å»ºå¯¹è±¡çš„å‡½æ•°æŒ‡é’ˆ
 
-	AClassInfo *	m_pciPrev;		//ÉÏÒ»¸öÀàÐÅÏ¢
-	AClassInfo *	m_pciNext;		//ÏÂÒ»¸öÀàÐÅÏ¢
+	AClassInfo *	m_pciPrev;		//ä¸Šä¸€ä¸ªç±»ä¿¡æ¯
+	AClassInfo *	m_pciNext;		//ä¸‹ä¸€ä¸ªç±»ä¿¡æ¯
 };
 
 #endif
