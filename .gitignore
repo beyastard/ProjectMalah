@@ -426,3 +426,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Allow DirectX 8.1 SDK .lib files
+!Dependency/dx81sdk/lib/*.lib
